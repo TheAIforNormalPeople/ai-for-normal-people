@@ -40,7 +40,7 @@ That's it! Your site will be live at a Netlify URL in ~2 minutes.
 
 1. In Netlify dashboard: **Site settings** → **Domain management**
 2. Click **"Add custom domain"**
-3. Enter: `theaifornormalpeople.com`
+3. Enter: `your-domain.com`
 4. Follow DNS instructions:
    - If using Netlify DNS (recommended): Update nameservers
    - If using external DNS: Add A record or CNAME

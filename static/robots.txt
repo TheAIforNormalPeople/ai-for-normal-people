@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://theaifornormalpeople.com/sitemap.xml
+Sitemap: /sitemap.xml
 
 
 

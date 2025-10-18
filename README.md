@@ -112,7 +112,7 @@ code block
 Edit `hugo.toml` to customize:
 
 ```toml
-baseURL = "https://theaifornormalpeople.com/"
+baseURL = "/"
 title = "AI for Normal People"
 
 [params]
@@ -173,7 +173,7 @@ Edit the menu in `hugo.toml`:
 
 3. **Set Up Custom Domain**
    - In Netlify: Site settings → Domain management
-   - Add custom domain: `theaifornormalpeople.com`
+   - Add custom domain: `your-domain.com`
    - Follow DNS instructions from Netlify
    - SSL certificate is automatically provided
 
@@ -374,7 +374,7 @@ hugo server -D
 
 Add to `layouts/partials/head.html`:
 ```html
-<script defer data-domain="theaifornormalpeople.com" 
+<script defer data-domain="your-domain.com" 
   src="https://plausible.io/js/script.js"></script>
 ```
 

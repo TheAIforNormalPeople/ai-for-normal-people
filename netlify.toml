@@ -44,13 +44,6 @@
   to = "/blog/:splat"
   status = 301
 
-# Redirect default Netlify subdomain to custom domain
-[[redirects]]
-  from = "https://your-site.netlify.app/*"
-  to = "https://theaifornormalpeople.com/:splat"
-  status = 301
-  force = true
-
 
 
 

@@ -1,4 +1,4 @@
-baseURL = "https://theaifornormalpeople.com/"
+baseURL = "/"
 languageCode = "en-us"
 title = "AI for Normal People"
 enableRobotsTXT = true

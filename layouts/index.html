@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="hero">
+    <div class="container">
+        <h1 class="hero-title">{{ .Site.Params.homepage.title }}</h1>
+        <p class="hero-subtitle">{{ .Site.Params.homepage.subtitle }}</p>
+    </div>
+</div>
+
+<div class="container">
+    <section class="recent-posts">
+        <h2 class="section-title">Recent Posts</h2>
+        <div class="posts-grid">
+            {{ range first 6 (where .Site.RegularPages "Section" "blog") }}
+            <article class="post-card">
+                <a href="{{ .Permalink }}" class="post-card-link">
+                    <div class="post-card-content">
+                        <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+                            {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}
+                        </time>
+                        <h3 class="post-title">{{ .Title }}</h3>
+                        <p class="post-summary">{{ .Summary }}</p>
+                        <span class="read-more">Read more →</span>
+                    </div>
+                </a>
+            </article>
+            {{ end }}
+        </div>
+        
+        <div class="view-all">
+            <a href="/blog/" class="btn-primary">View All Posts</a>
+        </div>
+    </section>
+</div>
+{{ end }}
+
+
+
+
+
+

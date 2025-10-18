@@ -1,0 +1,62 @@
+baseURL = "https://theaifornormalpeople.com/"
+languageCode = "en-us"
+title = "AI for Normal People"
+enableRobotsTXT = true
+enableEmoji = true
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  description = "A blog about AI tools for non-technical people"
+  author = "AI for Normal People"
+  dateFormat = "January 2, 2006"
+  
+  # Social media and SEO
+  twitter = ""  # Your Twitter handle (without @)
+  github = ""   # Your GitHub username
+  email = ""    # Your email
+  
+  # Open Graph / Twitter Card
+  images = ["/images/og-image.jpg"]
+  
+[params.homepage]
+  title = "Making AI Accessible"
+  subtitle = "Learn how to use AI tools without the technical jargon"
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 2
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 3
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
+
+
+

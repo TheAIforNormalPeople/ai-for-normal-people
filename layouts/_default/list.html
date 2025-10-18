@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="container">
+    <header class="page-header">
+        <h1 class="page-title">{{ .Title }}</h1>
+        {{ if .Params.description }}
+        <p class="page-description">{{ .Params.description }}</p>
+        {{ end }}
+    </header>
+    
+    <div class="posts-list">
+        {{ range .Paginator.Pages }}
+        <article class="post-list-item">
+            <a href="{{ .Permalink }}" class="post-list-link">
+                <div class="post-list-content">
+                    <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+                        {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}
+                    </time>
+                    <h2 class="post-title">{{ .Title }}</h2>
+                    <p class="post-summary">{{ .Summary }}</p>
+                    {{ if .Params.tags }}
+                    <div class="tags">
+                        {{ range first 3 .Params.tags }}
+                        <span class="tag">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+            </a>
+        </article>
+        {{ end }}
+    </div>
+    
+    {{ template "_internal/pagination.html" . }}
+</div>
+{{ end }}
+
+
+
+
+
+

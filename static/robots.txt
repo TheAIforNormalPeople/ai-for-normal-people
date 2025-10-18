@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://theaifornormalpeople.com/sitemap.xml
+
+
+
+
+
+

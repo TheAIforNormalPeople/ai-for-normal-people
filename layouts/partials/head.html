@@ -63,13 +63,12 @@
 
 <!-- Dark mode script (inline to prevent flash) -->
 <script>
-    try {
-        const theme = localStorage.getItem('theme') || 'light';
-        if (theme === 'dark') {
-            document.documentElement.classList.add('dark-mode');
-        }
-    } catch(e) {
-        // Ignore errors
+    // Check for saved theme preference or default to system preference
+    const theme = localStorage.getItem('theme') || 
+                  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    
+    if (theme === 'dark') {
+        document.documentElement.classList.add('dark-mode');
     }
 </script>
 

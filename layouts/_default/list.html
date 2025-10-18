@@ -12,9 +12,14 @@
         <article class="post-list-item">
             <a href="{{ .Permalink }}" class="post-list-link">
                 <div class="post-list-content">
-                    <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
-                        {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}
-                    </time>
+                    <div class="post-meta">
+                        <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+                            {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}
+                        </time>
+                        {{ if or .Params.isNew (and (not .Params.isNew) (gt .Date (now.AddDate 0 0 -30))) }}
+                        <span class="new-badge">NEW</span>
+                        {{ end }}
+                    </div>
                     <h2 class="post-title">{{ .Title }}</h2>
                     <p class="post-summary">{{ .Summary }}</p>
                     {{ if .Params.tags }}

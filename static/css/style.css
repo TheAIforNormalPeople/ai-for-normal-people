@@ -455,6 +455,25 @@ em {
     flex-wrap: wrap;
 }
 
+.new-badge {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
 .separator {
     color: var(--color-text-secondary);
 }

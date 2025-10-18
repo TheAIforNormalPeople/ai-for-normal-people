@@ -20,6 +20,9 @@ enableEmoji = true
   # Open Graph / Twitter Card
   images = ["/images/og-image.jpg"]
   
+  # Exclude taxonomy pages from sitemap
+  disableKinds = ["taxonomy", "term"]
+  
 [params.homepage]
   title = "Making AI Accessible"
   subtitle = "Learn how to use AI tools without the technical jargon"
@@ -56,6 +59,7 @@ enableEmoji = true
 [sitemap]
   changefreq = "weekly"
   priority = 0.5
+
 
 
 

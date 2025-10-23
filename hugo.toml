@@ -8,7 +8,7 @@ enableEmoji = true
   pagerSize = 10
 
 [params]
-  description = "A blog about AI tools for non-technical people"
+  description = "Real talk about AI tools for normal people. No courses, no BS, just honest reviews and guides for ChatGPT, Claude, and tools that actually work."
   author = "AI for Normal People"
   dateFormat = "January 2, 2006"
   

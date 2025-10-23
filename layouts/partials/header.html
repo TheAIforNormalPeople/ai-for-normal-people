@@ -94,22 +94,18 @@
                 const postSlug = badge.getAttribute('data-post-slug');
                 if (postSlug && localStorage.getItem('read_' + postSlug)) {
                     badge.textContent = 'READ';
-                    badge.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
-                    badge.style.animation = 'none';
-                    badge.style.transform = 'scale(1)';
+                    badge.classList.add('read-badge');
                 }
             });
             
             // Listen for storage changes (when user visits a blog post and comes back)
             window.addEventListener('storage', function(e) {
                 if (e.key && e.key.startsWith('read_')) {
-                    const slug = e.key.replace('read_', '');
+                    const slug = e.key.replace('read_', '').replace('_timestamp', '');
                     const badge = document.querySelector(`.new-badge[data-post-slug="${slug}"]`);
                     if (badge) {
                         badge.textContent = 'READ';
-                        badge.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
-                        badge.style.animation = 'none';
-                        badge.style.transform = 'scale(1)';
+                        badge.classList.add('read-badge');
                     }
                 }
             });

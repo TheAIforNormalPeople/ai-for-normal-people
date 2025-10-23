@@ -466,8 +466,9 @@ em {
     letter-spacing: 0.5px;
     box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
     animation: pulse 2s infinite;
-    transition: opacity 0.3s ease-out, transform 0.2s ease-out;
+    transition: all 0.3s ease-out;
     cursor: pointer;
+    display: inline-block;
 }
 
 .new-badge:hover {
@@ -475,17 +476,27 @@ em {
     box-shadow: 0 4px 8px rgba(255, 107, 107, 0.4);
 }
 
-/* READ badge styling */
-.new-badge[style*="background: linear-gradient(135deg, rgb(74, 222, 128)"] {
+/* READ badge styling - using class instead of attribute selector */
+.new-badge.read-badge {
     background: linear-gradient(135deg, #4ade80, #22c55e) !important;
     animation: none !important;
     transform: scale(1) !important;
+    box-shadow: 0 2px 4px rgba(34, 197, 94, 0.3) !important;
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0% { 
+        transform: scale(1); 
+        box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
+    }
+    50% { 
+        transform: scale(1.05); 
+        box-shadow: 0 4px 8px rgba(255, 107, 107, 0.5);
+    }
+    100% { 
+        transform: scale(1); 
+        box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
+    }
 }
 
 .separator {

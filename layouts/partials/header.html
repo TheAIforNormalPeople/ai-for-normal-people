@@ -69,6 +69,57 @@
                 localStorage.setItem('theme', isDark ? 'dark' : 'light');
             });
         }
+        
+        // Read receipt system for NEW badges
+        function initReadReceiptSystem() {
+            // Clean up old read receipts (older than 30 days)
+            const thirtyDaysAgo = new Date();
+            thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+            const cutoffTime = thirtyDaysAgo.getTime();
+            
+            for (let i = localStorage.length - 1; i >= 0; i--) {
+                const key = localStorage.key(i);
+                if (key && key.startsWith('read_')) {
+                    const timestamp = localStorage.getItem(key + '_timestamp');
+                    if (timestamp && parseInt(timestamp) < cutoffTime) {
+                        localStorage.removeItem(key);
+                        localStorage.removeItem(key + '_timestamp');
+                    }
+                }
+            }
+            
+            // Change badges for posts that have been read to show "READ"
+            const newBadges = document.querySelectorAll('.new-badge');
+            newBadges.forEach(badge => {
+                const postSlug = badge.getAttribute('data-post-slug');
+                if (postSlug && localStorage.getItem('read_' + postSlug)) {
+                    badge.textContent = 'READ';
+                    badge.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
+                    badge.style.animation = 'none';
+                    badge.style.transform = 'scale(1)';
+                }
+            });
+            
+            // Listen for storage changes (when user visits a blog post and comes back)
+            window.addEventListener('storage', function(e) {
+                if (e.key && e.key.startsWith('read_')) {
+                    const slug = e.key.replace('read_', '');
+                    const badge = document.querySelector(`.new-badge[data-post-slug="${slug}"]`);
+                    if (badge) {
+                        badge.textContent = 'READ';
+                        badge.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
+                        badge.style.animation = 'none';
+                        badge.style.transform = 'scale(1)';
+                    }
+                }
+            });
+            
+            // No need to mark posts as read on click anymore - 
+            // that happens when the user visits the actual blog post page
+        }
+        
+        // Initialize read receipt system
+        initReadReceiptSystem();
     });
 </script>
 

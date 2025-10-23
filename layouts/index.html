@@ -14,9 +14,14 @@
             <article class="post-card">
                 <a href="{{ .Permalink }}" class="post-card-link">
                     <div class="post-card-content">
-                        <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
-                            {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}
-                        </time>
+                        <div class="post-meta">
+                            <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+                                {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}
+                            </time>
+                            {{ if or .Params.isNew (and (not .Params.isNew) (gt .Date (now.AddDate 0 0 -7))) }}
+                            <span class="new-badge" data-post-slug="{{ .Slug }}">NEW</span>
+                            {{ end }}
+                        </div>
                         <h3 class="post-title">{{ .Title }}</h3>
                         <p class="post-summary">{{ .Summary }}</p>
                         <span class="read-more">Read more →</span>

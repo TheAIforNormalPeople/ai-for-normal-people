@@ -11,6 +11,8 @@
                 <span class="separator">•</span>
                 <span class="author">{{ .Params.author }}</span>
                 {{ end }}
+                <span class="separator">•</span>
+                <span class="read-indicator" id="read-indicator" style="display: none; color: #22c55e; font-weight: 600;">✓ Read</span>
                 {{ with .ReadingTime }}
                 <span class="separator">•</span>
                 <span class="reading-time">{{ . }} min read</span>
@@ -36,6 +38,30 @@
         {{ end }}
     </div>
 </article>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Mark this post as read when the page loads
+    const currentSlug = '{{ .Slug }}';
+    if (currentSlug) {
+        localStorage.setItem('read_' + currentSlug, 'true');
+        localStorage.setItem('read_' + currentSlug + '_timestamp', Date.now().toString());
+        
+        // Show the read indicator
+        const readIndicator = document.getElementById('read-indicator');
+        if (readIndicator) {
+            setTimeout(() => {
+                readIndicator.style.display = 'inline';
+                readIndicator.style.opacity = '0';
+                readIndicator.style.transition = 'opacity 0.5s ease-in';
+                setTimeout(() => {
+                    readIndicator.style.opacity = '1';
+                }, 100);
+            }, 1000); // Show after 1 second delay
+        }
+    }
+});
+</script>
 {{ end }}
 
 

@@ -1,0 +1,78 @@
+{{ define "main" }}
+<div class="container-narrow">
+    <article class="archive-page">
+        <header class="page-header" style="text-align: center; margin-bottom: 3rem;">
+            <h1 class="page-title" style="font-family: 'Courier New', monospace; text-transform: uppercase; letter-spacing: 2px; font-size: 2.5rem;">
+                {{ .Title }}
+            </h1>
+        </header>
+        
+        <!-- Character commentary at top -->
+        <div class="archive-commentary" style="margin-bottom: 3rem;">
+            {{ .Content }}
+        </div>
+        
+        <!-- Divider -->
+        <div style="text-align: center; margin: 3rem 0; font-family: 'Courier New', monospace; color: var(--color-text-secondary); font-size: 0.9rem;">
+            ═══════════════════════════════════════
+        </div>
+        
+        <!-- Archive posts list -->
+        <div class="archive-posts">
+            {{ $posts := where .Site.RegularPages "Section" "blog" }}
+            {{ $posts := where $posts "Type" "!=" "episode" }}
+            {{ range $posts }}
+            <div class="archive-post-item">
+                <h3><a href="{{ .RelPermalink }}" style="color: #60a5fa; text-decoration: none;">{{ .Title }}</a></h3>
+                <div class="post-meta" style="font-family: 'Courier New', monospace; font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">
+                    {{ .Date.Format "January 2, 2006" }} • {{ .ReadingTime }} min read
+                </div>
+                <p style="color: var(--color-text-secondary);">{{ .Summary }}</p>
+            </div>
+            {{ end }}
+        </div>
+    </article>
+</div>
+
+<style>
+.archive-page {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.archive-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.archive-post-item {
+    padding: 1.5rem;
+    background: rgba(59, 130, 246, 0.03);
+    border-left: 4px solid #3b82f6;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.archive-post-item:hover {
+    background: rgba(59, 130, 246, 0.08);
+    border-left-width: 6px;
+    transform: translateX(4px);
+}
+
+.archive-post-item h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+.archive-post-item h3 a:hover {
+    color: #93c5fd;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.archive-post-item p {
+    margin: 0;
+    line-height: 1.6;
+}
+</style>
+{{ end }}

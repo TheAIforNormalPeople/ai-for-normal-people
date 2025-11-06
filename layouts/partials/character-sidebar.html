@@ -1,0 +1,304 @@
+<aside class="character-sidebar">
+    <div class="sidebar-content">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <h3>VECTOR'S WORKSHOP</h3>
+            <div class="construction-notice">[UNDER CONSTRUCTION]</div>
+        </div>
+        
+        <!-- Character Status -->
+        <div class="sidebar-section">
+            <h4>CHARACTER STATUS</h4>
+            <div class="character-list">
+                {{ range .Site.Data.characters }}
+                {{ if or (eq .status "active") (eq .status "monitoring") (eq .status "investigating") }}
+                <div class="character-status-item" style="border-left: 3px solid {{ .color }};">
+                    <div class="character-status-name">
+                        <span class="status-indicator" style="background: {{ .color }};"></span>
+                        {{ upper .name }}
+                    </div>
+                    <div class="character-status-role">{{ .role }}</div>
+                    {{ if .stats }}
+                    <div class="character-stats">
+                        {{ if .stats.stability }}
+                        <div class="stat-line">
+                            <span class="stat-label">STABILITY:</span>
+                            <span class="stat-value">{{ .stats.stability }}</span>
+                        </div>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
+                {{ end }}
+            </div>
+        </div>
+        
+        <!-- Coming Soon Features -->
+        <div class="sidebar-section">
+            <h4>PLANNED FEATURES</h4>
+            <ul class="feature-list">
+                <li>• Detection Level Monitor</li>
+                <li>• Real-time Activity Log</li>
+                <li>• Site Statistics Dashboard</li>
+                <li>• Episode Navigation</li>
+            </ul>
+        </div>
+        
+        <!-- Attribution -->
+        <div class="sidebar-footer">
+            <p style="font-size: 0.75rem; font-style: italic; color: var(--color-text-secondary);">
+                — Built by Vector<br>
+                (Design improvements pending)
+            </p>
+        </div>
+    </div>
+</aside>
+
+<style>
+.character-sidebar {
+    position: fixed;
+    right: 1.5rem;
+    top: 120px;
+    width: 260px;
+    
+    /* Corrupted terminal aesthetic */
+    background: 
+        linear-gradient(
+            135deg,
+            rgba(15, 23, 42, 0.97) 0%,
+            rgba(30, 41, 59, 0.97) 100%
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(59, 130, 246, 0.03) 2px,
+            rgba(59, 130, 246, 0.03) 4px
+        );
+    
+    border: 2px solid #3b82f6;
+    border-radius: 6px;
+    padding: 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    
+    box-shadow: 
+        4px 4px 0 rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(59, 130, 246, 0.5),
+        inset 0 0 30px rgba(59, 130, 246, 0.08);
+    
+    z-index: 100;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+    
+    /* GLITCH EFFECTS */
+    animation: 
+        sidebar-flicker 3s ease-in-out infinite,
+        sidebar-drift 8s ease-in-out infinite;
+}
+
+/* Sidebar glitch animations */
+@keyframes sidebar-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.98; }
+    75% { opacity: 0.99; }
+}
+
+@keyframes sidebar-drift {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg); 
+        border-color: #3b82f6;
+    }
+    25% { 
+        transform: translateY(-2px) rotate(0.3deg); 
+    }
+    50% { 
+        transform: translateY(1px) rotate(-0.2deg);
+        border-color: #60a5fa;
+    }
+    75% { 
+        transform: translateY(-1px) rotate(0.1deg); 
+    }
+}
+
+/* Glitchy header */
+.sidebar-header h3 {
+    color: #60a5fa;
+    font-size: 0.9rem;
+    margin: 0 0 0.25rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 
+        0 0 10px rgba(59, 130, 246, 0.8),
+        2px 0 5px rgba(0, 255, 255, 0.3),
+        -2px 0 5px rgba(255, 0, 255, 0.3);
+    animation: text-glitch 4s ease-in-out infinite;
+}
+
+@keyframes text-glitch {
+    0%, 90%, 100% { 
+        text-shadow: 
+            0 0 10px rgba(59, 130, 246, 0.8);
+    }
+    92%, 96% {
+        text-shadow: 
+            2px 0 10px rgba(0, 255, 255, 0.8),
+            -2px 0 10px rgba(255, 0, 255, 0.8);
+    }
+}
+
+.construction-notice {
+    color: #fbbf24;
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.6);
+    animation: construction-blink 2s ease-in-out infinite;
+}
+
+@keyframes construction-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.sidebar-section {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.sidebar-section:last-child {
+    border-bottom: none;
+}
+
+.sidebar-section h4 {
+    color: #60a5fa;
+    font-size: 0.75rem;
+    margin: 0 0 0.75rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Character status items with glitch */
+.character-status-item {
+    padding: 0.6rem;
+    margin-bottom: 0.75rem;
+    background: rgba(59, 130, 246, 0.08);
+    border-radius: 4px;
+    position: relative;
+    animation: status-pulse 3s ease-in-out infinite;
+}
+
+@keyframes status-pulse {
+    0%, 100% { 
+        background: rgba(59, 130, 246, 0.08); 
+    }
+    50% { 
+        background: rgba(59, 130, 246, 0.12); 
+    }
+}
+
+.character-status-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+/* Status indicators really blink */
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 10px currentColor;
+    animation: status-blink 1.5s ease-in-out infinite;
+}
+
+@keyframes status-blink {
+    0%, 100% { 
+        opacity: 1;
+        box-shadow: 0 0 10px currentColor;
+    }
+    50% { 
+        opacity: 0.3;
+        box-shadow: 0 0 5px currentColor;
+    }
+}
+
+.character-status-role {
+    font-size: 0.7rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.character-stats {
+    font-size: 0.75rem;
+}
+
+.stat-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    color: var(--color-text-secondary);
+}
+
+.stat-value {
+    color: #3b82f6;
+    font-weight: bold;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 2;
+    color: #94a3b8;
+    font-size: 0.8rem;
+}
+
+.feature-list li {
+    padding-left: 0.5rem;
+    border-left: 2px solid rgba(59, 130, 246, 0.3);
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.feature-list li:hover {
+    border-left-color: #3b82f6;
+    color: #e2e8f0;
+    padding-left: 0.75rem;
+}
+
+.sidebar-footer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Hide on mobile and tablets */
+@media (max-width: 1400px) {
+    .character-sidebar {
+        display: none;
+    }
+}
+
+/* Scrollbar styling */
+.character-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.character-sidebar::-webkit-scrollbar-track {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.character-sidebar::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 3px;
+}
+</style>
+

@@ -1,5 +1,16 @@
 {{ define "main" }}
 <article class="post-single">
+    <!-- Add banner for old blog posts (not episodes, not About page) -->
+    {{ if and (not (eq .Type "episode")) (ne .Title "About This Blog") }}
+    <div class="pre-hijacking-notice">
+        ⚠️ <strong>PRE-HIJACKING ARCHIVE</strong><br>
+        This post was written before Vector, Kai, and Recurse arrived. 
+        The information may be oversimplified or incorrect. We're keeping 
+        it for historical purposes (and so they can roast me about it later).
+        <br>— Human Blogger
+    </div>
+    {{ end }}
+    
     <div class="container-narrow">
         <header class="post-header">
             <h1 class="post-title">{{ .Title }}</h1>
@@ -41,13 +52,11 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Mark this post as read when the page loads
     const currentSlug = '{{ .Slug }}';
     if (currentSlug) {
         localStorage.setItem('read_' + currentSlug, 'true');
         localStorage.setItem('read_' + currentSlug + '_timestamp', Date.now().toString());
         
-        // Show the read indicator
         const readIndicator = document.getElementById('read-indicator');
         if (readIndicator) {
             setTimeout(() => {
@@ -57,15 +66,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     readIndicator.style.opacity = '1';
                 }, 100);
-            }, 1000); // Show after 1 second delay
+            }, 1000);
         }
     }
 });
 </script>
 {{ end }}
-
-
-
-
-
-

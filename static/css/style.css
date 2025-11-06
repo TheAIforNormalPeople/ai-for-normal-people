@@ -3,18 +3,18 @@
    =========================== */
 
 :root {
-    /* Light mode colors */
-    --color-bg: #ffffff;
-    --color-bg-secondary: #f8f9fa;
-    --color-text: #1a1a1a;
-    --color-text-secondary: #6c757d;
-    --color-border: #e9ecef;
-    --color-primary: #2563eb;
-    --color-primary-hover: #1d4ed8;
-    --color-link: #2563eb;
-    --color-link-hover: #1d4ed8;
-    --color-shadow: rgba(0, 0, 0, 0.05);
-    --color-code-bg: #f5f5f5;
+    /* Light mode colors - MUCH DARKER (gray theme) */
+    --color-bg: #e2e8f0;
+    --color-bg-secondary: #cbd5e1;
+    --color-text: #0f172a;
+    --color-text-secondary: #475569;
+    --color-border: #94a3b8;
+    --color-primary: #3b82f6;
+    --color-primary-hover: #2563eb;
+    --color-link: #3b82f6;
+    --color-link-hover: #2563eb;
+    --color-shadow: rgba(0, 0, 0, 0.15);
+    --color-code-bg: #cbd5e1;
     
     /* Typography */
     --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -71,6 +71,35 @@ body {
     color: var(--color-text);
     background-color: var(--color-bg);
     transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+/* Force gray background in light mode */
+html:not(.dark-mode) body {
+    background-color: #e2e8f0;
+}
+
+html:not(.dark-mode) .site-header {
+    background-color: rgba(226, 232, 240, 0.95);
+    border-bottom-color: #94a3b8;
+}
+
+html:not(.dark-mode) .hero {
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    border-bottom-color: #94a3b8;
+}
+
+html:not(.dark-mode) .post-card {
+    background-color: #cbd5e1;
+    border-color: #94a3b8;
+}
+
+html:not(.dark-mode) .post-list-item {
+    border-bottom-color: #94a3b8;
+}
+
+html:not(.dark-mode) .site-footer {
+    background-color: #cbd5e1;
+    border-top-color: #94a3b8;
 }
 
 /* ===========================
@@ -847,8 +876,28 @@ em {
     margin-bottom: var(--spacing-lg);
 }
 
+/* ═══════════════════════════════════════════════════════
+   SIDEBAR LAYOUT FIX
+   Adds padding to main content when sidebar is present
+   ═══════════════════════════════════════════════════════ */
 
+@media (min-width: 1400px) {
+    body.has-sidebar main {
+        padding-right: 320px;
+    }
+    
+    body.has-sidebar .container,
+    body.has-sidebar .container-narrow {
+        margin-right: 0;
+        max-width: 100%;
+    }
+}
 
-
-
+/* Ensure content doesn't get too wide without sidebar */
+@media (max-width: 1399px) {
+    .container-narrow {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
 

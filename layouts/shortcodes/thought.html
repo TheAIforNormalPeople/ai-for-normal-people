@@ -1,0 +1,12 @@
+{{ $character := .Get "char" }}
+{{ $charData := index .Site.Data.characters (lower $character) }}
+
+<div class="thought-bubble" 
+     data-character="{{ $character }}"
+     style="--char-color: {{ $charData.color }};">
+    <div class="bubble-content">
+        {{ .Inner | markdownify }}
+    </div>
+    <div class="bubble-tail"></div>
+</div>
+

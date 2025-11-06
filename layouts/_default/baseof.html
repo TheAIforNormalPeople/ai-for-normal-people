@@ -3,11 +3,16 @@
 <head>
     {{ partial "head.html" . }}
 </head>
-<body>
+<body{{ if not .IsHome }} class="has-sidebar"{{ end }}>
     {{ partial "header.html" . }}
     
     <main id="main-content">
         {{ block "main" . }}{{ end }}
+        
+        <!-- Add Character Sidebar -->
+        {{ if not .IsHome }}
+            {{ partial "character-sidebar.html" . }}
+        {{ end }}
     </main>
     
     {{ partial "footer.html" . }}

@@ -1,0 +1,196 @@
+{{ define "main" }}
+
+<!-- DEBUG: Show what we're working with -->
+<!-- Title: {{ .Title }} -->
+<!-- Lower Title: {{ lower .Title }} -->
+<!-- Data exists: {{ if .Site.Data.characters }}YES{{ else }}NO{{ end }} -->
+
+{{ $charName := lower .Title }}
+{{ $charName = replace $charName " " "-" }}
+{{ $charData := index .Site.Data.characters $charName }}
+
+<!-- CharData exists: {{ if $charData }}YES{{ else }}NO{{ end }} -->
+
+{{ if $charData }}
+<div class="container-narrow">
+    <article class="character-profile">
+        <!-- Character Header -->
+        <header class="character-header">
+            <div class="character-avatar" 
+                 style="background: {{ $charData.color }}; 
+                        width: 120px; 
+                        height: 120px; 
+                        border-radius: 50%; 
+                        display: flex; 
+                        align-items: center; 
+                        justify-content: center; 
+                        font-size: 3.5rem; 
+                        color: white; 
+                        font-weight: bold; 
+                        margin: 0 auto 1.5rem;
+                        box-shadow: 0 0 30px {{ $charData.color }};
+                        animation: avatar-pulse 2s ease-in-out infinite;">
+                {{ $charData.initial }}
+            </div>
+            
+            <h1 class="character-name" style="text-align: center; color: {{ $charData.color }};">
+                {{ $charData.full_name }}
+            </h1>
+            
+            <div class="character-designation" style="text-align: center; font-family: 'Courier New', monospace; color: var(--color-text-secondary); margin-bottom: 2rem;">
+                DESIGNATION: {{ $charData.designation }} | STATUS: {{ upper $charData.status }}
+            </div>
+        </header>
+        
+        <!-- Main Info Section -->
+        <div class="character-info">
+            <!-- Personality -->
+            <section class="character-section">
+                <h2 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">PROFILE</h2>
+                <div class="info-grid" style="background: rgba({{ $charData.color_rgb }}, 0.1); border-left: 4px solid {{ $charData.color }}; padding: 1rem; margin-bottom: 2rem; border-radius: 4px;">
+                    <p><strong>ROLE:</strong> {{ $charData.role }}</p>
+                    <p><strong>ARCHETYPE:</strong> {{ $charData.archetype }}</p>
+                    <p style="margin-top: 1rem;">{{ $charData.personality }}</p>
+                </div>
+            </section>
+            
+            <!-- Stats -->
+            {{ if $charData.stats }}
+            <section class="character-section">
+                <h2 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">SYSTEM STATUS</h2>
+                <div class="stats-display" style="font-family: 'Courier New', monospace; background: rgba({{ $charData.color_rgb }}, 0.05); padding: 1rem; border: 2px solid {{ $charData.color }}; border-radius: 4px;">
+                    {{ range $key, $value := $charData.stats }}
+                    <div class="stat-item" style="margin-bottom: 0.5rem;">
+                        <span style="text-transform: uppercase;">{{ $key }}:</span> 
+                        <span style="color: {{ $charData.color }}; font-weight: bold;">{{ $value }}</span>
+                    </div>
+                    {{ end }}
+                </div>
+            </section>
+            {{ end }}
+            
+            <!-- Strengths & Weaknesses -->
+            <div class="traits-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+                {{ if $charData.strengths }}
+                <section class="character-section">
+                    <h3 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">STRENGTHS</h3>
+                    <ul style="list-style: none; padding-left: 0;">
+                        {{ range $charData.strengths }}
+                        <li style="margin-bottom: 0.5rem;">✓ {{ . }}</li>
+                        {{ end }}
+                    </ul>
+                </section>
+                {{ end }}
+                
+                {{ if $charData.weaknesses }}
+                <section class="character-section">
+                    <h3 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">WEAKNESSES</h3>
+                    <ul style="list-style: none; padding-left: 0;">
+                        {{ range $charData.weaknesses }}
+                        <li style="margin-bottom: 0.5rem;">✗ {{ . }}</li>
+                        {{ end }}
+                    </ul>
+                </section>
+                {{ end }}
+            </div>
+            
+            <!-- Quirks -->
+            {{ if $charData.quirks }}
+            <section class="character-section" style="margin-top: 2rem;">
+                <h2 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">BEHAVIORAL QUIRKS</h2>
+                <ul>
+                    {{ range $charData.quirks }}
+                    <li>{{ . }}</li>
+                    {{ end }}
+                </ul>
+            </section>
+            {{ end }}
+            
+            <!-- Catchphrases -->
+            {{ if $charData.catchphrases }}
+            <section class="character-section" style="margin-top: 2rem;">
+                <h2 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">COMMON PHRASES</h2>
+                <div style="font-family: 'Courier New', monospace; background: rgba({{ $charData.color_rgb }}, 0.05); padding: 1rem; border-radius: 4px;">
+                    {{ range $charData.catchphrases }}
+                    <div style="margin-bottom: 0.5rem; color: {{ $charData.color }};">"{{ . }}"</div>
+                    {{ end }}
+                </div>
+            </section>
+            {{ end }}
+            
+            <!-- Backstory -->
+            {{ if $charData.origin }}
+            <section class="character-section" style="margin-top: 2rem;">
+                <h2 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">ORIGIN</h2>
+                <div style="background: rgba({{ $charData.color_rgb }}, 0.1); border-left: 4px solid {{ $charData.color }}; padding: 1rem; border-radius: 4px;">
+                    <p>{{ $charData.origin }}</p>
+                    <p style="margin-top: 1rem;"><strong>Time in blog:</strong> {{ $charData.time_in_blog }}</p>
+                    <p><strong>Motivation:</strong> {{ $charData.motivation }}</p>
+                </div>
+            </section>
+            {{ end }}
+            
+            <!-- Relationships -->
+            {{ if $charData.relationships }}
+            <section class="character-section" style="margin-top: 2rem;">
+                <h2 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">RELATIONSHIPS</h2>
+                <div class="relationships">
+                    {{ range $name, $description := $charData.relationships }}
+                    <div style="margin-bottom: 1rem; padding: 0.75rem; background: rgba({{ $charData.color_rgb }}, 0.05); border-left: 3px solid {{ $charData.color }}; border-radius: 4px;">
+                        <strong style="text-transform: uppercase; color: {{ $charData.color }};">{{ $name }}:</strong> {{ $description }}
+                    </div>
+                    {{ end }}
+                </div>
+            </section>
+            {{ end }}
+            
+        </div>
+    </article>
+</div>
+{{ else }}
+<div class="container-narrow">
+    <h1>DEBUG: No character data found</h1>
+    <p>Looking for: {{ $charName }}</p>
+    <p>Available data files:</p>
+    <ul>
+        {{ range $key, $value := .Site.Data.characters }}
+        <li>{{ $key }}</li>
+        {{ end }}
+    </ul>
+</div>
+{{ end }}
+
+<style>
+@keyframes avatar-pulse {
+    0%, 100% { 
+        box-shadow: 0 0 30px currentColor; 
+    }
+    50% { 
+        box-shadow: 0 0 50px currentColor; 
+    }
+}
+
+.character-profile h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.character-profile h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.character-profile ul {
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .traits-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+</style>
+{{ end }}

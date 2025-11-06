@@ -1,45 +1,217 @@
 {{ define "main" }}
-<div class="hero">
-    <div class="container">
-        <h1 class="hero-title">{{ .Site.Params.homepage.title }}</h1>
-        <p class="hero-subtitle">{{ .Site.Params.homepage.subtitle }}</p>
-    </div>
-</div>
-
-<div class="container">
-    <section class="recent-posts">
-        <h2 class="section-title">Recent Posts</h2>
-        <div class="posts-grid">
-            {{ range first 6 (where .Site.RegularPages "Section" "blog") }}
-            <article class="post-card">
-                <a href="{{ .Permalink }}" class="post-card-link">
-                    <div class="post-card-content">
-                        <div class="post-meta">
-                            <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
-                                {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}
-                            </time>
-                            {{ if or .Params.isNew (and (not .Params.isNew) (gt .Date (now.AddDate 0 0 -7))) }}
-                            <span class="new-badge" data-post-slug="{{ .Slug }}">NEW</span>
-                            {{ end }}
-                        </div>
-                        <h3 class="post-title">{{ .Title }}</h3>
-                        <p class="post-summary">{{ .Summary }}</p>
-                        <span class="read-more">Read more →</span>
-                    </div>
-                </a>
-            </article>
-            {{ end }}
+<div class="home-container">
+    <!-- Hero Section with Glitch -->
+    <section class="hero-section">
+        <div class="hero-glitch-wrapper">
+            <h1 class="hero-title" data-text="Making AI Accessible">
+                Making AI Accessible
+            </h1>
+            <div class="hero-subtitle">
+                Learn how to use AI tools without the technical jargon
+            </div>
+            
+            <!-- Status Banner -->
+            <div class="hero-status">
+                <span class="status-text">[ BLOG STATUS: COMPROMISED ]</span>
+                <span class="status-indicator-dot"></span>
+            </div>
         </div>
-        
-        <div class="view-all">
-            <a href="/blog/" class="btn-primary">View All Posts</a>
+    </section>
+    
+    <!-- Recent Posts -->
+    <section class="recent-posts-section">
+        <div class="container">
+            <h2 class="section-title">Recent Posts</h2>
+            <div class="posts-grid">
+                {{ range first 6 (where .Site.RegularPages "Section" "blog") }}
+                <article class="post-card">
+                    <a href="{{ .Permalink }}" class="post-card-link">
+                        <div class="post-card-content">
+                            <div class="post-meta">
+                                <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+                                    {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}
+                                </time>
+                                {{ if or .Params.isNew (and (not .Params.isNew) (gt .Date (now.AddDate 0 0 -7))) }}
+                                <span class="new-badge" data-post-slug="{{ .Slug }}">NEW</span>
+                                {{ end }}
+                            </div>
+                            <h3 class="post-title">{{ .Title }}</h3>
+                            <p class="post-summary">{{ .Summary }}</p>
+                            <span class="read-more">Read more →</span>
+                        </div>
+                    </a>
+                </article>
+                {{ end }}
+            </div>
+            
+            <div class="view-all">
+                <a href="/blog/" class="btn-primary">View All Posts</a>
+            </div>
         </div>
     </section>
 </div>
+
+<style>
+.hero-section {
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 4px,
+            rgba(59, 130, 246, 0.03) 4px,
+            rgba(59, 130, 246, 0.03) 8px
+        );
+    pointer-events: none;
+    animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(50px); }
+}
+
+.hero-glitch-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    animation: title-glitch 5s ease-in-out infinite;
+}
+
+.hero-title::before,
+.hero-title::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.hero-title::before {
+    animation: glitch-1 3s ease-in-out infinite;
+    color: #00ffff;
+    z-index: -1;
+}
+
+.hero-title::after {
+    animation: glitch-2 3s ease-in-out infinite;
+    color: #ff00ff;
+    z-index: -2;
+}
+
+@keyframes title-glitch {
+    0%, 90%, 100% { transform: translateX(0); }
+    92% { transform: translateX(-2px); }
+    94% { transform: translateX(2px); }
+    96% { transform: translateX(-1px); }
+}
+
+@keyframes glitch-1 {
+    0%, 90%, 100% { 
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    92% { 
+        opacity: 0.7;
+        transform: translate(-3px, 2px);
+    }
+}
+
+@keyframes glitch-2 {
+    0%, 90%, 100% { 
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    94% { 
+        opacity: 0.7;
+        transform: translate(3px, -2px);
+    }
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+}
+
+.hero-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    background: rgba(239, 68, 68, 0.1);
+    border: 2px solid #ef4444;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #fca5a5;
+    animation: status-flash 2s ease-in-out infinite;
+}
+
+@keyframes status-flash {
+    0%, 100% { 
+        border-color: #ef4444;
+        box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+    }
+    50% { 
+        border-color: #f87171;
+        box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+    }
+}
+
+.status-indicator-dot {
+    width: 8px;
+    height: 8px;
+    background: #ef4444;
+    border-radius: 50%;
+    animation: blink 1s ease-in-out infinite;
+    box-shadow: 0 0 10px #ef4444;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.recent-posts-section {
+    margin-top: 3rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+}
+</style>
 {{ end }}
-
-
-
-
-
-

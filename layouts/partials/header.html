@@ -2,8 +2,14 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="/" class="site-logo">
-                    <span class="site-name">{{ .Site.Title }}</span>
+                <a href="/" class="site-logo" data-version="v2.0-vector">
+                    <span class="logo-prompt">▸▸</span>
+                    <span class="logo-text">
+                        <span class="logo-main">{{ .Site.Title }}</span>
+                        <span class="logo-glitch" aria-hidden="true">{{ .Site.Title }}</span>
+                        <span class="logo-glitch" aria-hidden="true">{{ .Site.Title }}</span>
+                    </span>
+                    <span class="logo-badge">✓ UPGRADED</span>
                 </a>
                 
                 <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobile-menu-toggle">

@@ -1,0 +1,10 @@
+{{ $character := .Get "char" }}
+{{ $charData := index .Site.Data.characters (lower $character) }}
+
+<div class="character-dialogue" 
+     data-character="{{ $character }}"
+     style="--char-color: {{ $charData.color }}; --char-font: {{ $charData.font }};">
+    <span class="character-name">[{{ $character }}]:</span>
+    <span class="dialogue-text">{{ .Inner | markdownify }}</span>
+</div>
+

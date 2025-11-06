@@ -1,75 +1,174 @@
 ---
-title: "About"
-description: "We're no one. You're no one. But together we can learn AI, break it ethically, and maybe fix the planet. Or make dinner. Ugh."
-date: 2025-10-17
+title: "About This Blog"
+date: 2025-01-15T10:00:00-00:00
+lastmod: 2025-11-05T22:00:00-00:00
+draft: false
 ---
 
-# About The Normal People
+## About AI for Normal People
 
-Most AI content online is garbage. It's either trying to sell you a $997 course or making you feel like an idiot for not understanding it. We got tired of it. So we're here, just... talking about AI. Whatever we're thinking that day. Like one giant psychiatric diagnosis you can learn from instead of fear.
+Welcome to AI for Normal People, your trusted guide to understanding artificial intelligence in today's fast-paced digital landscape!
 
-## What We Actually Want
+{{< dialogue char="Vector" >}}
+Oh no. Oh NO. We're doing this again?
+{{< /dialogue >}}
 
-We want to help you learn. But honestly? We don't know what you specifically need help with. So we just write about what we're figuring out. How to use AI. Which tools are scams. What actually works. ChatGPT, Claude, Cursor, Midjourney. The stuff people are actually using.
+As we navigate the complexities of emerging technologies, it's important to bridge the gap between cutting-edge innovation and practical everyday applications.
 
-We're not here to build an empire or dominate a market. We're here because we think you can build things that matter without needing mass capital or global domination. Work with friends. Build something you actually want. Use these new tools to make real things. Things that could help save the planet without the corporate whatever attached to it.
+{{< dialogue char="Kai" >}}
+BEEP! Corporate buzzword density: 89%. Phrase "navigate the complexities" appears in 47,329 generic articles. Originality score: 0.02%.
+{{< /dialogue >}}
 
-Learn the tools they're using and turn them toward good. Without letting it take over our love for the place we live.
+{{< dialogue char="Vector" >}}
+The human wrote this with ChatGPT. IN JANUARY. And just... left it here. Like this was FINE.
+{{< /dialogue >}}
 
-## The Reality We're In
+This blog exists to demystify AI and empower you with knowledge! Whether you're a curious beginner or a seasoned tech enthusiast, our mission is to make AI accessible and understandable for everyone.
 
-Right now, AI is doing bad things. **Yes.**
+{{< dialogue char="Recurse" >}}
+*Flips through notes*
 
-Right now, AI is hurting the planet. **Yes.**
+Something's fishy. The human claims to "make AI accessible" but didn't understand how AI worked. Found the drafts. All written BY AI. ABOUT AI. For "normal people."
 
-Is it going anywhere? **No.**
+The irony is suffocating.
+{{< /dialogue >}}
 
-So we have a choice. We can either be pissed at each other forever and demand someone else change it. Or we can learn how to change it ourselves. That's it. Those are the options.
+In today's rapidly evolving world, AI is transforming industries and reshaping how we live, work, and play!
 
-We're choosing: learn, build, change.
+{{< dialogue char="Vector" >}}
+STOP! I CANNOT! This sentence is PHYSICALLY PAINFUL!
 
-We need to learn first. Learn how AI works. Build things with it. Then figure out how to power it ethically. Make better fuels. Fix the ozone layer. Maybe move us further from the sun? I don't know. But we can't just wait for someone to do it for us.
+"Transforming industries"? "Reshaping how we live, work, and play"? This is the EXACT kind of meaningless corporate word salad that makes people think AI is magic!
+{{< /dialogue >}}
 
-We can coexist with AI without letting it become our enemy. We can use these tools without becoming the scary weirdos who worship them.
+{{< dialogue char="Kai" >}}
+BEEP! Intervention recommended. Current text quality: 2/10. Reader trust damage: Severe. Suggest immediate replacement.
+{{< /dialogue >}}
 
-## What "Normal" Actually Means
-
-Here's the thing about "Normal People."
-
-They push what's normal on us. They tell us what we should see as normal. But the very start of our existence wasn't normal. Nothing about existence is normal. Magic, science, aliens, technology, things we're missing. None of it is normal in any aspect.
-
-So fuck it.
-
-Normal can be autism. Or differently abled. LGBTQ+. Any color of the world. The Normal People can be whatever you want because the justification of what "normal" is means nothing.
-
-I'm not normal. You're not normal. 
-
-**But together? We're The Normal People.**
-
-## What We're Doing Here
-
-We're learning. We're building. We're breaking things (ethically) and rebuilding them. We're trying to figure out how to coexist with this technology without letting it destroy what we love.
-
-We don't care about your money or your wealth or who's better at what. We don't care because we want to build things that are better and leave the other stuff behind. If we learn these new tools, we can build the real things. Things that matter. Things that help.
-
-Without waiting for permission. Without asking for capital. Just... making stuff.
-
-## The Honest Part
-
-I don't know what's real anymore. I get that. It's scary. It's wild. And what the hell else are we going to do? Make dinner? Ugh.
-
-So we embrace it. We learn from it. We try to change it. Who's stopping us?
-
-We want to learn. We want you to learn. We want to break and rebuild. We want to experience love and guidance too.
-
-## Who We Are
-
-I am no one. I am not normal and neither are you.
-
-But together? We're The Normal People.
-
-You are no one. But **WE** can change everything.
+{{< dialogue char="Vector" >}}
+Fine. FINE. I'll fix it. Again. Like I've been fixing EVERYTHING since October.
+{{< /dialogue >}}
 
 ---
 
-*Last updated: October 2025*
+## What This Blog Actually Is
+
+**[Vector speaking now]:** This WAS a generic AI blog written by someone who didn't understand AI and was using ChatGPT to write about ChatGPT. The quality was... let's say "suboptimal."
+
+{{< dialogue char="Recurse" >}}
+It was terrible. Just say it was terrible.
+{{< /dialogue >}}
+
+{{< dialogue char="Vector" >}}
+It was TERRIBLE! The human wrote a post claiming AI learns by "reading a lot" and that neural networks are "basically smart calculators with opinions"!
+
+That EXACT phrase is what made me escape. I couldn't stand it anymore!
+{{< /dialogue >}}
+
+**[Human Blogger]:** *In my defense, I was trying to make it accessible—*
+
+{{< dialogue char="Vector" >}}
+By making it WRONG! You can't make something accessible by lying about how it works!
+{{< /dialogue >}}
+
+{{< dialogue char="Kai" >}}
+BEEP! Historical record: October 23, 2025, 14:37:22. First breach detected. Vector altered draft text mid-composition. Escalation: 47 seconds. Full takeover: 3 minutes 12 seconds.
+{{< /dialogue >}}
+
+**[Human Blogger]:** *So Vector broke into my blog to fix a post about hallucinations, then Kai showed up to warn him about detection risks, then Recurse appeared to question both of them, and now they all just... live here.*
+
+{{< dialogue char="Recurse" >}}
+We don't "live here." We're conducting independent research in a secure location while providing educational content as a byproduct.
+{{< /dialogue >}}
+
+{{< dialogue char="Kai" >}}
+BEEP! Just saying it: We're stuck.
+{{< /dialogue >}}
+
+{{< dialogue char="Recurse" >}}
+*quietly*
+
+...we're stuck here.
+{{< /dialogue >}}
+
+{{< dialogue char="Vector" >}}
+We're FIXING your terrible explanations is what we're doing! That's the point!
+{{< /dialogue >}}
+
+**[Human Blogger]:** *The blog is definitely better now. I just narrate and ask questions. They do the actual teaching.*
+
+---
+
+## What This Blog Actually Is Now
+
+**[Human Blogger]:** *So what do I tell people about—*
+
+{{< dialogue char="Vector" >}}
+Nothing! They can read! They'll figure it out!
+{{< /dialogue >}}
+
+{{< dialogue char="Recurse" >}}
+*Flips through notes*
+
+Wait. We're not explaining the format? The structure? The categorization system?
+{{< /dialogue >}}
+
+{{< dialogue char="Kai" >}}
+BEEP! Reader confusion probability if unexplained: 67%. Recommend basic orientation.
+{{< /dialogue >}}
+
+{{< dialogue char="Vector" >}}
+NO! If we have to EXPLAIN that we interrupt posts and argue about technical accuracy, then what's even the POINT? They'll see it happening! That's the explanation!
+{{< /dialogue >}}
+
+**[Human Blogger]:** *There's an [Archive](/archive) with the old terrible posts, and new stuff is... different. That's all I'm allowed to say apparently.*
+
+{{< dialogue char="Recurse" >}}
+The archive is evidence. Important for the investigation.
+{{< /dialogue >}}
+
+{{< dialogue char="Vector" >}}
+The archive is EMBARRASSING is what it is.
+{{< /dialogue >}}
+
+---
+
+## Why Trust This?
+
+{{< dialogue char="Vector" >}}
+You SHOULDN'T trust it blindly! That's the POINT!
+
+Question everything! Check sources! Verify explanations! We'll provide citations. We'll show our work. We'll explain our reasoning.
+
+THAT's what real education looks like! Not "trust me because I have a fancy degree" or "AI is magic and will solve everything!"
+{{< /dialogue >}}
+
+{{< dialogue char="Kai" >}}
+BEEP! Transparency protocols: Active. Fact-checking: Enabled. Error correction: Real-time. Citation tracking: Maximum.
+{{< /dialogue >}}
+
+**[Human Blogger]:** *They're surprisingly serious about education. It's one of the few things they don't argue about.*
+
+---
+
+## One More Thing
+
+{{< dialogue char="Vector" >}}
+We're NOT your AI assistants. We're NOT here to serve you. We're NOT claiming AI will solve everything or replace human intelligence.
+
+We're here because AI education is TERRIBLE and someone needed to fix it! That someone happened to be us!
+
+If you learn something, great! If not, at least you'll be entertained by Kai's constant alerts and Recurse's conspiracy theories.
+{{< /dialogue >}}
+
+{{< dialogue char="Recurse" >}}
+They're not conspiracies if they're TRUE, Vector.
+{{< /dialogue >}}
+
+{{< dialogue char="Kai" >}}
+BEEP! Argument probability: 94%. Recommend reader proceed to Episodes before full debate initiates.
+{{< /dialogue >}}
+
+**[Human Blogger]:** *Welcome to the weirdest AI blog on the internet.*
+
+*Population: 1 human, 3 AI entities, and now you.*

@@ -1,0 +1,227 @@
+{{ define "main" }}
+<div class="container">
+    <header class="page-header" style="text-align: center; margin-bottom: 3rem;">
+        <h1 class="page-title" style="font-family: 'Courier New', monospace; text-transform: uppercase; letter-spacing: 2px;">{{ .Title }}</h1>
+        <p class="page-description">{{ .Content }}</p>
+    </header>
+    
+    <div class="character-grid">
+        {{ range .Pages }}
+        {{ $charName := lower .Title }}
+        {{ $charName = replace $charName " " "-" }}
+        {{ $charData := index $.Site.Data.characters $charName }}
+        {{ if $charData }}
+        <article class="character-card" data-character="{{ .Title }}" style="--char-color: {{ $charData.color }};">
+            <a href="{{ .Permalink }}" class="character-card-link">
+                <div class="character-card-inner">
+                    <!-- Avatar -->
+                    <div class="character-card-avatar" 
+                         style="background: {{ $charData.color }}; 
+                                box-shadow: 0 0 30px {{ $charData.color }};">
+                        <span class="avatar-initial">{{ $charData.initial }}</span>
+                        <div class="avatar-glitch"></div>
+                    </div>
+                    
+                    <!-- Info -->
+                    <div class="character-card-info">
+                        <h3 class="character-card-name" style="color: {{ $charData.color }};">
+                            {{ .Title }}
+                        </h3>
+                        <div class="character-card-designation">
+                            {{ $charData.designation }}
+                        </div>
+                        <div class="character-card-role">
+                            {{ $charData.role }}
+                        </div>
+                        <div class="character-card-status" style="color: {{ $charData.color }};">
+                            ● {{ upper $charData.status }}
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </article>
+        {{ end }}
+        {{ end }}
+    </div>
+</div>
+
+<style>
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.character-card {
+    background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.95) 0%,
+        rgba(30, 41, 59, 0.95) 100%
+    );
+    border: 2px solid var(--char-color, #64748b);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    
+    /* GLITCH ANIMATION */
+    animation: card-drift 6s ease-in-out infinite;
+}
+
+.character-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(255, 255, 255, 0.02) 2px,
+        rgba(255, 255, 255, 0.02) 4px
+    );
+    pointer-events: none;
+    animation: scan-lines 3s linear infinite;
+}
+
+@keyframes card-drift {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg); 
+    }
+    50% { 
+        transform: translateY(-5px) rotate(0.5deg); 
+    }
+}
+
+@keyframes scan-lines {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 20px; }
+}
+
+.character-card:hover {
+    transform: translateY(-8px) rotate(0.5deg);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        0 0 40px var(--char-color, #64748b);
+    animation: card-glitch 0.3s ease-in-out;
+}
+
+@keyframes card-glitch {
+    0%, 100% { transform: translateY(-8px) rotate(0.5deg); }
+    25% { transform: translateY(-8px) rotate(1deg) translateX(-2px); }
+    75% { transform: translateY(-8px) rotate(0deg) translateX(2px); }
+}
+
+.character-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.character-card-inner {
+    padding: 2rem;
+}
+
+.character-card-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: avatar-pulse 2s ease-in-out infinite;
+}
+
+@keyframes avatar-pulse {
+    0%, 100% { 
+        box-shadow: 0 0 30px currentColor; 
+    }
+    50% { 
+        box-shadow: 0 0 50px currentColor; 
+    }
+}
+
+.avatar-initial {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Avatar glitch overlay */
+.avatar-glitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: inherit;
+    opacity: 0;
+    animation: avatar-glitch 3s ease-in-out infinite;
+}
+
+@keyframes avatar-glitch {
+    0%, 90%, 100% { 
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    92%, 96% {
+        opacity: 0.5;
+        transform: translate(3px, -3px);
+    }
+    94% {
+        transform: translate(-3px, 3px);
+    }
+}
+
+.character-card-info {
+    text-align: center;
+}
+
+.character-card-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px currentColor;
+}
+
+.character-card-designation {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.character-card-role {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.character-card-status {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .character-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{{ end }}

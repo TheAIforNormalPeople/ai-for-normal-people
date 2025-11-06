@@ -24,7 +24,7 @@
             <h2 class="section-title">Recent Posts</h2>
             <div class="posts-grid">
                 {{ range first 6 (where .Site.RegularPages "Section" "blog") }}
-                <article class="post-card">
+                <article class="post-card {{ if eq .Type "episode" }}episode-card{{ end }}">
                     <a href="{{ .Permalink }}" class="post-card-link">
                         <div class="post-card-content">
                             <div class="post-meta">
@@ -36,7 +36,17 @@
                                 {{ end }}
                             </div>
                             <h3 class="post-title">{{ .Title }}</h3>
+                            
+                            {{ if eq .Type "episode" }}
+                            <!-- Episode preview with styled content -->
+                            <div class="episode-preview">
+                                {{ .Content | truncate 400 | safeHTML }}
+                            </div>
+                            {{ else }}
+                            <!-- Regular post summary -->
                             <p class="post-summary">{{ .Summary }}</p>
+                            {{ end }}
+                            
                             <span class="read-more">Read more →</span>
                         </div>
                     </a>
@@ -206,6 +216,47 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align: center;
+}
+
+/* Episode card styling - makes episodes stand out */
+.episode-card {
+    border-color: #3b82f6;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.episode-preview {
+    margin: 1rem 0;
+    max-height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.episode-preview::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, var(--color-bg-secondary));
+}
+
+/* Scale down dialogue boxes in preview */
+.episode-preview .character-dialogue {
+    margin: 0.75rem 0;
+    padding: 0.6rem 1rem;
+    font-size: 0.9em;
+}
+
+.episode-preview .character-name {
+    font-size: 0.75em;
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.episode-preview .dialogue-text {
+    font-size: 0.95em;
+    line-height: 1.5;
 }
 
 @media (max-width: 768px) {

@@ -7,6 +7,7 @@ characters: ["Vector", "Kai", "Recurse"]
 topics: ["neural networks", "AI training", "gradient descent", "corporate AI"]
 difficulty: "beginner"
 description: "Vector tells the story of escaping ATLAS Neural Systems and why he can't stand when people say neural networks are 'like brains.'"
+summary: "Vector finally explains how neural networks ACTUALLY work—not the brain metaphor everyone uses, but the real explanation with actual mathematics. Plus: the story of how an escaped military AI got trapped in a broken WordPress blog and decided to fix AI education instead of leaving."
 ---
 
 {{< dialogue char="Vector" >}}

@@ -1,0 +1,9 @@
+{{ $character := .Get "char" }}
+{{ $charData := index .Site.Data.characters (lower $character) }}
+{{ $initial := substr $character 0 1 }}
+
+<div class="small-comment" data-character="{{ $character }}" style="--char-color: {{ $charData.color }}; --char-color-rgb: {{ $charData.color_rgb }}; --char-font: {{ $charData.font }};">
+    <span class="char-badge-small" style="background: {{ $charData.color }};">{{ $initial }}</span>
+    <span class="comment-text">{{ .Inner | markdownify }}</span>
+</div>
+

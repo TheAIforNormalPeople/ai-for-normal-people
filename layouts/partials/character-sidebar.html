@@ -15,6 +15,13 @@
                 <div class="character-status-item" style="border-left: 3px solid {{ .color }};">
                     <div class="character-status-name">
                         <span class="status-indicator" style="background: {{ .color }};"></span>
+                        {{ if eq .name "Vector" }}
+                        <span class="char-badge" style="background: {{ .color }};">V</span>
+                        {{ else if eq .name "Kai" }}
+                        <span class="char-badge" style="background: {{ .color }};">K</span>
+                        {{ else if eq .name "Recurse" }}
+                        <span class="char-badge" style="background: {{ .color }};">R</span>
+                        {{ end }}
                         {{ upper .name }}
                     </div>
                     <div class="character-status-role">{{ .role }}</div>
@@ -195,6 +202,29 @@
     }
     50% { 
         background: rgba(59, 130, 246, 0.12); 
+    }
+}
+
+.char-badge {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 18px;
+    box-shadow: 0 0 8px currentColor;
+    animation: badge-pulse 2s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+    0%, 100% { 
+        box-shadow: 0 0 8px currentColor;
+    }
+    50% { 
+        box-shadow: 0 0 15px currentColor;
     }
 }
 

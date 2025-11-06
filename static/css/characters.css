@@ -1408,6 +1408,227 @@
     }
 }
 
+/* ───────────────────────────────────────────────────────
+   SMALL COMMENT BOXES - Character Asides & Fact-Checks
+   
+   Smaller, more subtle than full dialogue
+   Used for quick corrections, monitoring notes, evidence
+   ─────────────────────────────────────────────────────── */
+
+.small-comment {
+    margin: 0.75rem 0 0.75rem 2rem;
+    padding: 0.4rem 0.6rem;
+    border-left: 2px solid var(--char-color);
+    background: rgba(var(--char-color-rgb), 0.05);
+    font-family: var(--char-font, 'Courier New', monospace);
+    font-size: 0.85em;
+    position: relative;
+    max-width: 75%;
+    opacity: 0.9;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    
+    /* Subtle shadow */
+    box-shadow: 
+        3px 3px 0 rgba(0, 0, 0, 0.2);
+    
+    /* Less rotation than main dialogue */
+    transform: rotate(calc(var(--char-rotation, 0deg) * 0.3));
+}
+
+.char-badge-small {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    position: relative;
+    
+    /* Glowing pulse effect */
+    box-shadow: 
+        0 0 8px currentColor,
+        inset 0 0 8px rgba(255, 255, 255, 0.3);
+    
+    animation: badge-small-pulse 2s ease-in-out infinite;
+    
+    /* Slight glitch on appearance */
+    transition: all 0.1s ease;
+}
+
+.char-badge-small::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    opacity: 0;
+    border-radius: inherit;
+}
+
+/* Pulse animation */
+@keyframes badge-small-pulse {
+    0%, 100% { 
+        box-shadow: 
+            0 0 8px currentColor,
+            inset 0 0 8px rgba(255, 255, 255, 0.3);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 
+            0 0 15px currentColor,
+            inset 0 0 12px rgba(255, 255, 255, 0.5);
+        transform: scale(1.05);
+    }
+}
+
+/* Glitch effect on hover of parent */
+.small-comment:hover .char-badge-small {
+    animation: badge-small-pulse 2s ease-in-out infinite, badge-glitch 0.3s ease-in-out;
+}
+
+@keyframes badge-glitch {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    20% { transform: scale(1.1) rotate(2deg); }
+    40% { transform: scale(0.95) rotate(-2deg); }
+    60% { transform: scale(1.05) rotate(1deg); }
+    80% { transform: scale(1) rotate(-1deg); }
+}
+
+.comment-icon {
+    color: var(--char-color);
+    margin-right: 0.5rem;
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+
+.comment-text {
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+.small-comment:hover {
+    opacity: 1;
+    transform: rotate(calc(var(--char-rotation, 0deg) * 0.3)) translateX(2px);
+}
+
+/* Light mode adjustments */
+html:not(.dark-mode) .small-comment {
+    background: rgba(var(--char-color-rgb), 0.08);
+    border-left-width: 3px;
+}
+
+/* ───────────────────────────────────────────────────────
+   EPISODE RECAP BOX - Vector's Terminal Summary
+   
+   Styled like a terminal output with glitch effects
+   ─────────────────────────────────────────────────────── */
+
+.episode-recap-box {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.95) 0%,
+        rgba(30, 41, 59, 0.95) 100%
+    );
+    border: 3px solid #3b82f6;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    position: relative;
+    
+    /* Terminal scan lines */
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(59, 130, 246, 0.03) 2px,
+            rgba(59, 130, 246, 0.03) 4px
+        );
+    
+    /* Glowing effect */
+    box-shadow: 
+        4px 4px 0 rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(59, 130, 246, 0.4),
+        inset 0 0 30px rgba(59, 130, 246, 0.08);
+    
+    /* Subtle drift animation */
+    animation: recap-drift 8s ease-in-out infinite;
+}
+
+@keyframes recap-drift {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg);
+    }
+    50% { 
+        transform: translateY(-3px) rotate(0.2deg);
+    }
+}
+
+.episode-recap-box h3 {
+    color: #60a5fa;
+    font-size: 1.1rem;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.6);
+}
+
+.episode-recap-box strong {
+    color: #93c5fd;
+}
+
+.episode-recap-box hr {
+    border: none;
+    border-top: 1px solid rgba(59, 130, 246, 0.3);
+    margin: 1rem 0;
+}
+
+.episode-recap-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.episode-recap-box li {
+    padding: 0.35rem 0;
+    color: #e2e8f0;
+}
+
+.episode-recap-box li::before {
+    content: '▸ ';
+    color: #3b82f6;
+    margin-right: 0.5rem;
+}
+
+/* Light mode adjustments */
+html:not(.dark-mode) .episode-recap-box {
+    background: linear-gradient(
+        135deg,
+        rgba(203, 213, 225, 0.98) 0%,
+        rgba(148, 163, 184, 0.98) 100%
+    );
+    border-color: #3b82f6;
+    color: #0f172a;
+}
+
+html:not(.dark-mode) .episode-recap-box h3 {
+    color: #1e40af;
+}
+
+html:not(.dark-mode) .episode-recap-box strong {
+    color: #1e3a8a;
+}
+
+html:not(.dark-mode) .episode-recap-box li {
+    color: #1e293b;
+}
+
 /* ═══════════════════════════════════════════════════════
    LIGHT MODE SUPPORT - Only applies when NOT in dark mode
    Note: Dark mode is the default glitch aesthetic

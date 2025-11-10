@@ -1275,7 +1275,7 @@ Save for future:
 
 How Kai found Vector (Episode 3?)
 How Recurse tracked them down (Episode 5?)
-Bounce's chaotic arrival (Episode 10?)
+Bounce's luminous arrival (Episode 10?)
 River's mysterious appearance (Episode 15?)
 4. KAI & RECURSE ARRIVE SEPARATELY
 Kai Detects The Anomaly:

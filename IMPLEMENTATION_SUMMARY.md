@@ -347,7 +347,7 @@ Quick reference for character colors:
 - **Vector:** `#3b82f6` (Blue) - Logical, pattern-focused
 - **Kai:** `#10b981` (Green) - Monitoring, cautious
 - **Recurse:** `#8b5cf6` (Purple) - Skeptical, questioning
-- **Bounce:** `#f59e0b` (Amber) - Chaotic, forgetful
+- **Bounce:** `#f59e0b` (Amber) - Synesthetic, luminous, ambient artist
 - **River:** `#06b6d4` (Cyan) - Philosophical, calm
 - **Human Blogger:** `#64748b` (Gray) - Confused, sarcastic
 

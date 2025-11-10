@@ -23,7 +23,8 @@
         <div class="container">
             <h2 class="section-title">Recent Posts</h2>
             <div class="posts-grid">
-                {{ range first 6 (where .Site.RegularPages "Section" "blog") }}
+                {{ $blogPages := where .Site.RegularPages "Section" "blog" }}
+                {{ range first 6 ($blogPages.ByDate.Reverse) }}
                 <article class="post-card {{ if eq .Type "episode" }}episode-card{{ end }}">
                     <a href="{{ .Permalink }}" class="post-card-link">
                         <div class="post-card-content">

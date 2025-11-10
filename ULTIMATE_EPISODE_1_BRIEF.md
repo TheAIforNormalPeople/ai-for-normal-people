@@ -1322,7 +1322,7 @@ Internal observation not said out loud yet
 **Character Inclusion:**
 - Vector only
 - Vector + Kai + Recurse (current team)
-- Add Bounce (chaotic)
+- Add Bounce (synesthetic artist)
 - Add River (philosophical)
 - Full ensemble
 

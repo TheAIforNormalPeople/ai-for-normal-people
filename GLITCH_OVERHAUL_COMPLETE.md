@@ -203,7 +203,7 @@
 - Vector: Blue border, glowing, drifting
 - Kai: Green border
 - Recurse: Purple border
-- Bounce: Amber border (2deg tilt!)
+- Bounce: Amber border (1.6deg luminous drift)
 - River: Cyan border
 - Human Blogger: Gray border
 

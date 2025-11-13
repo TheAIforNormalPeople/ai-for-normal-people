@@ -78,46 +78,185 @@
         
         // Read receipt system for NEW badges
         function initReadReceiptSystem() {
-            // Clean up old read receipts (older than 30 days)
-            const thirtyDaysAgo = new Date();
-            thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-            const cutoffTime = thirtyDaysAgo.getTime();
-            
-            for (let i = localStorage.length - 1; i >= 0; i--) {
-                const key = localStorage.key(i);
-                if (key && key.startsWith('read_')) {
-                    const timestamp = localStorage.getItem(key + '_timestamp');
-                    if (timestamp && parseInt(timestamp) < cutoffTime) {
-                        localStorage.removeItem(key);
-                        localStorage.removeItem(key + '_timestamp');
+            const READ_PREFIX = 'read:';
+            const READ_TS_PREFIX = 'readTimestamp:';
+            const LEGACY_PREFIX = 'read_';
+            const LEGACY_TS_SUFFIX = '_timestamp';
+            const BADGE_SELECTOR = '.js-read-badge';
+
+            const normalisePostId = (raw) => {
+                if (!raw) return '';
+                let id = raw.trim();
+                try {
+                    const url = new URL(id, window.location.origin);
+                    id = url.pathname || id;
+                } catch (e) {
+                    // raw might already be a relative path or slug
+                }
+                if (!id.startsWith('/')) {
+                    id = '/' + id;
+                }
+                if (!id.endsWith('/')) {
+                    id = id + '/';
+                }
+                return id;
+            };
+
+            const cleanupOldEntries = () => {
+                const thirtyDaysAgo = new Date();
+                thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+                const cutoffTime = thirtyDaysAgo.getTime();
+
+                for (let i = localStorage.length - 1; i >= 0; i--) {
+                    const key = localStorage.key(i);
+                    if (!key) continue;
+
+                    if (key.startsWith(READ_PREFIX)) {
+                        const postId = key.substring(READ_PREFIX.length);
+                        const tsKey = READ_TS_PREFIX + postId;
+                        const ts = localStorage.getItem(tsKey);
+                        if (ts && parseInt(ts, 10) < cutoffTime) {
+                            localStorage.removeItem(key);
+                            localStorage.removeItem(tsKey);
+                        }
+                    } else if (key.startsWith(LEGACY_PREFIX)) {
+                        const ts = localStorage.getItem(key + LEGACY_TS_SUFFIX);
+                        if (ts && parseInt(ts, 10) < cutoffTime) {
+                            localStorage.removeItem(key);
+                            localStorage.removeItem(key + LEGACY_TS_SUFFIX);
+                        }
                     }
                 }
-            }
-            
-            // Change badges for posts that have been read to show "READ"
-            const newBadges = document.querySelectorAll('.new-badge');
-            newBadges.forEach(badge => {
-                const postSlug = badge.getAttribute('data-post-slug');
-                if (postSlug && localStorage.getItem('read_' + postSlug)) {
+            };
+
+            const markBadge = (badge, asRead) => {
+                if (asRead) {
                     badge.textContent = 'READ';
-                    badge.classList.add('read-badge');
+                    badge.classList.remove('is-new');
+                    badge.classList.add('is-read');
+                    badge.setAttribute('aria-label', 'Post read');
+                } else {
+                    badge.textContent = 'NEW';
+                    badge.classList.remove('is-read');
+                    badge.classList.add('is-new');
+                    badge.setAttribute('aria-label', 'New post');
                 }
-            });
-            
-            // Listen for storage changes (when user visits a blog post and comes back)
-            window.addEventListener('storage', function(e) {
-                if (e.key && e.key.startsWith('read_')) {
-                    const slug = e.key.replace('read_', '').replace('_timestamp', '');
-                    const badge = document.querySelector(`.new-badge[data-post-slug="${slug}"]`);
-                    if (badge) {
-                        badge.textContent = 'READ';
-                        badge.classList.add('read-badge');
+            };
+
+            const markPostAsRead = (postId, slug) => {
+                if (!postId) return;
+                const timestamp = Date.now().toString();
+                const pathKey = READ_PREFIX + postId;
+                localStorage.setItem(pathKey, 'true');
+                localStorage.setItem(READ_TS_PREFIX + postId, timestamp);
+
+                if (slug) {
+                    const legacyKey = LEGACY_PREFIX + slug;
+                    localStorage.setItem(legacyKey, 'true');
+                    localStorage.setItem(legacyKey + LEGACY_TS_SUFFIX, timestamp);
+                }
+            };
+
+            const badgeIsRead = (postId, slug) => {
+                if (!postId && !slug) {
+                    return false;
+                }
+
+                const pathKey = postId ? READ_PREFIX + postId : null;
+                if (pathKey && localStorage.getItem(pathKey)) {
+                    return true;
+                }
+
+                if (slug) {
+                    const legacyKey = LEGACY_PREFIX + slug;
+                    if (localStorage.getItem(legacyKey)) {
+                        if (pathKey) {
+                            localStorage.setItem(pathKey, 'true');
+                            const legacyTs = localStorage.getItem(legacyKey + LEGACY_TS_SUFFIX);
+                            if (legacyTs) {
+                                localStorage.setItem(READ_TS_PREFIX + postId, legacyTs);
+                            }
+                        }
+                        return true;
                     }
                 }
+
+                return false;
+            };
+
+            const flashBadge = (badge) => {
+                if (!badge) return;
+                badge.classList.add('js-flash');
+                setTimeout(() => badge.classList.remove('js-flash'), FLASH_DURATION);
+            };
+
+            const updateBadges = () => {
+                const badges = document.querySelectorAll(BADGE_SELECTOR);
+                badges.forEach(badge => {
+                    const postPath = normalisePostId(badge.getAttribute('data-post-path') || '');
+                    const legacySlug = (badge.getAttribute('data-post-slug') || '').trim();
+                    const isRead = badgeIsRead(postPath, legacySlug);
+                    markBadge(badge, isRead);
+                });
+            };
+
+            const attachBadgeListeners = () => {
+                const badges = document.querySelectorAll(BADGE_SELECTOR);
+                badges.forEach(badge => {
+                    badge.setAttribute('role', 'button');
+                    badge.setAttribute('tabindex', '0');
+                    badge.setAttribute('title', 'Click to mark as read');
+
+                    const postPath = normalisePostId(badge.getAttribute('data-post-path') || '');
+                    const legacySlug = (badge.getAttribute('data-post-slug') || '').trim();
+
+                    const markAndUpdate = () => {
+                        if (!postPath && !legacySlug) return;
+                        markPostAsRead(postPath, legacySlug);
+                        flashBadge(badge);
+                        updateBadges();
+                    };
+
+                    badge.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        markAndUpdate();
+                    });
+
+                    badge.addEventListener('keydown', (event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault();
+                            markAndUpdate();
+                        }
+                    });
+                });
+            };
+
+            const refresh = () => {
+                cleanupOldEntries();
+                updateBadges();
+                attachBadgeListeners();
+            };
+
+            refresh();
+
+            window.addEventListener('storage', (event) => {
+                if (!event.key) return;
+                if (event.key.startsWith(READ_PREFIX) || event.key.startsWith(LEGACY_PREFIX)) {
+                    updateBadges();
+                    attachBadgeListeners();
+                }
             });
-            
-            // No need to mark posts as read on click anymore - 
-            // that happens when the user visits the actual blog post page
+
+            window.addEventListener('pageshow', () => {
+                updateBadges();
+                attachBadgeListeners();
+            });
+            document.addEventListener('visibilitychange', () => {
+                if (!document.hidden) {
+                    updateBadges();
+                    attachBadgeListeners();
+                }
+            });
         }
         
         // Initialize read receipt system

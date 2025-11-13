@@ -1,0 +1,4 @@
+﻿<figure class='post-figure'>
+  <img src='{{ .Get "src" }}' alt='{{ .Get "alt" }}' loading='lazy' decoding='async'>
+  {{ if .Inner }}<figcaption>{{ .Inner }}</figcaption>{{ end }}
+</figure>

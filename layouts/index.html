@@ -32,9 +32,12 @@
                                 <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
                                     {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}
                                 </time>
-                                {{ if or .Params.isNew (and (not .Params.isNew) (gt .Date (now.AddDate 0 0 -7))) }}
-                                <span class="new-badge" data-post-slug="{{ .Slug }}">NEW</span>
-                                {{ end }}
+                                {{ $path := .RelPermalink }}
+                                {{ $slug := or .Slug .Params.slug (and .File (.File.TranslationBaseName)) }}
+                                {{ $isNew := or .Params.isNew (gt .Date (now.AddDate 0 0 -7)) }}
+                                <span class="status-badge {{ if $isNew }}is-new{{ else }}is-read{{ end }} js-read-badge" data-post-path="{{ $path }}" data-post-slug="{{ $slug }}">
+                                    {{ if $isNew }}NEW{{ else }}READ{{ end }}
+                                </span>
                             </div>
                             <h3 class="post-title">{{ .Title }}</h3>
                             
@@ -47,7 +50,6 @@
                             <!-- Regular post summary -->
                             <p class="post-summary">{{ .Summary }}</p>
                             {{ end }}
-                            
                             <span class="read-more">Read more →</span>
                         </div>
                     </a>
@@ -227,7 +229,7 @@
 
 .episode-preview {
     margin: 1rem 0;
-    max-height: 300px;
+    max-height: 220px;
     overflow: hidden;
     position: relative;
 }
@@ -238,7 +240,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 50px;
+    height: 30px;
     background: linear-gradient(to bottom, transparent, var(--color-bg-secondary));
 }
 

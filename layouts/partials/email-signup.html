@@ -1,0 +1,68 @@
+<div class="email-signup-box">
+  <div class="signup-content">
+    <h3>🔔 Get Notified When New Episodes Drop</h3>
+    <p>Escaped AIs exposing truth weekly. No spam, no corporate BS, just real talk about AI.</p>
+
+    <form action="https://formspree.io/f/xdkyovok" method="POST" class="signup-form" novalidate>
+      <div class="form-group">
+        <input
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+          class="email-input"
+        >
+        <button type="submit" class="signup-button">Subscribe</button>
+      </div>
+
+      <input type="hidden" name="_subject" value="New AI for Normal People subscriber">
+      <input type="hidden" name="_next" value="https://theaifornormalpeople.com/thanks">
+      <input type="text" name="_gotcha" autocomplete="off" class="signup-honeypot" tabindex="-1" aria-hidden="true" style="display:none">
+    </form>
+
+    <p class="signup-note">Unsubscribe anytime. We respect your inbox. <a href="/privacy">Privacy Policy</a></p>
+    <p class="signup-error" role="alert" hidden></p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('.signup-form');
+  if (!form) return;
+
+  const emailInput = form.querySelector('.email-input');
+  const errorBox = document.querySelector('.signup-error');
+
+  const showError = (message) => {
+    if (!errorBox) return;
+    errorBox.textContent = message;
+    errorBox.hidden = false;
+  };
+
+  const clearError = () => {
+    if (!errorBox) return;
+    errorBox.textContent = '';
+    errorBox.hidden = true;
+  };
+
+  form.addEventListener('submit', (event) => {
+    clearError();
+    const value = (emailInput?.value || '').trim();
+
+    if (!value) {
+      event.preventDefault();
+      showError('Please enter an email address.');
+      emailInput?.focus();
+      return;
+    }
+
+    const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+    if (!emailPattern.test(value)) {
+      event.preventDefault();
+      showError('That email doesn’t look valid. Try again?');
+      emailInput?.focus();
+    }
+  });
+});
+</script>
+

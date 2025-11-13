@@ -484,33 +484,44 @@ em {
     flex-wrap: wrap;
 }
 
-.new-badge {
-    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
-    color: white;
+.status-badge {
     font-size: 0.75rem;
     font-weight: 600;
     padding: 0.25rem 0.5rem;
     border-radius: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
-    animation: pulse 2s infinite;
     transition: all 0.3s ease-out;
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    position: relative;
+    overflow: hidden;
 }
 
-.new-badge:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(255, 107, 107, 0.4);
+.status-badge.is-new {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
+    animation: pulse 2s infinite;
 }
 
-/* READ badge styling - using class instead of attribute selector */
-.new-badge.read-badge {
-    background: linear-gradient(135deg, #4ade80, #22c55e) !important;
-    animation: none !important;
-    transform: scale(1) !important;
-    box-shadow: 0 2px 4px rgba(34, 197, 94, 0.3) !important;
+.status-badge.is-read {
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+    color: #fff;
+    animation: none;
+    box-shadow: 0 2px 4px rgba(34, 197, 94, 0.3);
+}
+
+.status-badge:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.status-badge.js-flash {
+    animation: flash 1.2s ease-in-out;
 }
 
 @keyframes pulse {
@@ -526,6 +537,12 @@ em {
         transform: scale(1); 
         box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
     }
+}
+
+@keyframes flash {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.12); }
+    100% { transform: scale(1); }
 }
 
 .separator {
@@ -900,4 +917,156 @@ em {
         margin: 0 auto;
     }
 }
+
+
+/* Email Signup Box */
+.email-signup-box {
+  background: #1a1a2e;
+  border: 2px solid #00ff00;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 3rem 0;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+}
+
+.email-signup-box h3 {
+  color: #00ffff;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.email-signup-box p {
+  color: #b0b0b0;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.signup-form {
+  margin: 1.5rem 0;
+}
+
+.form-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.email-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: #0d0d1a;
+  border: 1px solid #00ff00;
+  border-radius: 4px;
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.email-input::placeholder {
+  color: #4a4a4a;
+}
+
+.signup-button {
+  padding: 0.75rem 2rem;
+  background: #00ff00;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.signup-button:hover {
+  background: #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.signup-note {
+  font-size: 0.85rem;
+  color: #6a6a6a;
+  margin-bottom: 0;
+}
+
+.signup-note a {
+  color: #00ff00;
+  text-decoration: none;
+}
+
+.signup-note a:hover {
+  color: #00ffff;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-group {
+    flex-direction: column;
+  }
+  
+  .signup-button {
+    width: 100%;
+  }
+}
+
+.signup-error {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin: 0 0 1rem;
+}
+
+/* ========================================
+   IMAGE SIZING FIX - DO NOT MOVE
+   MUST BE AT END TO OVERRIDE EVERYTHING
+   ======================================== */
+
+/* Force all images in content to be responsive */
+article img,
+.content img,
+.post-content img,
+.article-content img,
+main img,
+.blog-post img,
+.episode img,
+[class*="content"] img,
+[class*="post"] img,
+[class*="article"] img {
+    max-width: 100% !important;
+    height: auto !important;
+    width: auto !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
+/* Target images by source path */
+img[src*="/images/episodes/"],
+img[src*="ep03-"] {
+    max-width: 700px !important;
+    height: auto !important;
+    width: 100% !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    article img,
+    .content img,
+    main img {
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+}
+
+/* End of image fix */
 

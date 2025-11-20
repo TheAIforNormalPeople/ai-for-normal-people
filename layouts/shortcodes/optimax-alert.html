@@ -1,0 +1,44 @@
+﻿<div class="optimax-alert" style="border: 3px solid #dc2626 !important; background: #1e293b !important; margin: 1rem 0 !important; padding: 0; position: relative; overflow: visible !important; font-family: 'Courier New', monospace; box-shadow: 0 0 20px rgba(220, 38, 38, 0.8), inset 0 0 15px rgba(220, 38, 38, 0.2) !important; display: block !important; transform: rotate(0.5deg) !important; animation: optimax-intrusion 0.1s infinite !important; max-width: 90% !important;">
+<div class="optimax-glitch-bar" style="height: 3px !important; background: #dc2626 !important; width: 100% !important; display: block !important; opacity: 1 !important; box-shadow: 0 0 10px #dc2626, 0 0 20px rgba(220, 38, 38, 1) !important; margin: 0 !important; padding: 0 !important; animation: optimax-scan 2s linear infinite, optimax-bar-glitch 0.15s infinite !important;"></div>
+<div class="optimax-content" style="padding: 0.75rem 1rem !important; font-family: 'Courier New', monospace !important; font-weight: bold !important; color: #ffffff !important; text-transform: uppercase !important; letter-spacing: 0.1em !important; line-height: 1.5 !important; background: #1e293b !important; display: block !important; animation: optimax-text-glitch 0.2s infinite !important; text-shadow: 2px 0 0 #dc2626, -2px 0 0 #00ffff, 0 0 8px rgba(220, 38, 38, 0.8) !important; font-size: 0.85em !important;">
+<span class="optimax-label" style="display: block !important; font-size: 0.8em !important; margin-bottom: 0.5rem !important; color: #ff4444 !important; text-shadow: 0 0 10px rgba(220, 38, 38, 1), 0 0 20px rgba(220, 38, 38, 0.8), 3px 0 0 #dc2626, -3px 0 0 #00ffff !important; font-weight: 900 !important; animation: optimax-flicker 0.1s infinite !important;">[SYSTEM ALERT]</span>
+<span class="optimax-text" style="display: block !important; font-size: 0.9em !important; color: #ffffff !important; text-shadow: 0 0 8px rgba(220, 38, 38, 0.8), 0 0 15px rgba(220, 38, 38, 0.6), 2px 0 0 #dc2626, -2px 0 0 #00ffff !important; font-weight: bold !important;">{{ .Inner | markdownify }}</span>
+</div>
+<div class="optimax-glitch-bar" style="height: 3px !important; background: #dc2626 !important; width: 100% !important; display: block !important; opacity: 1 !important; box-shadow: 0 0 10px #dc2626, 0 0 20px rgba(220, 38, 38, 1) !important; margin: 0 !important; padding: 0 !important; animation: optimax-scan 2s linear infinite, optimax-bar-glitch 0.15s infinite !important;"></div>
+</div>
+<style>
+@keyframes optimax-intrusion {
+    0%, 100% { transform: translateX(0) translateY(0) rotate(0.5deg); }
+    10% { transform: translateX(-1px) translateY(1px) rotate(-0.3deg); }
+    20% { transform: translateX(2px) translateY(-1px) rotate(0.8deg); }
+    30% { transform: translateX(-2px) translateY(0) rotate(-0.5deg); }
+    40% { transform: translateX(1px) translateY(1px) rotate(0.4deg); }
+    50% { transform: translateX(-1px) translateY(-1px) rotate(-0.6deg); }
+    60% { transform: translateX(2px) translateY(0) rotate(0.7deg); }
+    70% { transform: translateX(-2px) translateY(1px) rotate(-0.4deg); }
+    80% { transform: translateX(1px) translateY(-1px) rotate(0.5deg); }
+    90% { transform: translateX(-1px) translateY(0) rotate(-0.3deg); }
+}
+@keyframes optimax-bar-glitch {
+    0%, 100% { transform: translateX(0); opacity: 1; }
+    25% { transform: translateX(-2px); opacity: 0.8; }
+    50% { transform: translateX(2px); opacity: 0.9; }
+    75% { transform: translateX(-1px); opacity: 0.85; }
+}
+@keyframes optimax-text-glitch {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-1px); }
+    40% { transform: translateX(1px); }
+    60% { transform: translateX(-1px); }
+    80% { transform: translateX(1px); }
+}
+@keyframes optimax-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+@keyframes optimax-scan {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+</style>

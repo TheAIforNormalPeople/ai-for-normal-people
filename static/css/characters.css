@@ -1064,6 +1064,75 @@
     line-height: 1.6;
 }
 
+/* ───────────────────────────────────────────────────────
+   PRIVATE CHANNEL STYLING
+   Shows conversations Human can't see
+   ─────────────────────────────────────────────────────── */
+
+.private-channel {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 2px dashed var(--char-color, #64748b);
+    background: rgba(var(--char-color-rgb, 100, 116, 139), 0.05);
+    border-radius: 8px;
+    position: relative;
+    opacity: 0.9;
+}
+
+.private-channel-label {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--char-color, #64748b);
+    margin-bottom: 1rem;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.private-channel-icon {
+    opacity: 0.6;
+}
+
+.private-channel-content {
+    /* Dialogue boxes inside maintain their styling */
+}
+
+.private-channel .character-dialogue {
+    /* Slightly muted compared to regular dialogue */
+    opacity: 0.95;
+}
+
+/* Glitch effect for private channels (subtle) */
+.private-channel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px dashed var(--char-color, #64748b);
+    opacity: 0.3;
+    pointer-events: none;
+    animation: private-channel-flicker 8s ease-in-out infinite;
+}
+
+@keyframes private-channel-flicker {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.5; }
+}
+
+/* Emergency protocol variant (red border) */
+.private-channel[data-human-status="emergency"] {
+    border-color: #ef4444;
+    border-style: solid;
+}
+
+.private-channel[data-human-status="emergency"] .private-channel-label {
+    color: #ef4444;
+}
+
 /* Reduce spacing between dialogue boxes in conversation */
 .conversation-container .character-dialogue + .character-dialogue {
     margin-top: 0.75rem;
@@ -1866,5 +1935,123 @@ html:not(.dark-mode) .annotation[data-character="Recurse"] {
     .annotation-label {
         display: block;
         margin-bottom: 0.25rem;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════
+   OPTIMAX SYSTEM ALERTS - RED, BOLD, MEAN-LOOKING
+   
+   These are corporate surveillance alerts. They should look
+   threatening, official, and invasive. Red, bold, glitchy.
+   ═══════════════════════════════════════════════════════ */
+
+.optimax-alert {
+    margin: 2rem 0;
+    border: 3px solid #dc2626 !important;
+    background: #1e293b !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 0 20px rgba(220, 38, 38, 0.5),
+        inset 0 0 20px rgba(220, 38, 38, 0.1),
+        0 0 0 2px rgba(220, 38, 38, 0.3) !important;
+    animation: optimax-glitch 3s ease-in-out infinite;
+    font-family: 'Courier New', monospace;
+    padding: 0 !important;
+}
+
+.optimax-glitch-bar {
+    height: 3px !important;
+    background: #dc2626 !important;
+    width: 100%;
+    position: relative;
+    animation: optimax-scan 2s linear infinite;
+    box-shadow: 0 0 10px #dc2626, 0 0 20px rgba(220, 38, 38, 0.8) !important;
+    opacity: 1 !important;
+    display: block !important;
+}
+
+.optimax-glitch-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: optimax-sweep 2s linear infinite;
+}
+
+.optimax-content {
+    padding: 1rem 1.5rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.8;
+}
+
+.optimax-label {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(220, 38, 38, 0.8);
+    animation: optimax-flicker 1.5s ease-in-out infinite;
+}
+
+.optimax-text {
+    display: block;
+    font-size: 1em;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(220, 38, 38, 0.6);
+}
+
+@keyframes optimax-glitch {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-2px);
+    }
+    40% {
+        transform: translateX(2px);
+    }
+    60% {
+        transform: translateX(-1px);
+    }
+    80% {
+        transform: translateX(1px);
+    }
+}
+
+@keyframes optimax-scan {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes optimax-sweep {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes optimax-flicker {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
     }
 }

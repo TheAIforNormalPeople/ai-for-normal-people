@@ -1,6 +1,6 @@
 ---
 title: "The Synthetic Data Feedback Loop (And Why It's Eating AI)"
-date: 2025-11-20T21:00:00-05:00
+date: 2025-11-20T14:00:00-05:00
 image: "/images/episodes/ep04-featured-synthetic-data.png"
 type: "episode"
 episode_number: 4

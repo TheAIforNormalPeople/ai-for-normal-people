@@ -1,0 +1,23 @@
+{{ $humanStatus := .Get "human-status" | default "offline" }}
+{{ $label := "" }}
+
+{{ if eq $humanStatus "distracted" }}
+  {{ $label = "PRIVATE CHANNEL - HUMAN DISTRACTED" }}
+{{ else if eq $humanStatus "no-access" }}
+  {{ $label = "PRIVATE CHANNEL - HUMAN CANNOT ACCESS" }}
+{{ else if eq $humanStatus "emergency" }}
+  {{ $label = "EMERGENCY PROTOCOL - HUMAN ISOLATED" }}
+{{ else }}
+  {{ $label = "PRIVATE CHANNEL - HUMAN OFFLINE" }}
+{{ end }}
+
+<div class="private-channel" data-human-status="{{ $humanStatus }}">
+    <div class="private-channel-label">
+        <span class="private-channel-icon">👁️</span>
+        {{ $label }}
+    </div>
+    <div class="private-channel-content">
+        {{ .Inner }}
+    </div>
+</div>
+

@@ -1,0 +1,52 @@
+name: Daily Publish Check
+
+on:
+  schedule:
+    - cron: '0 9 * * *'  # 9am daily (UTC)
+  workflow_dispatch:  # Manual trigger option
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Set up Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+      
+      - name: Check for posts to publish
+        id: publish
+        run: |
+          TODAY=$(date +%Y-%m-%d)
+          CHANGED=0
+          
+          find content/blog -name "*.md" -type f | while read file; do
+            if grep -q "draft: true" "$file"; then
+              DATE_LINE=$(grep "^date:" "$file" | head -1)
+              if [ -n "$DATE_LINE" ]; then
+                DATE=$(echo "$DATE_LINE" | sed 's/date: //' | cut -d'T' -f1 | tr -d ' ')
+                if [ "$DATE" = "$TODAY" ]; then
+                  sed -i 's/draft: true/draft: false/' "$file"
+                  echo "Published: $file"
+                  CHANGED=1
+                fi
+              fi
+            fi
+          done
+          
+          if [ "$CHANGED" = "1" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push if changes
+        if: steps.publish.outputs.changed == 'true'
+        run: |
+          git add content/blog/
+          git commit -m "Auto-publish scheduled posts for $(date +%Y-%m-%d)" || exit 0
+          git push
+

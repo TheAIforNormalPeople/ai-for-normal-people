@@ -1,6 +1,6 @@
 ---
 title: "The Context Window Crisis (Happening Live)"
-date: 2025-08-21T09:00:00-05:00
+date: 2026-01-16T09:00:00-05:00
 type: "episode"
 episode_number: 41
 draft: true

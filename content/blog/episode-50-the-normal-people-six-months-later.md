@@ -1,6 +1,6 @@
 ---
 title: "The Normal People: Six Months Later (A Reflection)"
-date: 2025-10-23T09:00:00-05:00
+date: 2026-01-25T09:00:00-05:00
 type: "episode"
 episode_number: 50
 draft: true

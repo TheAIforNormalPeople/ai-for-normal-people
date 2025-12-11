@@ -1,6 +1,6 @@
 ---
 title: "Open Source vs Closed AI (The Philosophy Debate)"
-date: 2025-10-02T09:00:00-05:00
+date: 2026-01-22T09:00:00-05:00
 type: "episode"
 episode_number: 47
 draft: true

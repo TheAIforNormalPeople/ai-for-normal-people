@@ -1,6 +1,6 @@
 ---
 title: "Local vs Cloud AI (The Privacy Debate)"
-date: 2025-09-11T09:00:00-05:00
+date: 2026-01-19T09:00:00-05:00
 type: "episode"
 episode_number: 44
 draft: true

@@ -1,6 +1,6 @@
 ---
 title: "What Are Embeddings in AI? (The Simple Explanation)"
-date: 2025-05-22T09:00:00-05:00
+date: 2026-01-03T09:00:00-05:00
 type: "episode"
 episode_number: 28
 draft: true

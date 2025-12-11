@@ -1,6 +1,6 @@
 ---
 title: "How AI Image Generation Works (It's Not Painting)"
-date: 2025-06-26T09:00:00-05:00
+date: 2026-01-08T09:00:00-05:00
 type: "episode"
 episode_number: 33
 draft: true

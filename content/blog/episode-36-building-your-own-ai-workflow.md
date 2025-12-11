@@ -1,6 +1,6 @@
 ---
 title: "Building Your Own AI Workflow (How We Actually Use AI)"
-date: 2025-07-17T09:00:00-05:00
+date: 2026-01-11T09:00:00-05:00
 type: "episode"
 episode_number: 36
 draft: true

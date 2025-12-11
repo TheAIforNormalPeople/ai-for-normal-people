@@ -1,6 +1,6 @@
 ---
 title: "Why AI Is Bad at Math (And Why That's Funny)"
-date: 2025-06-19T09:00:00-05:00
+date: 2026-01-07T09:00:00-05:00
 type: "episode"
 episode_number: 32
 draft: true

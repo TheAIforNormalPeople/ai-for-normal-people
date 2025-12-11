@@ -1,6 +1,6 @@
 ---
 title: "Why AI Forgets Mid-Conversation (It's Not Forgetfulness)"
-date: 2025-09-04T09:00:00-05:00
+date: 2026-01-18T09:00:00-05:00
 type: "episode"
 episode_number: 43
 draft: true

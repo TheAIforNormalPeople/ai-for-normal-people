@@ -1,0 +1,165 @@
+{
+  "name": "Generate Twitter Thread from Episode",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$json[\"episode_url\"]}}",
+        "options": {}
+      },
+      "name": "Fetch Episode Content",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "anthropicApi",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "claude-sonnet-4-20250514"
+            },
+            {
+              "name": "max_tokens",
+              "value": 1000
+            },
+            {
+              "name": "messages",
+              "value": "[{\"role\": \"user\", \"content\": \"Convert this blog post into a 5-tweet thread. Use Vector's voice (enthusiastic, CAPS for emphasis, exclamation marks). Format: Tweet 1: Hook that grabs attention. Tweets 2-4: Key points from the post. Tweet 5: Call to action to read full post. Each tweet must be under 280 characters. Separate tweets with '---'. Blog content: {{$json[\"data\"]}}\"}]"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Generate Thread via Claude",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const thread = $input.first().json.content[0].text.split('---');\nreturn thread.map((tweet, i) => ({\n  json: { \n    tweet: tweet.trim(), \n    position: i+1,\n    episode_url: $input.first().json.episode_url\n  }\n}));"
+      },
+      "name": "Split Into Tweets",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "text": "={{$json[\"tweet\"]}}",
+        "inReplyToStatusId": "={{$json[\"previous_tweet_id\"]}}",
+        "options": {}
+      },
+      "name": "Post Tweet",
+      "type": "n8n-nodes-base.twitter",
+      "typeVersion": 1,
+      "position": [1050, 300],
+      "credentials": {
+        "twitterOAuth1Api": {
+          "id": "1",
+          "name": "Twitter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "application": "{{$env.AIRTABLE_APP_ID}}",
+        "table": "Twitter Threads",
+        "columns": "Episode URL,Tweet Position,Tweet Text,Tweet ID,Posted Date",
+        "options": {}
+      },
+      "name": "Log to Airtable",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 1,
+      "position": [1250, 300]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Fetch Episode Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Episode Content": {
+      "main": [
+        [
+          {
+            "node": "Generate Thread via Claude",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Thread via Claude": {
+      "main": [
+        [
+          {
+            "node": "Split Into Tweets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Into Tweets": {
+      "main": [
+        [
+          {
+            "node": "Post Tweet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Post Tweet": {
+      "main": [
+        [
+          {
+            "node": "Log to Airtable",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-12-10T00:00:00.000Z",
+  "versionId": "1"
+}
+

@@ -8,7 +8,6 @@ topics: ["ChatGPT vs Claude", "best AI chatbot", "AI comparison", "Claude vs Cha
 difficulty: "beginner"
 description: "Honest comparison of ChatGPT, Claude, and Gemini. Vector has tested all three, Kai provides performance metrics, and Recurse investigates the companies behind them. Find out which AI chatbot fits your needs."
 summary: "The crew compares the three main AI chatbots. Vector shares test results, Kai provides specific metrics, Recurse questions company trust factors, and Human asks which one to actually use."
-slug: "episode-07-chatgpt-vs-claude-vs-gemini-comparison"
 draft: false
 ---
 

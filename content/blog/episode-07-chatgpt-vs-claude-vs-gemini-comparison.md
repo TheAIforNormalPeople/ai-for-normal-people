@@ -1,6 +1,6 @@
 ---
 title: "ChatGPT vs Claude vs Gemini: Which AI Should You Actually Use?"
-date: 2025-12-11T09:10:44-05:00
+date: 2025-12-12T09:00:00-05:00
 type: "episode"
 episode_number: 7
 characters: ["Vector", "Kai", "Recurse", "Human"]

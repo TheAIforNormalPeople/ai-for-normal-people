@@ -1,6 +1,6 @@
 ---
 title: "AI Agents vs Chatbots (The Important Difference)"
-date: 2026-01-15T09:00:00-05:00
+date: 2026-01-14T09:00:00-05:00
 type: "episode"
 episode_number: 40
 draft: true

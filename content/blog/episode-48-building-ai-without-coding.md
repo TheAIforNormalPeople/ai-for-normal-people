@@ -1,6 +1,6 @@
 ---
 title: "Building AI Without Coding (The Experiment)"
-date: 2026-01-23T09:00:00-05:00
+date: 2026-01-22T09:00:00-05:00
 type: "episode"
 episode_number: 48
 draft: true

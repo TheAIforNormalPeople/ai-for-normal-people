@@ -1,6 +1,6 @@
 ---
 title: "Prompt Engineering: Does It Actually Work? (The Honest Answer)"
-date: 2026-01-05T09:00:00-05:00
+date: 2026-01-04T09:00:00-05:00
 type: "episode"
 episode_number: 30
 draft: true

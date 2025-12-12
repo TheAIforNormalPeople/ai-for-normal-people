@@ -1,6 +1,6 @@
 ---
 title: "AI Emotions: Real or Simulated? (The Deep Question)"
-date: 2026-01-13T09:00:00-05:00
+date: 2026-01-12T09:00:00-05:00
 type: "episode"
 episode_number: 38
 draft: true

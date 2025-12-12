@@ -1,6 +1,6 @@
 ---
 title: "What Is Training Data? (Where AI Actually Learned Everything)"
-date: 2026-01-09T09:00:00-05:00
+date: 2026-01-08T09:00:00-05:00
 type: "episode"
 episode_number: 34
 draft: true

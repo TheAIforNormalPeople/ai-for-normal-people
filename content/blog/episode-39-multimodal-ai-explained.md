@@ -1,6 +1,6 @@
 ---
 title: "Multi-Modal AI Explained (When AI Can See)"
-date: 2026-01-14T09:00:00-05:00
+date: 2026-01-13T09:00:00-05:00
 type: "episode"
 episode_number: 39
 draft: true

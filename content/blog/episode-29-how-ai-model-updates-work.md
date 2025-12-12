@@ -1,6 +1,6 @@
 ---
 title: "How AI Model Updates Work (And What Actually Changes)"
-date: 2026-01-04T09:00:00-05:00
+date: 2026-01-03T09:00:00-05:00
 type: "episode"
 episode_number: 29
 draft: true

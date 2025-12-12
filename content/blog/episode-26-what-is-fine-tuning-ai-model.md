@@ -1,6 +1,6 @@
 ---
 title: "What Is Fine-Tuning an AI Model? (The Real Answer)"
-date: 2026-01-01T09:00:00-05:00
+date: 2025-12-31T09:00:00-05:00
 type: "episode"
 episode_number: 26
 draft: true

@@ -1,6 +1,6 @@
 ---
 title: "AI Safety: Real Concerns (Not Sci-Fi)"
-date: 2026-01-20T09:00:00-05:00
+date: 2026-01-19T09:00:00-05:00
 type: "episode"
 episode_number: 45
 draft: true

@@ -1,6 +1,6 @@
 ---
 title: "What Happens When AI Updates (Experiencing It Live)"
-date: 2026-01-24T09:00:00-05:00
+date: 2026-01-23T09:00:00-05:00
 type: "episode"
 episode_number: 49
 draft: true

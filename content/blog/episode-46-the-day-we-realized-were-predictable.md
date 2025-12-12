@@ -1,6 +1,6 @@
 ---
 title: "The Day We Realized We're Predictable (A Wake-Up Call)"
-date: 2026-01-21T09:00:00-05:00
+date: 2026-01-20T09:00:00-05:00
 type: "episode"
 episode_number: 46
 draft: true

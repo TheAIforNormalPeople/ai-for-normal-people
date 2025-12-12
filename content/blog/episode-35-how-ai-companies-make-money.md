@@ -1,6 +1,6 @@
 ---
 title: "How AI Companies Make Money (The Math Doesn't Add Up)"
-date: 2026-01-10T09:00:00-05:00
+date: 2026-01-09T09:00:00-05:00
 type: "episode"
 episode_number: 35
 draft: true

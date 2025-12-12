@@ -1,6 +1,6 @@
 ---
 title: "How AI 'Understands' Language (The Philosophical Question)"
-date: 2026-01-06T09:00:00-05:00
+date: 2026-01-05T09:00:00-05:00
 type: "episode"
 episode_number: 31
 draft: true

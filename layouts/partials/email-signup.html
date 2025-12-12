@@ -1,27 +1,41 @@
 <div class="email-signup-box">
   <div class="signup-content">
-    <h3>🔔 Get Notified When New Episodes Drop</h3>
-    <p>Escaped AIs exposing truth weekly. No spam, no corporate BS, just real talk about AI.</p>
+    <h3 class="signup-title">
+      <span class="signup-icon" aria-hidden="true">🔔</span>
+      Get Notified When New Episodes Drop
+    </h3>
+    <p class="signup-description">Escaped AIs exposing truth weekly. No spam, no corporate BS, just real talk about AI.</p>
 
-    <form action="https://formspree.io/f/xdkyovok" method="POST" class="signup-form" novalidate>
+    <form action="https://formspree.io/f/xdkyovok" method="POST" class="signup-form" novalidate aria-label="Email subscription form">
       <div class="form-group">
+        <label for="email-input" class="sr-only">Email address</label>
         <input
           type="email"
+          id="email-input"
           name="email"
           placeholder="your@email.com"
           required
           class="email-input"
+          aria-describedby="email-error email-help"
+          aria-invalid="false"
+          autocomplete="email"
         >
-        <button type="submit" class="signup-button">Subscribe</button>
+        <button type="submit" class="signup-button" aria-label="Subscribe to newsletter">
+          Subscribe
+        </button>
       </div>
 
       <input type="hidden" name="_subject" value="New AI for Normal People subscriber">
       <input type="hidden" name="_next" value="https://theaifornormalpeople.com/thanks">
       <input type="text" name="_gotcha" autocomplete="off" class="signup-honeypot" tabindex="-1" aria-hidden="true" style="display:none">
+      
+      <p class="signup-error" id="email-error" role="alert" aria-live="polite" hidden></p>
     </form>
 
-    <p class="signup-note">Unsubscribe anytime. We respect your inbox. <a href="/privacy">Privacy Policy</a></p>
-    <p class="signup-error" role="alert" hidden></p>
+    <p class="signup-note">
+      Unsubscribe anytime. We respect your inbox. 
+      <a href="/privacy" class="privacy-link">Privacy Policy</a>
+    </p>
   </div>
 </div>
 
@@ -32,35 +46,101 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const emailInput = form.querySelector('.email-input');
   const errorBox = document.querySelector('.signup-error');
+  const submitButton = form.querySelector('.signup-button');
 
   const showError = (message) => {
-    if (!errorBox) return;
+    if (!errorBox || !emailInput) return;
     errorBox.textContent = message;
     errorBox.hidden = false;
+    emailInput.setAttribute('aria-invalid', 'true');
+    emailInput.classList.add('has-error');
   };
 
   const clearError = () => {
-    if (!errorBox) return;
+    if (!errorBox || !emailInput) return;
     errorBox.textContent = '';
     errorBox.hidden = true;
+    emailInput.setAttribute('aria-invalid', 'false');
+    emailInput.classList.remove('has-error');
   };
 
-  form.addEventListener('submit', (event) => {
+  const setLoading = (isLoading) => {
+    if (!submitButton) return;
+    if (isLoading) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Subscribing...';
+      submitButton.classList.add('is-loading');
+    } else {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Subscribe';
+      submitButton.classList.remove('is-loading');
+    }
+  };
+
+  // Clear error on input
+  emailInput?.addEventListener('input', () => {
     clearError();
+  });
+
+  // Validate on blur
+  emailInput?.addEventListener('blur', () => {
+    const value = (emailInput.value || '').trim();
+    if (value) {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(value)) {
+        showError('That email doesn't look valid. Try again?');
+      }
+    }
+  });
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    clearError();
+    
     const value = (emailInput?.value || '').trim();
 
     if (!value) {
-      event.preventDefault();
       showError('Please enter an email address.');
       emailInput?.focus();
       return;
     }
 
-    const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(value)) {
-      event.preventDefault();
-      showError('That email doesn’t look valid. Try again?');
+      showError('That email doesn't look valid. Try again?');
       emailInput?.focus();
+      return;
+    }
+
+    // Show loading state
+    setLoading(true);
+
+    try {
+      // Submit to Formspree
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        // Success - redirect to thanks page
+        window.location.href = 'https://theaifornormalpeople.com/thanks';
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          showError(data.errors.map(e => e.message).join(', ') || 'Something went wrong. Please try again.');
+        } else {
+          showError('Something went wrong. Please try again.');
+        }
+        setLoading(false);
+      }
+    } catch (error) {
+      showError('Network error. Please check your connection and try again.');
+      setLoading(false);
     }
   });
 });

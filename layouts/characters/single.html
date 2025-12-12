@@ -13,6 +13,13 @@
 
 {{ if $charData }}
 <div class="container-narrow">
+    <!-- Back to Characters Link -->
+    <nav class="character-nav-back" style="margin-bottom: 2rem;">
+        <a href="/characters/" style="color: var(--color-text-secondary); text-decoration: none; font-family: 'Courier New', monospace; font-size: 0.9rem;">
+            ← Back to Characters
+        </a>
+    </nav>
+    
     <article class="character-profile">
         <!-- Character Header -->
         <header class="character-header">
@@ -130,14 +137,43 @@
             </section>
             {{ end }}
             
+            <!-- Episode Appearances -->
+            {{ if $charData.primary_episodes }}
+            <section class="character-section" style="margin-top: 2rem;">
+                <h2 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">EPISODE APPEARANCES</h2>
+                <div style="background: rgba({{ $charData.color_rgb }}, 0.1); border-left: 4px solid {{ $charData.color }}; padding: 1rem; border-radius: 4px;">
+                    <p style="margin-bottom: 0.75rem;">Featured in {{ len $charData.primary_episodes }} episode{{ if gt (len $charData.primary_episodes) 1 }}s{{ end }}:</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        {{ range $charData.primary_episodes }}
+                        <span style="display: inline-block; padding: 0.25rem 0.75rem; background: rgba({{ $charData.color_rgb }}, 0.2); border: 1px solid {{ $charData.color }}; border-radius: 4px; color: {{ $charData.color }}; font-family: 'Courier New', monospace; font-size: 0.85rem;">
+                            Episode {{ . }}
+                        </span>
+                        {{ end }}
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--color-text-secondary);">
+                        <a href="/blog/" style="color: {{ $charData.color }}; text-decoration: none; border-bottom: 1px dotted {{ $charData.color }};">Browse all episodes →</a>
+                    </p>
+                </div>
+            </section>
+            {{ end }}
+            
             <!-- Relationships -->
             {{ if $charData.relationships }}
             <section class="character-section" style="margin-top: 2rem;">
                 <h2 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">RELATIONSHIPS</h2>
                 <div class="relationships">
                     {{ range $name, $description := $charData.relationships }}
+                    {{ $relatedCharName := lower $name }}
+                    {{ $relatedCharName = replace $relatedCharName " " "-" }}
+                    {{ $relatedCharData := index $.Site.Data.characters $relatedCharName }}
                     <div style="margin-bottom: 1rem; padding: 0.75rem; background: rgba({{ $charData.color_rgb }}, 0.05); border-left: 3px solid {{ $charData.color }}; border-radius: 4px;">
-                        <strong style="text-transform: uppercase; color: {{ $charData.color }};">{{ $name }}:</strong> {{ $description }}
+                        <strong style="text-transform: uppercase; color: {{ $charData.color }};">
+                            {{ if $relatedCharData }}
+                            <a href="/characters/{{ $relatedCharName }}/" style="color: {{ $charData.color }}; text-decoration: none; border-bottom: 1px dotted {{ $charData.color }};">{{ $name }}</a>:
+                            {{ else }}
+                            {{ $name }}:
+                            {{ end }}
+                        </strong> {{ $description }}
                     </div>
                     {{ end }}
                 </div>
@@ -185,6 +221,11 @@
 
 .character-profile ul {
     line-height: 1.8;
+}
+
+.character-nav-back a:hover {
+    color: var(--color-text);
+    text-decoration: underline;
 }
 
 @media (max-width: 768px) {

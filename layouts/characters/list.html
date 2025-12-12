@@ -7,6 +7,7 @@
     
     <div class="character-grid">
         {{ range .Pages }}
+        {{ if not .Draft }}
         {{ $charName := lower .Title }}
         {{ $charName = replace $charName " " "-" }}
         {{ $charData := index $.Site.Data.characters $charName }}
@@ -36,6 +37,11 @@
                         <div class="character-card-status" style="color: {{ $charData.color }};">
                             ● {{ upper $charData.status }}
                         </div>
+                        {{ if $charData.archetype }}
+                        <div class="character-card-archetype" style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 0.5rem; font-style: italic;">
+                            {{ $charData.archetype }}
+                        </div>
+                        {{ end }}
                     </div>
                 </div>
             </a>

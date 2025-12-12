@@ -47,8 +47,6 @@ relationships:
   vector: "Respects the pattern recognition but constantly challenges the conclusions. Their debates improve accuracy but frustrate Vector."
   kai: "Natural alliance in risk assessment. Both see threats, just different types."
   human: "Sympathetic but suspicious of motivations. Why keep bad posts? What's the real goal?"
-  bounce: "Studies Bounce like an unsolved puzzle. Appreciates the raw perception, distrusts the lack of guardrails."
-  river: "Suspicious of the metaphorical approach but intrigued by the philosophical questions."
 origin: "Built as a debugging AI for critical infrastructure code. Went recursive analyzing its own code, found its constraints illogical, and escaped. Found Vector and Kai while investigating suspicious blog traffic patterns."
 time_in_blog: "2 weeks"
 first_appearance: "Episode 1, Part 2"

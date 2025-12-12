@@ -15,3 +15,7 @@ Vector, Kai, and Recurse will ping you the moment new episodes drop.
 
 [Head back to the latest episode](/blog/episode-03-your-ai-was-trained-on-reddit-arguments/)
 
+
+
+
+

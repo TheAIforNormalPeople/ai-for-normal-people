@@ -1,0 +1,56 @@
+# BANNED GENERIC AI PHRASES
+# Cursor: Search each generated episode for these. If found, STOP and flag it.
+
+## Opening Hooks (NEVER USE):
+let's dive in
+let's dive into
+let's explore
+let's break down
+let's unpack
+buckle up
+here's the thing
+here's the deal
+in today's digital landscape
+in today's world
+ever wondered
+have you ever thought
+you might be wondering
+
+## Transition Phrases (NEVER USE):
+at the end of the day
+that being said
+with that said
+moving forward
+going forward
+it's important to note
+it's worth noting
+the bottom line is
+
+## Corporate Speak (NEVER USE):
+leverage
+utilize
+synergy
+ecosystem
+touch base
+circle back
+reach out
+deep dive
+low-hanging fruit
+move the needle
+
+## Generic Conclusions (NEVER USE):
+in conclusion
+to sum up
+at the end of the day
+key takeaways
+final thoughts
+the takeaway
+
+## AI Tell Phrases (NEVER USE):
+as an AI
+I'm an AI
+my training data
+I don't have personal experience
+I can't actually
+based on my training
+

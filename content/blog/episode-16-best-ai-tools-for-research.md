@@ -1,6 +1,7 @@
 ---
 title: "Best AI Tools for Research (What Actually Works)"
-type: "episode"`ndate: 2025-12-21T09:00:00-05:00
+type: "episode"
+date: 2025-12-21T09:00:00-05:00
 draft: true
 description: "Honest tool recommendations for AI research. Vector categorizes tools by function, Kai provides comparison stats, Recurse investigates marketing claims. Cut through the tool bloat."
 tags: ["best AI research tools", "AI Guide", "AI for research"]

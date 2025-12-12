@@ -1,6 +1,6 @@
 ---
 title: "Using AI to Organize Your Thoughts"
-type: "episode"`ndate: 2025-12-27T09:00:00-05:00
+type: "episode"`ndate: 2025-12-26T09:00:00-05:00
 draft: true
 description: "AI as thought partner, not thought replacement. Vector explains cognitive offloading vs enhancement, Recurse questions where the line is, Human demonstrates techniques. Learn to think WITH AI."
 tags: ["AI for thinking", "AI Guide", "organize thoughts with AI"]

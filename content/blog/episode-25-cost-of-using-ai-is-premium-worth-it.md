@@ -1,6 +1,6 @@
 ---
 title: "Cost of Using AI: Is Premium Worth It?"
-type: "episode"`ndate: 2025-12-31T09:00:00-05:00
+type: "episode"`ndate: 2025-12-30T09:00:00-05:00
 draft: true
 description: "ROI analysis for different AI tools and use cases. Kai runs the numbers, Vector explains capability differences, Recurse questions subscription fatigue. Help decide what's worth paying for."
 tags: ["ChatGPT Plus worth it", "AI Guide", "AI subscription cost"]

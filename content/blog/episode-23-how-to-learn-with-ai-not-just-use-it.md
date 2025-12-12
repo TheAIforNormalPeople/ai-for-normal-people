@@ -1,6 +1,6 @@
 ---
 title: "How to Learn With AI (Not Just Use It)"
-type: "episode"`ndate: 2025-12-29T09:00:00-05:00
+type: "episode"`ndate: 2025-12-28T09:00:00-05:00
 draft: true
 description: "Active learning with AI vs passive consumption. Vector explains learning science, Recurse questions if AI makes learning too easy, Human tries both methods. Learn to learn WITH AI."
 tags: ["learn with AI", "AI Guide", "AI for learning"]

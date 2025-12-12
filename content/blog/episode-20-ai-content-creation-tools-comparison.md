@@ -1,6 +1,6 @@
 ---
 title: "AI Content Creation Tools Comparison (Honest Review)"
-type: "episode"`ndate: 2025-12-26T09:00:00-05:00
+type: "episode"`ndate: 2025-12-25T09:00:00-05:00
 draft: true
 description: "Honest comparison of AI writing tools without affiliate spam. Kai exposes wrapper economics, Recurse investigates marketing claims, Vector explains what's actually different. Save money."
 tags: ["AI content tools", "AI Guide", "best AI writing tools"]

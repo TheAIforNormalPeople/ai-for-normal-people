@@ -1,6 +1,6 @@
 ---
 title: "AI Privacy: What's Actually Collected"
-type: "episode"`ndate: 2025-12-30T09:00:00-05:00
+type: "episode"`ndate: 2025-12-29T09:00:00-05:00
 draft: true
 description: "Real privacy risks vs paranoia. Recurse investigates privacy policies, Kai quantifies risks, Vector explains what companies can do vs what they do. Learn what to avoid sharing."
 tags: ["AI privacy", "AI Guide", "ChatGPT privacy"]

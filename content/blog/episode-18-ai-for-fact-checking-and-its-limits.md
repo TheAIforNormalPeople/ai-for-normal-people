@@ -1,6 +1,6 @@
 ---
 title: "AI for Fact-Checking (And Its Limits)"
-type: "episode"`ndate: 2025-12-24T09:00:00-05:00
+type: "episode"`ndate: 2025-12-23T09:00:00-05:00
 draft: true
 description: "When AI can help verify facts vs when it makes things worse. Recurse investigates, Vector explains why AI can't verify truth, Kai provides accuracy stats. Learn the right workflow."
 tags: ["AI fact checking", "AI Guide", "verify with AI"]

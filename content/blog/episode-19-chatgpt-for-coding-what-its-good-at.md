@@ -1,6 +1,6 @@
 ---
 title: "ChatGPT for Coding: What It's Good At"
-type: "episode"`ndate: 2025-12-25T09:00:00-05:00
+type: "episode"`ndate: 2025-12-24T09:00:00-05:00
 draft: true
 description: "Realistic assessment of AI for coding. Vector demonstrates with code examples, Kai compares quality, Recurse questions the 'no-code' narrative. Learn what AI can and can't do for programming."
 tags: ["ChatGPT coding", "AI Guide", "AI for programming"]

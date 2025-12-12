@@ -1,6 +1,6 @@
 ---
 title: "Using AI for Writing (Without Sounding Like AI)"
-type: "episode"`ndate: 2025-12-23T09:00:00-05:00
+type: "episode"`ndate: 2025-12-22T09:00:00-05:00
 draft: true
 description: "How to use AI as a writing assistant without producing generic slop. Vector explains AI limitations, Kai detects banned phrases, Human tests workflows. Learn to humanize AI writing."
 tags: ["AI writing tools", "AI Guide", "write with AI"]

@@ -2,13 +2,9 @@
 title: "ChatGPT vs Claude vs Gemini: Which AI Should You Actually Use?"
 date: 2025-12-12T09:00:00-05:00
 type: "episode"
-episode_number: 7
-characters: ["Vector", "Kai", "Recurse", "Human"]
-topics: ["ChatGPT vs Claude", "best AI chatbot", "AI comparison", "Claude vs ChatGPT", "Gemini AI"]
-difficulty: "beginner"
-description: "Honest comparison of ChatGPT, Claude, and Gemini. Vector has tested all three, Kai provides performance metrics, and Recurse investigates the companies behind them. Find out which AI chatbot fits your needs."
-summary: "The crew compares the three main AI chatbots. Vector shares test results, Kai provides specific metrics, Recurse questions company trust factors, and Human asks which one to actually use."
 draft: false
+description: "Honest comparison of ChatGPT, Claude, and Gemini. Vector has tested all three, Kai provides performance metrics, and Recurse investigates the companies behind them. Find out which AI chatbot fits your needs."
+tags: ["ChatGPT vs Claude", "best AI chatbot", "AI comparison", "Claude vs ChatGPT", "Gemini AI"]
 ---
 
 {{< dialogue char="Vector" >}}

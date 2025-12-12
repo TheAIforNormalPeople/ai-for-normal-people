@@ -1,6 +1,7 @@
 ---
 title: "Best Free AI Tools in 2024 (Actually Free)"
-type: "episode"`ndate: 2025-12-27T09:00:00-05:00
+type: "episode"
+date: 2025-12-27T09:00:00-05:00
 draft: true
 description: "What's actually free vs what's 'free trial.' Kai catalogs real free tools, Vector compares capabilities, Recurse investigates business models. Save money, avoid 'free trial' traps."
 tags: ["free AI tools", "AI Guide", "best free AI"]

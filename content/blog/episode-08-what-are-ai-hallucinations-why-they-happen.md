@@ -1,6 +1,6 @@
 ---
 title: "What Are AI Hallucinations? (And Why They Happen)"
-date: 2025-12-12T09:00:00-05:00
+date: 2025-12-13T09:00:00-05:00
 image: "/images/episodes/general/vector-explaining-3.png"
 type: "episode"
 episode_number: 8
@@ -10,7 +10,7 @@ difficulty: "beginner"
 description: "Vector explains why AI hallucinations happen - it's a feature of how language models work, not a bug. Learn how to spot hallucinations and verify AI outputs."
 summary: "Human caught ChatGPT making up a study. Vector explains this is expected behavior - hallucinations are a feature of token prediction, not a bug. Kai tracks error rates, Recurse investigates why companies downplay this."
 slug: "episode-08-what-are-ai-hallucinations-why-they-happen"
-draft: true
+draft: false
 ---
 
 {{< dialogue char="Vector" >}}

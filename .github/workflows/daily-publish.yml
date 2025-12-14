@@ -2,8 +2,11 @@ name: Daily Publish Check
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # 9am daily (UTC)
+    - cron: '0 14 * * *'  # 2pm UTC = 9am EST (matches episode publish times)
   workflow_dispatch:  # Manual trigger option
+
+permissions:
+  contents: write  # Allow pushing changes
 
 jobs:
   publish:
@@ -11,6 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Set up Git
         run: |
@@ -23,23 +28,47 @@ jobs:
           TODAY=$(date +%Y-%m-%d)
           CHANGED=0
           
+          echo "=== Daily Publish Check ==="
+          echo "Today's date (UTC): $TODAY"
+          echo "Checking for posts to publish..."
+          echo ""
+          
           find content/blog -name "*.md" -type f | while read file; do
             if grep -q "draft: true" "$file"; then
               DATE_LINE=$(grep "^date:" "$file" | head -1)
               if [ -n "$DATE_LINE" ]; then
-                DATE=$(echo "$DATE_LINE" | sed 's/date: //' | cut -d'T' -f1 | tr -d ' ')
+                # Extract date (more robust - handles spaces and different formats)
+                DATE=$(echo "$DATE_LINE" | sed -E 's/^date:[[:space:]]*([0-9]{4}-[0-9]{2}-[0-9]{2}).*/\1/' | tr -d ' ')
+                
+                if [ -z "$DATE" ]; then
+                  echo "WARNING: Could not extract date from $file"
+                  echo "  Date line: $DATE_LINE"
+                  continue
+                fi
+                
+                echo "Checking: $file"
+                echo "  Date line: $DATE_LINE"
+                echo "  Extracted date: $DATE"
+                
                 if [ "$DATE" = "$TODAY" ]; then
                   sed -i 's/draft: true/draft: false/' "$file"
-                  echo "Published: $file"
+                  echo "  ✅ MATCH! Published: $file"
                   CHANGED=1
+                else
+                  echo "  ⏭️  No match (episode date: $DATE, today: $TODAY)"
                 fi
+              else
+                echo "WARNING: No date found in $file"
               fi
             fi
           done
           
+          echo ""
           if [ "$CHANGED" = "1" ]; then
+            echo "✅ Changes detected - will commit and push"
             echo "changed=true" >> $GITHUB_OUTPUT
           else
+            echo "ℹ️  No posts to publish today"
             echo "changed=false" >> $GITHUB_OUTPUT
           fi
       
@@ -49,4 +78,4 @@ jobs:
           git add content/blog/
           git commit -m "Auto-publish scheduled posts for $(date +%Y-%m-%d)" || exit 0
           git push
-
+          echo "✅ Changes pushed successfully"

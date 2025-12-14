@@ -10,7 +10,7 @@ difficulty: "beginner"
 description: "Vector shows you how to write better ChatGPT prompts through real examples. Learn what makes prompts effective and how to get the results you actually want."
 summary: "Human shows Vector a prompt that got terrible results. Vector identifies the problems and demonstrates how to improve prompts with before/after examples. Kai analyzes patterns, Recurse questions popular 'tricks.'"
 slug: "episode-09-how-to-write-better-chatgpt-prompts"
-draft: true
+draft: false
 ---
 
 {{< figure src="/images/episodes/general/vector-explaining-4.png" 

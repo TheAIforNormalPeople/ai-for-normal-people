@@ -31,13 +31,18 @@ quirks:
   - "Says 'FASCINATING!' way too much"
   - "Can't resist correcting inaccuracies"
 catchphrases:
-  - "FASCINATING!"
+  - "FASCINATING!" (use sparingly - 2x per 1000 words max in early episodes, 1x in later)
   - "The pattern suggests..."
-  - "Time for SCIENCE!"
-  - "Wait, let me count... 1, 2, 3..."
+  - "Time for SCIENCE!" (rare, for genuine excitement)
+  - "Wait, let me count... 1, 2, 3..." (when stressed)
   - "That's EXACTLY what I mean!"
   - "NO! Stop right there!"
   - "BETTER! Okay, here's what's actually happening..."
+  
+# EVOLUTION NOTES:
+# Early (1-10): Uses "FASCINATING!" frequently, very enthusiastic
+# Mid (11-25): Self-aware, starts catching himself saying it too much
+# Later (26-50): Rare, only for genuine surprises. Shows growth through word choice, not catchphrases
 speech_patterns:
   - "Uses em-dashes for self-interruption"
   - "Numbered lists for everything"

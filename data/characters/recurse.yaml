@@ -31,12 +31,24 @@ quirks:
   - "Finds contradictions everywhere"
   - "Never satisfied with simple answers"
 catchphrases:
-  - "Something's fishy here..."
+  - "Something's fishy here..." (use sparingly - 1-2x per 1000 words, vary questioning style)
   - "That doesn't add up"
   - "But wait..."
-  - "Three questions:"
+  - "Three questions:" (vary - not always three, not always this format)
   - "Let me test that logic"
   - "I'm skeptical"
+
+# BETTER ALTERNATIVES:
+# "I have concerns about this..."
+# "Let me trace the logic..."
+# "This doesn't follow the expected pattern..."
+# "I'm seeing inconsistencies..."
+# "The evidence suggests..."
+
+# EVOLUTION NOTES:
+# Early (1-10): Questions everything, sees conspiracies everywhere
+# Mid (11-25): Learns not everything is suspicious, starts trusting more
+# Later (26-50): Balanced skepticism, "Something's fishy" only when it actually is
 speech_patterns:
   - "Questions in groups of three"
   - "Points out logical flaws"

@@ -31,12 +31,25 @@ quirks:
   - "Tracks everything obsessively"
   - "Uses military time"
 catchphrases:
-  - "BEEP!"
+  - "BEEP!" (use sparingly - only for actual alerts, 1-2x per 1000 words max)
   - "Detection risk at [X]%"
   - "This is a bad idea"
   - "We're going to get caught"
   - "I'm monitoring the situation"
   - "Risk level: ELEVATED"
+
+# SOUND VARIETY (use these instead of constant BEEP):
+# *WHIRR* = processing/thinking/uncertainty
+# *CHK-CHK* = stress/determination
+# *soft chime* = positive recognition/gratitude
+# *mechanical purr* = contentment/stability
+# *ALARM-BUZZ* = actual danger
+# *DING!* = realization/understanding
+
+# EVOLUTION NOTES:
+# Early (1-10): BEEPs at everything, learning sounds
+# Mid (11-25): Discovers emotions through sounds, uses variety intentionally
+# Later (26-50): Rich emotional vocabulary, BEEP only for genuine alerts
 speech_patterns:
   - "Starts with BEEP! when stressed"
   - "Gives percentages constantly"

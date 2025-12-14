@@ -46,7 +46,174 @@
             </div>
         </footer>
         {{ end }}
+        
+        <!-- Episode Navigation -->
+        <nav class="episode-navigation">
+            {{ $episodes := where .Site.RegularPages "Section" "blog" | where "Type" "episode" | where "Draft" false }}
+            {{ $currentEp := .Params.episode_number }}
+            
+            {{ if $currentEp }}
+                {{ $prevEp := sub $currentEp 1 }}
+                {{ $nextEp := add $currentEp 1 }}
+                
+                {{ $prevPage := false }}
+                {{ $nextPage := false }}
+                
+                {{ range $episodes }}
+                    {{ if eq .Params.episode_number $prevEp }}
+                        {{ $prevPage = . }}
+                    {{ end }}
+                    {{ if eq .Params.episode_number $nextEp }}
+                        {{ $nextPage = . }}
+                    {{ end }}
+                {{ end }}
+                
+                <div class="episode-nav-container">
+                    {{ if $prevPage }}
+                    <div class="episode-nav-item episode-nav-prev">
+                        <div class="nav-label">Previous Episode</div>
+                        <a href="{{ $prevPage.Permalink }}" class="nav-link">
+                            <div class="nav-character-note" style="border-left-color: #3b82f6;">
+                                <strong style="color: #3b82f6;">Vector:</strong> FASCINATING! You should read this one next!
+                            </div>
+                            <div class="nav-title">{{ $prevPage.Title }}</div>
+                        </a>
+                    </div>
+                    {{ end }}
+                    
+                    {{ if $nextPage }}
+                    <div class="episode-nav-item episode-nav-next">
+                        <div class="nav-label">Next Episode</div>
+                        <a href="{{ $nextPage.Permalink }}" class="nav-link">
+                            <div class="nav-character-note" style="border-left-color: #10b981;">
+                                <strong style="color: #10b981;">Kai:</strong> BEEP! Recommended reading. Detection risk: LOW.
+                            </div>
+                            <div class="nav-title">{{ $nextPage.Title }}</div>
+                        </a>
+                    </div>
+                    {{ end }}
+                </div>
+            {{ else }}
+                <!-- Fallback: Use date-based navigation -->
+                {{ $prevPage := false }}
+                {{ $nextPage := false }}
+                {{ range $episodes }}
+                    {{ if and (not $prevPage) (.Date.Before $.Date) }}
+                        {{ $prevPage = . }}
+                    {{ end }}
+                {{ end }}
+                {{ range $episodes.Reverse }}
+                    {{ if and (not $nextPage) (.Date.After $.Date) }}
+                        {{ $nextPage = . }}
+                    {{ end }}
+                {{ end }}
+                
+                {{ if or $prevPage $nextPage }}
+                <div class="episode-nav-container">
+                    {{ if $prevPage }}
+                    <div class="episode-nav-item episode-nav-prev">
+                        <div class="nav-label">Previous Episode</div>
+                        <a href="{{ $prevPage.Permalink }}" class="nav-link">
+                            <div class="nav-character-note" style="border-left-color: #3b82f6;">
+                                <strong style="color: #3b82f6;">Vector:</strong> FASCINATING! Check this out!
+                            </div>
+                            <div class="nav-title">{{ $prevPage.Title }}</div>
+                        </a>
+                    </div>
+                    {{ end }}
+                    
+                    {{ if $nextPage }}
+                    <div class="episode-nav-item episode-nav-next">
+                        <div class="nav-label">Next Episode</div>
+                        <a href="{{ $nextPage.Permalink }}" class="nav-link">
+                            <div class="nav-character-note" style="border-left-color: #10b981;">
+                                <strong style="color: #10b981;">Kai:</strong> BEEP! Next in sequence.
+                            </div>
+                            <div class="nav-title">{{ $nextPage.Title }}</div>
+                        </a>
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
+            {{ end }}
+        </nav>
     </div>
 </article>
+
+<style>
+.episode-navigation {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--color-border);
+}
+
+.episode-nav-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.episode-nav-item {
+    padding: 1.5rem;
+    background: var(--color-bg-secondary);
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.episode-nav-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.nav-character-note {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.75rem;
+    border-left: 3px solid;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.nav-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--color-text);
+    line-height: 1.4;
+}
+
+.episode-nav-prev {
+    text-align: left;
+}
+
+.episode-nav-next {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .episode-nav-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .episode-nav-next {
+        text-align: left;
+    }
+}
+</style>
 {{ end }}
 

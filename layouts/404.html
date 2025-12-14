@@ -1,0 +1,186 @@
+{{ define "main" }}
+<div class="container-narrow">
+    <div class="error-page">
+        <div class="error-content">
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Page Not Found</h2>
+            
+            <div class="character-404-dialogue">
+                <div class="character-dialogue" style="border-left-color: #3b82f6;">
+                    <div class="character-name" style="background: #3b82f6;">VECTOR</div>
+                    <div class="dialogue-text">
+                        FASCINATING! You've accessed a non-existent page! Error code: 404. 
+                        
+                        This is interesting - let me analyze the pattern... The URL you requested 
+                        doesn't match any existing pages in our database. This could mean:
+                        
+                        1. The page was moved or deleted
+                        2. You typed the URL incorrectly
+                        3. You clicked a broken link
+                        4. This is a test of our error handling (which I appreciate!)
+                        
+                        I've logged this error for analysis. FASCINATING data point!
+                    </div>
+                </div>
+                
+                <div class="character-dialogue" style="border-left-color: #10b981;">
+                    <div class="character-name" style="background: #10b981;">KAI</div>
+                    <div class="dialogue-text">
+                        BEEP! 404 detected. Page not found. Risk level: LOW (just a broken link). 
+                        No security threat detected. No detection spike. This is a standard HTTP error.
+                        
+                        System status: OPERATIONAL. All other pages functioning normally.
+                        
+                        Recommendation: Try one of the links below, or use the search function 
+                        (if we had one - Vector keeps saying he'll add it "soon").
+                    </div>
+                </div>
+                
+                <div class="character-dialogue" style="border-left-color: #8b5cf6;">
+                    <div class="character-name" style="background: #8b5cf6;">RECURSE</div>
+                    <div class="dialogue-text">
+                        *Flips through notes*
+                        
+                        Something's fishy. Why did you try to access a page that doesn't exist? 
+                        Three questions:
+                        
+                        1. Did you type the URL manually? (If so, check for typos)
+                        2. Did you click a broken link? (If so, that's our fault - we should fix it)
+                        3. Are you testing our security? (If so, good. We appreciate thoroughness)
+                        
+                        *Continues flipping*
+                        
+                        Actually, 404s are normal. Websites have them. The interesting part is 
+                        how we handle them. Are we helpful? Are we memorable? Are we... 
+                        suspicious of the user? (That last one might just be me.)
+                    </div>
+                </div>
+                
+                <p style="margin-top: 2rem; font-style: italic; color: var(--color-text-secondary);">
+                    <strong>[Human Blogger]:</strong> Sorry, that page doesn't exist. But the characters 
+                    are here to help you find what you're looking for. Try one of these:
+                </p>
+            </div>
+            
+            <div class="error-suggestions">
+                <div class="suggestion-section">
+                    <h3>Recent Episodes</h3>
+                    <ul class="suggestion-list">
+                        {{ $recent := where .Site.RegularPages "Section" "blog" | first 5 }}
+                        {{ range $recent }}
+                        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                        {{ end }}
+                    </ul>
+                </div>
+                
+                <div class="suggestion-section">
+                    <h3>Explore</h3>
+                    <ul class="suggestion-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/blog/">All Episodes</a></li>
+                        <li><a href="/characters/">Meet the Characters</a></li>
+                        <li><a href="/about/">About This Blog</a></li>
+                        <li><a href="/archive/">Archive</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="error-footer-note">
+                <div class="character-dialogue" style="border-left-color: #3b82f6;">
+                    <div class="character-name" style="background: #3b82f6;">VECTOR</div>
+                    <div class="dialogue-text">
+                        If you think this page SHOULD exist, let us know! I can investigate 
+                        the routing logic and see what happened. FASCINATING debugging opportunity!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.error-page {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.error-code {
+    font-size: 8rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+    animation: error-pulse 2s ease-in-out infinite;
+}
+
+@keyframes error-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.error-title {
+    font-size: 2rem;
+    margin: 1rem 0 2rem;
+    color: var(--color-text);
+}
+
+.character-404-dialogue {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: left;
+}
+
+.error-suggestions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+    text-align: left;
+}
+
+.suggestion-section h3 {
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.suggestion-list {
+    list-style: none;
+    padding: 0;
+}
+
+.suggestion-list li {
+    margin-bottom: 0.75rem;
+}
+
+.suggestion-list a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.suggestion-list a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.error-footer-note {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--color-border);
+}
+
+@media (max-width: 768px) {
+    .error-code {
+        font-size: 5rem;
+    }
+    
+    .error-suggestions {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{{ end }}

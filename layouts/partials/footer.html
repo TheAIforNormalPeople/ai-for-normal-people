@@ -52,10 +52,81 @@
         </div>
         
         <div class="footer-bottom">
+            <div class="footer-status">
+                <div class="status-item">
+                    <span class="status-label">Site Status:</span>
+                    <span class="status-value" style="color: #10b981;">OPERATIONAL</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Last Updated:</span>
+                    <span class="status-value">{{ now.Format "Jan 2, 2006" }} by Vector</span>
+                </div>
+            </div>
+            
+            <div class="footer-character-notes">
+                <div class="character-note" style="border-left-color: #3b82f6;">
+                    <strong style="color: #3b82f6;">Vector:</strong> Site optimized. FASCINATING improvements to code efficiency!
+                </div>
+                <div class="character-note" style="border-left-color: #10b981;">
+                    <strong style="color: #10b981;">Kai:</strong> BEEP! Detection risk: 23%. All systems nominal.
+                </div>
+            </div>
+            
             <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
         </div>
     </div>
 </footer>
+
+<style>
+.footer-status {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.status-item {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.status-label {
+    color: var(--color-text-secondary);
+}
+
+.status-value {
+    font-weight: bold;
+}
+
+.footer-character-notes {
+    max-width: 600px;
+    margin: 1rem auto;
+    text-align: left;
+}
+
+.character-note {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    border-left: 3px solid;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .footer-status {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .footer-character-notes {
+        text-align: center;
+    }
+}
+</style>
 
 
 

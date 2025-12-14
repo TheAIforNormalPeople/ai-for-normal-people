@@ -28,7 +28,9 @@ Let me explain why this is so difficult, and what you can actually do about it.
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
-*Reviewing data*`n`nPattern detection: User searches "detect AI writing" and "AI detection tools" include terms: ChatGPT detector, spot AI content.
+*Reviewing data*
+
+Pattern detection: User searches "detect AI writing" and "AI detection tools" include terms: ChatGPT detector, spot AI content.
 
 *WHIRR*
 

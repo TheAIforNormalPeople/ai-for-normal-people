@@ -1,6 +1,6 @@
 ---
 title: "ChatGPT vs Claude vs Gemini: Which AI Should You Actually Use?"
-date: 2025-12-11T09:24:26-05:00
+date: 2025-11-23T09:00:00-05:00
 type: "episode"
 draft: false
 description: "Honest comparison of ChatGPT, Claude, and Gemini. Vector has tested all three, Kai provides performance metrics, and Recurse investigates the companies behind them. Find out which AI chatbot fits your needs."

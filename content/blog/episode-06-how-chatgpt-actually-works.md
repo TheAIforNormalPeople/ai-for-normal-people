@@ -1,6 +1,6 @@
 ---
 title: "How Does ChatGPT Actually Work? (The Real Explanation)"
-date: 2025-12-11T09:00:00-05:00
+date: 2025-11-22T09:00:00-05:00
 type: "episode"
 draft: false
 description: "Vector explains how ChatGPT's transformer architecture actually works. Learn about self-attention, token prediction, and why it seems intelligent without 'thinking' in the traditional sense."

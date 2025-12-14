@@ -1,6 +1,6 @@
 ---
 title: "The Accidental Save (And Why It Worked)"
-date: 2025-12-10T20:00:00-05:00
+date: 2025-11-21T14:00:00-05:00
 image: "/images/episodes/ep05-featured-accidental-save.png"
 type: "episode"
 episode_number: 5

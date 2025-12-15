@@ -49,9 +49,7 @@
         
         <!-- Episode Navigation -->
         <nav class="episode-navigation">
-            {{ $episodes := where .Site.RegularPages "Section" "blog" }}
-            {{ $episodes = where $episodes ".Params.type" "eq" "episode" }}
-            {{ $episodes = where $episodes "Draft" false }}
+            {{ $allBlogPages := where .Site.RegularPages "Section" "blog" }}
             {{ $currentEp := .Params.episode_number }}
             
             {{ if $currentEp }}
@@ -61,12 +59,14 @@
                 {{ $prevPage := false }}
                 {{ $nextPage := false }}
                 
-                {{ range $episodes }}
-                    {{ if eq .Params.episode_number $prevEp }}
-                        {{ $prevPage = . }}
-                    {{ end }}
-                    {{ if eq .Params.episode_number $nextEp }}
-                        {{ $nextPage = . }}
+                {{ range $allBlogPages }}
+                    {{ if and .Params.type (eq .Params.type "episode") (not .Draft) }}
+                        {{ if eq .Params.episode_number $prevEp }}
+                            {{ $prevPage = . }}
+                        {{ end }}
+                        {{ if eq .Params.episode_number $nextEp }}
+                            {{ $nextPage = . }}
+                        {{ end }}
                     {{ end }}
                 {{ end }}
                 
@@ -99,14 +99,18 @@
                 <!-- Fallback: Use date-based navigation -->
                 {{ $prevPage := false }}
                 {{ $nextPage := false }}
-                {{ range $episodes }}
-                    {{ if and (not $prevPage) (.Date.Before $.Date) }}
-                        {{ $prevPage = . }}
+                {{ range $allBlogPages }}
+                    {{ if and .Params.type (eq .Params.type "episode") (not .Draft) }}
+                        {{ if and (not $prevPage) (.Date.Before $.Date) }}
+                            {{ $prevPage = . }}
+                        {{ end }}
                     {{ end }}
                 {{ end }}
-                {{ range $episodes.Reverse }}
-                    {{ if and (not $nextPage) (.Date.After $.Date) }}
-                        {{ $nextPage = . }}
+                {{ range $allBlogPages }}
+                    {{ if and .Params.type (eq .Params.type "episode") (not .Draft) }}
+                        {{ if and (not $nextPage) (.Date.After $.Date) }}
+                            {{ $nextPage = . }}
+                        {{ end }}
                     {{ end }}
                 {{ end }}
                 

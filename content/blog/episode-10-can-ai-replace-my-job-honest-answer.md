@@ -10,7 +10,7 @@ difficulty: "beginner"
 description: "Honest assessment of AI job replacement. Vector analyzes which tasks AI handles well, Kai provides data on job categories, Recurse investigates what companies are actually doing. Not fear-mongering, not dismissive - just real."
 summary: "Human saw a headline about AI replacing writers. Vector provides context: AI is automating tasks, not whole jobs yet. Kai tracks which job categories are most at risk, Recurse investigates what companies are actually doing vs. claiming."
 slug: "episode-10-can-ai-replace-my-job-honest-answer"
-draft: true
+draft: false
 ---
 
 {{< figure src="/images/episodes/general/vector-explaining-5.png" 

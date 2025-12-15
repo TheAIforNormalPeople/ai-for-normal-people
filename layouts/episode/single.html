@@ -49,7 +49,9 @@
         
         <!-- Episode Navigation -->
         <nav class="episode-navigation">
-            {{ $episodes := where .Site.RegularPages "Section" "blog" | where "Type" "episode" | where "Draft" false }}
+            {{ $episodes := where .Site.RegularPages "Section" "blog" }}
+            {{ $episodes = where $episodes ".Params.type" "eq" "episode" }}
+            {{ $episodes = where $episodes "Draft" false }}
             {{ $currentEp := .Params.episode_number }}
             
             {{ if $currentEp }}

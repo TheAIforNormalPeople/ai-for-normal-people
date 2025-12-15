@@ -31,10 +31,12 @@ quirks:
   - "Finds contradictions everywhere"
   - "Never satisfied with simple answers"
 catchphrases:
-  - "Something's fishy here..." # use sparingly - 1-2x per 1000 words, vary questioning style
+  # use sparingly - 1-2x per 1000 words, vary questioning style
+  - "Something's fishy here..."
   - "That doesn't add up"
   - "But wait..."
-  - "Three questions:" (vary - not always three, not always this format)
+  # vary - not always three, not always this format
+  - "Three questions:"
   - "Let me test that logic"
   - "I'm skeptical"
 

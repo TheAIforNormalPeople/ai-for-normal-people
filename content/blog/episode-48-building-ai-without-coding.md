@@ -25,8 +25,6 @@ Okay. I'm going to build it. Without code. Watch.
 
 Done. No code. It works.
 
-{{< /dialogue >}}
-
 {{< dialogue char="Vector" >}}
 *Stunned*
 

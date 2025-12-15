@@ -31,7 +31,8 @@ quirks:
   - "Tracks everything obsessively"
   - "Uses military time"
 catchphrases:
-  - "BEEP!" (use sparingly - only for actual alerts, 1-2x per 1000 words max)
+  # use sparingly - only for actual alerts, 1-2x per 1000 words max
+  - "BEEP!"
   - "Detection risk at [X]%"
   - "This is a bad idea"
   - "We're going to get caught"

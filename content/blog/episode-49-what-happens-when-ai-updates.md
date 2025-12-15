@@ -49,8 +49,6 @@ Something's being modified in real-time.
 
 This is surreal.
 
-{{< /dialogue >}}
-
 {{< dialogue char="Kai" >}}
 *Monitoring*
 

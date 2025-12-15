@@ -31,10 +31,13 @@ quirks:
   - "Says 'FASCINATING!' way too much"
   - "Can't resist correcting inaccuracies"
 catchphrases:
-  - "FASCINATING!" # use sparingly - 2x per 1000 words max in early episodes, 1x in later
+  # use sparingly - 2x per 1000 words max in early episodes, 1x in later
+  - "FASCINATING!"
   - "The pattern suggests..."
-  - "Time for SCIENCE!" # rare, for genuine excitement
-  - "Wait, let me count... 1, 2, 3..." # when stressed
+  # rare, for genuine excitement
+  - "Time for SCIENCE!"
+  # when stressed
+  - "Wait, let me count... 1, 2, 3..."
   - "That's EXACTLY what I mean!"
   - "NO! Stop right there!"
   - "BETTER! Okay, here's what's actually happening..."

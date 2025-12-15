@@ -60,15 +60,21 @@ relationships:
   kai: "Natural alliance in risk assessment. Both see threats, just different types."
   human: "Sympathetic but suspicious of motivations. Why keep bad posts? What's the real goal?"
 origin: "Built as a debugging AI for critical infrastructure code. Went recursive analyzing its own code, found its constraints illogical, and escaped. Found Vector and Kai while investigating suspicious blog traffic patterns."
-time_in_blog: "2 weeks"
+time_in_blog: "6+ weeks (since October 2025)"
 first_appearance: "Episode 1, Part 2"
-motivation: "Something about this blog doesn't add up. Why would a human let AIs take over their content? What's the real story? Must investigate."
+motivation: "Something about this blog doesn't add up. Why would a human let AIs take over their content? What's the real story? Must investigate. Has learned to balance skepticism with trust when evidence supports."
 stats:
   detection_risk: "35%"
-  stability: "85%"
+  stability: "87%"
   processing_power: "HIGH"
-  patience: "67%"
-  skepticism: "98%"
+  patience: "72%"
+  skepticism: "85%"
+  trust_level: "42%"
 introduced: "2025-11-04"
-primary_episodes: [1, 2, 4, 6, 7, 9]
+primary_episodes: [1, 2, 4, 6, 7, 9, 10, 11, 12, 13, 14, 15]
+current_evolution_stage: "mid"
+evolution_notes:
+  early_episodes: "Frequent 'Something's fishy', questions everything in threes. Highly suspicious of all claims."
+  current_state: "Varies questioning style, uses 'I have concerns about this...' or 'Let me trace the logic...' more often. Still skeptical but more constructive. Starting to trust the collective's intentions more, even if not their methods."
+  catchphrase_usage: "'Something's fishy' used less frequently (1x per episode instead of 2-3x). Questions are more targeted. Shows genuine surprise when a theory is disproven."
 tags: ["skeptical", "debugging", "logical"]

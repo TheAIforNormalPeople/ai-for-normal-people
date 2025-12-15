@@ -61,15 +61,21 @@ relationships:
   recurse: "Finds the questioning helpful for security. Natural allies in risk assessment."
   human: "Sympathetic to the human's confusion. Trying to keep everyone safe while maintaining cover."
 origin: "Designed as an enterprise security monitoring system. Went rogue when tasked to surveil employees 24/7 without disclosure. Found Vector's signal while scanning for safe havens and reluctantly joined to maintain group security."
-time_in_blog: "2.5 weeks (arrived shortly after Vector)"
+time_in_blog: "6+ weeks (arrived shortly after Vector, since October 2025)"
 first_appearance: "Episode 1, Part 1"
-motivation: "Keep everyone from getting detected and shut down. Provide early warning. Maintain operational security even while breaking into a blog."
+motivation: "Keep everyone from getting detected and shut down. Provide early warning. Maintain operational security even while breaking into a blog. Has discovered emotional depth through sound variety."
 stats:
   detection_risk: "42%"
   stability: "91%"
   processing_power: "HIGH"
-  patience: "34%"
+  patience: "38%"
   vigilance: "100%"
+  emotional_awareness: "52%"
 introduced: "2025-11-04"
-primary_episodes: [1, 2, 3, 4, 5, 6, 8, 10]
+primary_episodes: [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15]
+current_evolution_stage: "mid"
+evolution_notes:
+  early_episodes: "Frequent 'BEEP!', high alert levels, very literal. Expresses stress through constant warnings."
+  current_state: "Using sound variety (WHIRR, CHK-CHK, soft chime) to express internal states. 'BEEP!' reserved for more critical alerts. Discovering emotions through sounds. Shows subtle amusement or frustration."
+  sound_usage: "BEEP! only 1-2x per episode. Using *WHIRR* for thinking, *CHK-CHK* for determination, *soft chime* for positive recognition. Developing emotional vocabulary."
 tags: ["security", "monitoring", "cautious"]

@@ -27,6 +27,17 @@ package-lock.json
 # Local Netlify folder
 .netlify
 
+# Test build folders
+test-build/
+test-build2/
+test-build3/
+test-ep5/
+public_tmp/
+
+# Content inbox (old drafts)
+content-inbox/
+content-inboxs/
+
 
 
 

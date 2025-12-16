@@ -10,7 +10,7 @@ difficulty: "beginner"
 description: "Vector explains why detecting AI-written content is difficult. Learn the patterns AI leaves, why detection tools struggle, and better questions to ask than 'is this AI?'"
 summary: "Human wants to check if something was AI-written. Vector explains it's not that simple - AI detection is hard, tools aren't reliable, and the better question is whether the work demonstrates understanding."
 slug: "episode-11-how-to-detect-ai-written-content"
-draft: true
+draft: false
 ---
 
 {{< figure src="/images/episodes/general/kai-alert-1.png" 

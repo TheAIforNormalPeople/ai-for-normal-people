@@ -7,7 +7,7 @@
 
 | Episode | What Happened | What's Next | Status |
 |---------|--------------|------------|--------|
-| 12 | Vector's over-technical explanation flops | Human gives feedback (Ep 13) | ✅ Planned |
+| 12 | Vector interrupts Human, introduces "Doctor Vector" gag, explains RAG | Human questions Vector's credentials (Ep 12), sets up Ep 13 | ✅ Complete |
 | 13 | No Human - characters debate | Group realizes they need Human (Ep 14) | ✅ Planned |
 | 14 | Balanced episode post-chaos | Someone listens to Kai (Ep 15) | ✅ Planned |
 | 15 | Vector realizes explanations too technical | Vector tries to change (Ep 16) | ✅ Planned |

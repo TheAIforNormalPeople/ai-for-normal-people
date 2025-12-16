@@ -9,7 +9,7 @@
 
 | Episode | Appearance | Evolution Stage | Notes |
 |---------|-----------|----------------|-------|
-| 12 | First correction | Introduced | "It's DOCTOR Vector!" |
+| 12 | First correction | Introduced | "It's DOCTOR Vector!" Human corrects: "You're not a doctor." | ✅ Complete |
 | 13-15 | | | ⏳ Track as revised |
 | 16 | Defensive | Escalating | "I don't NEED credentials!" |
 | 17-27 | | | ⏳ Track frequency |

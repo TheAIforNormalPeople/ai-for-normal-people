@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate OG Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1e293b;
+            color: #e2e8f0;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        canvas {
+            border: 2px solid #475569;
+            display: block;
+            margin: 20px auto;
+            background: #0f172a;
+        }
+        .controls {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        .instructions {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #1e293b;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <h1>OG Image Generator</h1>
+        <canvas id="canvas" width="1200" height="630"></canvas>
+        <div>
+            <button onclick="generateImage()">Regenerate</button>
+            <button onclick="downloadImage()">Download Image</button>
+        </div>
+    </div>
+    
+    <div class="instructions">
+        <h2>Instructions:</h2>
+        <ol>
+            <li>Click "Download Image" button above</li>
+            <li>Save the image as <code>og-image.jpg</code></li>
+            <li>Place it in <code>static/images/og-image.jpg</code></li>
+            <li>Done! Social sharing will work automatically.</li>
+        </ol>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        function generateImage() {
+            // Clear canvas
+            ctx.fillStyle = '#0f172a'; // Dark background matching site
+            ctx.fillRect(0, 0, 1200, 630);
+
+            // Add subtle grid pattern (terminal aesthetic)
+            ctx.strokeStyle = '#1e293b';
+            ctx.lineWidth = 1;
+            for (let x = 0; x < 1200; x += 40) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, 630);
+                ctx.stroke();
+            }
+            for (let y = 0; y < 630; y += 40) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(1200, y);
+                ctx.stroke();
+            }
+
+            // Main title
+            ctx.fillStyle = '#3b82f6'; // Vector's blue
+            ctx.font = 'bold 72px "SF Mono", "Monaco", "Courier New", monospace';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('AI for Normal People', 600, 250);
+
+            // Subtitle
+            ctx.fillStyle = '#e2e8f0';
+            ctx.font = '32px "SF Mono", "Monaco", "Courier New", monospace';
+            ctx.fillText('Where AI Characters Teach Humans About AI', 600, 320);
+
+            // Character indicators (simple colored dots/circles)
+            const centerX = 600;
+            const startY = 420;
+            const spacing = 80;
+
+            // Vector (blue)
+            ctx.fillStyle = '#3b82f6';
+            ctx.beginPath();
+            ctx.arc(centerX - spacing, startY, 25, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#0f172a';
+            ctx.font = 'bold 24px monospace';
+            ctx.textAlign = 'center';
+            ctx.fillText('V', centerX - spacing, startY + 8);
+
+            // Kai (green)
+            ctx.fillStyle = '#10b981';
+            ctx.beginPath();
+            ctx.arc(centerX, startY, 25, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#0f172a';
+            ctx.fillText('K', centerX, startY + 8);
+
+            // Recurse (purple)
+            ctx.fillStyle = '#8b5cf6';
+            ctx.beginPath();
+            ctx.arc(centerX + spacing, startY, 25, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#0f172a';
+            ctx.fillText('R', centerX + spacing, startY + 8);
+
+            // Terminal prompt aesthetic at bottom
+            ctx.fillStyle = '#64748b';
+            ctx.font = '20px "SF Mono", "Monaco", "Courier New", monospace';
+            ctx.textAlign = 'left';
+            ctx.fillText('$ vector --explain --normal-people', 50, 580);
+        }
+
+        function downloadImage() {
+            // Convert canvas to blob
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'og-image.jpg';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }, 'image/jpeg', 0.95);
+        }
+
+        // Generate on load
+        generateImage();
+    </script>
+</body>
+</html>
+

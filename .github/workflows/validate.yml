@@ -1,0 +1,68 @@
+name: Validate Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.120.4'  # Match Netlify version
+          extended: true
+      
+      - name: Check YAML syntax
+        run: |
+          echo "🔍 Checking YAML files for inline comments..."
+          ERRORS=0
+          
+          for file in data/characters/*.yaml; do
+            if [ -f "$file" ]; then
+              # Check for inline comments after list items
+              if grep -qP '^\s+-\s+[^#]*"[^"]*"\s+#[^-]' "$file"; then
+                echo "❌ ERROR: Inline comment found in $file"
+                echo "   Move comments to separate lines above list items"
+                ERRORS=$((ERRORS + 1))
+              fi
+            fi
+          done
+          
+          if [ $ERRORS -eq 0 ]; then
+            echo "✅ All YAML files valid"
+          else
+            echo "❌ Found $ERRORS YAML error(s)"
+            exit 1
+          fi
+      
+      - name: Build site
+        run: |
+          echo "🔍 Testing Hugo build..."
+          hugo --gc --minify --buildFuture
+          
+          if [ $? -ne 0 ]; then
+            echo "❌ Build failed"
+            exit 1
+          fi
+          
+          echo "✅ Build successful"
+      
+      - name: Check for template errors
+        run: |
+          echo "🔍 Checking for common template issues..."
+          
+          # Check for incompatible where filters
+          if grep -r 'where.*\.Params\.type.*eq' layouts/; then
+            echo "⚠️  WARNING: Found .Params.type in where filter (may not work on Hugo 0.120.4)"
+            echo "   Consider using range loops instead"
+          fi
+          
+          echo "✅ Template checks complete"
+

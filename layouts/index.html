@@ -42,9 +42,13 @@
                             <h3 class="post-title">{{ .Title }}</h3>
                             
                             {{ if eq .Type "episode" }}
-                            <!-- Episode preview with styled content -->
+                            <!-- Episode preview using description or summary -->
                             <div class="episode-preview">
-                                {{ .Content | truncate 400 | safeHTML }}
+                                {{ if .Params.description }}
+                                    <p class="post-summary">{{ .Params.description }}</p>
+                                {{ else }}
+                                    <p class="post-summary">{{ .Summary }}</p>
+                                {{ end }}
                             </div>
                             {{ else }}
                             <!-- Regular post summary -->

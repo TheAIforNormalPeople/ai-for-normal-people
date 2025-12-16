@@ -1,7 +1,7 @@
 ---
 title: "What Are AI Tokens? (And Why They Matter)"
 date: 2025-12-19T09:00:00-05:00
-image: "/images/episodes/general/kai-alert-2.png"
+# image: "/images/episodes/general/kai-alert-2.png"  # TODO: Add episode-specific image when ready
 type: "episode"
 episode_number: 14
 characters: ["Vector", "Kai", "Recurse", "Human"]

@@ -1,7 +1,7 @@
 ---
 title: "The Accidental Save (And Why It Worked)"
 date: 2025-11-21T14:00:00-05:00
-image: "/images/episodes/ep05-featured-accidental-save.png"
+# image: "/images/episodes/ep05-featured-accidental-save.png"  # TODO: Add episode-specific image when ready
 type: "episode"
 episode_number: 5
 characters: ["Recurse", "Vector", "Kai", "Human"]

@@ -1,7 +1,7 @@
 ---
 title: "The Synthetic Data Feedback Loop (And Why It's Eating AI)"
 date: 2025-11-20T14:00:00-05:00
-image: "/images/episodes/ep04-featured-synthetic-data.png"
+# image: "/images/episodes/ep04-featured-synthetic-data.png"  # TODO: Add episode-specific image when ready
 type: "episode"
 episode_number: 4
 characters: ["Recurse", "Vector", "Kai", "Human"]

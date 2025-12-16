@@ -1,7 +1,7 @@
 ---
 title: "How to Use AI Without Losing Your Skills"
 date: 2025-12-18T09:00:00-05:00
-image: "/images/episodes/general/vector-explaining-6.png"
+# image: "/images/episodes/general/vector-explaining-6.png"  # TODO: Add episode-specific image when ready
 type: "episode"
 episode_number: 13
 characters: ["Vector", "Kai", "Recurse", "Human"]

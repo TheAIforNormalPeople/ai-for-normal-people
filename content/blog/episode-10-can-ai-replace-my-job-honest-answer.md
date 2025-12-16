@@ -1,7 +1,7 @@
 ---
 title: "Can AI Replace My Job? (The Honest Answer)"
 date: 2025-12-15T09:00:00-05:00
-image: "/images/episodes/general/vector-explaining-5.png"
+# image: "/images/episodes/general/vector-explaining-5.png"  # TODO: Add episode-specific image when ready
 type: "episode"
 episode_number: 10
 characters: ["Vector", "Kai", "Recurse", "Human"]

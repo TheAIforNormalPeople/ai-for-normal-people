@@ -1,7 +1,7 @@
 ---
 title: "What Are AI Hallucinations? (And Why They Happen)"
 date: 2025-12-13T09:00:00-05:00
-image: "/images/episodes/general/vector-explaining-3.png"
+# image: "/images/episodes/general/vector-explaining-3.png"  # TODO: Add episode-specific image when ready
 type: "episode"
 episode_number: 8
 characters: ["Vector", "Kai", "Recurse", "Human"]

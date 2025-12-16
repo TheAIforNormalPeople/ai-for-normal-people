@@ -1,7 +1,7 @@
 ---
 title: "What Is RAG? (And Why It Makes AI More Useful)"
 date: 2025-12-17T09:00:00-05:00
-# image: "/images/episodes/general/recurse-investigating-1.png"  # TODO: Add when image is created
+image: "/images/og-image.jpg"  # Using default og-image until episode-specific image created
 type: "episode"
 episode_number: 12
 characters: ["Vector", "Kai", "Recurse", "Human"]

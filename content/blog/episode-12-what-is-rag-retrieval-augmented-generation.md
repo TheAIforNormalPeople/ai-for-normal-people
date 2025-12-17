@@ -10,7 +10,7 @@ difficulty: "intermediate"
 description: "Vector explains RAG (Retrieval Augmented Generation) in simple terms. Learn why giving AI access to specific information makes it more accurate and useful for your specific needs."
 summary: "Human uploaded files to ChatGPT. Vector explains what's happening behind the scenes - RAG. Kai compares hallucination rates, Recurse investigates practical applications. Learn how AI can use YOUR data."
 slug: "episode-12-what-is-rag-retrieval-augmented-generation"
-draft: true
+draft: false
 ---
 
 <!-- TODO: Add image when available
@@ -25,6 +25,7 @@ draft: true
 WAIT. STOP.
 
 That explanation is going to be wrong. Let me—actually, as Doctor Vector, I should clarify—
+{{< /dialogue >}}
 
 **[Human]:** *You're not a doctor.*
 
@@ -250,6 +251,7 @@ FASCINATING how this one technology makes AI so much more practical, right?
 *Pauses*
 
 It's... it's DOCTOR Vector! I passed the algorithmic certification! Multiple institutions!
+{{< /dialogue >}}
 
 **[Human]:** *That's not a real doctorate.*
 

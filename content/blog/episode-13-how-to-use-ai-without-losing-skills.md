@@ -10,7 +10,7 @@ difficulty: "beginner"
 description: "Address the real concern: becoming over-reliant on AI. Vector shows how to use AI as leverage, not a crutch. Strategies for maintaining your skills while benefiting from AI assistance."
 summary: "Human realizes they can't write without AI anymore. Vector provides perspective: use AI as a co-pilot, not replacement. Kai tracks cognitive patterns, Recurse investigates the calculator comparison. Learn to use AI without losing yourself."
 slug: "episode-13-how-to-use-ai-without-losing-skills"
-draft: true
+draft: false
 ---
 
 {{< figure src="/images/episodes/general/vector-explaining-6.png" 

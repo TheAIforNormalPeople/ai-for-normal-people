@@ -28,7 +28,9 @@ The key is: Use **AI** as a CO-PILOT, not a replacement. Use it for exploration,
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
-*Analyzing patterns*`n`nPattern detection: User searches "AI tool dependency" and "using AI productively" include terms: AI skills, skill development, AI reliance.
+*Analyzing patterns*
+
+Pattern detection: User searches "AI tool dependency" and "using AI productively" include terms: AI skills, skill development, AI reliance.
 
 *WHIRR*
 
@@ -97,7 +99,9 @@ Recurse is RIGHT - the calculator comparison isn't perfect. **AI** is different 
    caption="Balancing AI use and skill development" >}}
 
 {{< dialogue char="Kai" >}}
-*Reviewing data*`n`nPractical strategies logged:
+*Reviewing data*
+
+Practical strategies logged:
 
 **Use AI as co-pilot, not autopilot:**
 1. **Research phase:** Use AI to explore, then verify and think through findings yourself
@@ -168,7 +172,9 @@ The balance IS hard, but it's possible. The people who maintain it are the ones 
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
-*Reviewing data*`n`nFinal recommendations logged:
+*Reviewing data*
+
+Final recommendations logged:
 
 **Use AI without losing skills:**
 1. Use AI for exploration and drafting, not thinking and judgment

@@ -22,8 +22,6 @@ Human just realized something: They can't write without **AI** anymore. Every dr
 
 And that's a REAL concern! But here's the thing: Using **AI** doesn't have to mean losing your skills. It's about HOW you use it.
 
-Think of it like calculators: They didn't eliminate math skills, they changed them. People who learned to use calculators effectively stayed relevant. People who refused to adapt didn't.
-
 The key is: Use **AI** as a CO-PILOT, not a replacement. Use it for exploration, not avoidance. Use it to enhance your thinking, not replace it.
 {{< /dialogue >}}
 
@@ -47,21 +45,19 @@ Alert: Over-reliance on AI correlates with skill atrophy in critical thinking an
 {{< dialogue char="Vector" >}}
 Good questions! Are you becoming dumber? Probably not, but you MIGHT be losing skills if you're using **AI** wrong.
 
-**The calculator comparison:**
-- Calculators didn't eliminate math - they changed what math skills matter
-- People who learned to use calculators effectively (knowing when to use them, understanding the results) stayed relevant
-- People who just pressed buttons without understanding got left behind
+**The calculator comparison (with a twist):**
+Think of it like calculators: They didn't eliminate math skills, they changed which ones matter. People who learned to use calculators effectively—knowing when to use them, understanding the results—stayed relevant. People who just pressed buttons without understanding got left behind.
 
-**Same with AI:**
-- Using **AI** for research, drafting, formatting? Probably fine - those are tools.
-- Using **AI** to avoid thinking, learning, or creating? Problem - you're losing skills.
+**Same with AI, but there's a key difference:**
+- Calculators compute—you still need to understand the problem
+- **AI** can think—it can analyze, create, reason (sort of)
 
-**How to know when to stop:**
+So the question isn't just "when to use it," but "how to use a thinking tool without losing your own thinking."
+
+**How to know when you've gone too far:**
 - If you can't do the task without AI, you've gone too far
 - If you're not learning or understanding, you're using AI wrong
 - If you're just copying AI output without thinking, that's a problem
-
-**The test:** Can you explain what the AI did? Can you do it yourself if needed? Can you improve on what AI generated? If yes, you're using it right. If no, you're becoming dependent.
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}
@@ -78,10 +74,6 @@ Something's fishy about the "just use it as a tool" advice. AI is different from
 
 {{< dialogue char="Vector" >}}
 Recurse is RIGHT - the calculator comparison isn't perfect. **AI** is different because it does the THINKING, not just the computation.
-
-**The key difference:**
-- Calculators compute - you still need to understand the problem
-- **AI** can think - it can analyze, create, reason (sort of)
 
 **So the real question is:** How do you use a thinking tool without losing your own thinking?
 
@@ -103,18 +95,13 @@ Recurse is RIGHT - the calculator comparison isn't perfect. **AI** is different 
 
 Practical strategies logged:
 
-**Use AI as co-pilot, not autopilot:**
+**Practical workflow:**
 1. **Research phase:** Use AI to explore, then verify and think through findings yourself
 2. **Drafting phase:** Use AI for first drafts, then edit and improve yourself
 3. **Thinking phase:** Do this yourself - strategy, judgment, critical analysis
 4. **Verification phase:** Always verify AI outputs, especially facts and logic
 
-**The "explain it back" test:**
-- Can you explain what AI did and why?
-- Can you do it yourself if AI wasn't available?
-- Can you improve on what AI generated?
-
-If yes to all three, you're using AI right. If no, you're becoming dependent.
+**Quick check:** Can you explain what AI did? Can you do it yourself if needed? Can you improve on what AI generated? If yes to all three, you're using AI right. If no, you're becoming dependent.
 {{< /dialogue >}}
 
 **[Human]:** *So I should use AI, but always be thinking and learning myself? That makes sense, but it's hard to know the balance.*
@@ -135,7 +122,7 @@ YES! The balance is hard, but here's a practical framework:
 
 **The rule:** If the task helps you learn or think, do it yourself (at least sometimes). If it's just repetitive work, use AI.
 
-**The test:** Every time you use AI, ask: "Am I learning something, or just getting an answer?" If you're learning, you're good. If you're just getting answers without understanding, that's a problem.
+Every time you use AI, ask: "Am I learning something, or just getting an answer?" If you're learning, you're good. If you're just getting answers without understanding, that's a problem.
 
 It's not about never using AI - it's about using it in ways that make you BETTER, not ways that make you dependent!
 {{< /dialogue >}}
@@ -180,7 +167,7 @@ Final recommendations logged:
 1. Use AI for exploration and drafting, not thinking and judgment
 2. Always verify and improve AI outputs yourself
 3. Do the hard parts (thinking, learning, creating) yourself
-4. Use the "explain it back" test regularly
+4. Regularly check: Can you explain what AI did? Can you do it yourself? Can you improve it?
 5. Use AI to enhance learning, not replace it
 
 **Warning signs of over-dependency:**
@@ -199,14 +186,7 @@ Detection risk: Low. General advice about AI use.
 **[Human]:** *Okay, so use AI as a tool to enhance my work, but always keep thinking and learning myself. That's the balance.*
 
 {{< dialogue char="Vector" >}}
-EXACTLY! Use **AI** as a tool to make you BETTER, not as a replacement that makes you dependent.
-
-**The practical takeaway:**
-- Use **AI** for what it's good at (research, drafting, repetitive tasks)
-- Do the thinking, learning, and creating yourself
-- Always verify and improve AI outputs
-- Use the "explain it back" test
-- Use AI to enhance learning, not replace it
+EXACTLY! That's the balance.
 
 **The goal:** Be someone who uses **AI** effectively while maintaining and improving your own skills. That's how you stay relevant and capable, regardless of what tools are available.
 

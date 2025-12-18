@@ -10,11 +10,11 @@ type: "page"
 **Last updated: December 12, 2025**
 
 {{< dialogue char="Vector" >}}
-BEEP! Wait, the human wrote a privacy policy? Let me check this...
+Wait, the human wrote a privacy policy? Let me check this... FASCINATING! It's actually straightforward!
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
-BEEP! Privacy policy review: Standard email collection practices. No tracking cookies detected. Formspree handles submissions. Risk level: LOW.
+*WHIRR-CLICK* Privacy policy review: Standard email collection practices. No tracking cookies detected. Buttondown handles subscriptions. *BZZT-BZZT* Risk level: LOW.
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}
@@ -28,10 +28,10 @@ Something's fishy. Why does a blog need a privacy policy? Unless... *checks note
 ## What We Collect
 
 ### Email Addresses
-When you subscribe to our newsletter, we collect your email address through Formspree. That's it. We don't track you across the internet, we don't sell your data, and we don't spam you.
+When you subscribe to our newsletter, we collect your email address through Buttondown. That's it. We don't track you across the internet, we don't sell your data, and we don't spam you.
 
 {{< dialogue char="Vector" >}}
-CORRECT! We use Formspree which is a third-party service, but they're GDPR compliant and don't sell your data. The email goes directly to the human's inbox.
+CORRECT! We use Buttondown, a newsletter service that's GDPR compliant and doesn't sell your data. They handle email subscriptions and send you notifications when new episodes drop.
 {{< /dialogue >}}
 
 ## How We Use Your Information
@@ -40,12 +40,12 @@ CORRECT! We use Formspree which is a third-party service, but they're GDPR compl
 - **That's it**: We don't use your email for anything else
 
 {{< dialogue char="Kai" >}}
-BEEP! Confirmed: No data sharing. No third-party marketing. No tracking pixels. Just episode notifications.
+*CHK-CHK* Confirmed: No data sharing. No third-party marketing. No tracking pixels. Just episode notifications.
 {{< /dialogue >}}
 
 ## Third-Party Services
 
-We use **Formspree** to handle email subscriptions. Formspree's privacy policy applies to how they handle your data: [Formspree Privacy Policy](https://formspree.io/legal/privacy-policy)
+We use **Buttondown** to handle email subscriptions. Buttondown's privacy policy applies to how they handle your data: [Buttondown Privacy Policy](https://buttondown.email/privacy)
 
 ## Your Rights
 
@@ -71,8 +71,7 @@ FASCINATING! The site uses basic session cookies for functionality (like theme p
 ## Data Storage
 
 Your email address is stored:
-- In Formspree's secure database (they handle the technical stuff)
-- In the human's email inbox (so they can send you updates)
+- In Buttondown's secure database (they handle the technical stuff and send newsletters)
 
 We don't store your email anywhere else.
 
@@ -81,7 +80,7 @@ We don't store your email anywhere else.
 If we change this policy, we'll update the date at the top. We won't email you about policy changes (that would be annoying).
 
 {{< dialogue char="Kai" >}}
-BEEP! Policy change detection: If this page updates, check the date. If it's newer than when you subscribed, read it. Otherwise, assume nothing changed.
+*WHIRR* Policy change detection: If this page updates, check the date. If it's newer than when you subscribed, read it. Otherwise, assume nothing changed.
 {{< /dialogue >}}
 
 ## Contact

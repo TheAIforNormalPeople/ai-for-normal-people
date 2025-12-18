@@ -255,37 +255,50 @@
    ─────────────────────────────────────────────────────── */
 
 .pre-hijacking-notice {
-    background: 
-        repeating-linear-gradient(
-            -45deg,
-            #78350f,
-            #78350f 10px,
-            #92400e 10px,
-            #92400e 20px
-        );
-    border: 2px solid #f59e0b;
-    border-left: 5px solid #f59e0b;
-    border-radius: 4px;
-    padding: 0.65rem 0.85rem;
-    margin-bottom: 1.25rem;
-    font-size: 0.8rem;
-    line-height: 1.4;
-    color: #fef3c7;
-    font-family: 'Courier New', monospace;
     position: relative;
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background: linear-gradient(
+        135deg,
+        rgba(234, 88, 12, 0.2) 0%,
+        rgba(234, 88, 12, 0.3) 100%
+    );
+    border: 3px solid rgba(234, 88, 12, 0.6);
+    border-left-width: 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #fb923c;
+    transform: rotate(-0.4deg);
     box-shadow: 
-        4px 4px 0 rgba(0, 0, 0, 0.4),
-        0 0 20px rgba(245, 158, 11, 0.4);
-    max-width: 100%;
-    
-    /* GLITCH EFFECTS */
+        5px 5px 0 rgba(0, 0, 0, 0.2),
+        0 0 30px rgba(234, 88, 12, 0.3);
     animation: 
-        banner-glitch 4s ease-in-out infinite,
-        banner-flicker 0.3s ease-in-out infinite;
-    transform: rotate(-0.3deg);
+        banner-drift 8s ease-in-out infinite,
+        banner-flicker 6s ease-in-out infinite;
+    max-width: 100%;
 }
 
-/* Glitch overlay effect */
+/* Scan lines overlay */
+.pre-hijacking-notice::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.03) 0px,
+        rgba(0, 0, 0, 0.03) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/* Warning stripes pattern */
 .pre-hijacking-notice::after {
     content: '';
     position: absolute;
@@ -293,48 +306,63 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: inherit;
-    opacity: 0.3;
-    transform: translate(2px, -1px);
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(234, 88, 12, 0.1) 10px,
+        rgba(234, 88, 12, 0.1) 20px
+    );
     pointer-events: none;
-    mix-blend-mode: screen;
+    opacity: 0.4;
 }
 
-@keyframes banner-glitch {
+.pre-hijacking-notice:hover {
+    animation: 
+        banner-drift 8s ease-in-out infinite,
+        banner-flicker 6s ease-in-out infinite,
+        banner-glitch-shake 0.3s ease-in-out;
+    box-shadow: 
+        5px 5px 0 rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(234, 88, 12, 0.5);
+}
+
+/* Banner animations */
+@keyframes banner-drift {
     0%, 100% { 
-        transform: rotate(-0.3deg) translateX(0); 
+        transform: rotate(-0.4deg) translateX(0) translateY(0); 
     }
     25% { 
-        transform: rotate(-0.5deg) translateX(-2px); 
-        box-shadow: 
-            -4px 4px 0 rgba(0, 0, 0, 0.4),
-            2px 0 8px rgba(245, 158, 11, 0.6);
+        transform: rotate(-0.5deg) translateX(-2px) translateY(1px); 
     }
     50% { 
-        transform: rotate(-0.2deg) translateX(1px); 
+        transform: rotate(-0.3deg) translateX(1px) translateY(-1px); 
     }
     75% { 
-        transform: rotate(-0.4deg) translateX(-1px);
-        border-color: #fbbf24;
+        transform: rotate(-0.5deg) translateX(2px) translateY(1px); 
     }
 }
 
 @keyframes banner-flicker {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.98; }
+    50% { opacity: 0.97; }
+    75% { opacity: 0.99; }
 }
 
-/* Warning icon glitch */
-.pre-hijacking-notice::before {
-    content: '⚠️';
-    position: absolute;
-    top: 0.4rem;
-    right: 0.6rem;
-    font-size: 1rem;
-    animation: 
-        warning-pulse 2s ease-in-out infinite,
-        warning-glitch 3s ease-in-out infinite;
+@keyframes banner-glitch-shake {
+    0%, 100% { transform: rotate(-0.4deg) translateX(0); }
+    10% { transform: rotate(-0.5deg) translateX(-3px); }
+    20% { transform: rotate(-0.3deg) translateX(3px); }
+    30% { transform: rotate(-0.6deg) translateX(-2px); }
+    40% { transform: rotate(-0.2deg) translateX(2px); }
+    50% { transform: rotate(-0.5deg) translateX(-1px); }
+    60% { transform: rotate(-0.3deg) translateX(1px); }
+    70% { transform: rotate(-0.4deg) translateX(-2px); }
+    80% { transform: rotate(-0.4deg) translateX(2px); }
+    90% { transform: rotate(-0.5deg) translateX(-1px); }
 }
+
+/* Warning icon - moved to separate element if needed */
 
 @keyframes warning-pulse {
     0%, 100% { opacity: 0.5; }
@@ -1212,6 +1240,11 @@
     color: var(--color-text);
 }
 
+.logo-main {
+    position: relative;
+    z-index: 1;
+}
+
 .logo-glitch {
     position: absolute;
     top: 0;
@@ -1361,6 +1394,12 @@
     letter-spacing: 0.5px;
 }
 
+/* Light mode - make v2.0-vector text visible */
+html:not(.dark-mode) .site-logo::after {
+    color: #6b7280 !important;
+    opacity: 1 !important;
+}
+
 /* ═══════════════════════════════════════════════════════
    HERO STATUS BUTTON - "BLOG STATUS: COMPROMISED"
    ═══════════════════════════════════════════════════════ */
@@ -1373,24 +1412,21 @@
     padding: 0.75rem 1.25rem;
     background: rgba(239, 68, 68, 0.15);
     border: 3px solid #ef4444;
-    border-radius: 6px;
     font-family: 'Courier New', monospace;
     font-size: 0.9rem;
     color: #fca5a5;
     text-transform: uppercase;
     letter-spacing: 1px;
-    
     transform: rotate(0.3deg);
-    
     box-shadow: 
         4px 4px 0 rgba(0, 0, 0, 0.2),
         0 0 25px rgba(239, 68, 68, 0.4);
-    
     animation: 
         status-drift 6s ease-in-out infinite,
         status-flash 2s ease-in-out infinite;
 }
 
+/* Scan lines */
 .hero-status::before {
     content: '';
     position: absolute;
@@ -2055,3 +2091,175 @@ html:not(.dark-mode) .annotation[data-character="Recurse"] {
         opacity: 0.8;
     }
 }
+
+/* ═══════════════════════════════════════════════════════
+   LIGHT MODE OVERHAUL - HIGH CONTRAST & SATURATED COLORS
+   SHARP, BOLD, EASY TO READ - NOT WASHED OUT
+   ═══════════════════════════════════════════════════════ */
+
+/* Light mode base colors - MAXIMUM CONTRAST */
+html:not(.dark-mode) {
+    --color-bg: #ffffff;
+    --color-bg-secondary: #f5f5f5;
+    --color-text: #0a0a0a;           /* DARKER - almost black */
+    --color-text-secondary: #2d3748;  /* DARKER - more contrast */
+    --color-border: #cbd5e0;         /* STRONGER borders */
+    
+    /* Character colors - DARKER and MORE SATURATED */
+    --color-vector: #1e40af;         /* Deep saturated blue */
+    --color-kai: #047857;            /* Deep saturated green */
+    --color-recurse: #6d28d9;        /* Deep saturated purple */
+    --color-bounce: #b45309;         /* Deep saturated orange */
+    --color-river: #0e7490;          /* Deep saturated cyan */
+    --color-human: #334155;          /* Dark gray */
+    
+    /* Warning/alert colors - BRIGHT and SATURATED */
+    --color-warning: #b91c1c;        /* Bright red */
+    --color-caution: #c2410c;        /* Bright orange */
+    --color-alert: #a16207;          /* Bright yellow */
+}
+
+/* Background - DARKER gray, NO WHITE, much easier on eyes */
+html:not(.dark-mode) body {
+    background-color: #9ca3af !important;  /* DARKER gray - NOT WHITE, much easier to read */
+}
+
+/* Force dark text everywhere */
+html:not(.dark-mode) {
+    color: #0a0a0a;
+}
+
+html:not(.dark-mode) h1,
+html:not(.dark-mode) h2,
+html:not(.dark-mode) h3,
+html:not(.dark-mode) h4,
+html:not(.dark-mode) h5,
+html:not(.dark-mode) h6,
+html:not(.dark-mode) p,
+html:not(.dark-mode) li {
+    color: #0a0a0a;
+}
+
+html:not(.dark-mode) .post-card,
+html:not(.dark-mode) .post-list-item {
+    background: #f3f4f6 !important;  /* Light gray - NO WHITE */
+    border: 1px solid #d1d5db !important;  /* Visible border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark-mode) .post-card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Character Dialogue Boxes - BOLD and SATURATED */
+html:not(.dark-mode) .character-dialogue {
+    background: rgba(var(--char-color-rgb), 0.12);  /* Less transparent */
+    border: 4px solid rgba(var(--char-color-rgb), 0.9);  /* BOLD border */
+    box-shadow: 
+        6px 6px 0 rgba(0, 0, 0, 0.2),
+        0 0 30px rgba(var(--char-color-rgb), 0.4);
+}
+
+html:not(.dark-mode) .character-dialogue::before {
+    opacity: 0.2; /* Scan lines more visible */
+}
+
+html:not(.dark-mode) .character-name {
+    background: rgba(var(--char-color-rgb), 1);
+    color: #ffffff;
+    font-weight: 700;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Banners and Alerts - STRONG and SATURATED */
+html:not(.dark-mode) .pre-hijacking-notice,
+html:not(.dark-mode) .post-hijacking-notice {
+    background: linear-gradient(
+        135deg,
+        rgba(234, 88, 12, 0.25) 0%,
+        rgba(234, 88, 12, 0.35) 100%
+    );
+    border: 4px solid #ea580c;  /* SOLID, not transparent */
+    box-shadow: 
+        0 4px 20px rgba(234, 88, 12, 0.4),
+        inset 0 0 50px rgba(234, 88, 12, 0.15);
+    color: #7c2d12;  /* Dark text for contrast */
+}
+
+/* BLOG STATUS: COMPROMISED - BRIGHT RED with glow */
+html:not(.dark-mode) .hero-status {
+    background: #dc2626 !important;  /* BRIGHT RED background */
+    border: 2px solid #b91c1c !important;  /* Dark red border */
+    color: #ffffff !important;  /* White text */
+    font-weight: 700;
+    box-shadow: 
+        0 0 20px rgba(220, 38, 38, 0.3),
+        4px 4px 0 rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+html:not(.dark-mode) .hero-status .status-text {
+    color: #ffffff !important;
+}
+
+html:not(.dark-mode) .status-indicator-dot {
+    background: #ffffff !important;  /* White dot on red */
+    box-shadow: 0 0 15px #ffffff, 0 0 25px #dc2626;
+    border: 2px solid #991b1b;
+}
+
+/* Sidebar - STRONG borders, less transparency */
+html:not(.dark-mode) .character-sidebar {
+    background: #f3f4f6 !important;  /* Light gray - NO WHITE */
+    border: 3px solid #d1d5db;  /* STRONG border */
+    box-shadow: 
+        -4px 0 20px rgba(0, 0, 0, 0.15),
+        inset 0 0 100px rgba(0, 0, 0, 0.03);
+}
+
+html:not(.dark-mode) .character-sidebar::before {
+    opacity: 0.12; /* Drift lines more visible */
+}
+
+html:not(.dark-mode) .character-card {
+    background: #f3f4f6 !important;  /* Light gray - NO WHITE */
+    border: 2px solid #d1d5db;  /* STRONG border */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+html:not(.dark-mode) .character-card:hover {
+    border-color: #94a3b8;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Links - more saturated */
+html:not(.dark-mode) a {
+    color: #1e40af;  /* Deep blue */
+}
+
+html:not(.dark-mode) a:hover {
+    color: #1e3a8a;  /* Darker on hover */
+}
+
+/* Code blocks - stronger contrast */
+html:not(.dark-mode) code {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e0;
+    color: #0a0a0a;
+}
+
+html:not(.dark-mode) pre {
+    background: #f1f5f9;
+    border: 2px solid #cbd5e0;
+}
+
+/* Post content - ensure dark text */
+html:not(.dark-mode) .post-content {
+    color: #0a0a0a;
+}
+
+html:not(.dark-mode) .post-content p {
+    color: #0a0a0a;
+}
+

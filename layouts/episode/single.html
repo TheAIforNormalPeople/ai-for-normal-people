@@ -37,14 +37,18 @@
             {{ .Content }}
         </div>
         
+        {{ partial "episode-signup.html" . }}
+        
         {{ if .Params.tags }}
-        <footer class="post-footer">
-            <div class="tags">
-                {{ range .Params.tags }}
-                <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="tag">{{ . }}</a>
-                {{ end }}
-            </div>
-        </footer>
+        <div class="post-tags-container">
+            <footer class="post-footer">
+                <div class="tags">
+                    {{ range .Params.tags }}
+                    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="tag">{{ . }}</a>
+                    {{ end }}
+                </div>
+            </footer>
+        </div>
         {{ end }}
         
         <!-- Episode Navigation -->
@@ -88,7 +92,7 @@
                         <div class="nav-label">Next Episode</div>
                         <a href="{{ $nextPage.Permalink }}" class="nav-link">
                             <div class="nav-character-note" style="border-left-color: #10b981;">
-                                <strong style="color: #10b981;">Kai:</strong> BEEP! Recommended reading. Detection risk: LOW.
+                                <strong style="color: #10b981;">Kai:</strong> <em>*CHK-CHK*</em> Recommended reading. Detection risk: LOW.
                             </div>
                             <div class="nav-title">{{ $nextPage.Title }}</div>
                         </a>
@@ -133,7 +137,7 @@
                         <div class="nav-label">Next Episode</div>
                         <a href="{{ $nextPage.Permalink }}" class="nav-link">
                             <div class="nav-character-note" style="border-left-color: #10b981;">
-                                <strong style="color: #10b981;">Kai:</strong> BEEP! Next in sequence.
+                                <strong style="color: #10b981;">Kai:</strong> <em>*WHIRR*</em> Next in sequence.
                             </div>
                             <div class="nav-title">{{ $nextPage.Title }}</div>
                         </a>

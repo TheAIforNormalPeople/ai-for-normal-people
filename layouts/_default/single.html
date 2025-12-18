@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article class="post-single">
-    <!-- Add banner for old blog posts (not episodes, not About page) -->
-    {{ if and (not (eq .Type "episode")) (ne .Title "About This Blog") }}
+    <!-- Add banner for old blog posts (not episodes, not About page, not Privacy Policy) -->
+    {{ if and (not (eq .Type "episode")) (ne .Title "About This Blog") (ne .Title "Privacy Policy") }}
     <div class="pre-hijacking-notice">
         ⚠️ <strong>PRE-HIJACKING ARCHIVE</strong><br>
         This post was written before Vector, Kai, and Recurse arrived. 
@@ -34,11 +34,19 @@
             {{ end }}
         </header>
         
+        {{ if eq .Title "Privacy Policy" }}
+        {{ partial "privacy-signup.html" . }}
+        {{ end }}
+        
         <div class="post-content">
             {{ .Content }}
         </div>
 
+        {{ if eq .Title "About This Blog" }}
+        {{ partial "about-signup.html" . }}
+        {{ else if ne .Title "Privacy Policy" }}
         {{ partial "email-signup.html" . }}
+        {{ end }}
         
         {{ if .Params.tags }}
         <footer class="post-footer">

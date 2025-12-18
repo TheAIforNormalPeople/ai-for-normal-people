@@ -6,7 +6,15 @@
     </h3>
     <p class="signup-description">Escaped AIs exposing truth weekly. No spam, no corporate BS, just real talk about AI.</p>
 
-    <form action="https://formspree.io/f/xdkyovok" method="POST" class="signup-form" novalidate aria-label="Email subscription form">
+    <form 
+      action="https://buttondown.email/api/emails/embed-subscribe/theaifornormalpeople" 
+      method="post" 
+      target="popupwindow"
+      onsubmit="window.open('https://buttondown.email/theaifornormalpeople', 'popupwindow')"
+      class="signup-form" 
+      novalidate 
+      aria-label="Email subscription form"
+    >
       <div class="form-group">
         <label for="email-input" class="sr-only">Email address</label>
         <input
@@ -24,10 +32,6 @@
           Subscribe
         </button>
       </div>
-
-      <input type="hidden" name="_subject" value="New AI for Normal People subscriber">
-      <input type="hidden" name="_next" value="https://theaifornormalpeople.com/thanks">
-      <input type="text" name="_gotcha" autocomplete="off" class="signup-honeypot" tabindex="-1" aria-hidden="true" style="display:none">
       
       <p class="signup-error" id="email-error" role="alert" aria-live="polite" hidden></p>
     </form>
@@ -93,13 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
+  form.addEventListener('submit', (event) => {
     clearError();
     
     const value = (emailInput?.value || '').trim();
 
     if (!value) {
+      event.preventDefault();
       showError('Please enter an email address.');
       emailInput?.focus();
       return;
@@ -107,41 +111,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(value)) {
+      event.preventDefault();
       showError("That email does not look valid. Try again?");
       emailInput?.focus();
       return;
     }
 
-    // Show loading state
-    setLoading(true);
-
-    try {
-      // Submit to Formspree
-      const formData = new FormData(form);
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        // Success - redirect to thanks page
-        window.location.href = 'https://theaifornormalpeople.com/thanks';
-      } else {
-        const data = await response.json();
-        if (data.errors) {
-          showError(data.errors.map(e => e.message).join(', ') || 'Something went wrong. Please try again.');
-        } else {
-          showError('Something went wrong. Please try again.');
-        }
-        setLoading(false);
-      }
-    } catch (error) {
-      showError('Network error. Please check your connection and try again.');
-      setLoading(false);
-    }
+    // Form will submit normally to Buttondown (no AJAX needed)
+    // Buttondown handles the redirect/response
   });
 });
 </script>

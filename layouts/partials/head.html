@@ -61,16 +61,14 @@
 <!-- Styles -->
 <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v={{ now.Unix }}">
 <link rel="stylesheet" href="{{ "css/characters.css" | relURL }}?v={{ now.Unix }}">
+<link rel="stylesheet" href="{{ "css/light-mode-complete.css" | relURL }}?v={{ now.Unix }}">
 
 <!-- Dark mode script (inline to prevent flash) -->
 <script>
-    // Check for saved theme preference or default to system preference
-    const theme = localStorage.getItem('theme') || 
-                  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    
-    if (theme === 'dark') {
-        document.documentElement.classList.add('dark-mode');
-    }
+    // Always use dark mode - no theme toggle
+    document.documentElement.classList.add('dark-mode');
+    // Clear any old light mode preference
+    localStorage.removeItem('theme');
 </script>
 
 <!-- Google Analytics -->

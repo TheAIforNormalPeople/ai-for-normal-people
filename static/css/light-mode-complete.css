@@ -19,16 +19,14 @@ html:not(.dark-mode) {
 }
 
 /* ───────────────────────────────────────────────────────
-   PAGE BACKGROUNDS - All pages soft gray, NOT WHITE
+   PAGE BACKGROUNDS - All pages white, not blue-gray
    ─────────────────────────────────────────────────────── */
 
 html:not(.dark-mode) body,
-html:not(.dark-mode) html,
 html:not(.dark-mode) main,
 html:not(.dark-mode) #main-content,
-html:not(.dark-mode) .page-content,
-html:not(.dark-mode) .home-container {
-    background: #9ca3af !important;  /* Soft gray - NOT WHITE, much easier on eyes */
+html:not(.dark-mode) .page-content {
+    background: #9ca3af !important;  /* DARKER gray - much easier on eyes, NOT WHITE */
     color: #1a1a1a !important;
 }
 
@@ -37,14 +35,8 @@ html:not(.dark-mode) .container-narrow {
     background: transparent !important;  /* Let body background show through */
 }
 
-/* Hero section backgrounds - NOT WHITE */
-html:not(.dark-mode) .hero-section,
-html:not(.dark-mode) .hero {
-    background: #9ca3af !important;  /* Soft gray - NOT WHITE */
-}
-
-html:not(.dark-mode) .recent-posts-section {
-    background: transparent !important;  /* Let body background show */
+html:not(.dark-mode) .home-container {
+    background: #9ca3af !important;  /* DARKER gray */
 }
 
 /* ───────────────────────────────────────────────────────
@@ -302,24 +294,18 @@ html:not(.dark-mode) .page-description {
 }
 
 /* ───────────────────────────────────────────────────────
-   HERO SECTION - Ensure no white backgrounds
+   HERO SECTION
    ─────────────────────────────────────────────────────── */
 
 html:not(.dark-mode) .hero,
-html:not(.dark-mode) .hero-section,
-html:not(.dark-mode) .hero-glitch-wrapper {
-    background: transparent !important;  /* Let body background show through */
+html:not(.dark-mode) .hero-section {
+    background: #9ca3af !important;  /* DARKER gray - much easier on eyes */
     border-bottom: 1px solid #6b7280 !important;
 }
 
 html:not(.dark-mode) .hero-title,
 html:not(.dark-mode) .hero-subtitle {
     color: #1a1a1a !important;
-}
-
-/* Hero section before pseudo-element - make it subtle */
-html:not(.dark-mode) .hero-section::before {
-    background: transparent !important;  /* Remove any white overlay */
 }
 
 /* ───────────────────────────────────────────────────────
@@ -444,42 +430,5 @@ html:not(.dark-mode) .pagination .active a {
     background: #3b82f6 !important;
     color: #ffffff !important;
     border-color: #3b82f6 !important;
-}
-
-/* ───────────────────────────────────────────────────────
-   COMPREHENSIVE WHITE BACKGROUND REMOVAL
-   Ensure NO white backgrounds anywhere on the site
-   ─────────────────────────────────────────────────────── */
-
-/* Ensure body, html, and main always have gray background - NO WHITE */
-html:not(.dark-mode) html {
-    background-color: #9ca3af !important;
-}
-
-html:not(.dark-mode) body {
-    background-color: #9ca3af !important;  /* Soft gray background - NOT WHITE */
-}
-
-html:not(.dark-mode) main,
-html:not(.dark-mode) #main-content {
-    background-color: #9ca3af !important;  /* Soft gray background - NOT WHITE */
-}
-
-/* Override for specific elements that need their own backgrounds */
-html:not(.dark-mode) .post-card,
-html:not(.dark-mode) article[class*="card"],
-html:not(.dark-mode) .character-card,
-html:not(.dark-mode) .character-sidebar,
-html:not(.dark-mode) .site-header,
-html:not(.dark-mode) .site-footer,
-html:not(.dark-mode) .email-signup-box {
-    background-color: #f3f4f6 !important;  /* Light gray, NOT white */
-}
-
-/* Ensure containers don't have white backgrounds */
-html:not(.dark-mode) .container,
-html:not(.dark-mode) .container-narrow,
-html:not(.dark-mode) .home-container {
-    background-color: transparent !important;  /* Let body background show */
 }
 

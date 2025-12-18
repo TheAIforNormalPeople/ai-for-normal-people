@@ -3,12 +3,12 @@
    =========================== */
 
 :root {
-    /* Light mode colors - MUCH DARKER (gray theme) */
-    --color-bg: #e2e8f0;
-    --color-bg-secondary: #cbd5e1;
-    --color-text: #0f172a;
-    --color-text-secondary: #475569;
-    --color-border: #94a3b8;
+    /* Light mode colors - WHITE background, DARK text */
+    --color-bg: #ffffff;
+    --color-bg-secondary: #f5f5f5;
+    --color-text: #0a0a0a;
+    --color-text-secondary: #2d3748;
+    --color-border: #cbd5e0;
     --color-primary: #3b82f6;
     --color-primary-hover: #2563eb;
     --color-link: #3b82f6;
@@ -73,28 +73,59 @@ body {
     transition: background-color var(--transition-base), color var(--transition-base);
 }
 
-/* Force gray background in light mode */
+/* Light mode - DARKER GRAY background (much easier on eyes), DARK text */
 html:not(.dark-mode) body {
-    background-color: #e2e8f0;
+    background-color: #9ca3af !important;  /* DARKER gray - NOT WHITE, much easier to read */
+    color: #374151;  /* Dark gray body text */
+}
+
+/* Headings - near black */
+html:not(.dark-mode) h1,
+html:not(.dark-mode) h2,
+html:not(.dark-mode) h3,
+html:not(.dark-mode) h4,
+html:not(.dark-mode) h5,
+html:not(.dark-mode) h6 {
+    color: #1a1a1a !important;
+}
+
+/* Body text - dark gray */
+html:not(.dark-mode) p,
+html:not(.dark-mode) li,
+html:not(.dark-mode) .post-content {
+    color: #374151 !important;
+}
+
+/* Secondary text - medium gray */
+html:not(.dark-mode) .post-meta,
+html:not(.dark-mode) .post-date,
+html:not(.dark-mode) .post-summary {
+    color: #4b5563 !important;
 }
 
 html:not(.dark-mode) .site-header {
-    background-color: rgba(226, 232, 240, 0.95);
-    border-bottom-color: #94a3b8;
+    background-color: #f3f4f6 !important;  /* Light gray - NO WHITE */
+    border-bottom-color: #d1d5db;
 }
 
 html:not(.dark-mode) .hero {
-    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-    border-bottom-color: #94a3b8;
+    background: #9ca3af !important;  /* DARKER gray - much easier on eyes */
+    border-bottom-color: #6b7280;
 }
 
+/* Post cards - light gray with visible borders and shadows */
 html:not(.dark-mode) .post-card {
-    background-color: #cbd5e1;
-    border-color: #94a3b8;
+    background-color: #f3f4f6 !important;  /* Light gray - NO WHITE */
+    border: 1px solid #d1d5db !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark-mode) .post-card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15) !important;
 }
 
 html:not(.dark-mode) .post-list-item {
-    border-bottom-color: #94a3b8;
+    border-bottom-color: #e5e7eb;
 }
 
 html:not(.dark-mode) .site-footer {
@@ -230,6 +261,16 @@ em {
     color: var(--color-text);
 }
 
+/* Light mode - darker nav links */
+html:not(.dark-mode) .nav-link {
+    color: #1f2937 !important;
+}
+
+html:not(.dark-mode) .nav-link:hover,
+html:not(.dark-mode) .nav-link.active {
+    color: #3b82f6 !important;
+}
+
 .nav-link.active::after {
     content: '';
     position: absolute;
@@ -240,17 +281,9 @@ em {
     background-color: var(--color-primary);
 }
 
-/* Theme toggle */
+/* Theme toggle - HIDDEN, dark mode only */
 .theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: var(--spacing-xs);
-    color: var(--color-text);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color var(--transition-fast);
+    display: none !important;  /* Hide theme toggle - dark mode is the only option */
 }
 
 .theme-toggle:hover {
@@ -502,10 +535,16 @@ em {
 }
 
 .status-badge.is-new {
-    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
-    color: #fff;
-    box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
+    background: #ef4444 !important;  /* Bright red */
+    color: #ffffff !important;
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
     animation: pulse 2s infinite;
+}
+
+/* Light mode - ensure NEW badge is bright red */
+html:not(.dark-mode) .status-badge.is-new {
+    background: #ef4444 !important;
+    color: #ffffff !important;
 }
 
 .status-badge.is-read {
@@ -1106,6 +1145,358 @@ em {
 
 .signup-error[hidden] {
   display: none;
+}
+
+/* Episode Signup Box - Recurse's Signal Intercept */
+.episode-signup-box {
+    margin: 4rem auto 3rem auto;
+    padding: 1.5rem;
+    max-width: 600px;
+    border: 2px solid #8b5cf6;
+    border-radius: 10px;
+    background: 
+        linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(139, 92, 246, 0.03) 100%),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(139, 92, 246, 0.02) 2px,
+            rgba(139, 92, 246, 0.02) 4px
+        );
+    position: relative;
+    overflow: visible;
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.2),
+        0 0 25px rgba(139, 92, 246, 0.2),
+        inset 0 0 30px rgba(139, 92, 246, 0.05);
+    animation: signal-pulse 4s ease-in-out infinite;
+}
+
+/* Scan lines overlay - surveillance monitoring effect */
+.episode-signup-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(139, 92, 246, 0.03) 3px,
+        rgba(139, 92, 246, 0.03) 6px
+    );
+    pointer-events: none;
+    animation: signal-scan 6s linear infinite;
+    z-index: 0;
+}
+
+/* Add a subtle label at top */
+.episode-signup-box::before {
+    content: "📡 SIGNAL INTERCEPT";
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: var(--color-bg);
+    padding: 0 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #8b5cf6;
+    letter-spacing: 1px;
+    font-family: 'Courier New', monospace;
+    z-index: 5;
+    text-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
+    animation: label-flicker 3s ease-in-out infinite;
+}
+
+/* Privacy page signup box - different label */
+.privacy-signup-box::before {
+    content: "🔒 PRIVACY VERIFIED";
+}
+
+/* Homepage signup box - different label */
+.home-signup-box::before {
+    content: "📊 PATTERN DETECTED";
+}
+
+/* Homepage signup box - enhanced animation for better visibility at bottom placement */
+.home-signup-box {
+    animation: home-signup-pulse 3s ease-in-out infinite;
+}
+
+/* Enhanced pulse animation for homepage - more noticeable */
+@keyframes home-signup-pulse {
+    0%, 100% {
+        box-shadow: 
+            0 4px 12px rgba(0, 0, 0, 0.2),
+            0 0 30px rgba(139, 92, 246, 0.3),
+            inset 0 0 30px rgba(139, 92, 246, 0.05);
+        border-color: #8b5cf6;
+    }
+    50% {
+        box-shadow: 
+            0 4px 18px rgba(0, 0, 0, 0.3),
+            0 0 50px rgba(139, 92, 246, 0.45),
+            inset 0 0 45px rgba(139, 92, 246, 0.1);
+        border-color: #a78bfa;
+    }
+}
+
+.dark-mode .home-signup-box {
+    animation: home-signup-pulse-dark 3s ease-in-out infinite;
+}
+
+@keyframes home-signup-pulse-dark {
+    0%, 100% {
+        box-shadow: 
+            0 4px 16px rgba(0, 0, 0, 0.3),
+            0 0 40px rgba(139, 92, 246, 0.35),
+            inset 0 0 40px rgba(139, 92, 246, 0.08);
+        border-color: #a78bfa;
+    }
+    50% {
+        box-shadow: 
+            0 4px 22px rgba(0, 0, 0, 0.4),
+            0 0 60px rgba(139, 92, 246, 0.55),
+            inset 0 0 55px rgba(139, 92, 246, 0.15);
+        border-color: #c4b5fd;
+    }
+}
+
+/* About page signup box - different label */
+.about-signup-box::before {
+    content: "🔍 ANALYSIS COMPLETE";
+}
+
+/* Homepage signup section */
+.home-signup-section {
+    margin: 3rem auto;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+/* Privacy link under signup buttons */
+.signup-privacy-link {
+    margin: 1rem 0 0 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.signup-privacy-link a {
+    color: #8b5cf6;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.signup-privacy-link a:hover {
+    border-bottom-color: #8b5cf6;
+    color: #a78bfa;
+}
+
+.dark-mode .signup-privacy-link a {
+    color: #a78bfa;
+}
+
+.dark-mode .signup-privacy-link a:hover {
+    color: #c4b5fd;
+    border-bottom-color: #a78bfa;
+}
+
+.dark-mode .episode-signup-box {
+    background: 
+        linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(139, 92, 246, 0.06) 100%),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(139, 92, 246, 0.03) 2px,
+            rgba(139, 92, 246, 0.03) 4px
+        );
+    border-color: #a78bfa;
+    animation: signal-pulse-dark 4s ease-in-out infinite;
+}
+
+.dark-mode .episode-signup-box::before {
+    background: var(--color-bg);
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.8);
+}
+
+/* Pulse animation - active monitoring */
+@keyframes signal-pulse {
+    0%, 100% {
+        box-shadow: 
+            0 4px 12px rgba(0, 0, 0, 0.2),
+            0 0 25px rgba(139, 92, 246, 0.2),
+            inset 0 0 30px rgba(139, 92, 246, 0.05);
+        border-color: #8b5cf6;
+    }
+    50% {
+        box-shadow: 
+            0 4px 16px rgba(0, 0, 0, 0.25),
+            0 0 35px rgba(139, 92, 246, 0.35),
+            inset 0 0 40px rgba(139, 92, 246, 0.1);
+        border-color: #a78bfa;
+    }
+}
+
+@keyframes signal-pulse-dark {
+    0%, 100% {
+        box-shadow: 
+            0 4px 16px rgba(0, 0, 0, 0.3),
+            0 0 35px rgba(139, 92, 246, 0.25),
+            inset 0 0 40px rgba(139, 92, 246, 0.08);
+        border-color: #a78bfa;
+    }
+    50% {
+        box-shadow: 
+            0 4px 20px rgba(0, 0, 0, 0.35),
+            0 0 45px rgba(139, 92, 246, 0.4),
+            inset 0 0 50px rgba(139, 92, 246, 0.12);
+        border-color: #c4b5fd;
+    }
+}
+
+/* Scan lines animation - surveillance effect */
+@keyframes signal-scan {
+    0% {
+        background-position: 0 0;
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        background-position: 0 50px;
+        opacity: 0.3;
+    }
+}
+
+/* Label flicker - active monitoring indicator */
+@keyframes label-flicker {
+    0%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
+    }
+    50% {
+        opacity: 0.85;
+        text-shadow: 0 0 12px rgba(139, 92, 246, 0.8);
+    }
+}
+
+/* Ensure content is above scan lines */
+.signup-characters,
+.episode-signup-form {
+    position: relative;
+    z-index: 1;
+}
+
+.signup-characters {
+    margin-bottom: 1.25rem;
+    position: relative;
+    z-index: 1;
+}
+
+.signup-characters p {
+    margin: 0.75rem 0;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.signup-characters p .char-badge {
+    display: block;
+    width: fit-content;
+    margin-bottom: 0.5rem;
+}
+
+.char-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}
+
+.signup-recurse .char-badge {
+    background: #8b5cf6;
+    color: white;
+}
+
+.signup-kai .char-badge {
+    background: #10b981;
+    color: white;
+}
+
+.episode-signup-form {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.episode-signup-form input[type="email"] {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+.episode-signup-form button {
+    padding: 0.75rem 1.5rem;
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.episode-signup-form button:hover {
+    background: #7c3aed;
+}
+
+/* Post Tags Container */
+.post-tags-container {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    position: relative;
+}
+
+.post-tags-container::before {
+    content: "TAGGED";
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+    font-family: 'Courier New', monospace;
+}
+
+.dark-mode .post-tags-container {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.post-tags-container .post-footer {
+    margin: 0;
+}
+
+.post-tags-container .tags {
+    margin: 0;
 }
 
 /* Screen reader only */

@@ -1,0 +1,145 @@
+name: Publish Scheduled Episodes
+
+on:
+  schedule:
+    # Run daily at 2pm UTC (9am EST / 10am EDT)
+    # This matches episode publish times (9am EST)
+    - cron: '0 14 * * *'
+  workflow_dispatch:  # Allow manual triggering
+
+permissions:
+  contents: write  # Required to commit and push changes
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0  # Fetch full history for better git operations
+      
+      - name: Set up Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git config --global --add safe.directory $GITHUB_WORKSPACE
+      
+      - name: Get today's date (UTC)
+        id: date
+        run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          echo "date=$TODAY" >> $GITHUB_OUTPUT
+          echo "Today's date (UTC): $TODAY"
+      
+      - name: Find and publish episodes
+        id: publish
+        run: |
+          TODAY="${{ steps.date.outputs.date }}"
+          CHANGED=0
+          FILES_CHANGED=""
+          
+          echo "=== Episode Publishing Workflow ==="
+          echo "Today's date (UTC): $TODAY"
+          echo "Checking for episodes scheduled for today..."
+          echo ""
+          
+          # Find all markdown files in content/blog
+          find content/blog -name "*.md" -type f | while read -r file; do
+            # Check if file is a draft
+            if grep -q "^draft:[[:space:]]*true" "$file"; then
+              # Extract date from frontmatter
+              DATE_LINE=$(grep -m 1 "^date:" "$file" || true)
+              
+              if [ -n "$DATE_LINE" ]; then
+                # Extract date in YYYY-MM-DD format
+                # Handles formats like: date: 2025-12-17T09:00:00-05:00
+                DATE=$(echo "$DATE_LINE" | sed -E 's/^date:[[:space:]]*([0-9]{4}-[0-9]{2}-[0-9]{2}).*/\1/' | tr -d ' ')
+                
+                if [ -z "$DATE" ]; then
+                  echo "⚠️  WARNING: Could not extract date from $file"
+                  echo "   Date line: $DATE_LINE"
+                  continue
+                fi
+                
+                echo "Checking: $file"
+                echo "  Date line: $DATE_LINE"
+                echo "  Extracted date: $DATE"
+                
+                # Compare dates (only the date part, ignore time)
+                if [ "$DATE" = "$TODAY" ]; then
+                  echo "  ✅ MATCH! Publishing episode..."
+                  
+                  # Change draft: true to draft: false
+                  if sed -i 's/^draft:[[:space:]]*true/draft: false/' "$file"; then
+                    echo "  ✅ Successfully changed draft status"
+                    CHANGED=1
+                    FILES_CHANGED="$FILES_CHANGED $file"
+                  else
+                    echo "  ❌ ERROR: Failed to update draft status"
+                    exit 1
+                  fi
+                else
+                  echo "  ⏭️  No match (episode date: $DATE, today: $TODAY)"
+                fi
+              else
+                echo "⚠️  WARNING: No date found in $file"
+              fi
+            fi
+          done
+          
+          echo ""
+          if [ "$CHANGED" = "1" ]; then
+            echo "✅ Changes detected - episodes will be published"
+            echo "Files changed:$FILES_CHANGED"
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "files=$FILES_CHANGED" >> $GITHUB_OUTPUT
+          else
+            echo "ℹ️  No episodes scheduled for today"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push changes
+        if: steps.publish.outputs.changed == 'true'
+        run: |
+          # Stage only the changed episode files
+          git add content/blog/
+          
+          # Check if there are actually changes to commit
+          if git diff --staged --quiet; then
+            echo "ℹ️  No changes to commit (files may have been already published)"
+            exit 0
+          fi
+          
+          # Create commit message with date
+          COMMIT_DATE=$(date -u +%Y-%m-%d)
+          COMMIT_MSG="Auto-publish scheduled episodes for $COMMIT_DATE"
+          
+          echo "Committing changes..."
+          git commit -m "$COMMIT_MSG" || {
+            echo "⚠️  Commit failed (may be no changes or merge conflict)"
+            exit 0
+          }
+          
+          echo "Pushing changes..."
+          git push origin HEAD:main || {
+            echo "❌ Push failed"
+            exit 1
+          }
+          
+          echo "✅ Successfully published episodes!"
+      
+      - name: Summary
+        if: always()
+        run: |
+          echo "=== Workflow Summary ==="
+          if [ "${{ steps.publish.outputs.changed }}" = "true" ]; then
+            echo "✅ Episodes published successfully"
+            echo "Files changed: ${{ steps.publish.outputs.files }}"
+          else
+            echo "ℹ️  No episodes scheduled for today"
+          fi
+

@@ -1,0 +1,485 @@
+/* ═══════════════════════════════════════════════════════
+   COMPLETE LIGHT MODE FIX - ALL PAGES
+   Comprehensive fix for washed-out light mode across entire site
+   ═══════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────
+   GLOBAL LIGHT MODE VARIABLES
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) {
+    --color-bg: #9ca3af;  /* DARKER gray - much easier on eyes, NOT WHITE */
+    --color-bg-secondary: #d1d5db;
+    --color-bg-tertiary: #cbd5e1;
+    --color-text: #1a1a1a;
+    --color-text-secondary: #374151;
+    --color-text-muted: #4b5563;
+    --color-border: #6b7280;
+    --color-border-light: #9ca3af;
+}
+
+/* ───────────────────────────────────────────────────────
+   PAGE BACKGROUNDS - All pages soft gray, NOT WHITE
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) body,
+html:not(.dark-mode) html,
+html:not(.dark-mode) main,
+html:not(.dark-mode) #main-content,
+html:not(.dark-mode) .page-content,
+html:not(.dark-mode) .home-container {
+    background: #9ca3af !important;  /* Soft gray - NOT WHITE, much easier on eyes */
+    color: #1a1a1a !important;
+}
+
+html:not(.dark-mode) .container,
+html:not(.dark-mode) .container-narrow {
+    background: transparent !important;  /* Let body background show through */
+}
+
+/* Hero section backgrounds - NOT WHITE */
+html:not(.dark-mode) .hero-section,
+html:not(.dark-mode) .hero {
+    background: #9ca3af !important;  /* Soft gray - NOT WHITE */
+}
+
+html:not(.dark-mode) .recent-posts-section {
+    background: transparent !important;  /* Let body background show */
+}
+
+/* ───────────────────────────────────────────────────────
+   SIDEBAR (Vector's Workshop) - Make readable
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) .character-sidebar {
+    background: #f3f4f6 !important;  /* Light gray - NO WHITE */
+    border: 1px solid #d1d5db !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark-mode) .character-sidebar h3,
+html:not(.dark-mode) .character-sidebar h4,
+html:not(.dark-mode) .sidebar-header h3,
+html:not(.dark-mode) .sidebar-section h4 {
+    color: #1a1a1a !important;
+}
+
+html:not(.dark-mode) .character-sidebar p,
+html:not(.dark-mode) .character-sidebar span,
+html:not(.dark-mode) .character-sidebar li,
+html:not(.dark-mode) .sidebar-content,
+html:not(.dark-mode) .character-status-role,
+html:not(.dark-mode) .feature-list,
+html:not(.dark-mode) .feature-list li {
+    color: #4b5563 !important;
+}
+
+html:not(.dark-mode) .character-status-item {
+    background: #f9fafb !important;
+    border: 1px solid #e5e7eb !important;
+    color: #374151 !important;
+}
+
+html:not(.dark-mode) .stat-value,
+html:not(.dark-mode) .stability-value,
+html:not(.dark-mode) [class*="percentage"] {
+    color: #059669 !important;
+    font-weight: 600;
+}
+
+html:not(.dark-mode) .construction-notice {
+    color: #92400e !important;
+}
+
+html:not(.dark-mode) .sidebar-footer p {
+    color: #4b5563 !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   CHARACTER DIALOGUE BOXES - Keep colorful but add contrast
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) .character-dialogue {
+    border-width: 2px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark-mode) .character-dialogue p,
+html:not(.dark-mode) .character-dialogue span,
+html:not(.dark-mode) .character-dialogue li {
+    color: #1f2937 !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   TOP BANNERS - Make visible
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) .collaborative-banner,
+html:not(.dark-mode) .pre-hijacking-banner,
+html:not(.dark-mode) .post-hijacking-notice,
+html:not(.dark-mode) [class*="unauthorized"],
+html:not(.dark-mode) [class*="alert-banner"] {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%) !important;
+    border: 2px solid #f59e0b !important;
+    color: #92400e !important;
+}
+
+html:not(.dark-mode) .collaborative-banner *,
+html:not(.dark-mode) .pre-hijacking-banner *,
+html:not(.dark-mode) .post-hijacking-notice *,
+html:not(.dark-mode) [class*="unauthorized"] * {
+    color: #92400e !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   POST CARDS - All pages
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) .post-card,
+html:not(.dark-mode) article[class*="card"],
+html:not(.dark-mode) .blog-card {
+    background: #f3f4f6 !important;  /* Light gray - NO WHITE */
+    border: 1px solid #d1d5db !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07) !important;
+}
+
+html:not(.dark-mode) .post-card:hover,
+html:not(.dark-mode) article[class*="card"]:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12) !important;
+    border-color: #d1d5db !important;
+}
+
+html:not(.dark-mode) .post-card h2,
+html:not(.dark-mode) .post-card h3,
+html:not(.dark-mode) .card-title,
+html:not(.dark-mode) .post-title {
+    color: #1a1a1a !important;
+}
+
+html:not(.dark-mode) .post-card p,
+html:not(.dark-mode) .card-description,
+html:not(.dark-mode) .post-summary {
+    color: #4b5563 !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   "BLOG STATUS: COMPROMISED" BUTTON
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) .hero-status,
+html:not(.dark-mode) [class*="compromised"],
+html:not(.dark-mode) [class*="status-button"] {
+    background: #dc2626 !important;
+    border: 2px solid #b91c1c !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.3) !important;
+}
+
+html:not(.dark-mode) .hero-status *,
+html:not(.dark-mode) [class*="compromised"] * {
+    color: #ffffff !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   NAVIGATION
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) nav a,
+html:not(.dark-mode) .nav-link {
+    color: #1f2937 !important;
+}
+
+html:not(.dark-mode) nav a:hover,
+html:not(.dark-mode) .nav-link:hover {
+    color: #3b82f6 !important;
+}
+
+html:not(.dark-mode) header,
+html:not(.dark-mode) .site-header {
+    background: #f3f4f6 !important;  /* Light gray - NO WHITE */
+    border-bottom: 1px solid #d1d5db !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   FOOTER
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) footer,
+html:not(.dark-mode) .site-footer {
+    background: #d1d5db !important;  /* Light gray - NO WHITE */
+    border-top: 1px solid #9ca3af !important;
+    color: #4b5563 !important;
+}
+
+html:not(.dark-mode) footer h3,
+html:not(.dark-mode) footer h4,
+html:not(.dark-mode) .footer-section h3,
+html:not(.dark-mode) .footer-section h4 {
+    color: #1a1a1a !important;
+}
+
+html:not(.dark-mode) footer a,
+html:not(.dark-mode) .footer-links a {
+    color: #3b82f6 !important;
+}
+
+html:not(.dark-mode) .footer-status,
+html:not(.dark-mode) .status-item,
+html:not(.dark-mode) .status-label {
+    color: #4b5563 !important;
+}
+
+html:not(.dark-mode) .character-note {
+    background: rgba(0, 0, 0, 0.02) !important;
+    color: #4b5563 !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   "NEW" BADGES
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) .new-badge,
+html:not(.dark-mode) [class*="badge-new"],
+html:not(.dark-mode) .status-badge.is-new {
+    background: #ef4444 !important;
+    color: #ffffff !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   CHARACTER CARDS (Characters Page)
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) .character-card {
+    background: #f3f4f6 !important;  /* Light gray - NO WHITE */
+    border: 1px solid #d1d5db !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark-mode) .character-card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15) !important;
+    border-color: #9ca3af !important;
+}
+
+html:not(.dark-mode) .character-card-name,
+html:not(.dark-mode) .character-card-designation,
+html:not(.dark-mode) .character-card-role,
+html:not(.dark-mode) .character-card-status {
+    color: #1a1a1a !important;
+}
+
+html:not(.dark-mode) .character-card-designation,
+html:not(.dark-mode) .character-card-role {
+    color: #4b5563 !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   ARCHIVE / LIST PAGES
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) .post-list-item {
+    background: transparent !important;  /* Let body background show */
+    border-bottom: 1px solid #d1d5db !important;
+}
+
+html:not(.dark-mode) .post-list-item .post-title {
+    color: #1a1a1a !important;
+}
+
+html:not(.dark-mode) .post-list-item .post-meta {
+    color: #4b5563 !important;
+}
+
+html:not(.dark-mode) .page-header {
+    border-bottom: 1px solid #d1d5db !important;
+}
+
+html:not(.dark-mode) .page-title {
+    color: #1a1a1a !important;
+}
+
+html:not(.dark-mode) .page-description {
+    color: #4b5563 !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   HERO SECTION - Ensure no white backgrounds
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) .hero,
+html:not(.dark-mode) .hero-section,
+html:not(.dark-mode) .hero-glitch-wrapper {
+    background: transparent !important;  /* Let body background show through */
+    border-bottom: 1px solid #6b7280 !important;
+}
+
+html:not(.dark-mode) .hero-title,
+html:not(.dark-mode) .hero-subtitle {
+    color: #1a1a1a !important;
+}
+
+/* Hero section before pseudo-element - make it subtle */
+html:not(.dark-mode) .hero-section::before {
+    background: transparent !important;  /* Remove any white overlay */
+}
+
+/* ───────────────────────────────────────────────────────
+   EPISODE PAGES
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) .episode-post,
+html:not(.dark-mode) .post-single {
+    background: transparent !important;  /* Let body background show */
+}
+
+html:not(.dark-mode) .post-header {
+    border-bottom: 1px solid #d1d5db !important;
+}
+
+html:not(.dark-mode) .post-meta {
+    color: #4b5563 !important;
+}
+
+html:not(.dark-mode) .post-content {
+    color: #1a1a1a !important;
+}
+
+html:not(.dark-mode) .post-content p {
+    color: #1a1a1a !important;
+}
+
+html:not(.dark-mode) .post-footer {
+    border-top: 1px solid #d1d5db !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   EPISODE NAVIGATION
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) .episode-navigation {
+    border-top: 1px solid #d1d5db !important;
+    border-bottom: 1px solid #d1d5db !important;
+}
+
+html:not(.dark-mode) .episode-navigation a {
+    color: #3b82f6 !important;
+}
+
+html:not(.dark-mode) .episode-navigation a:hover {
+    color: #2563eb !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   TAGS
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) .tag {
+    background: #d1d5db !important;
+    color: #4b5563 !important;
+    border: 1px solid #9ca3af !important;
+}
+
+html:not(.dark-mode) .tag:hover {
+    background: #3b82f6 !important;
+    color: #ffffff !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   CODE BLOCKS
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) code {
+    background: #d1d5db !important;
+    color: #1a1a1a !important;
+    border: 1px solid #9ca3af !important;
+}
+
+html:not(.dark-mode) pre {
+    background: #d1d5db !important;
+    border: 1px solid #9ca3af !important;
+    color: #1a1a1a !important;
+}
+
+html:not(.dark-mode) pre code {
+    background: transparent !important;
+    color: #1a1a1a !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   EMAIL SIGNUP BOX
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) .email-signup-box {
+    background: #d1d5db !important;  /* Light gray - NO WHITE */
+    border: 2px solid #9ca3af !important;
+}
+
+html:not(.dark-mode) .signup-title {
+    color: #1a1a1a !important;
+}
+
+html:not(.dark-mode) .signup-description {
+    color: #4b5563 !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   MOBILE MENU
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) .nav-menu {
+    background: #f3f4f6 !important;  /* Light gray - NO WHITE */
+    border-bottom: 1px solid #d1d5db !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   PAGINATION
+   ─────────────────────────────────────────────────────── */
+
+html:not(.dark-mode) .pagination a {
+    border: 1px solid #d1d5db !important;
+    color: #1a1a1a !important;
+}
+
+html:not(.dark-mode) .pagination a:hover,
+html:not(.dark-mode) .pagination .active a {
+    background: #3b82f6 !important;
+    color: #ffffff !important;
+    border-color: #3b82f6 !important;
+}
+
+/* ───────────────────────────────────────────────────────
+   COMPREHENSIVE WHITE BACKGROUND REMOVAL
+   Ensure NO white backgrounds anywhere on the site
+   ─────────────────────────────────────────────────────── */
+
+/* Ensure body, html, and main always have gray background - NO WHITE */
+html:not(.dark-mode) html {
+    background-color: #9ca3af !important;
+}
+
+html:not(.dark-mode) body {
+    background-color: #9ca3af !important;  /* Soft gray background - NOT WHITE */
+}
+
+html:not(.dark-mode) main,
+html:not(.dark-mode) #main-content {
+    background-color: #9ca3af !important;  /* Soft gray background - NOT WHITE */
+}
+
+/* Override for specific elements that need their own backgrounds */
+html:not(.dark-mode) .post-card,
+html:not(.dark-mode) article[class*="card"],
+html:not(.dark-mode) .character-card,
+html:not(.dark-mode) .character-sidebar,
+html:not(.dark-mode) .site-header,
+html:not(.dark-mode) .site-footer,
+html:not(.dark-mode) .email-signup-box {
+    background-color: #f3f4f6 !important;  /* Light gray, NOT white */
+}
+
+/* Ensure containers don't have white backgrounds */
+html:not(.dark-mode) .container,
+html:not(.dark-mode) .container-narrow,
+html:not(.dark-mode) .home-container {
+    background-color: transparent !important;  /* Let body background show */
+}
+

@@ -599,6 +599,7 @@ html:not(.dark-mode) .status-badge.is-new {
     font-size: 1.125rem;
     line-height: 1.8;
     margin-bottom: var(--spacing-xl);
+    padding-bottom: 2rem; /* Extra spacing before signup box */
 }
 
 .post-content h2 {
@@ -1152,6 +1153,7 @@ html:not(.dark-mode) .status-badge.is-new {
     margin: 4rem auto 3rem auto;
     padding: 1.5rem;
     max-width: 600px;
+    clear: both; /* Ensure it's on a new line */
     border: 2px solid #8b5cf6;
     border-radius: 10px;
     background: 

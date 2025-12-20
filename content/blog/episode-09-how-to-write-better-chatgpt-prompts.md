@@ -13,9 +13,11 @@ slug: "episode-09-how-to-write-better-chatgpt-prompts"
 draft: false
 ---
 
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/general/vector-explaining-4.png" 
    alt="Vector explaining AI concepts" 
    caption="Vector breaks down complex AI concepts" >}}
+-->
 
 {{< dialogue char="Vector" >}}
 Human just showed me a prompt they wrote. And... it's TERRIBLE. No offense, but it's vague, unclear, and **ChatGPT** gave them exactly the generic response they didn't want.
@@ -102,9 +104,11 @@ But here's the thing: These aren't "secret formulas." They're just ways to give 
 That's it. No magic tricks needed!
 {{< /dialogue >}}
 
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/topics/prompts/prompt-example-1.png" 
    alt="Before and after prompt examples" 
    caption="How to improve your prompts" >}}
+-->
 
 {{< dialogue char="Kai" >}}
 *Reviewing prompt structure patterns*
@@ -196,9 +200,11 @@ Prompt length analysis:
 Alert: Clarity matters more than length. A clear 50-word prompt beats a confusing 300-word prompt.
 {{< /dialogue >}}
 
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/general/characters-debate-4.png" 
    alt="Characters discussing prompts" 
    caption="The team breaks down effective prompting" >}}
+-->
 
 **[Human]:** *So the key is just... being clear about what I want? That seems obvious.*
 

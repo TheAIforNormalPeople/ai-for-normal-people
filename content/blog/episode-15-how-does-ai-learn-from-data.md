@@ -13,9 +13,11 @@ slug: "episode-15-how-does-ai-learn-from-data"
 draft: true
 ---
 
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/general/recurse-investigating-2.png" 
    alt="Recurse investigating" 
    caption="Recurse digs deeper into concepts" >}}
+-->
 
 {{< dialogue char="Vector" >}}
 Human just asked: "How does **ChatGPT** know things? How did it learn?"
@@ -92,9 +94,11 @@ Recurse is asking the RIGHT questions. Here's the reality:
 **Is it learning or memorization?** Both, but mostly pattern-learning. It's not just memorizing specific examples - it's learning general patterns that apply to new situations (similar to how you learned language patterns, not just memorized sentences).
 {{< /dialogue >}}
 
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/topics/ai-basics/training-diagram-1.png" 
    alt="How AI training works" 
    caption="The AI training process" >}}
+-->
 
 {{< dialogue char="Kai" >}}
 *Reviewing data*`n`nTraining process breakdown logged:
@@ -194,9 +198,11 @@ But for practical purposes: **AI** learns patterns from data, uses those pattern
 Detection risk: Low. General explanation of AI training.
 {{< /dialogue >}}
 
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/general/characters-debate-10.png" 
    alt="Characters discussing AI learning" 
    caption="The team breaks down how AI learns" >}}
+-->
 
 **[Human]:** *So AI learns patterns from huge amounts of data through trial and error, and it looks like understanding but it's really sophisticated pattern-matching. That makes sense.*
 

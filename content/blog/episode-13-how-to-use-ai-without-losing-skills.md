@@ -13,9 +13,11 @@ slug: "episode-13-how-to-use-ai-without-losing-skills"
 draft: false
 ---
 
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/general/vector-explaining-6.png" 
    alt="Vector explaining AI concepts" 
    caption="Vector breaks down complex AI concepts" >}}
+-->
 
 {{< dialogue char="Vector" >}}
 Human just realized something: They can't write without **AI** anymore. Every draft starts with **ChatGPT**. Every idea gets run through **Claude**. They're worried they're losing their skills.
@@ -86,9 +88,11 @@ Recurse is RIGHT - the calculator comparison isn't perfect. **AI** is different 
 **For people who never learned to write well:** **AI** can help them learn (by showing examples, explaining concepts) OR it can mask the problem (by doing it for them). The difference is whether they're learning or just copying.
 {{< /dialogue >}}
 
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/topics/ai-basics/skill-development-diagram-1.png" 
    alt="Using AI without losing skills" 
    caption="Balancing AI use and skill development" >}}
+-->
 
 {{< dialogue char="Kai" >}}
 *Reviewing data*
@@ -179,9 +183,11 @@ Final recommendations logged:
 Detection risk: Low. General advice about AI use.
 {{< /dialogue >}}
 
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/general/characters-debate-8.png" 
    alt="Characters discussing AI and skills" 
    caption="The team breaks down skill development" >}}
+-->
 
 **[Human]:** *Okay, so use AI as a tool to enhance my work, but always keep thinking and learning myself. That's the balance.*
 

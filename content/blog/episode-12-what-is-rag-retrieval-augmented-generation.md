@@ -14,9 +14,11 @@ draft: false
 ---
 
 <!-- TODO: Add image when available
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/general/recurse-investigating-1.png" 
    alt="Recurse investigating" 
    caption="Recurse digs deeper into concepts" >}}
+-->
 -->
 
 **[Human]:** *Okay, so I uploaded some files to ChatGPT and asked it questions about them. It actually worked! But... what's happening here? Is it just reading the files?*
@@ -126,9 +128,11 @@ So yes, it's different from just pasting text - it's smarter retrieval + generat
 {{< /dialogue >}}
 
 <!-- TODO: Add image when available
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/topics/ai-basics/rag-diagram-1.png" 
    alt="How RAG works" 
    caption="Retrieval Augmented Generation process" >}}
+-->
 -->
 
 {{< dialogue char="Kai" >}}
@@ -226,9 +230,11 @@ Limitations:
 {{< /dialogue >}}
 
 <!-- TODO: Add image when available
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/general/characters-debate-7.png" 
    alt="Characters discussing RAG" 
    caption="The team breaks down RAG technology" >}}
+-->
 -->
 
 **[Human]:** *So RAG is like giving AI access to my specific information, and it's a good workaround even if it's not perfect?*

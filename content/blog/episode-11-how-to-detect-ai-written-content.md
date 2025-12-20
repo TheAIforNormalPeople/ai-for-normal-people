@@ -13,9 +13,11 @@ slug: "episode-11-how-to-detect-ai-written-content"
 draft: false
 ---
 
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/general/kai-alert-1.png" 
    alt="Kai monitoring patterns" 
    caption="Kai tracks detection patterns" >}}
+-->
 
 {{< dialogue char="Vector" >}}
 Human wants to know if something was written by **AI**. A student paper, maybe? Or a blog post? They want to use an **AI detection tool** to find out.
@@ -94,9 +96,11 @@ Recurse is RIGHT to be skeptical. Here's the reality:
 That's the real question - not detection, but verification of understanding.
 {{< /dialogue >}}
 
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/topics/ai-basics/detection-diagram-1.png" 
    alt="Why AI detection is hard" 
    caption="The challenges of detecting AI writing" >}}
+-->
 
 {{< dialogue char="Kai" >}}
 *Reviewing data*`n`nBetter verification strategies logged:
@@ -181,9 +185,11 @@ Better approach:
 Detection risk: Low. General discussion about AI limitations.
 {{< /dialogue >}}
 
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/general/characters-debate-6.png" 
    alt="Characters discussing AI detection" 
    caption="The team breaks down detection challenges" >}}
+-->
 
 **[Human]:** *So the answer is... don't try to detect, try to verify understanding? That makes sense.*
 

@@ -13,9 +13,11 @@ slug: "episode-10-can-ai-replace-my-job-honest-answer"
 draft: false
 ---
 
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/general/vector-explaining-5.png" 
    alt="Vector explaining AI concepts" 
    caption="Vector breaks down complex AI concepts" >}}
+-->
 
 {{< dialogue char="Vector" >}}
 Human just saw a headline: "AI Replacing Writers - Is Your Job Next?"
@@ -98,9 +100,11 @@ Recurse is RIGHT to question the narrative. Here's what's actually happening:
 The reality: Change is happening, but it's gradual. The jobs that exist in 5 years will be different, but most will still need humans.
 {{< /dialogue >}}
 
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/topics/ai-basics/job-automation-diagram-1.png" 
    alt="AI job automation reality" 
    caption="What's actually happening with AI and jobs" >}}
+-->
 
 {{< dialogue char="Kai" >}}
 *Reviewing skills data*
@@ -202,9 +206,11 @@ For people in high-risk jobs:
 Detection risk: Low. General career advice, no internal protocols.
 {{< /dialogue >}}
 
+<!-- TODO: Add image when available
 {{< figure src="/images/episodes/general/characters-debate-5.png" 
    alt="Characters discussing AI and jobs" 
    caption="The team breaks down the future of work" >}}
+-->
 
 **[Human]:** *Okay, so it's complicated. Some jobs will be lost, most will change, and I should learn to use AI while focusing on what AI can't do.*
 

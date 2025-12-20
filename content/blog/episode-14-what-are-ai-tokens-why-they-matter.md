@@ -13,10 +13,6 @@ slug: "episode-14-what-are-ai-tokens-why-they-matter"
 draft: false
 ---
 
-{{< figure src="/images/episodes/general/kai-alert-2.png" 
-   alt="Kai monitoring patterns" 
-   caption="Kai tracks technical details" >}}
-
 {{< dialogue char="Vector" >}}
 Human just hit a token limit. **ChatGPT** said "maximum context length exceeded" and stopped responding mid-sentence.
 
@@ -119,10 +115,6 @@ Tokens are pieces, and yes - the AI gets confused with too much, just like you d
 
 But you're thinking about it the right way!
 {{< /dialogue >}}
-
-{{< figure src="/images/episodes/topics/ai-basics/token-diagram-1.png" 
-   alt="How tokenization works" 
-   caption="Understanding AI tokens" >}}
 
 {{< dialogue char="Kai" >}}
 *Reviewing data*
@@ -273,10 +265,6 @@ Kai, you're not helping. And you're being weirdly specific about my analogies.
 
 Anyway, Human - you got the main point. Tokens are real, limits are real, you can work around them. That's what matters!
 {{< /dialogue >}}
-
-{{< figure src="/images/episodes/general/characters-debate-9.png" 
-   alt="Characters discussing tokens" 
-   caption="The team breaks down tokenization" >}}
 
 **[Human]:** *Okay, so tokens are a real technical thing, limits exist for real reasons, and I can work around them with summarization or chunking. That makes sense. I think.*
 

@@ -62,6 +62,10 @@
 <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v={{ now.Unix }}">
 <link rel="stylesheet" href="{{ "css/characters.css" | relURL }}?v={{ now.Unix }}">
 <link rel="stylesheet" href="{{ "css/light-mode-complete.css" | relURL }}?v={{ now.Unix }}">
+{{ if and .IsPage (eq .Params.episode_number 20) }}
+<!-- Holiday decorations for Episode 20 - Vector went decoration-crazy! -->
+<link rel="stylesheet" href="{{ "css/holiday-episode-20.css" | relURL }}?v={{ now.Unix }}">
+{{ end }}
 
 <!-- Dark mode script (inline to prevent flash) -->
 <script>

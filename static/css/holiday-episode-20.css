@@ -1,0 +1,763 @@
+/* ===========================
+   Holiday Episode 20 Decorations
+   Vector went decoration-crazy!
+   =========================== */
+
+/* Only apply to episode 20 */
+.episode-post.episode-20 {
+    position: relative;
+    overflow: visible;
+}
+
+/* Candy Cane Borders on Dialogue Boxes */
+/* Add candy cane border overlay - preserves character colors */
+.episode-post.episode-20 .character-dialogue {
+    position: relative;
+    /* Original character border (var(--char-color)) stays intact */
+    /* We'll add candy cane as an additional layer */
+}
+
+/* Add candy cane border using a wrapper pseudo-element */
+/* Note: Original ::before and ::after are used, so we'll override ::after for candy cane */
+.episode-post.episode-20 .character-dialogue::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 4px solid transparent;
+    border-image: repeating-linear-gradient(
+        45deg,
+        #dc2626 0px,
+        #dc2626 10px,
+        #ffffff 10px,
+        #ffffff 20px
+    ) 4;
+    pointer-events: none;
+    z-index: 2;
+    border-radius: inherit;
+    /* Override the original ::after RGB split effect for episode 20 */
+    transform: none;
+    opacity: 1;
+    mix-blend-mode: normal;
+}
+
+/* Twinkling Lights Effect */
+.episode-post.episode-20 .character-dialogue::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.6) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.7) 2px, transparent 2px),
+        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.5) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 90% 60%, rgba(255, 255, 255, 0.8) 2px, transparent 2px);
+    background-size: 100% 100%;
+    opacity: 0;
+    animation: twinkle 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Draping Christmas Lights at Top */
+/* Wavy black wire string - more pronounced wave */
+.episode-post.episode-20 .post-header::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 70px;
+    pointer-events: none;
+    z-index: 10;
+    /* More pronounced wavy wire using SVG - deeper sag between lights */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='20' viewBox='0 0 100 20' preserveAspectRatio='none'%3E%3Cpath d='M0,10 Q4,6 8,10 T16,10 T24,10 T32,10 T40,10 T48,10 T56,10 T64,10 T72,10 T80,10 T88,10 T96,10 T100,10' stroke='%23000' stroke-width='3' fill='none'/%3E%3C/svg%3E");
+    background-size: 100% 20px;
+    /* Wire positioned so center aligns with light top tips: 21px (low), 23px (mid), 25px (high) */
+    background-position: 0% 23px;
+    background-repeat: no-repeat;
+}
+
+/* Christmas lights - elongated pointed oval shapes, connected at top tip to wavy wire */
+.episode-post.episode-20 .post-header::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 70px;
+    pointer-events: none;
+    z-index: 11;
+    background-image: 
+        /* More lights - 13 total */
+        /* Elongated oval lights - top tip connects to wire */
+        /* Wire center is at 23px, wave pattern: 21px (low), 23px (mid), 25px (high) */
+        /* Light is 20px tall, so center needs to be 10px below wire position for top tip to touch */
+        radial-gradient(ellipse 6px 20px at 2% 41px, #dc2626 0%, #dc2626 90%, transparent 90%),
+        radial-gradient(ellipse 6px 20px at 10% 43px, #16a34a 0%, #16a34a 90%, transparent 90%),
+        radial-gradient(ellipse 6px 20px at 18% 45px, #2563eb 0%, #2563eb 90%, transparent 90%),
+        radial-gradient(ellipse 6px 20px at 26% 43px, #eab308 0%, #eab308 90%, transparent 90%),
+        radial-gradient(ellipse 6px 20px at 34% 41px, #ffffff 0%, #ffffff 90%, transparent 90%),
+        radial-gradient(ellipse 6px 20px at 42% 43px, #dc2626 0%, #dc2626 90%, transparent 90%),
+        radial-gradient(ellipse 6px 20px at 50% 45px, #16a34a 0%, #16a34a 90%, transparent 90%),
+        radial-gradient(ellipse 6px 20px at 58% 43px, #2563eb 0%, #2563eb 90%, transparent 90%),
+        radial-gradient(ellipse 6px 20px at 66% 41px, #eab308 0%, #eab308 90%, transparent 90%),
+        radial-gradient(ellipse 6px 20px at 74% 43px, #ffffff 0%, #ffffff 90%, transparent 90%),
+        radial-gradient(ellipse 6px 20px at 82% 45px, #dc2626 0%, #dc2626 90%, transparent 90%),
+        radial-gradient(ellipse 6px 20px at 90% 43px, #16a34a 0%, #16a34a 90%, transparent 90%),
+        radial-gradient(ellipse 6px 20px at 98% 41px, #2563eb 0%, #2563eb 90%, transparent 90%);
+    background-size: 9.09% 100%, 9.09% 100%, 9.09% 100%, 9.09% 100%, 9.09% 100%, 9.09% 100%, 9.09% 100%, 9.09% 100%, 9.09% 100%, 9.09% 100%, 9.09% 100%, 9.09% 100%, 9.09% 100%;
+    background-position: 0% 0%, 8.33% 0%, 16.66% 0%, 25% 0%, 33.33% 0%, 41.66% 0%, 50% 0%, 58.33% 0%, 66.66% 0%, 75% 0%, 83.33% 0%, 91.66% 0%, 100% 0%;
+    background-repeat: no-repeat;
+    animation: lights-twinkle 2s ease-in-out infinite;
+}
+
+@keyframes lights-twinkle {
+    0%, 100% { 
+        opacity: 1;
+        filter: brightness(1);
+    }
+    25% { 
+        opacity: 0.6;
+        filter: brightness(2);
+    }
+    50% { 
+        opacity: 1;
+        filter: brightness(1.3);
+    }
+    75% { 
+        opacity: 0.7;
+        filter: brightness(1.8);
+    }
+}
+
+/* Make post-header relative for positioning */
+.episode-post.episode-20 .post-header {
+    position: relative;
+    padding-top: 50px;
+}
+
+/* Festive border and styling for UNAUTHORIZED ACCESS box */
+.episode-post.episode-20 .post-hijacking-notice {
+    border: 3px solid transparent;
+    border-image: repeating-linear-gradient(
+        45deg,
+        #dc2626 0px,
+        #dc2626 10px,
+        #ffffff 10px,
+        #ffffff 20px
+    ) 3;
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    position: relative;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Festive styling for episode 20 notice */
+.episode-post.episode-20 .post-hijacking-notice {
+    text-align: center;
+}
+
+.episode-post.episode-20 .post-hijacking-notice strong {
+    color: #dc2626;
+    text-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+    font-size: 1.1em;
+}
+
+/* Snow Effect - Falling Down Like Slow Dust */
+/* Using multiple pseudo-elements for more sporadic, natural snow */
+/* Create many individual snowflakes with random positions and speeds */
+.episode-post.episode-20::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+    background-image: 
+        /* Layer 1 - Sporadic random positions */
+        radial-gradient(circle at 2% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 7% 0%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 23% 0%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 29% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 34% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 40% 0%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(circle at 45% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 51% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 56% 0%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 62% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 67% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 73% 0%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(circle at 78% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 84% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 89% 0%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 95% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        /* Layer 2 - More sporadic */
+        radial-gradient(circle at 4% 0%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(circle at 9% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 15% 0%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 26% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 31% 0%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(circle at 37% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 42% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 48% 0%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 53% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 59% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 64% 0%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(circle at 70% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 75% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 81% 0%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 86% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 92% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 97% 0%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        /* Layer 3 - Even more density */
+        radial-gradient(circle at 1% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 6% 0%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 11% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 16% 0%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(circle at 22% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 27% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 33% 0%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 38% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 44% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 49% 0%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(circle at 55% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 60% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 66% 0%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 71% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 77% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 82% 0%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(circle at 88% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 93% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 98% 0%, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+    background-size: 100% 400%;
+    background-position: 0% -100%;
+    background-repeat: no-repeat;
+    animation: snow-fall-down 100s linear infinite;
+    opacity: 0.8;
+}
+
+/* Additional snow layer with different speed for depth */
+.episode-post.episode-20::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+    background-image: 
+        /* More sporadic snowflakes */
+        radial-gradient(circle at 3% 0%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(circle at 8% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 13% 0%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 19% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 24% 0%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 35% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 41% 0%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 46% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 52% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 57% 0%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(circle at 63% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 68% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 74% 0%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 79% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 85% 0%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        radial-gradient(circle at 90% 0%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(circle at 96% 0%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px);
+    background-size: 100% 400%;
+    background-position: 0% -100%;
+    background-repeat: no-repeat;
+    animation: snow-fall-down-slow 120s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes snow-fall-down {
+    0% {
+        background-position: 0% -100%;
+    }
+    100% {
+        background-position: 0% 300%;
+    }
+}
+
+@keyframes snow-fall-down-slow {
+    0% {
+        background-position: 0% -100%;
+    }
+    100% {
+        background-position: 0% 300%;
+    }
+}
+
+/* FESTIVE Human Dialogue Box - Episode 20 Only */
+/* Based on character-dialogue structure, but with festive tweaks */
+/* First paragraph - start of the box */
+.episode-post.episode-20 .post-content > p:has(strong:first-child) {
+    /* Base structure matching character-dialogue */
+    margin: 0.85rem 0 0 0;
+    padding: 0.5rem 0.75rem;
+    border: 2px solid transparent; /* Will be replaced by candy cane border */
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    max-width: 85%;
+    font-size: 0.95em;
+    line-height: 1.6;
+    
+    /* Festive background - green with snowflake pattern */
+    background: 
+        /* Snowflake pattern */
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+        radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+        radial-gradient(circle at 90% 60%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        /* Scan lines like character boxes */
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.03) 2px,
+            rgba(255, 255, 255, 0.03) 4px
+        ),
+        /* Green base */
+        linear-gradient(135deg, rgba(16, 163, 74, 0.12) 0%, rgba(16, 163, 74, 0.08) 100%);
+    background-size: 50px 50px, 60px 60px, 45px 45px, 55px 55px, 50px 50px, 100% 100%, 100% 100%;
+    
+    /* Shadow matching character boxes */
+    box-shadow: 
+        8px 8px 0 rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(16, 163, 74, 0.5),
+        0 0 30px rgba(220, 38, 38, 0.3);
+    
+    transform: rotate(-0.3deg);
+    transition: transform 0.1s ease;
+    
+    /* Festive animation */
+    animation: festive-box-glow 4s ease-in-out infinite, scan-lines 8s linear infinite;
+}
+
+/* Continuation paragraphs - continue the box */
+.episode-post.episode-20 .post-content > p:has(strong:first-child) ~ p:not(.character-dialogue):not(:has(strong:first-child)) {
+    margin: 0;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 0;
+    max-width: 85%;
+    font-size: 0.95em;
+    line-height: 1.6;
+    position: relative;
+    
+    /* Same background */
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+        radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+        radial-gradient(circle at 90% 60%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.03) 2px,
+            rgba(255, 255, 255, 0.03) 4px
+        ),
+        linear-gradient(135deg, rgba(16, 163, 74, 0.12) 0%, rgba(16, 163, 74, 0.08) 100%);
+    background-size: 50px 50px, 60px 60px, 45px 45px, 55px 55px, 50px 50px, 100% 100%, 100% 100%;
+    
+    /* Continuous shadow */
+    box-shadow: 
+        8px 0 0 rgba(0, 0, 0, 0.6),
+        -8px 0 0 rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(16, 163, 74, 0.5),
+        0 0 30px rgba(220, 38, 38, 0.3);
+    
+    transform: rotate(-0.3deg);
+    transition: transform 0.1s ease;
+}
+
+/* Last paragraph - rounded bottom */
+.episode-post.episode-20 .post-content > p:has(strong:first-child) ~ p:not(.character-dialogue):not(:has(strong:first-child)):last-of-type,
+.episode-post.episode-20 .post-content > p:has(strong:first-child):last-of-type {
+    border-radius: 0 0 8px 8px;
+    margin-bottom: 0.85rem;
+    box-shadow: 
+        8px 8px 0 rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(16, 163, 74, 0.5),
+        0 0 30px rgba(220, 38, 38, 0.3);
+}
+
+/* Hover effects - same for all paragraphs */
+.episode-post.episode-20 .post-content > p:has(strong:first-child):hover,
+.episode-post.episode-20 .post-content > p:has(strong:first-child) ~ p:not(.character-dialogue):not(:has(strong:first-child)):hover {
+    transform: rotate(-0.3deg) translateX(3px);
+    animation: glitch-shake 0.3s ease-in-out, scan-lines 8s linear infinite;
+}
+
+/* Candy cane border - ONE continuous border around entire Human dialogue box */
+/* First paragraph: top + left + right */
+.episode-post.episode-20 .post-content > p:has(strong:first-child)::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: 0;
+    border-radius: 10px 10px 0 0;
+    pointer-events: none;
+    z-index: -1;
+    border: 4px solid;
+    border-bottom: none;
+    border-image: repeating-linear-gradient(
+        45deg,
+        #dc2626 0px,
+        #dc2626 8px,
+        #ffffff 8px,
+        #ffffff 16px
+    ) 4;
+    background: transparent;
+}
+
+/* Continuation paragraphs: left + right only */
+.episode-post.episode-20 .post-content > p:has(strong:first-child) ~ p:not(.character-dialogue):not(:has(strong:first-child))::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -4px;
+    right: -4px;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+    border-left: 4px solid;
+    border-right: 4px solid;
+    border-top: none;
+    border-bottom: none;
+    border-image: repeating-linear-gradient(
+        45deg,
+        #dc2626 0px,
+        #dc2626 8px,
+        #ffffff 8px,
+        #ffffff 16px
+    ) 4;
+    background: transparent;
+}
+
+/* Last paragraph: bottom + left + right */
+.episode-post.episode-20 .post-content > p:has(strong:first-child) ~ p:not(.character-dialogue):not(:has(strong:first-child)):last-of-type::before,
+.episode-post.episode-20 .post-content > p:has(strong:first-child) ~ p:not(.character-dialogue):not(:has(strong:first-child)):last-child::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 0 0 10px 10px;
+    pointer-events: none;
+    z-index: -1;
+    border: 4px solid;
+    border-top: none;
+    border-image: repeating-linear-gradient(
+        45deg,
+        #dc2626 0px,
+        #dc2626 8px,
+        #ffffff 8px,
+        #ffffff 16px
+    ) 4;
+    background: transparent;
+}
+
+/* Bottom border backup using ::after if border-image doesn't work */
+.episode-post.episode-20 .post-content > p:has(strong:first-child) ~ p:not(.character-dialogue):not(:has(strong:first-child)):last-of-type::after,
+.episode-post.episode-20 .post-content > p:has(strong:first-child) ~ p:not(.character-dialogue):not(:has(strong:first-child)):last-child::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    height: 4px;
+    border-radius: 0 0 10px 10px;
+    pointer-events: none;
+    z-index: -1;
+    background: repeating-linear-gradient(
+        45deg,
+        #dc2626 0px,
+        #dc2626 8px,
+        #ffffff 8px,
+        #ffffff 16px
+    );
+    background-size: 11.31px 11.31px;
+}
+
+/* If Human has only one paragraph (no continuation), add full border */
+.episode-post.episode-20 .post-content > p:has(strong:first-child):not(:has(~ p:not(.character-dialogue)))::before,
+.episode-post.episode-20 .post-content > p:has(strong:first-child):last-of-type:not(:has(~ p))::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 14px;
+    pointer-events: none;
+    z-index: -1;
+    /* Full border if it's the only paragraph */
+    border: 4px solid;
+    border-image: repeating-linear-gradient(
+        45deg,
+        #dc2626 0px,
+        #dc2626 8px,
+        #ffffff 8px,
+        #ffffff 16px
+    ) 4;
+    background: transparent;
+}
+
+/* Christmas lights - just a few like character boxes */
+/* Only on first continuation paragraph (or first paragraph if no continuation) */
+.episode-post.episode-20 .post-content > p:has(strong:first-child) ~ p:not(.character-dialogue):not(:has(strong:first-child)):first-of-type::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    pointer-events: none;
+    z-index: -2;
+    /* Just a few lights around the box */
+    background-image: 
+        radial-gradient(ellipse 6px 18px at 50% -2px, #dc2626 0%, #dc2626 90%, transparent 90%),
+        radial-gradient(ellipse 18px 6px at calc(100% + 2px) 50%, #16a34a 0%, #16a34a 90%, transparent 90%),
+        radial-gradient(ellipse 6px 18px at 50% calc(100% + 2px), #2563eb 0%, #2563eb 90%, transparent 90%),
+        radial-gradient(ellipse 18px 6px at -2px 50%, #eab308 0%, #eab308 90%, transparent 90%);
+    background-size: 100% 100%;
+    opacity: 0;
+    animation: lights-twinkle-border 2s ease-in-out infinite;
+}
+
+/* If only one paragraph, add lights to it */
+.episode-post.episode-20 .post-content > p:has(strong:first-child):not(:has(~ p:not(.character-dialogue)))::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    pointer-events: none;
+    z-index: -2;
+    background-image: 
+        radial-gradient(ellipse 6px 18px at 50% -2px, #dc2626 0%, #dc2626 90%, transparent 90%),
+        radial-gradient(ellipse 18px 6px at calc(100% + 2px) 50%, #16a34a 0%, #16a34a 90%, transparent 90%),
+        radial-gradient(ellipse 6px 18px at 50% calc(100% + 2px), #2563eb 0%, #2563eb 90%, transparent 90%),
+        radial-gradient(ellipse 18px 6px at -2px 50%, #eab308 0%, #eab308 90%, transparent 90%);
+    background-size: 100% 100%;
+    opacity: 0;
+    animation: lights-twinkle-border 2s ease-in-out infinite;
+}
+
+/* Wreath corner decorations are already in the main box-shadow above */
+
+@keyframes festive-box-glow {
+    0%, 100% {
+        box-shadow: 
+            8px 8px 0 rgba(0, 0, 0, 0.6),
+            0 0 20px rgba(16, 163, 74, 0.5),
+            0 0 30px rgba(220, 38, 38, 0.3);
+    }
+    50% {
+        box-shadow: 
+            8px 8px 0 rgba(0, 0, 0, 0.6),
+            0 0 30px rgba(16, 163, 74, 0.7),
+            0 0 40px rgba(220, 38, 38, 0.5);
+    }
+}
+
+/* Scan lines animation (from characters.css) */
+@keyframes scan-lines {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 8px; }
+}
+
+/* Glitch shake animation (from characters.css) */
+@keyframes glitch-shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-1px); }
+    20%, 40%, 60%, 80% { transform: translateX(1px); }
+}
+
+@keyframes lights-twinkle-border {
+    0%, 100% { opacity: 0; }
+    25% { opacity: 0.8; }
+    50% { opacity: 0.4; }
+    75% { opacity: 1; }
+}
+
+@keyframes wreath-glow {
+    0%, 100% {
+        opacity: 0.9;
+        box-shadow: 
+            -20px -15px 0 -5px #dc2626,
+            20px -15px 0 -5px #dc2626,
+            -25px 0 0 -5px #dc2626,
+            25px 0 0 -5px #dc2626,
+            -20px 15px 0 -5px #dc2626,
+            20px 15px 0 -5px #dc2626,
+            0 -20px 0 -5px #dc2626,
+            0 20px 0 -5px #dc2626,
+            0 0 20px rgba(16, 163, 74, 0.3);
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 
+            -20px -15px 0 -5px #dc2626,
+            20px -15px 0 -5px #dc2626,
+            -25px 0 0 -5px #dc2626,
+            25px 0 0 -5px #dc2626,
+            -20px 15px 0 -5px #dc2626,
+            20px 15px 0 -5px #dc2626,
+            0 -20px 0 -5px #dc2626,
+            0 20px 0 -5px #dc2626,
+            0 0 30px rgba(16, 163, 74, 0.5);
+    }
+}
+
+/* Red and White Stripes on Container */
+.episode-post.episode-20 .container-narrow {
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 2px,
+        rgba(220, 38, 38, 0.03) 2px,
+        rgba(220, 38, 38, 0.03) 4px
+    );
+    border-left: 4px solid #dc2626;
+    border-right: 4px solid #dc2626;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* Subtle sparkle on hover */
+.episode-post.episode-20 .character-dialogue:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+                0 0 40px rgba(220, 38, 38, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Make sure content is above snow */
+.episode-post.episode-20 .post-content {
+    position: relative;
+    z-index: 2;
+}
+
+.episode-post.episode-20 .post-header {
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive: Tone down on mobile */
+@media (max-width: 768px) {
+    .episode-post.episode-20 .character-dialogue {
+        border-width: 2px;
+    }
+    
+    .episode-post.episode-20::before {
+        opacity: 0.4;
+    }
+    
+    .episode-post.episode-20 .post-header::before {
+        height: 50px;
+        top: -35px;
+    }
+    
+    .episode-post.episode-20 .post-header::after {
+        height: 50px;
+        top: -35px;
+    }
+    
+    .episode-post.episode-20 .post-header {
+        padding-top: 40px;
+    }
+    
+    .episode-post.episode-20 .container-narrow {
+        border-left-width: 2px;
+        border-right-width: 2px;
+    }
+}
+
+/* Dark mode adjustments */
+.dark-mode .episode-post.episode-20 .character-dialogue::after {
+    border-image: repeating-linear-gradient(
+        45deg,
+        #ef4444 0px,
+        #ef4444 10px,
+        #ffffff 10px,
+        #ffffff 20px
+    ) 4;
+}
+
+.dark-mode .episode-post.episode-20 .container-narrow {
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 2px,
+        rgba(239, 68, 68, 0.05) 2px,
+        rgba(239, 68, 68, 0.05) 4px
+    );
+    border-left-color: #ef4444;
+    border-right-color: #ef4444;
+}
+
+.dark-mode .episode-post.episode-20::before {
+    background-image: 
+        /* More snowflakes for dark mode - same pattern but more visible */
+        radial-gradient(circle at 3% 5%, rgba(255, 255, 255, 0.6) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 8% 10%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 13% 15%, rgba(255, 255, 255, 0.6) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 23% 25%, rgba(255, 255, 255, 0.6) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 28% 30%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 33% 35%, rgba(255, 255, 255, 0.6) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 38% 40%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 43% 45%, rgba(255, 255, 255, 0.6) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 48% 50%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 53% 55%, rgba(255, 255, 255, 0.6) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 58% 60%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 63% 65%, rgba(255, 255, 255, 0.6) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 68% 70%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 73% 75%, rgba(255, 255, 255, 0.6) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 78% 80%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 83% 85%, rgba(255, 255, 255, 0.6) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 88% 90%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(circle at 93% 95%, rgba(255, 255, 255, 0.6) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 98% 100%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 5% 8%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 15% 18%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 25% 28%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 35% 38%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 45% 48%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 55% 58%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 65% 68%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 75% 78%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 85% 88%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 95% 98%, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+    opacity: 0.6;
+}
+

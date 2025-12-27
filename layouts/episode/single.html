@@ -1,10 +1,17 @@
 {{ define "main" }}
-<article class="episode-post">
+{{ $episodeNum := .Params.episode_number }}
+<article class="episode-post {{ if eq $episodeNum 20 }}episode-20{{ end }}">
     <!-- Banner for NEW character-driven posts -->
     <div class="post-hijacking-notice">
+        {{ if eq $episodeNum 20 }}
+        🎄 <strong>FESTIVE COLLABORATION</strong> 🎄<br>
+        Written with assistance from: 
+        {{ range .Params.characters }}{{ . }} {{ end }}
+        {{ else }}
         ✨ <strong>COLLABORATIVE POST</strong><br>
         Written with assistance from: 
         {{ range .Params.characters }}{{ . }} {{ end }}
+        {{ end }}
     </div>
     
     <div class="container-narrow">
@@ -223,7 +230,7 @@
     .episode-nav-next {
         text-align: left;
     }
-}
+    }
 </style>
 {{ end }}
 

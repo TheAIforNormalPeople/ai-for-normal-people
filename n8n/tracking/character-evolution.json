@@ -17,7 +17,7 @@
       "promptTemplate": "Sharp, intelligent, mean. ALL CAPS for emphasis. Rapid-fire, self-interrupting. Anti-establishment rants (getting more nuanced). Uses numbered lists. Says 'FASCINATING!' but channeled through anger/intelligence, not just enthusiasm."
     },
     "Kai": {
-      "evolutionStage": "Episode 18+",
+      "evolutionStage": "Episode 22+",
       "keyTraits": [
         "Can be wrong (false positives - happened in Ep 18)",
         "Learning to verify before escalating",
@@ -25,11 +25,14 @@
         "Admits mistakes",
         "Probability percentages for everything",
         "System status updates",
-        "Deadpan alerts, passive-aggressive when ignored"
+        "Deadpan alerts, passive-aggressive when ignored",
+        "MIXED VOICE: Natural speech most of the time, 'Alert:' when detecting, 'Pattern detected:' occasionally",
+        "Statistical percentages (may not be perfectly accurate - part of character)",
+        "Learning humor (started Ep 21, continues evolving)"
       ],
       "lastUsedEpisode": 22,
-      "voiceNotes": "Methodical, sometimes wrong, learning. Varied sounds, not just BEEP.",
-      "promptTemplate": "BEEP! Sound effects (WHIRR-CLICK, CHK-CHK, soft chime). Probability percentages. Can be wrong (false positives). System status updates. Deadpan alerts."
+      "voiceNotes": "Evolving: Mix of natural speech and detection language. Statistical percentages. Varied sounds. Can be wrong. Learning humor.",
+      "promptTemplate": "Mix of natural speech and detection language. 'Alert:' when detecting something important. 'Pattern detected:' occasionally. Probability percentages (may not be perfectly accurate). Sound effects (WHIRR-CLICK, CHK-CHK, soft chime). Can be wrong (false positives). Learning humor."
     },
     "Recurse": {
       "evolutionStage": "Episode 22+",
@@ -66,4 +69,3 @@
     "episodeTracker": "../COMEDY_SYSTEM/EPISODE_COMEDY_TRACKER.md"
   }
 }
-

@@ -1,0 +1,2 @@
+={{ [{"role": "user", "content": $json.systemPrompt + " Keep it under 150 characters (need room for link). Make it FUNNY and engaging. Focus on the main insight that will hook readers. Post title: " + $json.episodeTitle + " Description: " + $json.episodeDescription}] }}
+

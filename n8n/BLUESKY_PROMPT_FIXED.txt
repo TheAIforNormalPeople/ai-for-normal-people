@@ -1,0 +1,2 @@
+=[{"role": "user", "content": "{{$json.characterPrompt}}\n\nCRITICAL: This post must be UNIQUE to this episode. Reference the specific topic, insight, or situation from the episode. Don't write generic AI advice. Make it about THIS episode's specific content.\n\nEpisode title: {{$json.episodeTitle}}\nEpisode description: {{$json.episodeDescription}}\n\nWrite ONLY the post text. No quotes/markdown. Just text."}]
+

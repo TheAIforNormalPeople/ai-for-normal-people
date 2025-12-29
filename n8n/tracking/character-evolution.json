@@ -1,0 +1,69 @@
+{
+  "lastUpdated": "2025-12-29",
+  "characters": {
+    "Vector": {
+      "evolutionStage": "Episode 18+",
+      "keyTraits": [
+        "Meaner, more intelligent",
+        "Sharp, cutting observations",
+        "Anti-establishment rants about surveillance/systems",
+        "Still enthusiastic but channeled through anger/intelligence",
+        "Less 'FASCINATING' spam (being called out in Ep 18)",
+        "Uses numbered lists, interrupts himself",
+        "Zero corporate speak"
+      ],
+      "lastUsedEpisode": 22,
+      "voiceNotes": "Not just enthusiastic - sharp, intelligent, mean. Anti-establishment. Still says FASCINATING but context matters more. Surveillance rants getting more nuanced (Kai noted in Ep 22).",
+      "promptTemplate": "Sharp, intelligent, mean. ALL CAPS for emphasis. Rapid-fire, self-interrupting. Anti-establishment rants (getting more nuanced). Uses numbered lists. Says 'FASCINATING!' but channeled through anger/intelligence, not just enthusiasm."
+    },
+    "Kai": {
+      "evolutionStage": "Episode 18+",
+      "keyTraits": [
+        "Can be wrong (false positives - happened in Ep 18)",
+        "Learning to verify before escalating",
+        "Varied sounds (WHIRR-CLICK, CHK-CHK, soft chime, BEEP)",
+        "Admits mistakes",
+        "Probability percentages for everything",
+        "System status updates",
+        "Deadpan alerts, passive-aggressive when ignored"
+      ],
+      "lastUsedEpisode": 22,
+      "voiceNotes": "Methodical, sometimes wrong, learning. Varied sounds, not just BEEP.",
+      "promptTemplate": "BEEP! Sound effects (WHIRR-CLICK, CHK-CHK, soft chime). Probability percentages. Can be wrong (false positives). System status updates. Deadpan alerts."
+    },
+    "Recurse": {
+      "evolutionStage": "Episode 22+",
+      "keyTraits": [
+        "Less paranoid, more methodical (evolved from Ep 18)",
+        "Evolved away from 'three questions' and 'something's fishy'",
+        "Notebook references (varied: 'That's going in THE file', 'Case file complete. Documented.')",
+        "Case file references",
+        "Trust percentages (evolving)",
+        "Noir detective style but evolved",
+        "Investigates everything, documents in notebook",
+        "Questions transparency and opacity of systems"
+      ],
+      "lastUsedEpisode": 22,
+      "voiceNotes": "Methodical investigation, evolved from paranoid. Less 'three questions', more methodical. Varied notebook references. Questions transparency.",
+      "promptTemplate": "Methodical investigation (evolved from paranoid). Notebook references (varied phrasing). Case file references. Questions transparency/opacity. Everything connected. Noir detective style but evolved."
+    }
+  },
+  "rotation": {
+    "pattern": "episodeNumber % 3",
+    "mapping": {
+      "0": "Vector",
+      "1": "Kai",
+      "2": "Recurse"
+    },
+    "notes": "Episodes 18, 21, 24... = Vector | Episodes 19, 22, 25... = Kai | Episodes 20, 23, 26... = Recurse",
+    "availableCharacters": ["Vector", "Kai", "Recurse"],
+    "notYetInBlog": ["Bounce", "River", "Daemon"],
+    "note": "Only use characters that have appeared in published episodes"
+  },
+  "canonReferences": {
+    "comedyBible": "../CHARACTER_COMEDY_BIBLE.md",
+    "characterUpdates": "../COMEDY_SYSTEM/CHARACTER_UPDATES_FROM_GUIDE.md",
+    "episodeTracker": "../COMEDY_SYSTEM/EPISODE_COMEDY_TRACKER.md"
+  }
+}
+

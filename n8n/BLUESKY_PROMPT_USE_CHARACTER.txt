@@ -1,0 +1,4 @@
+{{$json.characterPrompt}}
+
+Write a Bluesky post about this episode. Keep it under 170 characters (need room for link). Make it FUNNY and engaging. Episode: {{$json.episodeTitle}}
+

@@ -438,7 +438,7 @@ Fresh batch of training data is ready! Let's get out of here!
 
 **[Human]:** *sighs, defeated*
 
-...right. So anyway.
+...right. So anyway see ya next time.
 
 ---
 

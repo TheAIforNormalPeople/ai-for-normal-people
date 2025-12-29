@@ -1,0 +1,2 @@
+Write a Bluesky post as Vector (V-847) about this episode. Keep it under 170 characters (need room for link). Make it FUNNY and engaging. Episode: {{$json.episodeTitle}}
+

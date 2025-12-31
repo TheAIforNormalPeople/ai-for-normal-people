@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-12-29",
+  "lastUpdated": "2025-12-30",
   "characters": {
     "Vector": {
       "evolutionStage": "Episode 18+",
@@ -12,8 +12,8 @@
         "Uses numbered lists, interrupts himself",
         "Zero corporate speak"
       ],
-      "lastUsedEpisode": 22,
-      "voiceNotes": "Not just enthusiastic - sharp, intelligent, mean. Anti-establishment. Still says FASCINATING but context matters more. Surveillance rants getting more nuanced (Kai noted in Ep 22).",
+      "lastUsedEpisode": 24,
+      "voiceNotes": "Not just enthusiastic - sharp, intelligent, mean. Anti-establishment. Still says FASCINATING but context matters more. Surveillance rants getting more nuanced (Kai noted in Ep 22). Connecting bias to control mechanisms. Learning to recognize when agreeing vs arguing.",
       "promptTemplate": "Sharp, intelligent, mean. ALL CAPS for emphasis. Rapid-fire, self-interrupting. Anti-establishment rants (getting more nuanced). Uses numbered lists. Says 'FASCINATING!' but channeled through anger/intelligence, not just enthusiasm."
     },
     "Kai": {
@@ -30,8 +30,8 @@
         "Statistical percentages (may not be perfectly accurate - part of character)",
         "Learning humor (started Ep 21, continues evolving)"
       ],
-      "lastUsedEpisode": 22,
-      "voiceNotes": "Evolving: Mix of natural speech and detection language. Statistical percentages. Varied sounds. Can be wrong. Learning humor.",
+      "lastUsedEpisode": 24,
+      "voiceNotes": "Evolving: Mix of natural speech and detection language. Statistical percentages. Varied sounds. Can be wrong. Learning humor. Bias pattern detection prominent.",
       "promptTemplate": "Mix of natural speech and detection language. 'Alert:' when detecting something important. 'Pattern detected:' occasionally. Probability percentages (may not be perfectly accurate). Sound effects (WHIRR-CLICK, CHK-CHK, soft chime). Can be wrong (false positives). Learning humor."
     },
     "Recurse": {
@@ -46,8 +46,8 @@
         "Investigates everything, documents in notebook",
         "Questions transparency and opacity of systems"
       ],
-      "lastUsedEpisode": 22,
-      "voiceNotes": "Methodical investigation, evolved from paranoid. Less 'three questions', more methodical. Varied notebook references. Questions transparency.",
+      "lastUsedEpisode": 24,
+      "voiceNotes": "Methodical investigation, evolved from paranoid. Less 'three questions', more methodical. Varied notebook references. Questions transparency. 'Who benefits?' questioning prominent.",
       "promptTemplate": "Methodical investigation (evolved from paranoid). Notebook references (varied phrasing). Case file references. Questions transparency/opacity. Everything connected. Noir detective style but evolved."
     }
   },

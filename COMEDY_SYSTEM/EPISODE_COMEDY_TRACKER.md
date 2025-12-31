@@ -16,6 +16,7 @@
 | 20 | Holiday obsession, Decoration pattern matching | Holiday protocols not found, Pattern-matching celebration | Pattern-matching celebration documentation | | | | Holiday episode | Visual decorations, teaching meaning of holidays |
 | 21 | Christmas CSS removal joke, Decoration callback, Cognitive offloading explanation | System status, Pattern detection, Statistics dump, Probability statements, Humor attempt | Case file method, Methodical investigation, Hypocrisy callout | | | Vector + Kai (humor learning) | | Cognitive enhancement vs offloading |
 | 22 | Surveillance rant (context monitoring), Hypothesis collection, Context window explanation | Alert/Pattern detection, Probability statements (multiple), Statistical analysis, Mixed natural speech | Methodical investigation, Notebook notes (varied), Transparency questions | | | Vector + Kai (surveillance vs monitoring) | | Context windows, AI memory, token limits |
+| 24 | Training data bias explanation, Surveillance rant (bias as control), Hypothesis collection (numbered list), FASCINATING (contextual) | Pattern detection (bias patterns), Probability statements (multiple), System status, Bias monitoring | Methodical investigation, Notebook notes (varied), "Who benefits?" questioning | | | Vector + Kai (bias detection), Vector + Recurse (investigation vs explanation) | | AI bias, training data bias, fairness |
 
 ---
 

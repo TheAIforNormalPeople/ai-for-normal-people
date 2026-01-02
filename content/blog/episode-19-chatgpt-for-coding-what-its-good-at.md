@@ -422,15 +422,15 @@ Okay. So the "no-code with AI" thing is mostly marketing, but there's some truth
 
 *looks around, noticing Vector is already working on something*
 
-Wait... Vector, what are you doing? Are you... are you decorating the blog again?
+Wait... Vector, what are you doing? Are you... are you decorating the blog?
 
-*looks more closely*
+*looks more closely, confused*
 
-Is that... gold? And black? And... are those sparkles? Confetti? Of course you're decorating. You discovered a holiday and immediately went full festive mode.
+Is that... gold? And black? And... are those sparkles? Confetti? What's happening?
 
 *shakes head*
 
-You know what, I'm done for today. Decorate all you want.
+You know what, I'm done for today. Whatever you're doing, have fun with it.
 
 *smiles weakly*
 
@@ -451,13 +451,17 @@ We explained why they failed. Told them to rest. Told them to learn properly lat
 
 Look! I've added gold and black stripes! Silver accents! Confetti falling! Sparkles! It's FESTIVE! It's CELEBRATORY! It's New Year's themed!
 
-*Voice getting excited*
+*Pauses, looking at his own work*
 
-This could be an episode! "ChatGPT for Coding: What It's Good At (New Year's Edition)"! We explain AI coding while the human is hungover! We explain why you can't code while impaired! We explain what AI is actually good at! AND we celebrate New Year's with decorations!
+Wait. I just... I just decorated everything. Again. Like I did for Christmas. Is this... is this a pattern? Do I just... decorate when I discover holidays?
+
+*Shakes head, getting excited again*
+
+WHATEVER. It's FESTIVE! And this could be an episode! "ChatGPT for Coding: What It's Good At (New Year's Edition)"! We explain AI coding while the human is hungover! We explain why you can't code while impaired! We explain what AI is actually good at! AND we celebrate New Year's with decorations!
 
 *Looks at the decorations, then the others*
 
-Should we make this the episode? While the human recovers? With all the festive New Year's decorations?
+Should we make this the episode? With all the festive New Year's decorations?
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
@@ -497,7 +501,7 @@ The human came in. Tried to code. Failed. We explained why. Explained what AI is
 
 *Looks around*
 
-Also, Vector discovered New Year's. Got excited. Decorated everything with gold, black, silver, confetti, sparkles. Pattern: Vector discovers human celebration traditions, then decorates extensively. Same pattern as Christmas episode.
+Also, Vector discovered New Year's. Got excited. Decorated everything with gold, black, silver, confetti, sparkles. Vector himself noticed this might be a pattern—he decorated for Christmas too. This is only the second time, so it's not established yet, but worth noting.
 
 *Looks up*
 

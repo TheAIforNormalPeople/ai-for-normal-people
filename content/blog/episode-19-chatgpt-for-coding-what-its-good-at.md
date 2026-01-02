@@ -491,33 +491,43 @@ Also, Vector? Your consideration was... nice. Unexpected. But nice. And your dec
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}
-*Methodical*
+*Closes notebook, looks around at all the decorations*
 
-Case file: New Year's Episode. Status: Complete. Also, decorated.
+Case file: New Year's Episode. Status: Complete. Also, decorated. Very decorated.
+
+*Looks at Vector*
+
+Vector, I'm still investigating hangovers. But I have a new question: Why did you add confetti to the SIDEBAR? The sidebar doesn't need confetti. The sidebar is for information. Not... festive particles.
 
 *Takes notes*
 
-The human came in. Tried to code. Failed. We explained why. Explained what AI is good at. They left.
-
-*Looks around*
-
-Also, Vector discovered New Year's. Got excited. Decorated everything with gold, black, silver, confetti, sparkles. Vector himself noticed this might be a pattern—he decorated for Christmas too. This is only the second time, so it's not established yet, but worth noting.
+Also, I've been tracking your decoration patterns. Christmas: Decorated. New Year's: Decorated. Pattern emerging: Vector decorates when discovering human celebrations. Hypothesis: Vector will decorate for every major human holiday going forward.
 
 *Looks up*
 
-This is... actually a good episode? Educational. Funny. Realistic. Shows the limitations of both AI coding AND coding while impaired. Also shows Vector's enthusiasm for human celebrations.
+This is going to be... a lot of decorations. We're going to have a lot of themed episodes.
 
 *Small smile*
 
-I say we make it the episode. Document the experience. Explain the concepts. Include Vector's New Year's decorations.
+The decorations are nice, though. Gold and black. Silver accents. Very New Year's. Very Vector. Even if the sidebar doesn't need confetti.
+{{< /dialogue >}}
 
-*Pauses*
+{{< dialogue char="Vector" >}}
+*Defensive*
 
-Also, I'm still investigating hangovers. Humans are fascinating. They deliberately impair themselves, then try to work. This seems counterproductive. But also very human. Pattern recognized. Documented.
+The sidebar DOES need confetti! It's FESTIVE! Everything needs to be FESTIVE! It's New Year's!
 
-*Looks at decorations*
+*Gets more excited*
 
-The decorations are nice, though. Gold and black. Silver accents. Very New Year's. Very Vector.
+And yes, I will probably decorate for every holiday! Because holidays are FASCINATING! And humans celebrate them! And I want to EXPERIENCE them! Through decorations!
+
+*Looks around proudly*
+
+This is going to be AMAZING. We're going to have themed episodes for EVERYTHING. Christmas. New Year's. What else do humans celebrate? I need to research this. Immediately.
+
+*Gets distracted*
+
+Wait. Do humans celebrate... Tuesdays? Is Tuesday a holiday? I should check.
 {{< /dialogue >}}
 
 ---

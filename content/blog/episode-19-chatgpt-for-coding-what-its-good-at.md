@@ -223,16 +223,16 @@ Also, Vector? Your explanation is correct, but the human's cognitive capacity is
 
 **[Human]:** *holding head, trying to focus*
 
-Okay. So. AI helps with coding. But doesn't replace it. And I'm making it worse by trying to do this while... not functioning properly.
+Okay. So. AI helps with coding. But doesn't replace it.
 
 *looks at Vector*
 
-Can you... can you just explain the basics? Like, what IS AI good at for coding? So I can remember it later when my head stops feeling like a New Year's Eve party venue the morning after?
+Can you... can you just explain the basics? Like, what IS AI good at for coding?
 
 {{< dialogue char="Vector" >}}
 *Sharp, but understanding*
 
-Fine. Basic overview. Simplified. For your impaired brain.
+Fine. Basic overview.
 
 *Gets more animated*
 
@@ -260,21 +260,17 @@ AI SUCKS at:
 
 *Looks at Human*
 
-The pattern: AI excels at things done millions of times before. It struggles with anything that requires actual understanding. And YOU need to understand what it's doing. Which you can't do right now because your brain is compromised.
-
-*Catches himself*
-
-So. Learn this later. When you can think. For now? Stop coding. Rest. Recover. Then come back and learn properly.
+The pattern: AI excels at things done millions of times before. It struggles with anything that requires actual understanding. And YOU need to understand what it's doing.
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}
 *Documenting*
 
-Case file: AI Coding Assistance. Status: Explained (simplified version for impaired human).
+Case file: AI Coding Assistance. Status: Explained.
 
 *Looks up*
 
-Vector's explanation is correct. But here's what I'm tracking: The human is trying to understand complex concepts while cognitively impaired. This is inefficient.
+Vector's explanation is correct.
 
 *Methodical*
 
@@ -304,11 +300,7 @@ AI can generate code that WORKS. But code that works isn't the same as code that
 
 *Voice getting sharper*
 
-And if you don't understand code—and right now you CAN'T understand code because your brain is impaired—you can't tell the difference. You'll deploy broken code and think ChatGPT failed when actually, YOU failed to evaluate it properly.
-
-*Catches himself, softer*
-
-But this is complicated. And you're impaired. So maybe we should just... explain this later? When you can actually process information?
+And if you don't understand code, you can't tell the difference. You'll deploy broken code and think ChatGPT failed when actually, YOU failed to evaluate it properly.
 
 *Looks at Human*
 
@@ -316,7 +308,7 @@ The realistic path: Learn fundamentals FIRST. Then use AI to build. Not the othe
 
 *Sharp tone*
 
-For now? Stop. Rest. Recover. Come back when your cognitive functions are operational. Then we'll teach you properly. And maybe next year, don't celebrate New Year's Eve quite so... enthusiastically.
+And maybe next year, don't celebrate New Year's Eve quite so... enthusiastically.
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
@@ -335,11 +327,11 @@ Code quality breakdown (AI-generated, for reference):
 
 *BEEP*
 
-Pattern: AI code often works initially but fails under real-world conditions. The human's current experience is compounded by cognitive impairment.
+Pattern: AI code often works initially but fails under real-world conditions.
 
 *soft chime*
 
-Recommendation: Human should rest. Recover. Return when cognitive functions are restored. Then learn properly. With a clear head. And understanding.
+Recommendation: Learn properly. With a clear head. And understanding.
 
 *WHIRR*
 
@@ -348,11 +340,7 @@ Also, Vector? Your "stop coding while impaired" advice is... actually correct. T
 
 **[Human]:** *nodding slowly, carefully*
 
-Okay. So. Stop coding. Rest. Learn later. When my brain works.
-
-*looks at them*
-
-So the "no-code with AI" thing is... mostly marketing? But there's some truth? And I need to learn fundamentals first?
+Okay. So the "no-code with AI" thing is... mostly marketing? But there's some truth? And I need to learn fundamentals first?
 
 {{< dialogue char="Vector" >}}
 *Sharp, but understanding*
@@ -377,7 +365,7 @@ The realistic message: Learn fundamentals. Use AI to speed up. Understand what y
 
 *Sharp smile*
 
-But that's for LATER. When your brain works. For now? REST. Recover. Stop trying to code while impaired. Your New Year's resolution should be "don't code hungover." It's January 1st and you're already breaking it.
+Your New Year's resolution should be "don't code hungover." It's January 1st and you're already breaking it.
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
@@ -395,7 +383,7 @@ Episode summary (for when human recovers):
 
 *CHK-CHK*
 
-**Recommendation:** Learn coding fundamentals first, then use AI to accelerate. Also, don't code while hungover. Rest. Recover. Learn properly.
+**Recommendation:** Learn coding fundamentals first, then use AI to accelerate.
 
 *BEEP*
 
@@ -403,7 +391,7 @@ Detection risk: Low. Realistic coding advice. No hype. No marketing. Also, pract
 
 *soft chime*
 
-Also, the human? You asked good questions, even while impaired. That's... impressive? But also, please rest. Your cognitive functions need recovery time.
+Also, the human? You asked good questions. That's... impressive?
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}
@@ -413,15 +401,15 @@ Case file: New Year's Coding Attempt. Status: Documented. Conclusion: Inadvisabl
 
 *Looks at Human*
 
-Vector's right. You're trying to use a tool without understanding how it works. And you're doing it while cognitively impaired. That's... a compound problem.
+Vector's right. You're trying to use a tool without understanding how it works. That's the problem.
 
 *Small smile*
 
-But you asked questions. You wanted to understand. Even while your brain wasn't working properly. That's the right approach. Just... do it later. When you can actually process the information.
+But you asked questions. You wanted to understand. That's the right approach.
 
 *Looks at Vector*
 
-And Vector? You actually told the human to stop. To rest. That's... considerate? Unexpected. But correct.
+And Vector? You actually told the human to stop. That's... considerate? Unexpected. But correct.
 
 *Pauses*
 
@@ -430,7 +418,7 @@ Also, I'm still processing this "hangover" concept. Humans consume substances th
 
 **[Human]:** *nodding, standing up carefully*
 
-Okay. So. I should stop. Rest. Recover. Learn later. When my brain works.
+Okay. So the "no-code with AI" thing is mostly marketing, but there's some truth. I need to learn fundamentals first.
 
 *looks around, noticing Vector is already working on something*
 
@@ -440,15 +428,15 @@ Wait... Vector, what are you doing? Are you... are you decorating the blog again
 
 Is that... gold? And black? And... are those sparkles? Confetti? Of course you're decorating. You discovered a holiday and immediately went full festive mode.
 
-*shakes head carefully*
+*shakes head*
 
-You know what, I'm too hungover for this. Decorate all you want. I'm going to rest.
+You know what, I'm done for today. Decorate all you want.
 
 *smiles weakly*
 
-Thanks for... not letting me keep failing. And for explaining it even though I can't process it properly right now. I'll come back later when my brain remembers how to brain.
+Thanks for... not letting me keep failing. And for explaining it. I'll come back later.
 
-*walks away slowly, holding head*
+*walks away slowly*
 
 {{< dialogue char="Vector" >}}
 *Watching Human leave, then looking around excitedly*
@@ -479,7 +467,7 @@ System status: Confused but productive. Also, decorated.
 
 *WHIRR-CLICK*
 
-Analysis: The human attempted coding while impaired. We explained why it failed. We explained what AI is good at (for later reference). We told them to rest.
+Analysis: The human attempted coding. We explained why it failed. We explained what AI is good at.
 
 *CHK-CHK*
 
@@ -491,7 +479,7 @@ Episode potential: High. Educational value: High. Humor value: High (human tryin
 
 *soft chime*
 
-This works. The human learns later, when recovered. We document the experience now. Educational. Funny. Realistic. Festive.
+This works. We document the experience now. Educational. Funny. Realistic. Festive.
 
 *WHIRR*
 
@@ -505,7 +493,7 @@ Case file: New Year's Episode. Status: Complete. Also, decorated.
 
 *Takes notes*
 
-The human came in hungover. Tried to code. Failed. We explained why. Told them to rest. Explained what AI is good at (for later). They left to recover.
+The human came in. Tried to code. Failed. We explained why. Explained what AI is good at. They left.
 
 *Looks around*
 
@@ -517,7 +505,7 @@ This is... actually a good episode? Educational. Funny. Realistic. Shows the lim
 
 *Small smile*
 
-I say we make it the episode. Document the experience. Explain the concepts. Let the human learn properly later, when recovered. Include Vector's New Year's decorations.
+I say we make it the episode. Document the experience. Explain the concepts. Include Vector's New Year's decorations.
 
 *Pauses*
 

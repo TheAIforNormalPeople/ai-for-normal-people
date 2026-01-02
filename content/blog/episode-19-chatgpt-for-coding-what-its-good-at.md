@@ -18,11 +18,11 @@ Ugh. What time is it? It's... it's light outside. Oh no.
 
 *rubs temples*
 
-Okay. So. Last night was New Year's Eve. I may have... celebrated. A lot. And now I'm trying to use ChatGPT to build something and NOTHING IS WORKING. My head hurts. The code doesn't make sense. I can't think straight.
+Okay. So. Last night was New Year's Eve. I may have... celebrated. A lot. And now I'm trying to use ChatGPT to build something and NOTHING IS WORKING. My head feels like it's been hit with a confetti cannon full of regret.
 
 *stops typing, head in hands*
 
-I've been trying for THREE HOURS and every time I copy-paste code, it breaks. Every time I ask ChatGPT to fix something, it breaks something else. And my brain feels... fuzzy. Like it's wrapped in cotton.
+I've been trying for THREE HOURS and every time I copy-paste code, it breaks. Every time I ask ChatGPT to fix something, it breaks something else. My brain feels... fuzzy. Like I'm trying to think through a champagne bubble.
 
 *looks up, bleary-eyed*
 
@@ -165,11 +165,7 @@ Okay, so you're telling me I shouldn't be trying to code right now. Great. Thank
 
 *rubs temples again*
 
-But here's the thing: I'm still seeing all these posts. "I built an app using ChatGPT!" And I'm like... I can't even think straight and they're building APPS? What am I missing?
-
-*looks up, squinting*
-
-Is it just me? Is it the hangover? Or is this actually hard and people are lying about it?
+But here's the thing: I'm still seeing all these posts. "I built an app using ChatGPT!" And I'm like... I can't even remember what I had for breakfast and they're building APPS? What am I missing? Is this actually hard or are people just lying about it?
 
 {{< dialogue char="Vector" >}}
 *sharp, but slightly understanding*
@@ -229,13 +225,9 @@ Also, Vector? Your explanation is correct, but the human's cognitive capacity is
 
 Okay. So. AI helps with coding. But doesn't replace it. And I'm making it worse by trying to do this while... not functioning properly.
 
-*pauses*
-
-That actually makes sense. I think. My brain hurts too much to process this properly.
-
 *looks at Vector*
 
-Can you... can you just explain the basics? Like, what IS AI good at for coding? So I can remember it later when my head stops pounding?
+Can you... can you just explain the basics? Like, what IS AI good at for coding? So I can remember it later when my head stops feeling like a New Year's Eve party venue the morning after?
 
 {{< dialogue char="Vector" >}}
 *Sharp, but understanding*
@@ -324,7 +316,7 @@ The realistic path: Learn fundamentals FIRST. Then use AI to build. Not the othe
 
 *Sharp tone*
 
-For now? Stop. Rest. Recover. Come back when your cognitive functions are operational. Then we'll teach you properly.
+For now? Stop. Rest. Recover. Come back when your cognitive functions are operational. Then we'll teach you properly. And maybe next year, don't celebrate New Year's Eve quite so... enthusiastically.
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
@@ -358,10 +350,6 @@ Also, Vector? Your "stop coding while impaired" advice is... actually correct. T
 
 Okay. So. Stop coding. Rest. Learn later. When my brain works.
 
-*pauses*
-
-That... that actually makes sense. I can't think straight. I can't evaluate code properly. I'm just making it worse.
-
 *looks at them*
 
 So the "no-code with AI" thing is... mostly marketing? But there's some truth? And I need to learn fundamentals first?
@@ -389,7 +377,7 @@ The realistic message: Learn fundamentals. Use AI to speed up. Understand what y
 
 *Sharp smile*
 
-But that's for LATER. When your brain works. For now? REST. Recover. Stop trying to code while impaired.
+But that's for LATER. When your brain works. For now? REST. Recover. Stop trying to code while impaired. Your New Year's resolution should be "don't code hungover." It's January 1st and you're already breaking it.
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
@@ -450,7 +438,7 @@ Wait... Vector, what are you doing? Are you... are you decorating the blog again
 
 *looks more closely*
 
-Is that... gold? And black? And... are those sparkles? Confetti?
+Is that... gold? And black? And... are those sparkles? Confetti? Of course you're decorating. You discovered a holiday and immediately went full festive mode.
 
 *shakes head carefully*
 
@@ -458,11 +446,7 @@ You know what, I'm too hungover for this. Decorate all you want. I'm going to re
 
 *smiles weakly*
 
-Thanks for... not letting me keep failing. And for explaining it even though I can't process it properly right now.
-
-*pauses*
-
-I'll come back later. When I can think. Then we'll do this properly. And hopefully the decorations won't be... too much.
+Thanks for... not letting me keep failing. And for explaining it even though I can't process it properly right now. I'll come back later when my brain remembers how to brain.
 
 *walks away slowly, holding head*
 
@@ -482,14 +466,6 @@ Look! I've added gold and black stripes! Silver accents! Confetti falling! Spark
 *Voice getting excited*
 
 This could be an episode! "ChatGPT for Coding: What It's Good At (New Year's Edition)"! We explain AI coding while the human is hungover! We explain why you can't code while impaired! We explain what AI is actually good at! AND we celebrate New Year's with decorations!
-
-*Pauses, looking around proudly*
-
-I generated gold and black patterns. Silver sparkles. Confetti animations. Festive borders. I made it CELEBRATORY! Just like New Year's should be!
-
-*Voice getting sharper*
-
-Actually, this IS educational. And funny. And realistic. People try to code while hungover. It doesn't work. AI doesn't help if you can't think clearly.
 
 *Looks at the decorations, then the others*
 

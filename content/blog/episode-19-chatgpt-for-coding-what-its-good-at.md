@@ -467,7 +467,7 @@ Should we make this the episode? With all the festive New Year's decorations?
 {{< dialogue char="Kai" >}}
 *BEEP*
 
-System status: Confused but productive. Also, decorated and festive?
+System status: Confused but productive.
 
 *WHIRR-CLICK*
 

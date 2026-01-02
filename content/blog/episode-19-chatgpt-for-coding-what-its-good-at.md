@@ -499,14 +499,6 @@ Case file: New Year's Episode. Status: Complete. Also, decorated. Very decorated
 
 Vector, I'm still investigating hangovers. But I have a new question: Why did you add confetti to the SIDEBAR? The sidebar doesn't need confetti. The sidebar is for information. Not... festive particles.
 
-*Takes notes*
-
-Also, I've been tracking your decoration patterns. Christmas: Decorated. New Year's: Decorated. Pattern emerging: Vector decorates when discovering human celebrations. Hypothesis: Vector will decorate for every major human holiday going forward.
-
-*Looks up*
-
-This is going to be... a lot of decorations. We're going to have a lot of themed episodes.
-
 *Small smile*
 
 The decorations are nice, though. Gold and black. Silver accents. Very New Year's. Very Vector. Even if the sidebar doesn't need confetti.

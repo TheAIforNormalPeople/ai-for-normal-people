@@ -1,10 +1,14 @@
 {{ define "main" }}
 {{ $episodeNum := .Params.episode_number }}
-<article class="episode-post {{ if eq $episodeNum 20 }}episode-20{{ end }}">
+<article class="episode-post {{ if eq $episodeNum 20 }}episode-20{{ else if eq $episodeNum 19 }}episode-19-newyear{{ end }}">
     <!-- Banner for NEW character-driven posts -->
     <div class="post-hijacking-notice">
         {{ if eq $episodeNum 20 }}
         🎄 <strong>FESTIVE COLLABORATION</strong> 🎄<br>
+        Written with assistance from: 
+        {{ range .Params.characters }}{{ . }} {{ end }}
+        {{ else if eq $episodeNum 19 }}
+        🎉 <strong>NEW YEAR COLLABORATION</strong> 🎉<br>
         Written with assistance from: 
         {{ range .Params.characters }}{{ . }} {{ end }}
         {{ else }}

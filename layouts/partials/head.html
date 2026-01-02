@@ -66,6 +66,10 @@
 <!-- Holiday decorations for Episode 20 - Vector went decoration-crazy! -->
 <link rel="stylesheet" href="{{ "css/holiday-episode-20.css" | relURL }}?v={{ now.Unix }}">
 {{ end }}
+{{ if and .IsPage (eq .Params.episode_number 19) }}
+<!-- New Year decorations for Episode 19 - Vector discovered New Year's! -->
+<link rel="stylesheet" href="{{ "css/newyear-episode-19.css" | relURL }}?v={{ now.Unix }}">
+{{ end }}
 
 <!-- Dark mode script (inline to prevent flash) -->
 <script>

@@ -336,6 +336,10 @@ body:has(.episode-19-newyear) .character-sidebar {
         );
     
     border: 2px solid #d4af37 !important;
+    border-top: 2px solid #d4af37 !important;
+    border-right: 2px solid #d4af37 !important;
+    border-bottom: 2px solid #d4af37 !important;
+    border-left: 2px solid #d4af37 !important;
     border-color: #d4af37 !important;
     box-shadow: 
         4px 4px 0 rgba(0, 0, 0, 0.5),

@@ -20,19 +20,20 @@ Kai's sounds are written as italic text with asterisks:
 **Current Implementation: CSS-based**
 - Sounds are italic text (`<em>`) in dialogue
 - CSS targets italic text in dialogue boxes
-- Default: Green/cyan (#10b981) - Kai's character color
-- Different sound types get different colors:
-  - **Processing sounds** (hum, whirr): Green/cyan (#10b981)
-  - **Alert sounds** (BEEP, ALARM): Red (#ef4444)
-  - **Soft sounds** (soft chime, gentle beep): Purple (#8b5cf6)
-  - **Data sounds** (data ping, scanner): Cyan (#06b6d4)
-  - **Stress sounds** (CHK-CHK): Orange (#f59e0b)
-  - **Realization sounds** (DING): Yellow (#eab308)
+- **Default:** Green/cyan (#10b981) - Kai's character color
+- All italic text in dialogue is styled as sounds by default
+- Different sound types can use data attributes for specific colors:
+  - **Processing sounds** (`data-sound="processing"`): Green/cyan (#10b981)
+  - **Alert sounds** (`data-sound="alert"`): Red (#ef4444)
+  - **Soft sounds** (`data-sound="soft"`): Purple (#8b5cf6)
+  - **Data sounds** (`data-sound="data"`): Cyan (#06b6d4)
+  - **Stress sounds** (`data-sound="stress"`): Orange (#f59e0b)
+  - **Realization sounds** (`data-sound="realization"`): Yellow (#eab308)
 
-**Future Enhancement: Data Attributes**
-- Add `data-sound="type"` to sounds for precise styling
-- Example: `<em data-sound="alert">*BEEP*</em>`
-- More reliable than pattern matching
+**Environmental Details:**
+- Use `data-env` attribute for environmental stage directions
+- Example: `<em data-env>*from monitoring station*</em>`
+- Styled as gray, smaller, less prominent
 
 **Option 2: Class-based (Recommended for future)**
 - Add classes to sounds: `<em class="sound-effect" data-type="processing">*processing hum*</em>`

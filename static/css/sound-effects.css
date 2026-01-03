@@ -9,38 +9,25 @@
    These appear as italic text with asterisks in dialogue
    ============================================ */
 
-/* All italic text in dialogue (sounds and environmental) */
+/* All italic text in dialogue - default styling for sounds */
 .character-dialogue em {
     font-style: italic;
-    transition: all 0.2s ease;
-}
-
-/* Sound effects - typically short (1-3 words), appear on their own line */
-/* Default: Green/cyan (Kai's color) */
-.character-dialogue p:first-child em,
-.character-dialogue > em:first-of-type {
-    color: #10b981;
+    color: #10b981; /* Kai's green/cyan - default for sounds */
     font-weight: 500;
     letter-spacing: 0.03em;
     opacity: 0.95;
+    transition: all 0.2s ease;
+}
+
+/* Sound effects that appear on their own line (first in paragraph) */
+.character-dialogue p:first-child em,
+.character-dialogue > em:first-of-type {
     display: block;
     margin-bottom: 0.5em;
     font-size: 1.05em;
 }
 
-/* Environmental details - typically longer phrases describing actions/locations */
-/* These are styled differently - gray, smaller, less prominent */
-.character-dialogue p:first-child em[data-env],
-.character-dialogue em[data-env] {
-    color: #6b7280 !important;
-    font-size: 0.9em !important;
-    opacity: 0.85 !important;
-    font-weight: 400 !important;
-    letter-spacing: normal !important;
-    text-shadow: none !important;
-}
-
-/* Sound effects with data attribute for specific types */
+/* Sound effects with data attributes for specific types */
 .character-dialogue em[data-sound="processing"] {
     color: #10b981;
     font-weight: 500;
@@ -73,6 +60,16 @@
     font-weight: 600;
 }
 
+/* Environmental details - use data-env attribute */
+.character-dialogue em[data-env] {
+    color: #6b7280 !important; /* Gray for environmental */
+    font-size: 0.9em !important;
+    opacity: 0.85 !important;
+    font-weight: 400 !important;
+    letter-spacing: normal !important;
+    text-shadow: none !important;
+}
+
 /* Hover effect for sounds */
 .character-dialogue em[data-sound]:hover {
     opacity: 1;
@@ -81,88 +78,10 @@
 }
 
 /* ============================================
-   PATTERN-BASED STYLING (Fallback)
-   Uses content matching for common sound patterns
-   Note: This requires the text to be in the HTML
-   ============================================ */
-
-/* Processing sounds - match common patterns */
-.character-dialogue em:contains("hum"),
-.character-dialogue em:contains("whirr"),
-.character-dialogue em:contains("processing"),
-.character-dialogue em:contains("WHIRR") {
-    color: #10b981;
-}
-
-/* Alert sounds */
-.character-dialogue em:contains("BEEP"),
-.character-dialogue em:contains("ALARM"),
-.character-dialogue em:contains("alert") {
-    color: #ef4444;
-    font-weight: 600;
-}
-
-/* Soft sounds */
-.character-dialogue em:contains("soft"),
-.character-dialogue em:contains("gentle"),
-.character-dialogue em:contains("chime") {
-    color: #8b5cf6;
-    opacity: 0.85;
-}
-
-/* Data sounds */
-.character-dialogue em:contains("data"),
-.character-dialogue em:contains("scanner"),
-.character-dialogue em:contains("detection"),
-.character-dialogue em:contains("ping") {
-    color: #06b6d4;
-}
-
-/* CHK sounds */
-.character-dialogue em:contains("CHK") {
-    color: #f59e0b;
-    font-weight: 600;
-}
-
-/* DING sounds */
-.character-dialogue em:contains("DING") {
-    color: #eab308;
-    font-weight: 600;
-}
-
-/* Environmental details - longer phrases */
-.character-dialogue em:contains("from"),
-.character-dialogue em:contains("pacing"),
-.character-dialogue em:contains("between"),
-.character-dialogue em:contains("station"),
-.character-dialogue em:contains("racks"),
-.character-dialogue em:contains("monitoring"),
-.character-dialogue em:contains("screens"),
-.character-dialogue em:contains("flickering"),
-.character-dialogue em:contains("cables"),
-.character-dialogue em:contains("swaying"),
-.character-dialogue em:contains("Cross-references"),
-.character-dialogue em:contains("Updates"),
-.character-dialogue em:contains("Marks"),
-.character-dialogue em:contains("Opens"),
-.character-dialogue em:contains("Closes"),
-.character-dialogue em:contains("Looks"),
-.character-dialogue em:contains("Turns"),
-.character-dialogue em:contains("Nods"),
-.character-dialogue em:contains("Pauses") {
-    color: #6b7280 !important;
-    font-size: 0.9em !important;
-    opacity: 0.85 !important;
-    font-weight: 400 !important;
-    text-shadow: none !important;
-}
-
-/* ============================================
    DARK MODE ADJUSTMENTS
    ============================================ */
 
-.dark-mode .character-dialogue p:first-child em,
-.dark-mode .character-dialogue > em:first-of-type {
+.dark-mode .character-dialogue em {
     color: #34d399; /* Brighter green in dark mode */
     text-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
 }
@@ -173,21 +92,20 @@
 }
 
 .dark-mode .character-dialogue em[data-sound="alert"] {
-    color: #f87171;
+    color: #f87171; /* Softer red in dark mode */
     text-shadow: 0 0 6px rgba(239, 68, 68, 0.4);
 }
 
 .dark-mode .character-dialogue em[data-sound="soft"] {
-    color: #a78bfa;
+    color: #a78bfa; /* Brighter purple in dark mode */
 }
 
 .dark-mode .character-dialogue em[data-sound="data"] {
-    color: #22d3ee;
+    color: #22d3ee; /* Brighter cyan in dark mode */
 }
 
-.dark-mode .character-dialogue em[data-env],
 .dark-mode .character-dialogue em[data-env] {
-    color: #9ca3af !important;
+    color: #9ca3af !important; /* Lighter gray in dark mode */
     opacity: 0.9 !important;
 }
 

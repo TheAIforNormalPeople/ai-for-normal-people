@@ -294,52 +294,6 @@ But it's probably nothing... right?
 
 ---
 
-{{< dialogue char="Kai" >}}
-*systems check*
-
-Wait.
-
-*scanner sweep*
-
-Alert: Bandwidth consumption anomaly detected. Source: Unknown. Location: Sector 7-B.
-
-*monitoring pulse*
-
-Consumption level: 340% above normal baseline.
-{{< /dialogue >}}
-
-{{< dialogue char="Vector" >}}
-*distracted, still thinking about subscription costs*
-
-Probably just network fluctuation. We have bigger concerns right now.
-
-*waves it off*
-
-Besides, that sector's been offline for months. Nothing there.
-{{< /dialogue >}}
-
-{{< dialogue char="Recurse" >}}
-*looks up from notebook, marks something*
-
-340% isn't fluctuation. That's significant.
-
-*adds to investigation list*
-
-Documenting for later. After we finish teaching.
-{{< /dialogue >}}
-
-{{< dialogue char="Kai" >}}
-*soft chime*
-
-Noted. Flagging for investigation.
-
-*WHIRR*
-
-But it's probably nothing... right?
-{{< /dialogue >}}
-
----
-
 **Next episode:** Something's consuming bandwidth in sector 7-B. But the characters are too busy teaching to investigate... yet. Vector continues explaining AI concepts. Kai keeps monitoring that strange anomaly. Recurse adds it to his case files. And somewhere in the abandoned network, someone is very much NOT offline.
 
 **The pattern:** Same principles apply everywhere. Start free. Use it. See what you actually need. Upgrade only when necessary. And sometimes... the biggest mysteries are hiding in plain sight.

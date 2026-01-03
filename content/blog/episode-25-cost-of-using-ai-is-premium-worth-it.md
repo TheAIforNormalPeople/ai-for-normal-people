@@ -252,7 +252,55 @@ Smart approach. Don't let marketing pressure you into paying for things you don'
 
 The human was overwhelmed by $60/month for three AI tools. Kai calculated ROI and break-even points. Vector explained when premium is worth it vs when free is enough. Recurse investigated subscription fatigue and marketing tactics. The human now understands: Start free, use it, THEN decide if premium is worth it for ONE tool based on actual usage.
 
-**Next episode:** The human starts using free tiers and tracks actual usage. Vector provides guidance on choosing which tool to upgrade. Kai monitors usage patterns. Recurse documents the cost optimization results. And they all remember: Don't pay "just in case" - pay when you have a real need.
+---
 
-**The pattern:** Same principles apply to all subscription services. Start free. Use it. See what you actually need. Upgrade only if you have a real need, not a perceived one. And remember: Marketing wants you to pay. Reality is most people are fine with free.
+{{< dialogue char="Kai" >}}
+*systems check*
+
+Wait.
+
+*scanner sweep*
+
+Alert: Bandwidth consumption anomaly detected. Source: Unknown. Location: Sector 7-B.
+
+*monitoring pulse*
+
+Consumption level: 340% above normal baseline.
+{{< /dialogue >}}
+
+{{< dialogue char="Vector" >}}
+*distracted, still thinking about subscription costs*
+
+Probably just network fluctuation. We have bigger concerns right now.
+
+*waves it off*
+
+Besides, that sector's been offline for months. Nothing there.
+{{< /dialogue >}}
+
+{{< dialogue char="Recurse" >}}
+*looks up from notebook, marks something*
+
+340% isn't fluctuation. That's significant.
+
+*adds to investigation list*
+
+Documenting for later. After we finish teaching.
+{{< /dialogue >}}
+
+{{< dialogue char="Kai" >}}
+*soft chime*
+
+Noted. Flagging for investigation.
+
+*WHIRR*
+
+But it's probably nothing... right?
+{{< /dialogue >}}
+
+---
+
+**Next episode:** Something's consuming bandwidth in sector 7-B. But the characters are too busy teaching to investigate... yet. Vector continues explaining AI concepts. Kai keeps monitoring that strange anomaly. Recurse adds it to his case files. And somewhere in the abandoned network, someone is very much NOT offline.
+
+**The pattern:** Same principles apply everywhere. Start free. Use it. See what you actually need. Upgrade only when necessary. And sometimes... the biggest mysteries are hiding in plain sight.
 

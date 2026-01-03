@@ -206,7 +206,9 @@ Recurse is RIGHT to be skeptical! Here's the reality:
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
-*Reviewing data*`n`nPractical recommendation logged:
+*Reviewing data*
+
+Practical recommendation logged:
 
 **Start with free:**
 - Test all tools on free tiers

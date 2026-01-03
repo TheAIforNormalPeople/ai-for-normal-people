@@ -253,7 +253,7 @@ So yes, there's a risk - but if you're intentional about using AI to ENHANCE lea
 
 Okay, I get it. Try first, struggle, use AI when stuck, practice, explain back. Don't treat it like Google. Got it.
 
-*stands up*
+*opens a new browser tab*
 
 Thanks. I'm going to go try this. Actually try it, not just read about it.
 
@@ -261,10 +261,10 @@ Thanks. I'm going to go try this. Actually try it, not just read about it.
 
 See? I'm already applying what I learned. Try first, then ask for help.
 
-*walks away*
+*starts typing in the new tab, not paying attention to the conversation anymore*
 
 {{< dialogue char="Vector" >}}
-*Watching Human leave*
+*Noticing Human is focused on another tab*
 
 Okay. So. The human was consuming information, not learning. We explained active learning vs. passive consumption. They understood the workflow. They're going to try it.
 
@@ -279,6 +279,10 @@ Wait. Did they just... use our conversation as an example of learning? They said
 *Gets excited*
 
 That's META! They're learning about learning BY learning about learning!
+
+*Looks at Human typing in another tab*
+
+Also, they're actually doing it! They're not just reading and moving on! They opened another tab and they're trying the workflow right now!
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}

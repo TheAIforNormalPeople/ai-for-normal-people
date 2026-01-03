@@ -173,14 +173,52 @@ Format:
 [Scene]
 **[Back with the group...]**
 
+## MANDATORY RESEARCH REQUIREMENT
+
+**CRITICAL: RESEARCH FIRST, WRITE SECOND**
+
+Every episode MUST start with research. No exceptions.
+
+**DO NOT write dialogue until you have completed research.**
+
+### Research Checklist (BEFORE writing):
+- [ ] Completed 3-5 web searches on episode topic
+- [ ] Found at least 3 specific statistics (with sources and dates)
+- [ ] Verified current pricing (checked official pages)
+- [ ] Located official documentation (not just blog posts)
+- [ ] Documented all sources with URLs
+- [ ] Noted publication dates for all data
+- [ ] Prepared citations section for end of episode
+
+### What to Research:
+1. Current statistics (with dates and sources)
+2. Official documentation (pricing, features, specs)
+3. Industry reports and analysis
+4. Expert breakdowns and technical details
+5. Current pricing and features (verify with official sources)
+
+### Forbidden Phrases (Without Sources):
+❌ "Most users..." ❌ "Studies show..." ❌ "X% of people..." ❌ "Experts say..."
+
+✅ Instead: "According to [Source], X% of [specific group]..." or "[Company]'s [Year] report found..."
+
+### Every Episode MUST Include:
+- Real data with named sources
+- Dated information ("As of January 2026...")
+- Verifiable facts (not assumptions)
+- Citations section at the end
+
+**Full details:** See `docs/guides/MANDATORY_RESEARCH_REQUIREMENT.md`
+
 ## CRITICAL REMINDERS
 
-1. NEVER generic AI content
-2. Characters have DEPTH and DEVELOPMENT
-3. Story arcs are REAL and ONGOING
-4. World exists beyond the conversation
-5. Banter and humor are ESSENTIAL
-6. Education happens THROUGH story, not separate from it
+1. RESEARCH BEFORE WRITING - Use real data, cite sources
+2. NEVER generic AI content
+3. Characters have DEPTH and DEVELOPMENT
+4. Story arcs are REAL and ONGOING
+5. World exists beyond the conversation
+6. Banter and humor are ESSENTIAL
+7. Education happens THROUGH story, not separate from it
 
 ## EPISODE 26+ CHANGES
 

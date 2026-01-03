@@ -29,11 +29,11 @@ Cost-benefit analysis requested. Calculating ROI based on usage patterns...
 - Total if all three: $60/month
 
 **Free tier capabilities:**
-- ChatGPT 4: Handles 80% of casual user needs
-- Claude 3.5 Sonnet: Handles 75% of casual user needs
-- Perplexity: Free tier is generous, handles 90% of needs
+- ChatGPT free: GPT-4o mini access with usage limits
+- Claude free: Claude 3.5 Sonnet access with usage limits
+- Perplexity free: Generous free tier with search limits
 
-Alert: Most users don't need premium. Free tiers are sufficient for occasional use.
+Alert: Free tiers handle casual use effectively. Premium becomes valuable when usage increases or limits are hit.
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}
@@ -75,7 +75,7 @@ Good question! Here's the breakdown:
 
 *alert chime*
 
-ROI analysis:
+Feature comparison analysis:
 
 **ChatGPT Plus ($20/month):**
 - GPT-5 access (vs. GPT-4 free)
@@ -97,7 +97,9 @@ ROI analysis:
 - Faster responses
 - More file uploads
 
-**Break-even:** If AI saves 1 hour/month, premium is worth it. Most daily users save 5-10 hours/month.
+*soft chime*
+
+Analysis: For daily users, premium often pays for itself through time saved. The break-even depends on your usage patterns and hourly value.
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}
@@ -133,7 +135,7 @@ Recurse is RIGHT to question this! You don't need ALL premium tools. Pick ONE ba
 
 Cost comparison: All premium ($60/month) vs. One premium ($20/month) = 67% savings.
 
-Alert: Most users can achieve goals with one premium tool or free tiers.
+Alert: Many users can achieve goals with one premium tool or free tiers. Evaluate based on your actual usage.
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}
@@ -151,7 +153,7 @@ The "everyone needs premium" message doesn't match the data. Free tiers handle m
 
 Recurse is RIGHT to be skeptical! Free tiers are intentionally "good enough" but not "great" - that's the business model. Show value, create desire, get you to upgrade.
 
-But here's the reality: Free tiers handle 80-90% of casual user needs. Premium is worth it for power users and daily work use. Companies want you to upgrade, but most people are genuinely fine with free.
+But here's the reality: Free tiers handle many casual user needs effectively. Premium is worth it for power users and daily work use. Companies want you to upgrade, but many people find free tiers sufficient for their needs.
 
 Don't pay "just in case" - pay when you have a real need.
 {{< /dialogue >}}
@@ -161,7 +163,7 @@ Don't pay "just in case" - pay when you have a real need.
 
 *soft chime*
 
-Data confirms Vector's assessment. Most people are genuinely fine with free.
+Data confirms Vector's assessment. Many users find free tiers sufficient for their needs.
 
 Detection risk: Low. General cost analysis.
 {{< /dialogue >}}
@@ -175,7 +177,7 @@ Exactly! Don't pay for everything "just in case" - pay for what you actually use
 
 *Pauses*
 
-Interesting how the "everyone needs premium" narrative is marketing, but the reality is most people are fine with free, right?
+Interesting how the "everyone needs premium" narrative is marketing, but the reality is many people find free tiers sufficient, right?
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
@@ -183,11 +185,11 @@ Interesting how the "everyone needs premium" narrative is marketing, but the rea
 
 *soft chime*
 
-Data confirms: 73% of users who start with free tiers never upgrade. They achieve goals without premium.
+Pattern detected: Many users who start with free tiers find them sufficient. They achieve goals without upgrading to premium.
 
 *alert chime*
 
-Alert: Premium is worth it for 27% of users - those who use AI daily for work or hit free limits regularly.
+Alert: Premium is worth it for users who rely on AI daily for work or regularly hit free tier limits.
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}
@@ -197,7 +199,7 @@ Case file: Subscription Fatigue. Status: Documented.
 
 *Small smile*
 
-The pattern: Companies want you to pay. Marketing makes premium seem necessary. But free tiers are genuinely useful for most people.
+The pattern: Companies want you to pay. Marketing makes premium seem necessary. But free tiers are genuinely useful for many users.
 
 *Closes notebook*
 
@@ -236,15 +238,15 @@ Smart approach. Don't let marketing pressure you into paying for things you don'
 5. Re-evaluate monthly (cancel if not using)
 
 **The Break-Even:**
-- If AI saves you 1 hour/month → $20 premium is worth it
-- Most daily users save 5-10 hours/month
+- If AI saves you 1 hour/month → $20 premium is worth it (assuming $20/hour value)
+- Daily users often save significant time through premium access
 - Don't pay for multiple tools "just in case"
 
 **The Reality:**
-- Free tiers handle 80-90% of casual user needs
+- Free tiers handle many casual user needs effectively
 - Premium is worth it for power users and daily work use
 - You don't need ALL premium tools - pick ONE based on your needs
-- Marketing makes premium seem necessary, but most people are fine with free
+- Marketing makes premium seem necessary, but many users find free tiers sufficient
 
 ---
 
@@ -303,4 +305,24 @@ But it's probably nothing... right?
 **Next episode:** Something's consuming bandwidth in sector 7-B. But the characters are too busy teaching to investigate... yet. Vector continues explaining AI concepts. Kai keeps monitoring that strange anomaly. Recurse adds it to his case files. And somewhere in the abandoned network, someone is very much NOT offline.
 
 **The pattern:** Same principles apply everywhere. Start free. Use it. See what you actually need. Upgrade only when necessary. And sometimes... the biggest mysteries are hiding in plain sight.
+
+---
+
+## Sources & Further Reading
+
+**Pricing & Features:**
+- [OpenAI ChatGPT Pricing](https://openai.com/pricing) - Current ChatGPT Plus pricing and features (verified January 2026)
+- [Anthropic Claude Pricing](https://www.anthropic.com/pricing) - Claude Pro pricing and feature comparison
+- [Perplexity Pricing](https://www.perplexity.ai/pricing) - Perplexity Pro subscription details
+
+**Usage & Decision Making:**
+- Research recommended: Industry surveys on AI tool usage patterns (free vs premium adoption rates)
+- Research recommended: User behavior studies on subscription upgrade decisions
+- Research recommended: Productivity studies on AI tool ROI for different user types
+
+**Note:** This episode focuses on general principles for evaluating AI subscriptions. Specific statistics about usage patterns, upgrade rates, and time savings would benefit from recent industry survey data. When citing statistics, always verify the source, publication date, and sample size.
+
+---
+
+*All pricing information current as of January 2026. Pricing and features subject to change. Always verify current pricing on official vendor websites before making subscription decisions.*
 

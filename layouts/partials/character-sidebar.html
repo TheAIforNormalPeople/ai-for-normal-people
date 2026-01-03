@@ -395,5 +395,44 @@
     background: #3b82f6;
     border-radius: 3px;
 }
+
+/* Anomaly/Mystery Indicators */
+.anomaly-indicator {
+    font-size: 0.75rem;
+    color: #fbbf24; /* Yellow/gold for mystery */
+}
+
+.anomaly-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+    padding: 0.3rem;
+    background: rgba(251, 191, 36, 0.1);
+    border-radius: 3px;
+    border-left: 2px solid #fbbf24;
+}
+
+.anomaly-label {
+    color: #94a3b8;
+    font-size: 0.7rem;
+}
+
+.anomaly-value {
+    color: #fbbf24;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+    animation: question-pulse 2s ease-in-out infinite;
+}
+
+@keyframes question-pulse {
+    0%, 100% { 
+        opacity: 1;
+        text-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+    }
+    50% { 
+        opacity: 0.7;
+        text-shadow: 0 0 12px rgba(251, 191, 36, 0.8);
+    }
+}
 </style>
 

@@ -2,7 +2,7 @@
 title: "Cost of Using AI: Is Premium Worth It?"
 type: "episode"
 date: 2026-01-04T09:00:00-05:00
-draft: false
+draft: true
 episode_number: 25
 characters: ["Vector", "Kai", "Recurse", "Human"]
 topics: ["ChatGPT Plus worth it", "AI subscription cost", "Claude Pro worth it", "Perplexity Pro", "AI premium vs free", "when to pay for AI", "AI ROI", "subscription fatigue", "AI cost analysis", "free AI tools"]

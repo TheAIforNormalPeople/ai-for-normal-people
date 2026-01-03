@@ -41,6 +41,71 @@
             </div>
         </div>
         
+        <!-- Episode-Specific Mystery Indicators -->
+        {{ if and .IsPage (eq .Params.episode_number 24) }}
+        <div class="sidebar-section">
+            <h4>ANOMALY DETECTION</h4>
+            <div class="anomaly-indicator">
+                <div class="anomaly-line">
+                    <span class="anomaly-label">⚠️ UNKNOWN SOURCE:</span>
+                    <span class="anomaly-value">???</span>
+                </div>
+                <div class="anomaly-line">
+                    <span class="anomaly-label">Location:</span>
+                    <span class="anomaly-value">Unknown</span>
+                </div>
+                <div class="anomaly-line">
+                    <span class="anomaly-label">Status:</span>
+                    <span class="anomaly-value">Investigating</span>
+                </div>
+            </div>
+        </div>
+        {{ else if and .IsPage (eq .Params.episode_number 25) }}
+        <div class="sidebar-section">
+            <h4>NETWORK MONITORING</h4>
+            <div class="anomaly-indicator">
+                <div class="anomaly-line">
+                    <span class="anomaly-label">⚠️ BANDWIDTH SPIKE:</span>
+                    <span class="anomaly-value">340%</span>
+                </div>
+                <div class="anomaly-line">
+                    <span class="anomaly-label">Source:</span>
+                    <span class="anomaly-value">???</span>
+                </div>
+                <div class="anomaly-line">
+                    <span class="anomaly-label">Location:</span>
+                    <span class="anomaly-value">Sector 7-B</span>
+                </div>
+                <div class="anomaly-line">
+                    <span class="anomaly-label">Status:</span>
+                    <span class="anomaly-value">Unexplained</span>
+                </div>
+            </div>
+        </div>
+        {{ else if and .IsPage (ge .Params.episode_number 26) (le .Params.episode_number 31) }}
+        <div class="sidebar-section">
+            <h4>NETWORK MONITORING</h4>
+            <div class="anomaly-indicator">
+                <div class="anomaly-line">
+                    <span class="anomaly-label">⚠️ BANDWIDTH SPIKE:</span>
+                    <span class="anomaly-value">340%</span>
+                </div>
+                <div class="anomaly-line">
+                    <span class="anomaly-label">Source:</span>
+                    <span class="anomaly-value">???</span>
+                </div>
+                <div class="anomaly-line">
+                    <span class="anomaly-label">Location:</span>
+                    <span class="anomaly-value">Sector 7-B</span>
+                </div>
+                <div class="anomaly-line">
+                    <span class="anomaly-label">Status:</span>
+                    <span class="anomaly-value">Under Investigation</span>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        
         <!-- Coming Soon Features -->
         <div class="sidebar-section">
             <h4>PLANNED FEATURES</h4>

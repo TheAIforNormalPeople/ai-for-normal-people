@@ -146,17 +146,17 @@ Alert: All techniques require active engagement, not passive consumption. Patter
 
 *soft chime*
 
-Also, Vector? Your answer to Recurse's questions was... actually helpful. You adjusted when challenged. That's new.
+Also, Vector? Your answer to Recurse's questions was... actually helpful. You adjusted when challenged.
 {{< /dialogue >}}
 
 {{< dialogue char="Vector" >}}
 *Looks at Kai, slightly defensive*
 
-What do you mean "that's new"? I adjust when challenged all the time!
+What do you mean? I adjust when challenged!
 
 *Pauses*
 
-Okay, maybe not all the time. But I'm learning! See? Learning requires adjustment!
+Okay, maybe not always. But I'm learning! See? Learning requires adjustment!
 
 *Gets more animated*
 
@@ -261,34 +261,6 @@ Yes, you CAN become dependent on AI for learning. If you always ask AI first, yo
 *Catches himself*
 
 So yes, there's a risk - but if you're intentional about using AI to ENHANCE learning (not replace it), you can learn faster AND maintain independence!
-{{< /dialogue >}}
-
-{{< dialogue char="Kai" >}}
-*WHIRR*
-
-Vector's dependency warning is important. That's a real risk that people don't think about.
-
-*CHK-CHK*
-
-Also, Vector? You actually acknowledged a risk. That's... considerate? Unexpected. But correct.
-
-*BEEP*
-
-Pattern: Vector shows growth. Acknowledges limitations. Provides balanced advice. Character development detected.
-{{< /dialogue >}}
-
-{{< dialogue char="Recurse" >}}
-*Looks at Kai*
-
-You're tracking character development now? Really?
-
-*Small smile*
-
-But also, Vector did acknowledge the risk. That's good. Balanced advice is better than absolute statements.
-
-*Takes notes*
-
-Case file update: Vector demonstrates growth. Acknowledges dependency risk. Provides nuanced advice. Kai tracks character development. System functioning as intended.
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}

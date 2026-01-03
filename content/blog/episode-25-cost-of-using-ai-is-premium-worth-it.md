@@ -157,9 +157,11 @@ Don't pay "just in case" - pay when you have a real need.
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
+*from monitoring station*
+
 *soft chime*
 
-Break-even: If AI saves 1 hour/month, premium is worth it. Most daily users save 5-10 hours/month.
+Data confirms Vector's assessment. Most people are genuinely fine with free.
 
 Detection risk: Low. General cost analysis.
 {{< /dialogue >}}

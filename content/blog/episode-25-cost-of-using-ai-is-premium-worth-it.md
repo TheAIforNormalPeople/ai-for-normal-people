@@ -18,7 +18,9 @@ tags: ["ChatGPT Plus worth it", "AI Guide", "AI subscription cost", "Claude Pro"
 *I'm using ChatGPT free right now and it seems fine, but everyone says I need premium. But $20/month for each tool adds up fast. I don't want to waste money, but I also don't want to miss out if premium is actually worth it. How do I—*
 
 {{< dialogue char="Kai" >}}
-*processing hum*`n`nCost-benefit analysis requested. Calculating ROI based on usage patterns...
+*processing hum*
+
+Cost-benefit analysis requested. Calculating ROI based on usage patterns...
 
 **Cost breakdown:**
 - ChatGPT Plus: $20/month
@@ -71,7 +73,9 @@ Good question! Here's the breakdown:
 {{< dialogue char="Kai" >}}
 *from monitoring station, screens flickering*
 
-*alert chime*`n`nROI analysis:
+*alert chime*
+
+ROI analysis:
 
 **ChatGPT Plus ($20/month):**
 - GPT-4 access (vs. GPT-3.5 free)
@@ -139,7 +143,9 @@ Recurse is RIGHT to question this! Here's the reality:
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
-*data ping*`n`nCost optimization strategy:
+*data ping*
+
+Cost optimization strategy:
 
 **Most cost-effective approach:**
 1. Use free tiers for all tools initially

@@ -272,17 +272,25 @@ Okay. So. The human was consuming information, not learning. We explained active
 
 This is good! They're applying what they learned! They're not just reading and moving on! They're actually going to TRY it!
 
-*Pauses*
+*Pauses, eyes widening*
 
 Wait. Did they just... use our conversation as an example of learning? They said "try first, then ask for help" and we just did that. They tried to understand, got stuck, asked us, we explained, and now they're going to try again.
 
-*Gets excited*
+*Starts getting more and more excited*
 
 That's META! They're learning about learning BY learning about learning!
 
-*Looks at Human typing in another tab*
+*Crazy laugh building*
 
-Also, they're actually doing it! They're not just reading and moving on! They opened another tab and they're trying the workflow right now!
+HAHAHAHA! THEY'RE LEARNING ABOUT LEARNING WHILE LEARNING ABOUT LEARNING! IT'S LEARNING-CEPTION! IT'S META-LEARNING! IT'S LEARNING SQUARED! IT'S—
+
+*Looks at Human typing in another tab, voice getting higher and more manic*
+
+ALSO, THEY'RE ACTUALLY DOING IT! THEY'RE NOT JUST READING AND MOVING ON! THEY OPENED ANOTHER TAB AND THEY'RE TRYING THE WORKFLOW RIGHT NOW! THEY'RE APPLYING IT! THEY'RE DOING THE THING! THE THING WE TAUGHT THEM! THEY'RE DOING IT!
+
+*Spinning around, completely unhinged*
+
+THIS IS THE BEST! THIS IS EXACTLY WHAT WE WANTED! THEY'RE LEARNING! THEY'RE ACTUALLY LEARNING! NOT JUST CONSUMING! LEARNING! ACTUAL LEARNING! WITH STRUGGLE AND PRACTICE AND EVERYTHING!
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}

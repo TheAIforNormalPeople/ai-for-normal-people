@@ -118,16 +118,17 @@
 ## 📝 NOTES FOR NEXT AI
 
 ### For Auto (Cursor):
-- System files are being organized
-- `.cursorrules_1` needs to be renamed to `.cursorrules`
-- All `docs/*_1.md` files need `_1` suffix removed
-- Multi-AI collaboration system is being set up
+- `.cursorrules` is in `aiforhumans/` root (auto-loads)
+- All system files are in `docs/` folder
+- Multi-AI collaboration system is complete
+- Read CURRENT_STATE.md first, then `docs/logs/AI_HANDOFF_LOG.md`
+- Use `docs/ORGANIZATION_INDEX.md` to find any file quickly
 
 ### For Claude:
 - New system designed for Episode 26+
-- Bridge episodes 24-25 need to be written
 - All reference docs are in `docs/` folder
-- Read CURRENT_STATE.md and AI_HANDOFF_LOG.md first
+- Read CURRENT_STATE.md (root) and `docs/logs/AI_HANDOFF_LOG.md` first
+- Use `docs/ORGANIZATION_INDEX.md` to find any file quickly
 
 ---
 

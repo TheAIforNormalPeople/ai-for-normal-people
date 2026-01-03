@@ -19,7 +19,9 @@ This system ensures both Auto (in Cursor) and Claude (in other sessions) can:
 
 ```
 aiforhumans/
-├── .cursorrules                    ← Auto-loads in Cursor (rename from .cursorrules_1)
+├── .cursorrules                    ← Auto-loads in Cursor (in root)
+├── CURRENT_STATE.md                ← Single source of truth (in root)
+├── MULTI_AI_COLLABORATION_SYSTEM.md ← This file (in root)
 ├── docs/                           ← All reference docs (both AIs can read)
 │   ├── CHARACTER_VOICE_ROTATION.md
 │   ├── CHARACTER_DEEP_BACKSTORY.md
@@ -27,10 +29,11 @@ aiforhumans/
 │   ├── EPISODE_26_PLAN.md
 │   ├── ENVIRONMENT_AND_BANTER.md
 │   ├── CURSOR_IMPLEMENTATION_GUIDE.md
-│   └── COMPLETE_SYSTEM_SUMMARY.md
-├── AI_HANDOFF_LOG.md               ← Both AIs update this
-├── CURRENT_STATE.md                ← Single source of truth
-└── EPISODE_BRIDGE_PLAN.md          ← How we get from 23 to 26
+│   ├── COMPLETE_SYSTEM_SUMMARY.md
+│   ├── episode-planning/
+│   │   └── EPISODE_BRIDGE_PLAN.md  ← How we get from 23 to 26
+│   └── logs/
+│       └── AI_HANDOFF_LOG.md       ← Both AIs update this
 ```
 
 ---
@@ -38,6 +41,7 @@ aiforhumans/
 ## 🔄 HANDOFF SYSTEM
 
 ### AI_HANDOFF_LOG.md
+**Location:** `docs/logs/AI_HANDOFF_LOG.md`
 **Purpose:** Both AIs log what they're working on, what they completed, what needs attention.
 
 **Format:**
@@ -60,6 +64,7 @@ aiforhumans/
 ```
 
 ### CURRENT_STATE.md
+**Location:** `aiforhumans/CURRENT_STATE.md` (root level)
 **Purpose:** Single source of truth for project state.
 
 **Contains:**

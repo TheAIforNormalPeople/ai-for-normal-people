@@ -20,10 +20,10 @@ Kai's sounds are written as italic text with asterisks:
 **Current Implementation: CSS-based**
 - Sounds are italic text (`<em>`) in dialogue
 - CSS targets italic text in dialogue boxes
-- **Default:** Green/cyan (#10b981) - Kai's character color
+- **Default:** Bright yellow/gold (#eab308) - Distinct from Kai's green box (#10b981)
 - All italic text in dialogue is styled as sounds by default
 - Different sound types can use data attributes for specific colors:
-  - **Processing sounds** (`data-sound="processing"`): Green/cyan (#10b981)
+  - **Processing sounds** (`data-sound="processing"`): Yellow/gold (#eab308)
   - **Alert sounds** (`data-sound="alert"`): Red (#ef4444)
   - **Soft sounds** (`data-sound="soft"`): Purple (#8b5cf6)
   - **Data sounds** (`data-sound="data"`): Cyan (#06b6d4)

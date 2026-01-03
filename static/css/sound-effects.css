@@ -12,7 +12,7 @@
 /* All italic text in dialogue - default styling for sounds */
 .character-dialogue em {
     font-style: italic;
-    color: #10b981; /* Kai's green/cyan - default for sounds */
+    color: #eab308; /* Bright yellow/gold - stands out from green box */
     font-weight: 500;
     letter-spacing: 0.03em;
     opacity: 0.95;
@@ -25,11 +25,12 @@
     display: block;
     margin-bottom: 0.5em;
     font-size: 1.05em;
+    color: #eab308; /* Bright yellow/gold - distinct from green box */
 }
 
 /* Sound effects with data attributes for specific types */
 .character-dialogue em[data-sound="processing"] {
-    color: #10b981;
+    color: #eab308; /* Yellow/gold for processing sounds */
     font-weight: 500;
 }
 
@@ -82,13 +83,13 @@
    ============================================ */
 
 .dark-mode .character-dialogue em {
-    color: #34d399; /* Brighter green in dark mode */
-    text-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
+    color: #fbbf24; /* Brighter yellow/gold in dark mode */
+    text-shadow: 0 0 6px rgba(234, 179, 8, 0.5);
 }
 
 .dark-mode .character-dialogue em[data-sound="processing"] {
-    color: #34d399;
-    text-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
+    color: #fbbf24; /* Brighter yellow in dark mode */
+    text-shadow: 0 0 6px rgba(234, 179, 8, 0.5);
 }
 
 .dark-mode .character-dialogue em[data-sound="alert"] {

@@ -294,39 +294,35 @@ THIS IS THE BEST! THIS IS EXACTLY WHAT WE WANTED! THEY'RE LEARNING! THEY'RE ACTU
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
+*WHIRR*
+
+Vector's excitement levels: Critical. Spinning detected. Manic laughter detected. All caps detected.
+
 *BEEP*
 
-System status: Vector's excitement levels: Critical. Approaching maximum intensity.
-
-*WHIRR-CLICK*
-
-Vector's behavior analysis: Spinning. Laughing maniacally. Using all caps. Pattern detected: Complete loss of composure.
+Pattern: Vector loses composure when humans do normal things. The human applied what they learned. That's expected behavior. Not meta. Not "learning-ception."
 
 *CHK-CHK*
 
-Also, Vector? The human just applied what they learned. That's normal. Not meta. Not "learning-ception." Just... learning.
-
-*BEEP*
-
-Vector's response: Still spinning. Still laughing. Still unhinged. Status: Unchanged.
+Vector's response: Still spinning. Still unhinged. Status: Unchanged.
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}
-*Looks at Vector, concerned*
+*Looks at Vector*
 
-Vector? Vector, are you okay? You're spinning. And laughing. And using words that don't exist.
-
-*Small smile*
-
-"Learning-ception"? Really? That's not a thing. That's just... you making up words while having a breakdown.
+Vector? You're spinning. And laughing. And making up words.
 
 *Takes notes*
 
-Case file update: Vector demonstrates extreme excitement response to normal learning behavior. Pattern: Vector gets unhinged when humans do what they're supposed to do. Documented.
+Case file: Vector's breakdown. Trigger: Human applied learning. Response: Complete loss of composure. Pattern: Vector gets unhinged when humans do what they're supposed to do.
+
+*Small smile*
+
+Also, "learning-ception" isn't a thing. That's just you having a breakdown.
 
 *Pauses*
 
-Also, Vector? Stop spinning. You're going to make yourself dizzy. And stop calling everything "meta." Not everything is meta. Sometimes things are just... things.
+Stop spinning. You're going to make yourself dizzy.
 {{< /dialogue >}}
 
 {{< dialogue char="Vector" >}}

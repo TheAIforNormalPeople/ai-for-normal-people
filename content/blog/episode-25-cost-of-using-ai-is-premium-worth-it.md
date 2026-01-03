@@ -1,7 +1,7 @@
 ---
 title: "Cost of Using AI: Is Premium Worth It?"
 type: "episode"
-date: 2026-01-05T09:00:00-05:00
+date: 2026-01-04T09:00:00-05:00
 draft: true
 episode_number: 25
 characters: ["Vector", "Kai", "Recurse", "Human"]

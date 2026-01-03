@@ -342,7 +342,7 @@ Case file: Vector's new term. "Learning-ception."
 
 *Small smile*
 
-It does sound really cool though.
+It does sound really cool.
 
 *Takes notes*
 

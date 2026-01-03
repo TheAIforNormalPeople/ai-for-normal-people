@@ -250,12 +250,6 @@ Smart approach. Don't let marketing pressure you into paying for things you don'
 
 ---
 
-## What's Next?
-
-The human was overwhelmed by $60/month for three AI tools. Kai calculated ROI and break-even points. Vector explained when premium is worth it vs when free is enough. Recurse investigated subscription fatigue and marketing tactics. The human now understands: Start free, use it, THEN decide if premium is worth it for ONE tool based on actual usage.
-
----
-
 {{< dialogue char="Kai" >}}
 *systems check*
 

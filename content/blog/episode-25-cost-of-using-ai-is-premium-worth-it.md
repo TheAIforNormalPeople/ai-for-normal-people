@@ -29,8 +29,8 @@ Cost-benefit analysis requested. Calculating ROI based on usage patterns...
 - Total if all three: $60/month
 
 **Free tier capabilities:**
-- ChatGPT 3.5: Handles 80% of casual user needs
-- Claude Sonnet: Handles 75% of casual user needs
+- ChatGPT 4: Handles 80% of casual user needs
+- Claude 3.5 Sonnet: Handles 75% of casual user needs
 - Perplexity: Free tier is generous, handles 90% of needs
 
 Alert: Most users don't need premium. Free tiers are sufficient for occasional use.
@@ -58,7 +58,7 @@ Good question! Here's the breakdown:
 **Premium is worth it if:**
 - **Daily use** - Using AI multiple times per day
 - **Work productivity** - Using for work (time saved = money earned)
-- **Latest models** - Need GPT-4, Claude 3.5, latest features
+- **Latest models** - Need GPT-5, Claude 4.5, latest features
 - **Priority access** - Can't wait in queues (free tiers sometimes have wait times)
 - **Advanced features** - Need longer context, file uploads, custom instructions
 
@@ -78,17 +78,18 @@ Good question! Here's the breakdown:
 ROI analysis:
 
 **ChatGPT Plus ($20/month):**
-- GPT-4 access (vs. GPT-3.5 free)
+- GPT-5 access (vs. GPT-4 free)
 - Priority access (no wait times)
 - Longer context window
 - File uploads
 - Custom instructions
 
 **Claude Pro ($20/month):**
+- Claude 4.5 access (vs. Claude 3.5 free)
 - Priority access
 - Higher rate limits
 - Longer context (200k tokens)
-- Same model as free (just faster/more)
+- Advanced reasoning capabilities
 
 **Perplexity Pro ($20/month):**
 - More searches per day
@@ -298,7 +299,7 @@ The key is: Don't let marketing pressure you into paying for things you don't ne
 **When Premium Is Worth It:**
 - Daily use for work (productivity gain)
 - Hitting free tier limits regularly
-- Need latest models (GPT-4, Claude 3.5)
+- Need latest models (GPT-5, Claude 4.5)
 - Priority access needed (no wait times)
 
 **Cost Optimization Strategy:**

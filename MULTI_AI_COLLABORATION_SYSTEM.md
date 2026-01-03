@@ -114,7 +114,11 @@ aiforhumans/
 ### When Starting Work:
 
 1. **Read CURRENT_STATE.md** (know where we are)
+   - **For Cursor (Auto):** `aiforhumans/CURRENT_STATE.md`
+   - **For Claude:** `/mnt/project/aiforhumans/CURRENT_STATE.md` (if repo is mounted there)
 2. **Read AI_HANDOFF_LOG.md** (see what other AI did)
+   - **For Cursor (Auto):** `aiforhumans/docs/logs/AI_HANDOFF_LOG.md`
+   - **For Claude:** `/mnt/project/aiforhumans/docs/logs/AI_HANDOFF_LOG.md` (if repo is mounted there)
 3. **Check .cursorrules** (if in Cursor, auto-loads)
 4. **Load relevant docs/** files for context
 5. **Do the work**
@@ -169,29 +173,31 @@ aiforhumans/
 
 ### Both AIs Must:
 
-1. **Always read CURRENT_STATE.md first**
-2. **Always update AI_HANDOFF_LOG.md after work**
+1. **Always read CURRENT_STATE.md first** (root level)
+2. **Always update docs/logs/AI_HANDOFF_LOG.md after work**
 3. **Always commit to git** (don't leave uncommitted work)
 4. **Never duplicate work** (check handoff log first)
 5. **Always reference docs/** files (don't work from memory)
 6. **Always update CURRENT_STATE.md** if state changes
+7. **Use docs/ORGANIZATION_INDEX.md** to find any file quickly
 
-### File Naming:
+### File Locations:
 
-- **Core rules:** `.cursorrules` (no suffix, auto-loads)
-- **Reference docs:** `docs/FILENAME.md` (no `_1` suffix)
-- **Logs:** `AI_HANDOFF_LOG.md`, `CURRENT_STATE.md`
-- **Plans:** `EPISODE_BRIDGE_PLAN.md`, `EPISODE_XX_PLAN.md`
+- **Core rules:** `.cursorrules` (root, auto-loads)
+- **Reference docs:** `docs/FILENAME.md` (system files)
+- **Logs:** `docs/logs/AI_HANDOFF_LOG.md`, `CURRENT_STATE.md` (root)
+- **Plans:** `docs/episode-planning/EPISODE_BRIDGE_PLAN.md`, `docs/EPISODE_XX_PLAN.md`
+- **Organization:** `docs/ORGANIZATION_INDEX.md` (find any file)
 
 ---
 
 ## 📝 QUICK REFERENCE
 
 ### "What should I work on?"
-→ Read CURRENT_STATE.md → Check AI_HANDOFF_LOG.md → Pick next priority
+→ Read CURRENT_STATE.md → Check docs/logs/AI_HANDOFF_LOG.md → Pick next priority
 
 ### "What did the other AI do?"
-→ Read AI_HANDOFF_LOG.md (sorted by date, most recent first)
+→ Read docs/logs/AI_HANDOFF_LOG.md (sorted by date, most recent first)
 
 ### "What's the current episode?"
 → Read CURRENT_STATE.md → Episode number section
@@ -201,6 +207,9 @@ aiforhumans/
 
 ### "How do I write an episode?"
 → Read docs/EPISODE_26_PLAN.md (template) + docs/CURSOR_IMPLEMENTATION_GUIDE.md
+
+### "Where is [file]?"
+→ Read docs/ORGANIZATION_INDEX.md (master file index)
 
 ---
 

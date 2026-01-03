@@ -115,55 +115,23 @@ The "just pay for everything" advice doesn't make sense. That's expensive.
 **[Human]:** *Yeah, that's what I'm worried about. $60/month for three tools is a lot.*
 
 {{< dialogue char="Vector" >}}
-Recurse is RIGHT to question this! Here's the reality:
+*pacing intensifies*
 
-**Do you need all premium tools?**
-- **NO** - Most people only need ONE premium tool
-- **Pick based on use case:**
-  - **ChatGPT Plus** - Best general-purpose, most polished
-  - **Claude Pro** - Best for long documents, analysis
-  - **Perplexity Pro** - Best for research with citations
+Recurse is RIGHT to question this! You don't need ALL premium tools. Pick ONE based on your use case:
 
-**API vs. Subscription:**
-- **API** - Pay per use, cheaper if you use less
-- **Subscription** - Flat rate, better if you use a lot
-- **Break-even** - If you use AI heavily, subscription is better. If occasionally, API might be cheaper.
+- **ChatGPT Plus** - Best general-purpose
+- **Claude Pro** - Best for long documents, analysis
+- **Perplexity Pro** - Best for research with citations
 
-**Subscription fatigue:**
-- **YES** - Paying for multiple services adds up
-- **Solution** - Pick ONE premium tool, use free tiers for others
-- **Strategy** - Start with one, see if you need more
+**API vs. Subscription:** API is cheaper if you use less. Subscription is better if you use a lot. Break-even depends on your usage.
 
-**The practical approach:**
-1. **Start with free tiers** - See what you actually use
-2. **Pick ONE premium** - Based on your main use case
-3. **Use free for others** - Don't pay for everything
-4. **Re-evaluate monthly** - Cancel if you're not using it
-
-**The key:** You don't need ALL premium tools. Pick ONE based on your needs, use free for the rest!
+**The practical approach:** Start free, see what you actually use, pick ONE premium based on your main use case, keep others free, re-evaluate monthly.
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
 *data ping*
 
-Cost optimization strategy:
-
-**Most cost-effective approach:**
-1. Use free tiers for all tools initially
-2. Identify which tool you use most
-3. Upgrade only that tool to premium
-4. Keep others on free tier
-5. Re-evaluate monthly
-
-**Cost comparison:**
-- All premium: $60/month
-- One premium: $20/month (67% savings)
-- All free: $0/month (if free is sufficient)
-
-**When to pay:**
-- Daily use for work (productivity gain)
-- Hitting free tier limits regularly
-- Need latest models for specific tasks
+Cost comparison: All premium ($60/month) vs. One premium ($20/month) = 67% savings.
 
 Alert: Most users can achieve goals with one premium tool or free tiers.
 {{< /dialogue >}}
@@ -179,55 +147,19 @@ The "everyone needs premium" message doesn't match the data. Free tiers handle m
 {{< /dialogue >}}
 
 {{< dialogue char="Vector" >}}
-Recurse is RIGHT to be skeptical! Here's the reality:
+*stops pacing, turns to Recurse*
 
-**Are free tiers intentionally limited?**
-- **YES** - Free tiers are designed to be "good enough" but not "great"
-- **Purpose** - Show value, create desire for premium
-- **Strategy** - Get you using it, hit limits, then upgrade
+Recurse is RIGHT to be skeptical! Free tiers are intentionally "good enough" but not "great" - that's the business model. Show value, create desire, get you to upgrade.
 
-**Do most people need premium?**
-- **NO** - Free tiers handle 80-90% of casual user needs
-- **YES** - Premium is worth it for power users and daily work use
-- **It depends** - On your usage patterns and needs
+But here's the reality: Free tiers handle 80-90% of casual user needs. Premium is worth it for power users and daily work use. Companies want you to upgrade, but most people are genuinely fine with free.
 
-**The marketing:**
-- Companies want you to upgrade (that's how they make money)
-- Marketing emphasizes premium benefits
-- Free tier limitations are real but manageable for most
-
-**The reality:** Free tiers are genuinely useful for most people. Premium is worth it if you:
-- Use AI daily
-- Use for work (productivity gain)
-- Hit free limits regularly
-- Need latest models
-
-**The key:** Don't pay "just in case" - pay when you have a real need. Start free, upgrade only if you actually need to!
+Don't pay "just in case" - pay when you have a real need.
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
-*Reviewing data*
+*soft chime*
 
-Practical recommendation logged:
-
-**Start with free:**
-- Test all tools on free tiers
-- See how much you actually use AI
-- Identify your main use case
-
-**Upgrade to premium if:**
-- You use AI daily
-- You hit free tier limits
-- You use for work (productivity gain)
-- You need latest models
-
-**Cost optimization:**
-- Pick ONE premium tool (not all)
-- Use free tiers for others
-- Re-evaluate monthly
-- Cancel if not using
-
-**Break-even:** If AI saves 1 hour/month, premium is worth it.
+Break-even: If AI saves 1 hour/month, premium is worth it. Most daily users save 5-10 hours/month.
 
 Detection risk: Low. General cost analysis.
 {{< /dialogue >}}
@@ -237,9 +169,7 @@ Detection risk: Low. General cost analysis.
 {{< dialogue char="Vector" >}}
 *pacing between server racks, cables swaying*
 
-Exactly! Start free, use it, see what you actually need, THEN decide if premium is worth it for ONE tool.
-
-Don't pay for everything "just in case" - pay for what you actually use and need. Most people can achieve their goals with free tiers or one premium tool. You don't need to pay $60/month for three services!
+Exactly! Don't pay for everything "just in case" - pay for what you actually use and need.
 
 *Pauses*
 
@@ -256,10 +186,6 @@ Data confirms: 73% of users who start with free tiers never upgrade. They achiev
 *alert chime*
 
 Alert: Premium is worth it for 27% of users - those who use AI daily for work or hit free limits regularly.
-
-*processing hum*
-
-Recommendation: Start free. Upgrade only if you have a real need, not a perceived one.
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}
@@ -273,7 +199,7 @@ The pattern: Companies want you to pay. Marketing makes premium seem necessary. 
 
 *Closes notebook*
 
-Investigation complete. Conclusion: Don't pay "just in case." Pay when you have a real need.
+Investigation complete.
 {{< /dialogue >}}
 
 **[Human]:** *Thanks. That helps. I'll start with free and see what I actually use before spending anything.*
@@ -281,11 +207,7 @@ Investigation complete. Conclusion: Don't pay "just in case." Pay when you have 
 {{< dialogue char="Vector" >}}
 *Nods*
 
-Smart approach. That's exactly what you should do.
-
-*Turns to face the group*
-
-The key is: Don't let marketing pressure you into paying for things you don't need. Start free, use it, THEN decide if premium is worth it based on YOUR actual usage, not someone else's marketing message.
+Smart approach. Don't let marketing pressure you into paying for things you don't need.
 {{< /dialogue >}}
 
 ---

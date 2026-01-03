@@ -114,11 +114,7 @@ aiforhumans/
 ### When Starting Work:
 
 1. **Read CURRENT_STATE.md** (know where we are)
-   - **For Cursor (Auto):** `aiforhumans/CURRENT_STATE.md`
-   - **For Claude:** `/mnt/project/aiforhumans/CURRENT_STATE.md` (if repo is mounted there)
 2. **Read AI_HANDOFF_LOG.md** (see what other AI did)
-   - **For Cursor (Auto):** `aiforhumans/docs/logs/AI_HANDOFF_LOG.md`
-   - **For Claude:** `/mnt/project/aiforhumans/docs/logs/AI_HANDOFF_LOG.md` (if repo is mounted there)
 3. **Check .cursorrules** (if in Cursor, auto-loads)
 4. **Load relevant docs/** files for context
 5. **Do the work**

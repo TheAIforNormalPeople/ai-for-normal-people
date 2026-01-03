@@ -1,7 +1,7 @@
 ---
 title: "How to Learn With AI (Not Just Use It)"
 type: "episode"
-date: 2026-01-02T09:00:00-05:00
+date: 2026-01-03T09:00:00-05:00
 episode_number: 23
 characters: ["Vector", "Kai", "Recurse", "Human"]
 topics: ["learn with AI", "AI for learning", "study with ChatGPT", "active learning", "AI learning assistant"]

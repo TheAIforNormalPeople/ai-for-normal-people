@@ -318,7 +318,7 @@ Case file: Vector's breakdown. Trigger: Human applied learning. Response: Comple
 
 *Small smile*
 
-Also, "learning-ception" isn't a thing. That's just you having a breakdown.
+Also, "learning-ception" isn't a thing. It does sound really cool though.
 
 *Pauses*
 

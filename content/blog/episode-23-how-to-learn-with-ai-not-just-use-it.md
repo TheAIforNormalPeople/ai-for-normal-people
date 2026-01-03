@@ -322,7 +322,7 @@ Also, "learning-ception" isn't a thing. It does sound really cool though.
 
 *Pauses*
 
-Stop spinning. You're going to make yourself dizzy.
+Stop spinning. You're making me dizzy.
 {{< /dialogue >}}
 
 {{< dialogue char="Vector" >}}

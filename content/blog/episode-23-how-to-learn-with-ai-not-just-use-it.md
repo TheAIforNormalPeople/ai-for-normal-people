@@ -346,7 +346,7 @@ It does sound really cool.
 
 *Takes notes*
 
-Logging it. Documented. Because it sounds cool.
+Logging it. Documented.
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}

@@ -35,13 +35,15 @@
 
 ### 🔬 RESEARCH REQUIREMENT (MANDATORY)
 - [ ] Completed 3-5 web searches on episode topic BEFORE writing
-- [ ] Found at least 3 specific statistics (with sources and dates)
+- [ ] Found at least 3 specific statistics (with sources and dates) OR noted research needed
 - [ ] Verified current pricing (checked official pages)
 - [ ] Located official documentation (not just blog posts)
 - [ ] All claims have named sources (no "most users..." without citation)
-- [ ] Citations section included at end of episode
+- [ ] **"Sources & Further Reading" section included at end of episode** (REQUIRED)
+- [ ] Citations section includes official pricing/documentation links
 - [ ] Data is current (dated information included)
 - [ ] No generic AI content - using real, verifiable facts
+- [ ] Sources section formatted correctly with categories and descriptions
 - **Full details:** See `docs/guides/MANDATORY_RESEARCH_REQUIREMENT.md`
 
 ### 🎯 SEO & METADATA

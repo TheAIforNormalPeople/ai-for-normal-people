@@ -206,7 +206,24 @@ Every episode MUST start with research. No exceptions.
 - Real data with named sources
 - Dated information ("As of January 2026...")
 - Verifiable facts (not assumptions)
-- Citations section at the end
+- **Citations section at the end** - REQUIRED for every episode
+
+**Citations Section Format:**
+```markdown
+---
+
+## Sources & Further Reading
+
+**Pricing & Features:**
+- [Source Title](URL) - Brief description (verified date)
+
+**Usage & Research:**
+- [Source Title](URL) - What it covers
+
+---
+
+*All data current as of [DATE]. Always verify current information on official sources.*
+```
 
 **Full details:** See `docs/guides/MANDATORY_RESEARCH_REQUIREMENT.md`
 

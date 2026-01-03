@@ -171,9 +171,16 @@ Premium isn't about features - it's about frequency of use.
 
 ---
 
-## STEP 5: ADD CITATIONS AT END
+## STEP 5: ADD CITATIONS AT END (REQUIRED)
 
-Every episode MUST end with sources:
+**Every episode MUST end with a "Sources & Further Reading" section. No exceptions.**
+
+This section is REQUIRED for every episode, even if sources are limited. If you don't have specific sources yet, include:
+- Official pricing/documentation pages (always available)
+- Note that additional research is recommended
+- Links to official vendor websites
+
+**Standard Format:**
 
 ```markdown
 ---
@@ -181,21 +188,35 @@ Every episode MUST end with sources:
 ## Sources & Further Reading
 
 **Pricing & Features:**
-- [OpenAI ChatGPT Pricing](https://openai.com/pricing) - Current plans and features
-- [Anthropic Claude Pro](https://www.anthropic.com/claude) - Claude pricing and capabilities
+- [OpenAI ChatGPT Pricing](https://openai.com/pricing) - Current plans and features (verified January 2026)
+- [Anthropic Claude Pricing](https://www.anthropic.com/pricing) - Claude Pro pricing and capabilities
+- [Perplexity Pricing](https://www.perplexity.ai/pricing) - Perplexity Pro subscription details
 
-**Usage Data:**
-- [Stack Overflow Developer Survey 2024](url) - AI tool usage statistics across 65,000 developers
-- [OpenAI Usage Patterns](url) - Official blog post about user behavior
+**Usage & Research:**
+- Research recommended: [Industry survey name/link if available] - Usage patterns and adoption rates
+- Research recommended: [Study name/link if available] - User behavior and subscription decisions
 
 **Technical Details:**
-- [OpenAI API Documentation](url) - GPT-4o specifications
+- [OpenAI API Documentation](url) - Technical specifications
 - [Anthropic Claude Documentation](url) - Context window and rate limits
 
 ---
 
-*All data current as of January 2026. Pricing and features subject to change.*
+*All data current as of [DATE]. Pricing and features subject to change. Always verify current information on official vendor websites.*
 ```
+
+**If You Don't Have Sources Yet:**
+- Still include the section
+- List official pricing/documentation pages (these are always available)
+- Note: "Research recommended: [topic] - [description]" for topics that need sources
+- Be honest: "Specific statistics would benefit from recent industry survey data"
+
+**Why This Matters:**
+- Builds credibility and trust
+- Allows readers to verify information
+- Shows we're using real data, not making things up
+- Helps with SEO (external links to authoritative sources)
+- Professional standard for educational content
 
 ---
 

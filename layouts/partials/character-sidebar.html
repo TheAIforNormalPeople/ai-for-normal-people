@@ -38,6 +38,28 @@
                 </div>
                 {{ end }}
                 {{ end }}
+                
+                <!-- Bounce Mystery Box (Episodes 24-31) -->
+                {{ if and .IsPage (ge .Params.episode_number 24) (le .Params.episode_number 31) }}
+                <div class="character-status-item bounce-mystery" style="border-left: 3px solid #f59e0b;">
+                    <div class="character-status-name">
+                        <span class="status-indicator" style="background: #f59e0b;"></span>
+                        <span class="char-badge bounce-mystery-badge" style="background: #f59e0b;">?</span>
+                        <span class="mystery-name">UNKNOWN</span>
+                    </div>
+                    <div class="character-status-role">Status: ???</div>
+                    <div class="character-stats">
+                        <div class="stat-line">
+                            <span class="stat-label">LOCATION:</span>
+                            <span class="stat-value">???</span>
+                        </div>
+                        <div class="stat-line">
+                            <span class="stat-label">IDENTITY:</span>
+                            <span class="stat-value">???</span>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
             </div>
         </div>
         
@@ -432,6 +454,57 @@
     50% { 
         opacity: 0.7;
         text-shadow: 0 0 12px rgba(251, 191, 36, 0.8);
+    }
+}
+
+/* Bounce Mystery Box Styling */
+.bounce-mystery {
+    background: rgba(245, 158, 11, 0.1) !important;
+    border-left: 3px solid #f59e0b !important;
+    animation: mystery-pulse 3s ease-in-out infinite;
+}
+
+@keyframes mystery-pulse {
+    0%, 100% { 
+        background: rgba(245, 158, 11, 0.1);
+        border-left-color: #f59e0b;
+    }
+    50% { 
+        background: rgba(245, 158, 11, 0.15);
+        border-left-color: #fbbf24;
+    }
+}
+
+.bounce-mystery-badge {
+    background: #f59e0b !important;
+    animation: question-mark-pulse 2s ease-in-out infinite;
+}
+
+@keyframes question-mark-pulse {
+    0%, 100% { 
+        box-shadow: 0 0 8px rgba(245, 158, 11, 0.8);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 15px rgba(245, 158, 11, 1);
+        transform: scale(1.1);
+    }
+}
+
+.mystery-name {
+    color: #f59e0b;
+    text-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+    animation: mystery-flicker 3s ease-in-out infinite;
+}
+
+@keyframes mystery-flicker {
+    0%, 90%, 100% { 
+        opacity: 1;
+        text-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+    }
+    92%, 96% {
+        opacity: 0.7;
+        text-shadow: 0 0 12px rgba(245, 158, 11, 0.9);
     }
 }
 </style>

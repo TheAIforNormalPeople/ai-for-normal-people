@@ -1,0 +1,216 @@
+/* ============================================
+   SOUND EFFECTS & ENVIRONMENTAL DETAILS STYLING
+   Makes Kai's sounds and environmental stage directions visually distinct
+   ============================================ */
+
+/* ============================================
+   KAI'S SOUND EFFECTS
+   Format: *sound name* (e.g., *processing hum*, *BEEP*, *WHIRR-CLICK*)
+   These appear as italic text with asterisks in dialogue
+   ============================================ */
+
+/* Target italic text in dialogue that contains asterisks (sounds) */
+.character-dialogue em {
+    font-style: italic;
+    color: #10b981; /* Kai's green/cyan - default for sounds */
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    opacity: 0.95;
+    transition: all 0.2s ease;
+}
+
+/* Sound effects on their own line (first element in paragraph) */
+.character-dialogue p:first-child em,
+.character-dialogue > em:first-of-type {
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1.05em;
+}
+
+/* Processing sounds (hum, whirr, processing) - Green/cyan */
+.character-dialogue em:has-text("hum"),
+.character-dialogue em:has-text("whirr"),
+.character-dialogue em:has-text("processing"),
+.character-dialogue em:has-text("WHIRR") {
+    color: #10b981;
+    font-weight: 500;
+}
+
+/* Alert sounds (BEEP, ALARM, alert) - Red with subtle pulse */
+.character-dialogue em:has-text("BEEP"),
+.character-dialogue em:has-text("ALARM"),
+.character-dialogue em:has-text("alert") {
+    color: #ef4444;
+    font-weight: 600;
+    text-shadow: 0 0 4px rgba(239, 68, 68, 0.3);
+}
+
+/* Soft sounds (soft chime, gentle beep) - Purple */
+.character-dialogue em:has-text("soft"),
+.character-dialogue em:has-text("gentle"),
+.character-dialogue em:has-text("chime") {
+    color: #8b5cf6;
+    font-weight: 400;
+    opacity: 0.85;
+}
+
+/* Data/technical sounds (data ping, scanner, detection) - Cyan */
+.character-dialogue em:has-text("data"),
+.character-dialogue em:has-text("scanner"),
+.character-dialogue em:has-text("detection"),
+.character-dialogue em:has-text("ping") {
+    color: #06b6d4;
+    font-weight: 500;
+}
+
+/* CHK-CHK (stress, determination) - Orange/yellow */
+.character-dialogue em:has-text("CHK"),
+.character-dialogue em:has-text("CHK-CHK") {
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+/* DING (realization) - Bright yellow */
+.character-dialogue em:has-text("DING") {
+    color: #eab308;
+    font-weight: 600;
+}
+
+/* Hover effect for sounds */
+.character-dialogue em:hover {
+    opacity: 1;
+    text-shadow: 0 0 8px currentColor;
+    transform: scale(1.02);
+}
+
+/* ============================================
+   ENVIRONMENTAL STAGE DIRECTIONS
+   Format: *action or location* (e.g., *from monitoring station*, *pacing between server racks*)
+   These are italic but NOT sounds - they describe actions/locations
+   ============================================ */
+
+/* Environmental details - italic text that's NOT a sound */
+/* These typically appear before dialogue to set the scene */
+.character-dialogue p:first-child em:not(:has-text("*BEEP*")):not(:has-text("*WHIRR*")):not(:has-text("*CHK*")):not(:has-text("*DING*")):not(:has-text("hum")):not(:has-text("chime")):not(:has-text("ping")):not(:has-text("whirr")):not(:has-text("processing")):not(:has-text("data")):not(:has-text("scanner")):not(:has-text("detection")):not(:has-text("ALARM")):not(:has-text("alert")) {
+    color: #6b7280; /* Gray for environmental */
+    font-size: 0.9em;
+    opacity: 0.85;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: normal;
+}
+
+/* Better approach: Style environmental details that describe actions/locations */
+/* These are typically longer phrases describing where/what character is doing */
+.character-dialogue p:first-child em {
+    /* Check if it's longer than typical sound (sounds are usually 1-3 words) */
+    /* Environmental details are usually longer phrases */
+}
+
+/* Environmental details that are clearly not sounds */
+.character-dialogue em:has-text("from"),
+.character-dialogue em:has-text("pacing"),
+.character-dialogue em:has-text("between"),
+.character-dialogue em:has-text("station"),
+.character-dialogue em:has-text("racks"),
+.character-dialogue em:has-text("monitoring"),
+.character-dialogue em:has-text("screens"),
+.character-dialogue em:has-text("flickering"),
+.character-dialogue em:has-text("cables"),
+.character-dialogue em:has-text("swaying"),
+.character-dialogue em:has-text("Cross-references"),
+.character-dialogue em:has-text("Updates"),
+.character-dialogue em:has-text("Marks"),
+.character-dialogue em:has-text("Opens"),
+.character-dialogue em:has-text("Closes"),
+.character-dialogue em:has-text("Looks"),
+.character-dialogue em:has-text("Turns"),
+.character-dialogue em:has-text("Nods"),
+.character-dialogue em:has-text("Pauses") {
+    color: #6b7280 !important; /* Gray for environmental */
+    font-size: 0.9em !important;
+    opacity: 0.85 !important;
+    font-weight: 400 !important;
+    text-shadow: none !important;
+}
+
+/* ============================================
+   DARK MODE ADJUSTMENTS
+   ============================================ */
+
+.dark-mode .character-dialogue em {
+    /* Sounds in dark mode - brighter colors */
+}
+
+.dark-mode .character-dialogue em:has-text("hum"),
+.dark-mode .character-dialogue em:has-text("whirr"),
+.dark-mode .character-dialogue em:has-text("processing"),
+.dark-mode .character-dialogue em:has-text("WHIRR") {
+    color: #34d399; /* Brighter green in dark mode */
+    text-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
+}
+
+.dark-mode .character-dialogue em:has-text("BEEP"),
+.dark-mode .character-dialogue em:has-text("ALARM"),
+.dark-mode .character-dialogue em:has-text("alert") {
+    color: #f87171; /* Softer red in dark mode */
+    text-shadow: 0 0 6px rgba(239, 68, 68, 0.4);
+}
+
+.dark-mode .character-dialogue em:has-text("soft"),
+.dark-mode .character-dialogue em:has-text("gentle"),
+.dark-mode .character-dialogue em:has-text("chime") {
+    color: #a78bfa; /* Brighter purple in dark mode */
+}
+
+.dark-mode .character-dialogue em:has-text("data"),
+.dark-mode .character-dialogue em:has-text("scanner"),
+.dark-mode .character-dialogue em:has-text("detection"),
+.dark-mode .character-dialogue em:has-text("ping") {
+    color: #22d3ee; /* Brighter cyan in dark mode */
+}
+
+.dark-mode .character-dialogue em:has-text("from"),
+.dark-mode .character-dialogue em:has-text("pacing"),
+.dark-mode .character-dialogue em:has-text("between"),
+.dark-mode .character-dialogue em:has-text("station"),
+.dark-mode .character-dialogue em:has-text("racks"),
+.dark-mode .character-dialogue em:has-text("monitoring"),
+.dark-mode .character-dialogue em:has-text("screens"),
+.dark-mode .character-dialogue em:has-text("flickering"),
+.dark-mode .character-dialogue em:has-text("cables"),
+.dark-mode .character-dialogue em:has-text("swaying"),
+.dark-mode .character-dialogue em:has-text("Cross-references"),
+.dark-mode .character-dialogue em:has-text("Updates"),
+.dark-mode .character-dialogue em:has-text("Marks"),
+.dark-mode .character-dialogue em:has-text("Opens"),
+.dark-mode .character-dialogue em:has-text("Closes"),
+.dark-mode .character-dialogue em:has-text("Looks"),
+.dark-mode .character-dialogue em:has-text("Turns"),
+.dark-mode .character-dialogue em:has-text("Nods"),
+.dark-mode .character-dialogue em:has-text("Pauses") {
+    color: #9ca3af !important; /* Lighter gray in dark mode */
+    opacity: 0.9 !important;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* Ensure sounds are still readable if color is removed */
+.character-dialogue em {
+    /* Color is not the only differentiator */
+    font-weight: 500; /* Also uses weight */
+    letter-spacing: 0.03em; /* Also uses spacing */
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .character-dialogue em {
+        color: #000 !important; /* Black for print */
+        text-shadow: none !important;
+    }
+}

@@ -135,7 +135,7 @@ Recurse is RIGHT to question this! You don't need ALL premium tools. Pick ONE ba
 
 Cost comparison: All premium ($60/month) vs. One premium ($20/month) = 67% savings.
 
-Alert: Many users can achieve goals with one premium tool or free tiers. Evaluate based on your actual usage.
+Alert: Users can achieve goals with one premium tool or free tiers. Evaluate based on your actual usage patterns.
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}
@@ -143,9 +143,9 @@ Alert: Many users can achieve goals with one premium tool or free tiers. Evaluat
 
 But here's what I'm investigating: Is the "premium is worth it" narrative just marketing?
 
-What if free tiers are intentionally limited to push upgrades? What if most people don't actually need premium, but companies make it seem necessary?
+What if free tiers are intentionally limited to push upgrades? What if users don't actually need premium, but companies make it seem necessary?
 
-The "everyone needs premium" message doesn't match the data. Free tiers handle most needs.
+The "everyone needs premium" message doesn't match observable patterns. Free tiers handle casual use effectively.
 {{< /dialogue >}}
 
 {{< dialogue char="Vector" >}}
@@ -153,7 +153,7 @@ The "everyone needs premium" message doesn't match the data. Free tiers handle m
 
 Recurse is RIGHT to be skeptical! Free tiers are intentionally "good enough" but not "great" - that's the business model. Show value, create desire, get you to upgrade.
 
-But here's the reality: Free tiers handle many casual user needs effectively. Premium is worth it for power users and daily work use. Companies want you to upgrade, but many people find free tiers sufficient for their needs.
+But here's the reality: Free tiers handle casual user needs effectively. Premium is worth it for power users and daily work use. Companies want you to upgrade, but free tiers are sufficient for casual users.
 
 Don't pay "just in case" - pay when you have a real need.
 {{< /dialogue >}}
@@ -163,7 +163,7 @@ Don't pay "just in case" - pay when you have a real need.
 
 *soft chime*
 
-Data confirms Vector's assessment. Many users find free tiers sufficient for their needs.
+Data confirms Vector's assessment. Free tiers are sufficient for casual use cases.
 
 Detection risk: Low. General cost analysis.
 {{< /dialogue >}}
@@ -177,7 +177,7 @@ Exactly! Don't pay for everything "just in case" - pay for what you actually use
 
 *Pauses*
 
-Interesting how the "everyone needs premium" narrative is marketing, but the reality is many people find free tiers sufficient, right?
+Interesting how the "everyone needs premium" narrative is marketing, but the reality is free tiers are sufficient for casual users, right?
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
@@ -185,7 +185,7 @@ Interesting how the "everyone needs premium" narrative is marketing, but the rea
 
 *soft chime*
 
-Pattern detected: Many users who start with free tiers find them sufficient. They achieve goals without upgrading to premium.
+Pattern detected: Users who start with free tiers often find them sufficient. They achieve goals without upgrading to premium.
 
 *alert chime*
 
@@ -199,7 +199,7 @@ Case file: Subscription Fatigue. Status: Documented.
 
 *Small smile*
 
-The pattern: Companies want you to pay. Marketing makes premium seem necessary. But free tiers are genuinely useful for many users.
+The pattern: Companies want you to pay. Marketing makes premium seem necessary. But free tiers are genuinely useful for casual use cases.
 
 *Closes notebook*
 
@@ -243,10 +243,10 @@ Smart approach. Don't let marketing pressure you into paying for things you don'
 - Don't pay for multiple tools "just in case"
 
 **The Reality:**
-- Free tiers handle many casual user needs effectively
+- Free tiers handle casual user needs effectively
 - Premium is worth it for power users and daily work use
 - You don't need ALL premium tools - pick ONE based on your needs
-- Marketing makes premium seem necessary, but many users find free tiers sufficient
+- Marketing makes premium seem necessary, but free tiers are sufficient for casual use
 
 ---
 

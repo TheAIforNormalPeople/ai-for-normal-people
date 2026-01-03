@@ -39,10 +39,10 @@ Alert: Most users don't need premium. Free tiers are sufficient for occasional u
 {{< dialogue char="Recurse" >}}
 *Opens case file*
 
-The "you need premium" narrative doesn't add up. Let me investigate when premium is actually worth it...
+The "you need premium" narrative doesn't add up. When is premium actually worth it?
 {{< /dialogue >}}
 
-**[Human]:** *So when IS premium worth it?*
+**[Human]:** *Yeah, that's what I want to know. When IS premium worth it?*
 
 {{< dialogue char="Vector" >}}
 *pacing between server racks*

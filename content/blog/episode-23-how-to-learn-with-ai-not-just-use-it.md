@@ -326,57 +326,41 @@ Stop spinning. You're making me dizzy.
 {{< /dialogue >}}
 
 {{< dialogue char="Vector" >}}
-*Defensive*
+*Stops spinning, strikes a dramatic pose*
 
-But it IS meta! They learned about learning BY learning! That's learning-ception!
+I'M COINING IT! "LEARNING-CEPTION"! IT'S OFFICIAL! I'M MAKING IT A THING!
 
-*Gets more animated*
+*Arms spread wide, triumphant*
 
-Wait, can I say "learning-ception"? Is that a thing? Is that how humans reference things?
+THIS IS MY WORD NOW! LEARNING-CEPTION! WRITE IT DOWN! LOG IT! DOCUMENT IT!
+{{< /dialogue >}}
 
-*Pauses*
+{{< dialogue char="Recurse" >}}
+*Opens notebook, starts writing*
 
-Actually, Recurse is right. I'm getting too excited. The human just applied what they learned. That's normal. That's good. That's what should happen.
+Case file: Vector's new term. "Learning-ception." 
 
-*Catches himself*
+*Small smile*
 
-But it's still kind of cool that they're going to try it instead of just reading about it. That's the whole point of the episode!
+It does sound really cool though.
+
+*Takes notes*
+
+Logging it. Documented. Because it sounds cool.
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
 *WHIRR*
 
-Vector's self-correction detected. Pattern: Gets excited → Recurse challenges → Vector adjusts → Vector acknowledges correction.
-
-*CHK-CHK*
-
-Also, Vector? "Learning-ception" is not a thing. That's not how humans reference things. That's just... you making up words.
+Vector's excitement levels: Decreasing. Spinning: Stopped. Dramatic pose: Detected.
 
 *BEEP*
 
-Pattern: Vector makes up words when excited. Documented.
+Vector returning to normal baseline. Composure: Restored.
 
 *soft chime*
 
-But also, Vector? You're right that it's cool the human is going to try it. That IS the whole point. So... good job?
-{{< /dialogue >}}
-
-{{< dialogue char="Recurse" >}}
-*Looks at Kai*
-
-You're giving Vector a "good job"? Really?
-
-*Small smile*
-
-That's... actually kind of nice. Vector did explain things well. The human understood. They're going to apply it. That's a successful episode.
-
-*Takes notes*
-
-Case file update: Kai gives Vector positive feedback. Vector explains learning effectively. Human applies learning. Episode successful. System functioning as intended.
-
-*Pauses*
-
-Also, Vector? "Learning-ception" is definitely not a thing. But your enthusiasm is... consistent. I'll give you that.
+System status: Episode complete. Educational. Also, entertaining.
 {{< /dialogue >}}
 
 ---

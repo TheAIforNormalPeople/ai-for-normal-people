@@ -301,6 +301,84 @@ Also configured in `netlify.toml` build command: `hugo --gc --minify --buildFutu
   - r/programming
   - r/explainlikeimfive (for simple explanations)
 
+#### YouTube
+
+**Status:** ⏳ Not Yet Set Up  
+**Cost:** FREE (YouTube API is free)  
+**Requirements:**
+- YouTube channel
+- Google Cloud Project
+- YouTube Data API v3 enabled
+- OAuth2 credentials
+
+**Setup Complexity:** Medium  
+**Time to Setup:** 1-2 hours
+
+**Content Options:**
+
+1. **YouTube Community Posts** (Easiest - Text + Link)
+   - Similar to Twitter/Bluesky posts
+   - Can be automated via YouTube API
+   - Text announcement with episode link
+   - Can include images
+   - **Best for:** Quick episode announcements
+
+2. **YouTube Shorts** (Medium - Short Video)
+   - 60-second vertical videos
+   - Character voice-over with episode highlights
+   - Requires video creation (can use AI tools)
+   - **Best for:** Engaging short-form content
+
+3. **Full Videos** (Complex - Full Production)
+   - Full episode read-throughs
+   - Character animations/illustrations
+   - Requires significant production time
+   - **Best for:** Long-term content strategy
+
+**n8n Integration:**
+- ✅ YouTube node available in n8n
+- Can post Community posts via API
+- Can upload videos (requires video file)
+- OAuth2 authentication required
+
+**Pros:**
+- FREE API access
+- Large audience (2+ billion users)
+- Community posts are easy to automate
+- Great for SEO (YouTube is a search engine)
+- Can embed videos in blog posts
+
+**Cons:**
+- Requires Google Cloud setup
+- OAuth2 flow more complex than Reddit
+- Community posts have character limits
+- Video content requires more production time
+- Need to verify channel (100+ subscribers for some features)
+
+**Recommendation:**
+- ✅ **Start with Community Posts** - Easiest to automate
+  - Text announcements with episode links
+  - Can include episode images
+  - Similar to Twitter/Bluesky workflow
+- ⏳ **Consider Shorts later** - If you want video content
+  - Use AI voice generation for character voices
+  - Create simple animations or use character art
+  - 60-second episode highlights
+
+**Setup Steps:**
+1. Create Google Cloud Project
+2. Enable YouTube Data API v3
+3. Create OAuth2 credentials
+4. Add YouTube node to n8n workflow
+5. Test with Community post
+
+**Content Strategy:**
+- Post episode announcements as Community posts
+- Include episode title, brief description, link
+- Use character voice (same as Twitter/Bluesky)
+- Add episode image/thumbnail
+- Engage with comments
+
 ### Marketing Workflow Strategy
 
 #### Content Distribution Flow
@@ -314,10 +392,11 @@ n8n Workflow Triggers
 │  Generate Posts (Character Voice)   │
 └─────────────────────────────────────┘
     ↓
-    ├─→ Twitter (auto-post)
-    ├─→ Bluesky (auto-post)
-    ├─→ Reddit (auto-post to relevant subreddits)
-    └─→ Instagram (manual or auto if approved)
+    ├─→ Twitter (auto-post) ✅
+    ├─→ Bluesky (auto-post) ✅
+    ├─→ Reddit (auto-post to relevant subreddits) ⏳
+    ├─→ YouTube Community (auto-post) ⏳
+    └─→ Instagram (manual or auto if approved) ⏳
 ```
 
 #### Posting Schedule
@@ -339,6 +418,13 @@ n8n Workflow Triggers
 - ⏳ Not yet automated (waiting on Developer access or using manual)
 - Plan: Post episode image + link
 - Plan: Use character art when available
+
+**YouTube:**
+- ⏳ Not yet set up
+- Plan: Start with Community posts (text + link)
+- Plan: Use character voice for announcements
+- Plan: Include episode image/thumbnail
+- Future: Consider Shorts if video content desired
 
 ### Reddit Strategy
 
@@ -402,6 +488,7 @@ n8n Workflow Triggers
 **Marketing:**
 - n8n (already have)
 - Reddit app (create at reddit.com/prefs/apps)
+- Google Cloud Project + YouTube Data API (for YouTube)
 - Meta Developer account (for Instagram)
 
 **Review:**
@@ -420,8 +507,8 @@ n8n Workflow Triggers
 - 100% of posts have meta descriptions
 
 **Marketing:**
-- Posts to 4 platforms (Twitter, Bluesky, Reddit, Instagram)
-- Engagement on Reddit (comments, upvotes)
+- Posts to 5 platforms (Twitter, Bluesky, Reddit, YouTube, Instagram)
+- Engagement on Reddit and YouTube (comments, upvotes)
 - Consistent posting schedule
 - Character voice consistency across platforms
 
@@ -431,7 +518,8 @@ n8n Workflow Triggers
 
 ### Immediate (Next Session)
 1. **Set up Reddit in n8n** - Guide ready (`REDDIT_SETUP_STEPS.md`), just needs implementation
-2. **Create episode review checklist** - Template needed for pre-publish review
+2. **Set up YouTube Community Posts** - Create Google Cloud project, enable API, add to n8n
+3. **Create episode review checklist** - Template needed for pre-publish review
 
 ### This Week
 1. **Move inline styles to CSS** - 105 instances need to be moved

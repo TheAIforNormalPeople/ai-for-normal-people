@@ -50,8 +50,12 @@
    - **Description:** `Automated posting`
    - **About URL:** `https://theaifornormalpeople.com`
    - **Redirect URI:** `http://localhost:5678/rest/oauth2-credential/callback`
-4. Click "create app"
-5. **Save:**
+4. **If asked about Devvit:** Click **"No"** or **Skip** - You don't need Devvit!
+   - Devvit is for building interactive Reddit apps (games, bots, etc.)
+   - You just need the regular Reddit API for posting
+   - Regular API is what you need for n8n
+5. Click "create app"
+6. **Save:**
    - **Client ID** (under app name)
    - **Secret** (click "edit" to see)
 

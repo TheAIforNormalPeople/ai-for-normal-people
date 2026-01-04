@@ -12,7 +12,7 @@ tags: ["AI content tools", "AI Guide", "best AI writing tools"]
 *I keep seeing ads for "revolutionary AI writing tools" but when I try them, they feel the same. Like, they all generate the same generic content. Am I missing something, or are they all basically—*
 
 {{< dialogue char="Kai" >}}
-*DING!*`n`nAnalysis complete. 78% of "AI writing tools" are ChatGPT API wrappers with custom prompts. Price markup: 200-400% over direct API usage.
+*DING!*`n`nAnalysis complete. My estimate: A significant portion (estimated 70-80% range) of "AI writing tools" are ChatGPT API wrappers with custom prompts. Price markup: Estimated 200-400% range over direct API usage (varies by tool).
 
 Alert: Most tools offer same core functionality with different branding and UI.
 

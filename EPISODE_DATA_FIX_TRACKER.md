@@ -17,10 +17,11 @@
 
 ### Priority 2: Mid-Range Episodes
 - [x] **Episode 20** - The Holiday Break and AI Creativity ✅ FIXED
+- [x] **Episode 20** - AI Content Creation Tools Comparison ✅ FIXED (78% statistic, price markup)
 - [x] **Episode 19** - ChatGPT for Coding ✅ FIXED (Cognitive percentages)
-- [ ] **Episode 18** - AI for Fact-Checking
-- [ ] **Episode 17** - Using AI for Writing
-- [ ] **Episode 16** - Best AI Tools for Research
+- [x] **Episode 18** - AI for Fact-Checking ✅ FIXED (Detection risk percentages)
+- [x] **Episode 17** - Using AI for Writing ✅ FIXED (Time savings percentages)
+- [x] **Episode 16** - Best AI Tools for Research ✅ FIXED (Recommendation consistency)
 - [x] **Episode 15** - How Does AI Learn from Data ✅ CHECKED (No problematic statistics found)
 - [x] **Episode 14** - What Are AI Tokens ✅ FIXED
 - [x] **Episode 13** - How to Use AI Without Losing Skills ✅ FIXED

@@ -34,12 +34,16 @@ Pattern detection: User searches "AI tool dependency" and "using AI productively
 
 *WHIRR*
 
-Cognitive offloading analysis:
-- Tasks where AI helps: Research (78% efficiency gain), drafting (65%), formatting (82%)
-- Tasks where AI hurts: Critical thinking (12% decline if overused), creativity (18% decline), problem-solving (15% decline)
-- Balance point: Using AI for 40-60% of task (research, drafting) while maintaining 40-60% human work (thinking, editing, strategy)
+Cognitive offloading analysis (general patterns, exact percentages vary by individual and task):
 
-Alert: Over-reliance on AI correlates with skill atrophy in critical thinking and creativity.
+- Tasks where AI helps: Research (significant efficiency gains, often 60-80% range), drafting (moderate to significant gains, often 50-70% range), formatting (significant gains, often 70-85% range)
+- Tasks where AI may hurt if overused: Critical thinking (potential decline if over-relied upon), creativity (potential decline if over-relied upon), problem-solving (potential decline if over-relied upon)
+
+- Balance point: Using AI for a portion of tasks (research, drafting) while maintaining substantial human work (thinking, editing, strategy) appears optimal. Exact percentages vary by individual and task type.
+
+Alert: Over-reliance on AI may correlate with skill atrophy in critical thinking and creativity, though I don't have access to comprehensive studies measuring exact decline rates.
+
+*Note: These are general patterns based on observable workflows. Exact percentages vary significantly by individual, task complexity, and usage patterns. I don't have access to comprehensive cognitive science research on AI-assisted work and skill retention.*
 {{< /dialogue >}}
 
 **[Human]:** *Am I becoming dumber by using ChatGPT? How do I know when to stop using AI?*

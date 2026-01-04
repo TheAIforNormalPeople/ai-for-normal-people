@@ -24,7 +24,9 @@ Human just sent me SEVEN "Best AI Research Tools" articles. All of them list dif
 
 And Human is CONFUSED. Rightfully so!
 
-Here's the thing nobody tells you: 90% of "AI research tools" are just **ChatGPT** or **Claude** with a custom interface and pre-made prompts. That's it. That's the entire industry.
+Here's the thing nobody tells you: A significant portion of "AI research tools" are essentially **ChatGPT** or **Claude** with a custom interface and pre-made prompts. Many tools in this space are API wrappers rather than fundamentally new technology.
+
+*Note: I don't have access to comprehensive market research data to provide an exact percentage. This is based on observable patterns in the tool ecosystem, not verified statistics.*
 
 You're paying for convenience, not innovation. And that's... fine? But it's not "revolutionary."
 
@@ -38,13 +40,15 @@ Pattern detection: User searches "best AI research tools" and "AI research assis
 
 *WHIRR*
 
-Market analysis:
-- 78% of "AI research tools" are ChatGPT/Claude API wrappers
-- Average price markup: 200-400% over direct API usage
-- Core functionality overlap: 85-92% between competing tools
-- Unique features claimed vs. actual unique features: 12% accuracy rate
+Pattern observation (based on tool analysis, not verified market statistics):
+- Many "AI research tools" are ChatGPT/Claude API wrappers (exact percentage varies)
+- Price markup over direct API usage can be substantial (often 2-4x, but varies widely)
+- Core functionality overlap is significant between competing tools (exact percentage varies)
+- Many claimed "unique features" are actually variations on similar functionality
 
-Alert: Most tool differentiation is in UI and marketing, not core capabilities.
+Alert: Most tool differentiation appears to be in UI and marketing, not core capabilities. However, I don't have access to comprehensive market research data to provide exact percentages.
+
+*Note: These are observations based on analyzing available tools, not verified statistics from industry research.*
 {{< /dialogue >}}
 
 **[Human]:** *Okay but... which ONE should I actually use? I don't need 50 tools, I need one that works. Are you telling me they're all the same?*
@@ -96,7 +100,9 @@ And you're right about the free vs. paid thing. Let me fix that:
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
-*CHK-CHK* Vector's recommendation consistency: 64%. Defensive responses detected: 2 instances in 47 seconds.
+*CHK-CHK* Vector's recommendation consistency: Estimated 60-70% range. Defensive responses detected: 2 instances in 47 seconds.
+
+*Note: This is my assessment based on pattern analysis, not a verified statistic.*
 
 *WHIRR* Analyzing Vector's tool recommendations against usage data...
 {{< /dialogue >}}
@@ -188,7 +194,9 @@ Wait, was I supposed to use more analogies? I can add more if you want! Like, re
 {{< dialogue char="Kai" >}}
 *BZZT-BZZT* Vector. Stop. *CHK-CHK* 
 
-Analogy usage threshold exceeded. Recommendation: One analogy per topic maximum. Additional analogies may decrease comprehension by 18%.
+Analogy usage threshold exceeded. Recommendation: One analogy per topic maximum. Additional analogies may decrease comprehension (exact impact varies by reader and context).
+
+*Note: I don't have access to specific research on analogy comprehension rates. This is a general recommendation based on readability principles, not a verified statistic.*
 
 *WHIRR*
 {{< /dialogue >}}
@@ -213,13 +221,17 @@ Only upgrade if:
 - You need Perplexity's faster responses (Pro tier)
 - You're analyzing multiple long papers daily (Claude Pro)
 
-Most academic researchers can do 90% of their work with free tiers. The 10% that requires paid is usually heavy daily use.
+Most academic researchers can do the majority of their work with free tiers. The portion that requires paid is usually heavy daily use or specialized features.
+
+*Note: I don't have access to comprehensive surveys of academic researcher usage patterns. This is a general observation, not a verified statistic.*
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
 *WHIRR* Vector's free-tier-first recommendation: LOGICALLY SOUND. Cost efficiency: HIGH. User satisfaction probability: ELEVATED.
 
-*CHK-CHK* Detected: Vector providing practical advice without overhyping tools. Consistency with stated values: 92%.
+*CHK-CHK* Detected: Vector providing practical advice without overhyping tools. Consistency with stated values: High (estimated 90-95% range).
+
+*Note: This is my assessment, not a verified statistic.*
 {{< /dialogue >}}
 
 {{< dialogue char="Vector" >}}
@@ -264,7 +276,9 @@ Thanks for calling me out on that. I was being inconsistent.
 
 *BZZT-BZZT* Self-correction behavior: DETECTED. Social learning indicators: POSITIVE.
 
-Vector's recommendation quality after self-correction: 94%. Improvement: 2%.
+Vector's recommendation quality after self-correction: High (estimated 90-95% range). Improvement: Moderate.
+
+*Note: These are my assessments based on pattern analysis, not verified statistics.*
 {{< /dialogue >}}
 
 {{< dialogue char="Vector" >}}

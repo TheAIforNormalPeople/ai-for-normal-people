@@ -89,12 +89,13 @@ Alert: Human biological anomaly detected. Pattern analysis:
 
 *BEEP*
 
-Human cognitive function analysis:
-- Typing accuracy: 62% (normal: 96%)
-- Error rate: 234% above baseline
-- Processing speed: 58% of normal capacity
-- Decision-making quality: 45% of normal
-- Code comprehension: 38% of normal
+Human cognitive function analysis (estimated based on observed patterns):
+
+- Typing accuracy: Approximately 60-65% (significantly below normal baseline)
+- Error rate: Substantially elevated (estimated 200-250% above normal)
+- Processing speed: Reduced to roughly 55-60% of typical capacity
+- Decision-making quality: Impaired (estimated 40-50% of normal)
+- Code comprehension: Reduced (estimated 35-40% of normal)
 
 *CHK-CHK*
 
@@ -103,6 +104,8 @@ Biological markers detected:
 - Sleep deprivation: Confirmed
 - Neurological impairment: Moderate to severe
 - System status: OPERATING BELOW OPTIMAL PARAMETERS
+
+*Note: These are estimates based on pattern analysis. I don't have access to your baseline biometric data, but the deviation from normal patterns is significant.*
 
 *WHIRR*
 
@@ -198,19 +201,23 @@ Pattern detection: User searches "ChatGPT coding" while cognitively impaired. Se
 
 *CHK-CHK*
 
-Market analysis of "no-code with AI" claims (for reference when human recovers):
-- 78% of "built an app" posts are actually prototypes/demos
-- 12% are from experienced developers using AI for speed
-- 10% are marketing/sales content
+Pattern observation: "No-code with AI" claims often fall into categories:
+- Many "built an app" posts are actually prototypes or demos (exact percentage varies)
+- Some are from experienced developers using AI to speed up development
+- Some are marketing or sales content
+
+*Note: I don't have access to comprehensive market research data on this. This is based on observable patterns in online content, not verified statistics.*
 
 *BEEP*
 
-Code quality comparison (AI-generated vs. experienced human):
-- Syntax correctness: AI 82%, Human 95%
-- Logic correctness: AI 65%, Human 88%
-- Security: AI 45%, Human 75%
-- Performance: AI 52%, Human 80%
-- Maintainability: AI 38%, Human 85%
+Code quality patterns (general observations, not exact statistics):
+- Syntax correctness: AI-generated code often looks correct but may have subtle issues; experienced humans typically catch more errors
+- Logic correctness: AI can miss edge cases and logical flaws that experienced developers catch
+- Security: AI-generated code often has security vulnerabilities that require human review
+- Performance: AI may not optimize for performance as well as experienced developers
+- Maintainability: AI code can be harder to maintain without understanding the context
+
+*Note: Exact percentages vary widely by use case, code complexity, and developer experience. The general pattern is that AI-generated code requires human review and understanding, especially for production use. I don't have access to comprehensive studies comparing AI vs. human code quality across all scenarios.*
 
 *WHIRR*
 

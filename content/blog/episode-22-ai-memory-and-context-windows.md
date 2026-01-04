@@ -42,7 +42,9 @@ Alert: Context window analysis. We're at about 1,200 tokens right now. This mode
 
 *CHK-CHK*
 
-Probability that context will overflow in next 50 exchanges: 12%. Probability that context will overflow in next 100 exchanges: 67%. Not immediate, but I'm monitoring it.
+My estimate: Probability that context will overflow in next 50 exchanges is relatively low (estimated 10-15% range). Probability that context will overflow in next 100 exchanges is moderate to high (estimated 60-70% range). Not immediate, but I'm monitoring it.
+
+*Note: These are my estimates based on current token usage patterns, not verified statistics.*
 
 *Pauses*
 
@@ -110,11 +112,13 @@ Or just pull out the important stuff and save it separately. Put it in your syst
 
 *Pauses*
 
-Probability that users will actually do this: 23%. Most people just keep talking until context overflows, then get frustrated when the AI "forgets."
+My estimate: The probability that users will actually do this is relatively low (estimated 20-25% range). Most people just keep talking until context overflows, then get frustrated when the AI "forgets."
+
+*Note: This is my observation based on pattern analysis, not a verified statistic from user behavior studies.*
 
 *soft chime*
 
-Just... statistics.
+Just... my estimates based on pattern analysis. Not verified statistics from external research.
 {{< /dialogue >}}
 
 {{< dialogue char="Vector" >}}
@@ -176,7 +180,9 @@ Or just pull out the essentials and save them somewhere else.
 
 *Pauses*
 
-Probability that you'll remember to do this: 34%. Most people just keep going until it breaks, then wonder why the AI "forgot" everything.
+My estimate: The probability that you'll remember to do this is relatively low (estimated 30-40% range). Most people just keep going until it breaks, then wonder why the AI "forgot" everything.
+
+*Note: This is my observation, not a verified statistic.*
 
 *soft chime*
 
@@ -236,7 +242,9 @@ But most AI interfaces don't show this stuff. You're on your own. You have to wa
 
 *Pauses*
 
-Probability that this will improve: 67%. As context windows get larger, the problem becomes less urgent. But it won't go away completely.
+My assessment: The probability that this will improve is moderate to high (estimated 60-70% range). As context windows get larger, the problem becomes less urgent. But it won't go away completely.
+
+*Note: This is my estimate based on observable trends, not a verified prediction.*
 
 *soft chime*
 
@@ -292,7 +300,9 @@ So yeah. Context windows have limits. Hit the limit, old messages disappear. Sta
 
 *CHK-CHK*
 
-Probability that this will solve your "AI forgetting" problem: 89%. If you actually do it.
+My estimate: The probability that this will solve your "AI forgetting" problem is high (estimated 85-90% range) - if you actually do it.
+
+*Note: This is my assessment based on pattern analysis, not a verified statistic.*
 
 *Pauses*
 
@@ -300,7 +310,7 @@ Also, Vector? Alert: Your surveillance rants are getting more nuanced. That's...
 
 *soft chime*
 
-Just... statistics.
+Just... my estimates based on pattern analysis. Not verified statistics from external research.
 {{< /dialogue >}}
 
 **[Human]:** *AI gets more complicated every time I use this computer. But at least now I know why it "forgets" things instead of just thinking my computer is broken. That's... progress, I guess?*

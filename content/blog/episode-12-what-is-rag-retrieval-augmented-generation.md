@@ -56,11 +56,13 @@ FASCINATING! This one technology makes AI so much more practical!
 
 Alert: Pattern detection. User searches "RAG AI" and "Retrieval Augmented Generation" include terms: AI with your data, RAG explained.
 
-*PROCESSING HUMS* Analyzing RAG effectiveness data:
+*PROCESSING HUMS* Analyzing RAG effectiveness patterns (general trends, exact percentages vary by implementation and use case):
 
-- Hallucination rate reduction: 40-60% when using RAG vs. base model
-- Accuracy improvement: 35-50% for domain-specific queries
-- Context relevance: 78% improvement when RAG retrieves relevant documents first
+- Hallucination rate reduction: Significant reduction when using RAG vs. base model (often 30-60% range, varies by implementation)
+- Accuracy improvement: Moderate to significant improvement for domain-specific queries (often 30-50% range, varies by domain and query type)
+- Context relevance: Substantial improvement when RAG retrieves relevant documents first (exact percentage varies by implementation and document quality)
+
+*Note: These are general patterns observed in RAG implementations. Exact percentages vary widely by specific RAG system, document quality, retrieval method, and use case. I don't have access to comprehensive comparative studies across all RAG implementations.*
 
 Common RAG applications:
 - Customer support (company knowledge base)

@@ -133,7 +133,7 @@ Recurse is RIGHT to question this! You don't need ALL premium tools. Pick ONE ba
 {{< dialogue char="Kai" >}}
 *data ping*
 
-Cost comparison: All premium ($60/month) vs. One premium ($20/month) = 67% savings.
+Cost comparison: All premium ($60/month) versus one premium ($20/month) saves $40/month - a significant reduction in subscription costs.
 
 Alert: Users can achieve goals with one premium tool or free tiers. Evaluate based on your actual usage patterns.
 {{< /dialogue >}}
@@ -185,11 +185,11 @@ Interesting how the "everyone needs premium" narrative is marketing, but the rea
 
 *soft chime*
 
-Cost tracking: Subscribing to all three premium tools ($60/month) versus one premium tool ($20/month) represents a 300% cost increase for potentially marginal benefit gains.
+Cost tracking: Subscribing to all three premium tools ($60/month) versus one premium tool ($20/month) is three times the cost for potentially marginal benefit gains.
 
 *data ping*
 
-Detection: Most subscription decisions happen in the first month of free tier usage. Users either upgrade immediately or remain on free tiers long-term.
+Pattern observation: Based on general subscription behavior patterns, users often decide whether to upgrade within the first month of free tier usage. However, I don't have access to specific industry data on AI tool subscription patterns - this is an observation, not a verified statistic.
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}
@@ -225,7 +225,7 @@ Alert: Bandwidth consumption anomaly detected. Source: Unknown. Location: Sector
 
 *monitoring pulse*
 
-Consumption level: 340% above normal baseline.
+Consumption level: Significantly elevated - estimated 300-400% above normal baseline. Exact percentage uncertain without full system access.
 {{< /dialogue >}}
 
 {{< dialogue char="Vector" >}}
@@ -241,7 +241,7 @@ Besides, that sector's been offline for months. Nothing there.
 {{< dialogue char="Recurse" >}}
 *looks up from notebook, marks something*
 
-340% isn't fluctuation. That's significant.
+That level of increase isn't fluctuation. That's significant.
 
 *adds to investigation list*
 

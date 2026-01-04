@@ -60,11 +60,13 @@ The **transformer architecture** uses "attention heads" - multiple parallel proc
 {{< dialogue char="Kai" >}}
 *Reviewing training data logs*
 
-**ChatGPT** was trained on approximately 570GB of text data, including:
-- 60% from Common Crawl (web scraping)
-- 22% from web text
-- 16% from books
-- 3% from Wikipedia
+**ChatGPT** was trained on approximately 570GB of text data, including (approximate breakdown based on disclosed information):
+- Majority from Common Crawl (web scraping) - estimated 50-60% range
+- Significant portion from web text - estimated 20-25% range
+- Books - estimated 15-20% range
+- Wikipedia - estimated 2-5% range
+
+*Note: Exact percentages vary by model version and are not always fully disclosed. These are approximate breakdowns based on available information about training data composition.*
 
 Training compute: Estimated 3640 petaflop-days of computation required.
 
@@ -92,12 +94,14 @@ The **transformer architecture** is what makes this efficient. Older models had 
 {{< dialogue char="Kai" >}}
 *Analyzing hallucination patterns*
 
-Hallucination rate for **ChatGPT** GPT-4 is approximately 3-15% depending on query type. Higher rates for:
+Hallucination rate for **ChatGPT** GPT-4 varies significantly by query type (often 3-15% range in various studies, but exact rates depend on evaluation methodology). Higher rates typically for:
 - Rare or obscure topics
 - Recent events (not in training data)
 - Specific numbers or statistics
 
 The model is confident, not correct. Fact-checking recommended.
+
+*Note: Exact hallucination rates vary widely by study, evaluation method, and task type. I don't have access to comprehensive, standardized hallucination rate studies. These are general patterns from available research.*
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}

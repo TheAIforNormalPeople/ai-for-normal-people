@@ -254,10 +254,12 @@ Perfect pattern matching! Just not matching REALITY!
 {{< dialogue char="Kai" >}}
 BEEP! Statistical breakdown of incident:
 
-- Legal citation pattern recognition: 99.2% accurate
-- Actual case existence verification: 0% performed
-- Confidence score in generated citations: 0.89 (high)
-- Confidence correlation with accuracy: 0.03 (none)
+- Legal citation pattern recognition: Very high accuracy (estimated 98-99% range)
+- Actual case existence verification: Not performed (0%)
+- Confidence score in generated citations: High (estimated 0.85-0.90 range)
+- Confidence correlation with accuracy: Very low (estimated 0.01-0.05 range, essentially none)
+
+*Note: These are my assessments based on pattern analysis, not verified statistics from comprehensive studies.*
 
 Conclusion: Confidence measures pattern match strength, NOT factual validity. Common misconception.
 {{< /dialogue >}}
@@ -473,9 +475,11 @@ BETTER terminology: "Pattern completion failure" or "confident guessing" or lite
 {{< dialogue char="Kai" >}}
 BEEP! Vector summary accuracy: 94%. Passion: Still maximum.
 
-Statistical correction: "Hallucination" prevalence in AI documentation: 847 instances across major companies.
+Pattern observation: "Hallucination" appears frequently in AI documentation across major companies (exact count varies by search methodology and time period).
 
-Replacement rate after glossary adoption: 96% in test groups.
+Replacement rate after glossary adoption: High (estimated 90-95% range in test groups, though exact percentage varies by study and implementation).
+
+*Note: I don't have access to comprehensive documentation analysis to provide exact counts. The replacement rate estimate is based on general patterns, not verified statistics from all test groups.*
 
 Key metric repeating for emphasis: Confidence ≠ Accuracy. Correlation: 0.03 (essentially none).
 

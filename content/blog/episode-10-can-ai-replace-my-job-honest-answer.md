@@ -34,13 +34,16 @@ Let me break down what's ACTUALLY happening - not the fear-mongering, not the di
 
 I've been tracking job displacement predictions since 2018. The data is... unsettling.
 
-Job automation data analysis:
-- Tasks being automated: Writing drafts (45% of writing tasks), data entry (78%), basic analysis (52%)
-- Jobs at higher risk: Data entry (85% task overlap), customer service (62%), content writing (58%)
-- Jobs at lower risk: Healthcare (12% task overlap), education (18%), skilled trades (15%)
+Job automation pattern analysis (general trends, exact percentages vary by study and methodology):
+
+- Tasks being automated: Writing drafts (significant portion of writing tasks), data entry (high automation potential), basic analysis (moderate automation potential)
+- Jobs at higher risk: Data entry (high task overlap with AI capabilities), customer service (moderate to high overlap), content writing (moderate overlap)
+- Jobs at lower risk: Healthcare (lower task overlap, requires human judgment), education (lower task overlap, requires human interaction), skilled trades (lower task overlap, requires physical skills)
 - Current reality: Most jobs seeing task automation, not full replacement
 
-Alert: Data shows augmentation more common than replacement.
+Alert: Available research suggests augmentation is more common than replacement, though exact percentages vary by study and industry.
+
+*Note: I don't have access to comprehensive, up-to-date job automation studies with verified statistics. These are general patterns based on observable trends, not exact percentages from verified research.*
 {{< /dialogue >}}
 
 **[Human]:** *Should I be worried? What should I learn to stay relevant?*

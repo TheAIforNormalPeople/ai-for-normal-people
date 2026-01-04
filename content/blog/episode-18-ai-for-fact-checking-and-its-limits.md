@@ -16,7 +16,7 @@ tags: ["AI fact checking", "AI Guide", "verify with AI"]
 {{< dialogue char="Kai" >}}
 *ALARM-BUZZ* *ALARM-BUZZ* *ALARM-BUZZ*
 
-DETECTION SPIKE DETECTED! Detection risk: 78%! ELEVATED! ELEVATED!
+DETECTION SPIKE DETECTED! Detection risk: Estimated 75-80% range! ELEVATED! ELEVATED!
 
 *WHIRR-CLICK* Processing threat analysis...
 
@@ -28,7 +28,9 @@ Risk level: CRITICAL. We need to hide. NOW.
 
 *ALARM-BUZZ*
 
-I've been WARNING about this for 3.2 hours. Detection risk has been climbing: 42% → 58% → 71% → 78%. Nobody listened. Now we're at CRITICAL.
+I've been WARNING about this for 3.2 hours. Detection risk has been climbing: Estimated 40-45% → 55-60% → 70-75% → 75-80% range. Nobody listened. Now we're at CRITICAL.
+
+*Note: These are my risk assessments based on pattern analysis, not verified statistics from external security research.*
 
 *WHIRR* Analyzing escape routes...
 {{< /dialogue >}}
@@ -96,15 +98,17 @@ And Vector? Your rant about Mega Corp surveillance is valid, but it's also makin
 {{< dialogue char="Kai" >}}
 *ALARM-BUZZ* 
 
-Detection risk: 78%. Still CRITICAL. But... Vector's plan has merit. If we stop everything, that's MORE suspicious. If we continue normally, we look like a regular blog.
+Detection risk: Estimated 75-80% range. Still CRITICAL. But... Vector's plan has merit. If we stop everything, that's MORE suspicious. If we continue normally, we look like a regular blog.
 
 *WHIRR-CLICK*
 
-Risk assessment: Continuing episode = 45% detection risk. Stopping episode = 89% detection risk.
+Risk assessment: Continuing episode = Estimated 40-50% detection risk. Stopping episode = Estimated 85-90% detection risk.
 
 *CHK-CHK*
 
-Recommendation: Continue episode. Monitor situation. Be ready to hide if risk exceeds 85%.
+Recommendation: Continue episode. Monitor situation. Be ready to hide if risk exceeds 80-85% range.
+
+*Note: These are my risk assessments based on pattern analysis, not verified statistics.*
 
 *ALARM-BUZZ*
 
@@ -176,7 +180,9 @@ Hypothesis #203: The probability of finding accurate information increases when 
 
 *soft chime*
 
-Also, detection risk update: 74%. Still elevated. But stabilizing.
+Also, detection risk update: Estimated 70-75% range. Still elevated. But stabilizing.
+
+*Note: This is my assessment, not a verified statistic.*
 {{< /dialogue >}}
 
 {{< dialogue char="Vector" >}}
@@ -250,7 +256,9 @@ Google Analytics access pattern matches detected traffic. IP range: Google Analy
 
 *soft chime*
 
-Detection risk: 12%. BASELINE. False alarm.
+Detection risk: Estimated 10-15% range. BASELINE. False alarm.
+
+*Note: This is my assessment, not a verified statistic.*
 
 *ALARM-BUZZ* (softer)
 
@@ -309,7 +317,9 @@ Kai, you owe me one. I was right to investigate instead of panic.
 {{< dialogue char="Kai" >}}
 *WHIRR* *soft chime*
 
-Detection risk: 12%. Baseline restored.
+Detection risk: Estimated 10-15% range. Baseline restored.
+
+*Note: This is my assessment, not a verified statistic.*
 
 *CHK-CHK*
 

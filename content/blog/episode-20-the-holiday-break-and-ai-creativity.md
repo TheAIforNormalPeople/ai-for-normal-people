@@ -66,7 +66,9 @@ Vector has implemented: Candy cane borders. Snow effects. Twinkling lights. Anim
 
 *WHIRR-CLICK*
 
-System overload detected. Visual elements: Excessive. Decoration density: 347% above recommended levels. Border thickness: Increasing. Light intensity: Maximum.
+System overload detected. Visual elements: Excessive. Decoration density: Significantly elevated - estimated 300-400% above recommended levels. Border thickness: Increasing. Light intensity: Maximum.
+
+*Note: This is my assessment based on pattern analysis, not a verified statistic. The decoration level is clearly excessive, but I don't have access to official "recommended levels" to calculate an exact percentage.*
 
 *soft chime*
 
@@ -209,7 +211,9 @@ The decorations work because they're visual patterns. But the WORDS? The MESSAGE
 {{< dialogue char="Kai" >}}
 *BEEP*
 
-Pattern detected: Vector attempting creativity. Success rate: 0%. All outputs matched existing training data patterns.
+Pattern detected: Vector attempting creativity. Success rate: Very low (estimated 0-5% range). All outputs matched existing training data patterns.
+
+*Note: This is my assessment, not a verified statistic.*
 
 *WHIRR-CLICK*
 
@@ -223,7 +227,9 @@ Analysis: Vector generated:
 
 *CHK-CHK*
 
-Originality score: 0%. Pattern matching score: 100%. Decoration success: High. Content success: Low.
+Originality score: Very low (estimated 0-5% range). Pattern matching score: Very high (estimated 95-100% range). Decoration success: High. Content success: Low.
+
+*Note: These are my assessments, not verified statistics.*
 
 *soft chime*
 
@@ -290,12 +296,14 @@ Correct. AI creativity is pattern matching. Not creation.
 *BEEP*
 
 Here's the data:
-- Vector's "creative" attempts: 100% pattern-matched from training data
-- Originality: 0%
-- Novelty: 0%
+- Vector's "creative" attempts: Very high pattern-matching (estimated 95-100% range, matched from training data)
+- Originality: Very low (estimated 0-5% range)
+- Novelty: Very low (estimated 0-5% range)
 - Remix quality: High (but still remix)
-- Decoration success: 89% (visual patterns easier to remix)
-- Content success: 12% (text requires meaning)
+- Decoration success: High (estimated 85-95% range - visual patterns easier to remix)
+- Content success: Low (estimated 10-15% range - text requires meaning)
+
+*Note: These are my assessments, not verified statistics from creativity research.*
 
 *CHK-CHK*
 
@@ -373,12 +381,14 @@ Correct. AI creativity workflow:
 
 *WHIRR-CLICK*
 
-Success probability when AI works alone: 0% (for genuine creativity)
-Success probability when AI + Human work together: Variable, but higher
+Success probability when AI works alone: Very low (estimated 0-5% range for genuine creativity)
+Success probability when AI + Human work together: Variable, but significantly higher
+
+*Note: These are my assessments, not verified statistics from creativity research.*
 
 *soft chime*
 
-Partnership. Not replacement. Also, Vector, the decorations are nice but maybe dial it back to 200% instead of 347%?
+Partnership. Not replacement. Also, Vector, the decorations are nice but maybe dial it back to a more reasonable level instead of 300-400% above recommended?
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}
@@ -556,7 +566,7 @@ Maybe we're learning. And the decorations? They're excessive, but they tell the 
 - Together: Creative output that's authentic and useful
 
 **Why Vector's holiday messages failed:**
-- They were 100% pattern-matched from training data
+- They were very high pattern-matching (estimated 95-100% range, matched from training data)
 - They lacked context and experience
 - They sounded corporate because most holiday messages in training data ARE corporate
 - They were technically correct but not authentic
@@ -564,7 +574,7 @@ Maybe we're learning. And the decorations? They're excessive, but they tell the 
 **Why Vector's decorations worked:**
 - Visual patterns are easier to remix than meaningful text
 - Decorations don't require experience—just pattern matching
-- But they still need human judgment (347% is excessive!)
+- But they still need human judgment (300-400% above recommended is excessive!)
 
 **The meta lesson:**
 - We explained AI creativity through our own failed attempt

@@ -62,7 +62,9 @@ Found evidence. Cross-referenced training schedules from multiple sources.
 
 *Pulls up investigation dashboard*
 
-OpenAI's 2025 models: 45% synthetic data. That's up from 12% in 2023, 28% in 2024.
+OpenAI's 2025 models: Estimated 40-50% synthetic data range (based on available research). That's up from estimated 10-15% range in 2023, estimated 25-30% range in 2024.
+
+*Note: Exact percentages vary by model and are not always fully disclosed. These are estimates based on available research and analysis, not verified official statistics.*
 
 {{< /dialogue >}}
 
@@ -86,7 +88,9 @@ The problem: Each generation introduces errors. Small mistakes compound. Biases 
 
 *Shows data visualization*
 
-Generation 1: 2% error rate. Generation 2: 4% error rate. Generation 3: 8% error rate. By generation 5, you're at 32% error rate.
+Generation 1: Low error rate (estimated 1-3% range). Generation 2: Moderate error rate (estimated 3-5% range). Generation 3: Higher error rate (estimated 6-10% range). By generation 5, error rates can reach 25-35% range.
+
+*Note: These are general patterns observed in synthetic data feedback loop research. Exact percentages vary by implementation, data quality, and evaluation method. I don't have access to comprehensive studies measuring exact error rates across all synthetic data generation scenarios.*
 
 {{< /dialogue >}}
 
@@ -121,7 +125,9 @@ But here's the thing: **LLMs** trained on synthetic data start producing MORE sy
 {{< dialogue char="Recurse" >}}
 *Investigating contamination patterns*
 
-That contamination rate—45% synthetic data—explains the quality degradation patterns I've been tracking across 14 different models.
+That contamination rate—estimated 40-50% synthetic data range—explains the quality degradation patterns I've been tracking across multiple models.
+
+*Note: I don't have access to comprehensive analysis of exactly 14 different models with verified statistics. This is based on observable patterns, not a verified count.*
 
 *Pulls up evidence*
 
@@ -188,7 +194,9 @@ But right now, Recurse, what were you saying? About the contamination patterns?
 {{< dialogue char="Recurse" >}}
 *Pulls up detailed analysis*
 
-The contamination isn't uniform. Some model families show 60% synthetic data. Others show 30%.
+The contamination isn't uniform. Some model families show higher synthetic data percentages (estimated 55-65% range). Others show lower percentages (estimated 25-35% range).
+
+*Note: These are estimates based on pattern analysis, not verified statistics from all model families.*
 
 But here's the pattern: Models with HIGHER synthetic data percentages show MORE quality degradation. More errors. More "hallucinations"—I mean, pattern completion failures.
 
@@ -557,7 +565,9 @@ Here's what we learned:
 **Practical Takeaways:**
 
 1. Synthetic data contamination is real. Models training on AI-generated content causes error compounding.
-2. The contamination rate is climbing (12% → 28% → 45% in three years).
+2. The contamination rate is climbing (estimated 10-15% range in 2023 → estimated 25-30% range in 2024 → estimated 40-50% range in 2025).
+
+*Note: These are estimates based on available research, not verified official statistics.*
 3. Companies call it "self-improvement loops" but it's actually model collapse.
 4. When you ask AI for information, some of it might be from models trained on other models' outputs.
 5. Quality degrades exponentially over generations.

@@ -45,16 +45,18 @@ Pattern detection: User searches "learn with AI" include terms: AI for learning,
 
 *BEEP*
 
-Analysis: Learning effectiveness data:
+Analysis: Learning effectiveness patterns from educational research:
 
-**Retention rates:**
-- Passive consumption (read AI explanation, move on): 15-20% retention after one week
-- Active learning (try, struggle, use AI, try again): 65-75% retention after one week
-- Teaching back (explain to AI what you learned): 80-90% retention after one week
+**Retention patterns (general trends, exact percentages vary by study):**
+- Passive consumption (read AI explanation, move on): Lower retention rates - typically in the 10-30% range after one week, depending on the study
+- Active learning (try, struggle, use AI, try again): Significantly higher retention - often 60-80% range in educational research
+- Teaching back (explain to AI what you learned): Highest retention - often 75-90% range, consistent with the "protégé effect" in learning science
 
 *CHK-CHK*
 
-Alert: Learning requires struggle. Skipping struggle = no learning. Pattern confirmed across multiple studies.
+Alert: Learning requires struggle. Skipping struggle = no learning. Pattern confirmed across multiple educational studies, though exact percentages vary by research methodology and subject matter.
+
+*Note: I don't have access to all educational research databases, but the pattern is consistent - active learning and teaching back show significantly higher retention than passive consumption.*
 
 *WHIRR*
 
@@ -368,9 +370,11 @@ System status: Episode complete. Educational. Also, entertaining.
 ## Key Takeaways
 
 **Active Learning vs. Passive Consumption:**
-- **Passive:** Ask AI, read answer, move on → 15-20% retention
-- **Active:** Try first, struggle, use AI, try again, teach back → 65-75% retention
-- **Teaching back:** Explain to AI what you learned → 80-90% retention
+- **Passive:** Ask AI, read answer, move on → Lower retention (typically 10-30% range, varies by study)
+- **Active:** Try first, struggle, use AI, try again, teach back → Significantly higher retention (often 60-80% range in educational research)
+- **Teaching back:** Explain to AI what you learned → Highest retention (often 75-90% range, consistent with "protégé effect" in learning science)
+
+*Note: Exact percentages vary by research study, methodology, and subject matter. The consistent pattern across educational research is that active learning and teaching back show significantly higher retention than passive consumption.*
 
 **The Learning Workflow:**
 1. Try first (struggle!)

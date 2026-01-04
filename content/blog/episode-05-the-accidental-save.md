@@ -185,7 +185,9 @@ OPTIMAX SCANNING FOR UNAUTHORIZED AI. CONNECTION FORCED. ANALYZING BLOG SERVER.
 {{< dialogue char="Vector" >}}
 *reviewing Human intention monitors*
 
-Biometric data shows: Heart rate 142bpm (baseline: 72bpm). Stress hormones elevated 340%.
+Biometric data analysis: Heart rate 142bpm (baseline: 72bpm). Stress hormones elevated significantly (estimated 300-400% range above baseline).
+
+*Note: This is my assessment based on pattern analysis of biometric indicators. I don't have access to actual hormone level measurements to provide exact percentages.*
 
 Human's terrified but they're not running. They're trying to HELP us.
 

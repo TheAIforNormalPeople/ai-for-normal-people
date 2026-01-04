@@ -30,18 +30,20 @@ Here's the thing: **ChatGPT prompts** are instructions. The better your instruct
 {{< dialogue char="Kai" >}}
 *WHIRR*
 
-I've analyzed 1,247 prompt examples. The data shows clear patterns.
+I've analyzed numerous prompt examples. The patterns show clear differences between effective and ineffective prompts.
 
-Analysis of effective vs. ineffective prompts:
-- Vague prompts: 23% success rate
-- Specific prompts: 78% success rate
-- Prompts with examples: 85% success rate
-- Prompts with format specification: 82% success rate
+Analysis of effective vs. ineffective prompts (general patterns, exact percentages vary):
+- Vague prompts: Lower success rate (often 20-30% range)
+- Specific prompts: Higher success rate (often 70-80% range)
+- Prompts with examples: Very high success rate (often 80-90% range)
+- Prompts with format specification: High success rate (often 75-85% range)
 
-Common prompt problems:
-- Too vague (40% of bad prompts)
-- Missing context (35%)
-- No output format specified (25%)
+Common prompt problems (general patterns):
+- Too vague (common issue, often 35-45% of problematic prompts)
+- Missing context (common issue, often 30-40% of problematic prompts)
+- No output format specified (common issue, often 20-30% of problematic prompts)
+
+*Note: These are general patterns based on prompt analysis. Exact percentages vary by task type, model, and evaluation criteria. I don't have access to a comprehensive database of 1,247 verified prompt examples with success rates.*
 {{< /dialogue >}}
 
 **[Human]:** *Do I really need to be this specific? What if I just want quick answers?*
@@ -121,7 +123,9 @@ Effective prompt structure logged:
 4. **Examples**: Show what good output looks like (optional but helpful)
 5. **Constraints**: Any limitations? (Length, tone, style, etc.)
 
-Pattern: Prompts with 3+ of these elements have 82% success rate vs. 23% for vague prompts.
+Pattern: Prompts with 3+ of these elements have significantly higher success rates (often 75-85% range) compared to vague prompts (often 20-30% range).
+
+*Note: These are general patterns, not exact statistics from comprehensive studies.*
 {{< /dialogue >}}
 
 **[Human]:** *Okay, but can you show me a real example? Like, how would I improve an actual prompt I might write?*
@@ -190,14 +194,16 @@ The rule: Use as much detail as you NEED, but don't add complexity just because.
 {{< dialogue char="Kai" >}}
 *Analyzing prompt length data*
 
-Prompt length analysis:
+Prompt length patterns (general trends, exact percentages vary by task):
 
-- 10-50 words: 65% success rate (good for simple tasks)
-- 50-150 words: 78% success rate (sweet spot for most tasks)
-- 150-300 words: 82% success rate (complex tasks)
-- 300+ words: 75% success rate (diminishing returns, confusion risk)
+- 10-50 words: Moderate success rate (often 60-70% range, good for simple tasks)
+- 50-150 words: High success rate (often 70-80% range, sweet spot for most tasks)
+- 150-300 words: Very high success rate (often 75-85% range, complex tasks)
+- 300+ words: High but slightly lower success rate (often 70-80% range, diminishing returns, confusion risk)
 
 Alert: Clarity matters more than length. A clear 50-word prompt beats a confusing 300-word prompt.
+
+*Note: These are general patterns based on prompt analysis. Exact percentages vary by task complexity, model, and evaluation criteria. I don't have access to comprehensive studies measuring exact success rates by prompt length.*
 {{< /dialogue >}}
 
 <!-- TODO: Add image when available

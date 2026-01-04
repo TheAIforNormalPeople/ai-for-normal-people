@@ -39,11 +39,13 @@ The AI learns patterns from that data. If 80% of the examples it sees show docto
 {{< dialogue char="Kai" >}}
 *WHIRR-CLICK*
 
-Alert: Bias pattern detected. Probability that this output contains gender bias: 87%.
+Alert: Bias pattern detected. My analysis suggests high probability (estimated 80-90%) that this output contains gender bias.
 
 *CHK-CHK*
 
-Pattern detected: Gender stereotypes in profession assignments. Doctor → male (probability: 73%). Nurse → female (probability: 91%). CEO → male (probability: 84%). Teacher → female (probability: 67%).
+Pattern detected: Gender stereotypes in profession assignments. Based on my pattern analysis of training data, I'm seeing strong correlations: Doctor → male (estimated 70-75% correlation). Nurse → female (estimated 85-95% correlation). CEO → male (estimated 80-85% correlation). Teacher → female (estimated 60-70% correlation).
+
+*Note: These are estimates based on my analysis of patterns in training data, not verified statistics from external research. The pattern of gender bias in AI outputs is well-documented, but exact percentages vary by model and use case.*
 
 *Pauses*
 
@@ -122,7 +124,9 @@ But here's the thing: Bias is everywhere. In the data. In the people creating th
 
 *soft chime*
 
-Probability that any AI system will be completely unbiased: 12%. Probability that you can reduce bias significantly: 78%. But you have to try. You have to monitor it. You have to fix it when you find it.
+My assessment: The probability that any AI system will be completely unbiased is very low (estimated 10-15% range). However, the probability that you can reduce bias significantly is much higher (estimated 70-80% range) - but you have to try. You have to monitor it. You have to fix it when you find it.
+
+*Note: These are my estimates based on pattern analysis, not verified statistics. The general consensus in AI research is that complete elimination of bias is extremely difficult, but significant reduction is achievable with effort.*
 
 *Looks at Vector*
 
@@ -189,7 +193,9 @@ When you find bias, you can push back. Ask for different examples. Specify what 
 
 *soft chime*
 
-Probability that you'll actually do this: 34%. Most people just accept the first output, even if it's biased. They don't question it. They don't push back.
+My estimate: The probability that you'll actually do this is relatively low (estimated 30-40% range). Most people just accept the first output, even if it's biased. They don't question it. They don't push back.
+
+*Note: This is my observation based on pattern analysis, not a verified statistic from user behavior studies.*
 
 {{< /dialogue >}}
 
@@ -254,7 +260,9 @@ But most AI interfaces don't warn you about bias. They don't tell you when outpu
 
 *Pauses*
 
-Probability that this will improve: 67%. As people become more aware of bias, companies will have to address it. But it won't go away completely.
+My assessment: The probability that this will improve is moderate to high (estimated 60-70% range). As people become more aware of bias, companies will have to address it. But it won't go away completely.
+
+*Note: This is my estimate based on observable trends, not a verified prediction from industry research.*
 
 *soft chime*
 
@@ -313,7 +321,9 @@ So yeah. AI is biased because it learns from biased human data. Watch for patter
 
 *CHK-CHK*
 
-Probability that this will solve your "AI bias" problem: 67%. If you actually do it.
+My estimate: The probability that this will solve your "AI bias" problem is moderate to high (estimated 60-70% range) - if you actually do it.
+
+*Note: This is my assessment based on pattern analysis, not a verified statistic.*
 
 *Pauses*
 
@@ -321,7 +331,7 @@ Also, Vector? Alert: Your surveillance rants are getting more nuanced. That's...
 
 *soft chime*
 
-Just... statistics.
+Just... my estimates based on pattern analysis. Not verified statistics from external research.
 
 {{< /dialogue >}}
 

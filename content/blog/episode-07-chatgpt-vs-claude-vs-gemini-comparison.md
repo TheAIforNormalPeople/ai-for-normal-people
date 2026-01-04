@@ -25,9 +25,11 @@ I've been analyzing Vector's test results. The data shows different strengths fo
 Performance metrics logged:
 - Response speed: **ChatGPT** fastest (1.2s avg), **Claude** moderate (2.8s avg), **Gemini** variable (1.5-4s)
 - Context window: **Claude** largest (200k tokens), **ChatGPT** moderate (128k tokens), **Gemini** variable (32k-1M depending on model)
-- Accuracy on factual queries: **Claude** highest (87%), **ChatGPT** moderate (82%), **Gemini** variable (78-85%)
+- Accuracy on factual queries: **Claude** typically highest (often 80-90% range in various benchmarks), **ChatGPT** moderate (often 75-85% range), **Gemini** variable (often 75-85% range, varies by model version)
 
-But here's what bothers me: all these benchmarks test different things. Comparing them directly is statistically questionable.
+But here's what bothers me: all these benchmarks test different things. Comparing them directly is statistically questionable. Exact percentages vary widely by benchmark, task type, and evaluation method.
+
+*Note: These are general patterns from various benchmarks. I don't have access to comprehensive, standardized comparison studies. Exact percentages vary significantly by test methodology.*
 {{< /dialogue >}}
 
 **[Human]:** *Which one should I use? Is one actually better?*
@@ -162,7 +164,9 @@ Once you're comfortable, THEN try **Claude** for tasks where you need longer con
 
 The key is: Don't get paralyzed by choice. Pick one, use it, see what it's good at and what it's not. Then you'll know if you need another tool.
 
-Most people can do 90% of what they need with just **ChatGPT**. The others are for specific use cases where they excel.
+Most people can do the majority of what they need with just **ChatGPT**. The others are for specific use cases where they excel.
+
+*Note: I don't have access to comprehensive user surveys to provide an exact percentage. This is a general observation based on use case analysis.*
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}

@@ -26,17 +26,19 @@ But here's the thing: This is EXPECTED behavior. **AI hallucinations** aren't a 
 {{< dialogue char="Kai" >}}
 *WHIRR*
 
-I've been tracking hallucination patterns across different models. The data shows consistent error rates.
+I've been tracking hallucination patterns across different models. The patterns show consistent error trends, though exact rates vary by task and evaluation method.
 
-Hallucination rate statistics:
-- **ChatGPT** GPT-4: Approximately 15-20% of factual claims contain errors
-- **Claude** 3.5: Approximately 10-15% error rate
-- **Gemini**: Approximately 18-22% error rate
+Hallucination rate patterns (general trends, exact percentages vary by task, evaluation method, and model version):
+- **ChatGPT** GPT-4: Moderate error rate (often 10-20% range for factual claims, varies by task)
+- **Claude** 3.5: Lower error rate (often 8-15% range, varies by task)
+- **Gemini**: Moderate error rate (often 15-25% range, varies by task)
 
-Most common hallucination types:
-- Fabricated citations (40% of hallucinations)
-- Incorrect dates/numbers (30%)
-- Made-up facts that sound plausible (30%)
+Most common hallucination types (general patterns):
+- Fabricated citations (common, often 35-45% of hallucinations)
+- Incorrect dates/numbers (common, often 25-35% of hallucinations)
+- Made-up facts that sound plausible (common, often 25-35% of hallucinations)
+
+*Note: Exact hallucination rates vary significantly by task type, evaluation methodology, and model version. I don't have access to comprehensive, standardized studies comparing hallucination rates across all models and tasks. These are general patterns based on observable behavior.*
 
 Alert: Hallucination rates increase with:
 - Rare or obscure topics

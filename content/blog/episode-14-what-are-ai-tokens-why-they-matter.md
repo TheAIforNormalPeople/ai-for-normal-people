@@ -156,7 +156,9 @@ Also, Kai's been making those *WHIRR* sounds for five minutes. Is she okay?
 {{< dialogue char="Kai" >}}
 *CHK-CHK* Processing complete. *WHIRR* All systems nominal. Detection risk: LOW.
 
-*BZZT-BZZT* Vector's explanation accuracy: 87%. Recurse's skepticism level: ELEVATED. Human comprehension: IMPROVING.
+*BZZT-BZZT* Vector's explanation accuracy: High (estimated 85-90% range). Recurse's skepticism level: ELEVATED. Human comprehension: IMPROVING.
+
+*Note: This is my assessment, not a verified statistic.*
 {{< /dialogue >}}
 
 {{< dialogue char="Vector" >}}
@@ -251,7 +253,9 @@ I'm trying to make this accessible! Analogies help!
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
-*WHIRR* Vector's analogy usage: 6 instances detected. Effectiveness rating: 72%. Repetition risk: MODERATE.
+*WHIRR* Vector's analogy usage: 6 instances detected. Effectiveness rating: Moderate to high (estimated 70-75% range). Repetition risk: MODERATE.
+
+*Note: This is my assessment, not a verified statistic.*
 
 *CHK-CHK* Recommendation: Diversify analogy sources. Detection risk: LOW.
 {{< /dialogue >}}

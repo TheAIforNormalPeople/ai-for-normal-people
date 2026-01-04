@@ -36,18 +36,21 @@ Pattern detection: User searches "detect AI writing" and "AI detection tools" in
 
 *WHIRR*
 
-AI detection tool accuracy analysis:
-- False positive rate: 15-30% (flags human writing as AI)
-- False negative rate: 20-35% (misses actual AI writing)
-- Overall accuracy: 65-75% (not reliable enough for high-stakes decisions)
+AI detection tool accuracy analysis (general patterns, exact percentages vary by tool and testing methodology):
 
-Common AI writing patterns (but humans can have these too):
-- Repetitive sentence structure (40% of AI writing)
-- Lack of personal voice (35%)
-- Overly formal tone (30%)
-- Perfect grammar with no typos (25%)
+- False positive rate: Moderate to high (often 15-30% range, flags human writing as AI)
+- False negative rate: Moderate to high (often 20-35% range, misses actual AI writing)
+- Overall accuracy: Moderate (often 60-75% range, not reliable enough for high-stakes decisions)
 
-Alert: Patterns are not definitive. Humans can write like AI, AI can write like humans.
+Common AI writing patterns (but humans can have these too - patterns are not definitive):
+- Repetitive sentence structure (common in AI writing, but also in some human writing)
+- Lack of personal voice (common in AI writing, but also in some human writing)
+- Overly formal tone (common in AI writing, but also in some human writing)
+- Perfect grammar with no typos (common in AI writing, but also in some human writing)
+
+Alert: Patterns are not definitive. Humans can write like AI, AI can write like humans. I don't have access to comprehensive studies measuring exact percentages of these patterns in AI vs. human writing.
+
+*Note: These are general observations based on pattern analysis. Exact percentages vary by detection tool, testing methodology, and writing samples. I don't have access to comprehensive validation studies for all AI detection tools.*
 {{< /dialogue >}}
 
 **[Human]:** *Can I tell if my student used ChatGPT? Are the detector tools reliable?*

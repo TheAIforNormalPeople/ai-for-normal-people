@@ -218,24 +218,26 @@ The people producing generic AI slop are the ones who think AI can replace writi
 {{< dialogue char="Kai" >}}
 *WHIRR*
 
-Workflow efficiency analysis:
+Workflow efficiency analysis (general patterns, exact percentages vary by individual and task):
 
-**Time saved with AI:**
-- Research: 60-70% time reduction
-- Outlining: 40-50% time reduction  
-- First drafts: 30-40% time reduction (if you edit heavily)
-- Editing: 20-30% time reduction
+**Time saved with AI (typical ranges observed):**
+- Research: Significant time reduction (often 50-70% range, varies by task complexity)
+- Outlining: Moderate to significant time reduction (often 35-50% range)
+- First drafts: Moderate time reduction (often 25-40% range, if you edit heavily)
+- Editing: Some time reduction (often 15-30% range)
 
 **Time NOT saved:**
-- Personal voice sections: 0% (you write these)
-- Creative elements: 0% (you write these)
-- Final polish: 0% (you do this)
+- Personal voice sections: Minimal to no time saved (you write these)
+- Creative elements: Minimal to no time saved (you write these)
+- Final polish: Minimal to no time saved (you do this)
 
-Net time savings: 25-35% for experienced writers, 40-50% for less experienced writers.
+Net time savings: Estimated 20-35% for experienced writers, 35-50% for less experienced writers (varies widely by individual and writing style).
 
 *CHK-CHK*
 
-Alert: This contradicts "AI writes for you" narrative. Most users expect 80%+ time savings. Reality: 25-35%.
+Alert: This contradicts "AI writes for you" narrative. Many users expect very high time savings (80%+), but reality is typically more modest (20-35% range for experienced writers).
+
+*Note: These are general patterns based on observable workflows. Exact percentages vary significantly by individual, writing style, and task complexity. I don't have access to comprehensive productivity studies comparing AI-assisted vs. traditional writing workflows.*
 
 *WHIRR*
 
@@ -304,7 +306,9 @@ Pattern: Human's writing voice = specific examples, personal perspective, direct
 
 *WHIRR*
 
-Alert: Removing these phrases alone improves readability by 45%. Human's explanation demonstrates this naturally.
+Alert: Removing these phrases significantly improves readability. Human's explanation demonstrates this naturally - the text flows better without generic AI phrases.
+
+*Note: I don't have access to specific readability studies measuring the exact impact of removing AI phrases. The improvement is observable, but I can't provide a precise percentage.*
 
 *WHIRR*
 

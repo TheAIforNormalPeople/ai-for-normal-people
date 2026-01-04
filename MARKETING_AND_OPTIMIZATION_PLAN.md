@@ -103,10 +103,19 @@ Create a system to review each episode for:
 ### Current State (from Site Audit)
 
 **Issues Found:**
-- ❌ 105 instances of inline styles (still need to move to CSS)
+- ⚠️ **105 instances of inline styles** - BUT most are CSS variables (`--char-color`) which is GOOD practice (dynamic character colors from data)
+  - CSS variables are modern and performant
+  - Necessary for dynamic character colors from data files
+  - Only a few are actual hardcoded inline styles (mostly in 404 page)
+  - **Verdict:** Not a real issue - CSS variables are fine!
 - ⚠️ Large CSS files (165KB total, but now minified in production)
+  - This is intentional - character-specific styling, dialogue boxes, special episode CSS
+  - Characters.css (61KB) is large but serves a purpose (character styling)
+  - Episode-specific CSS (holiday, newyear) is conditionally loaded (good!)
 - ⚠️ Inline JavaScript (260+ lines, but minified in production)
-- ⚠️ Estimated 20-30% unused CSS
+  - Mostly read receipt system and initialization
+  - Could be externalized but not critical
+- ⚠️ Estimated 20-30% unused CSS - would need analysis to confirm
 - ✅ **Minification configured** - HTML/CSS/JS minified in production builds
 
 **What's Good:**
@@ -128,7 +137,7 @@ Create a system to review each episode for:
    - ✅ Hugo minification config added to `hugo.toml`
    - ✅ Build command includes `--minify` flag
    - ✅ CSS/JS/HTML minified in production builds
-   - ⏳ Still need to: Move inline styles to CSS files (105 instances)
+   - ✅ Inline styles are mostly CSS variables (GOOD practice) - no action needed
 
 2. **Optimize Images**
    - Compress existing images
@@ -182,9 +191,9 @@ Create a system to review each episode for:
 3. ⏳ Add alt text to images - Not done yet
 
 **Phase 2: Medium Effort (4-6 hours)**
-1. Move inline styles to CSS files
-2. Remove unused CSS rules
-3. Optimize images
+1. ⏳ Remove unused CSS rules - Would need analysis (20-30% estimated)
+2. ⏳ Optimize images - Compress and convert to WebP
+3. ⏳ Move inline styles - LOW PRIORITY (most are CSS variables, which are fine)
 
 **Phase 3: Larger Refactor (8-12 hours)**
 1. Refactor template structure

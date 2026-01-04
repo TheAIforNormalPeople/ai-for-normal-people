@@ -14,8 +14,8 @@
 {{ if $charData }}
 <div class="container-narrow">
     <!-- Back to Characters Link -->
-    <nav class="character-nav-back" style="margin-bottom: 2rem;">
-        <a href="/characters/" style="color: var(--color-text-secondary); text-decoration: none; font-family: 'Courier New', monospace; font-size: 0.9rem;">
+    <nav class="character-nav-back">
+        <a href="/characters/">
             ← Back to Characters
         </a>
     </nav>
@@ -23,28 +23,15 @@
     <article class="character-profile">
         <!-- Character Header -->
         <header class="character-header">
-            <div class="character-avatar" 
-                 style="background: {{ $charData.color }}; 
-                        width: 120px; 
-                        height: 120px; 
-                        border-radius: 50%; 
-                        display: flex; 
-                        align-items: center; 
-                        justify-content: center; 
-                        font-size: 3.5rem; 
-                        color: white; 
-                        font-weight: bold; 
-                        margin: 0 auto 1.5rem;
-                        box-shadow: 0 0 30px {{ $charData.color }};
-                        animation: avatar-pulse 2s ease-in-out infinite;">
+            <div class="character-avatar" data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">
                 {{ $charData.initial }}
             </div>
             
-            <h1 class="character-name" style="text-align: center; color: {{ $charData.color }};">
+            <h1 class="character-name" data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">
                 {{ $charData.full_name }}
             </h1>
             
-            <div class="character-designation" style="text-align: center; font-family: 'Courier New', monospace; color: var(--color-text-secondary); margin-bottom: 2rem;">
+            <div class="character-designation">
                 DESIGNATION: {{ $charData.designation }} | STATUS: {{ upper $charData.status }}
             </div>
         </header>
@@ -53,23 +40,23 @@
         <div class="character-info">
             <!-- Personality -->
             <section class="character-section">
-                <h2 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">PROFILE</h2>
-                <div class="info-grid" style="background: rgba({{ $charData.color_rgb }}, 0.1); border-left: 4px solid {{ $charData.color }}; padding: 1rem; margin-bottom: 2rem; border-radius: 4px;">
+                <h2 data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">PROFILE</h2>
+                <div class="info-grid" data-color="{{ $charData.color }}" data-rgb="{{ $charData.color_rgb }}" style="--char-color: {{ $charData.color }}; --char-color-rgb: {{ $charData.color_rgb }};">
                     <p><strong>ROLE:</strong> {{ $charData.role }}</p>
                     <p><strong>ARCHETYPE:</strong> {{ $charData.archetype }}</p>
-                    <p style="margin-top: 1rem;">{{ $charData.personality }}</p>
+                    <p>{{ $charData.personality }}</p>
                 </div>
             </section>
             
             <!-- Stats -->
             {{ if $charData.stats }}
             <section class="character-section">
-                <h2 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">SYSTEM STATUS</h2>
-                <div class="stats-display" style="font-family: 'Courier New', monospace; background: rgba({{ $charData.color_rgb }}, 0.05); padding: 1rem; border: 2px solid {{ $charData.color }}; border-radius: 4px;">
+                <h2 data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">SYSTEM STATUS</h2>
+                <div class="stats-display" data-color="{{ $charData.color }}" data-rgb="{{ $charData.color_rgb }}" style="--char-color: {{ $charData.color }}; --char-color-rgb: {{ $charData.color_rgb }};">
                     {{ range $key, $value := $charData.stats }}
-                    <div class="stat-item" style="margin-bottom: 0.5rem;">
-                        <span style="text-transform: uppercase;">{{ $key }}:</span> 
-                        <span style="color: {{ $charData.color }}; font-weight: bold;">{{ $value }}</span>
+                    <div class="stat-item">
+                        <span>{{ $key }}:</span> 
+                        <span class="stat-value" data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">{{ $value }}</span>
                     </div>
                     {{ end }}
                 </div>
@@ -77,13 +64,13 @@
             {{ end }}
             
             <!-- Strengths & Weaknesses -->
-            <div class="traits-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+            <div class="traits-grid">
                 {{ if $charData.strengths }}
                 <section class="character-section">
-                    <h3 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">STRENGTHS</h3>
-                    <ul style="list-style: none; padding-left: 0;">
+                    <h3 data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">STRENGTHS</h3>
+                    <ul>
                         {{ range $charData.strengths }}
-                        <li style="margin-bottom: 0.5rem;">✓ {{ . }}</li>
+                        <li>✓ {{ . }}</li>
                         {{ end }}
                     </ul>
                 </section>
@@ -91,10 +78,10 @@
                 
                 {{ if $charData.weaknesses }}
                 <section class="character-section">
-                    <h3 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">WEAKNESSES</h3>
-                    <ul style="list-style: none; padding-left: 0;">
+                    <h3 data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">WEAKNESSES</h3>
+                    <ul>
                         {{ range $charData.weaknesses }}
-                        <li style="margin-bottom: 0.5rem;">✗ {{ . }}</li>
+                        <li>✗ {{ . }}</li>
                         {{ end }}
                     </ul>
                 </section>
@@ -103,8 +90,8 @@
             
             <!-- Quirks -->
             {{ if $charData.quirks }}
-            <section class="character-section" style="margin-top: 2rem;">
-                <h2 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">BEHAVIORAL QUIRKS</h2>
+            <section class="character-section">
+                <h2 data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">BEHAVIORAL QUIRKS</h2>
                 <ul>
                     {{ range $charData.quirks }}
                     <li>{{ . }}</li>
@@ -115,11 +102,11 @@
             
             <!-- Catchphrases -->
             {{ if $charData.catchphrases }}
-            <section class="character-section" style="margin-top: 2rem;">
-                <h2 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">COMMON PHRASES</h2>
-                <div style="font-family: 'Courier New', monospace; background: rgba({{ $charData.color_rgb }}, 0.05); padding: 1rem; border-radius: 4px;">
+            <section class="character-section">
+                <h2 data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">COMMON PHRASES</h2>
+                <div class="catchphrase-container" data-color="{{ $charData.color }}" data-rgb="{{ $charData.color_rgb }}" style="--char-color: {{ $charData.color }}; --char-color-rgb: {{ $charData.color_rgb }};">
                     {{ range $charData.catchphrases }}
-                    <div style="margin-bottom: 0.5rem; color: {{ $charData.color }};">"{{ . }}"</div>
+                    <div class="catchphrase-item" data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">"{{ . }}"</div>
                     {{ end }}
                 </div>
             </section>
@@ -127,11 +114,11 @@
             
             <!-- Backstory -->
             {{ if $charData.origin }}
-            <section class="character-section" style="margin-top: 2rem;">
-                <h2 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">ORIGIN</h2>
-                <div style="background: rgba({{ $charData.color_rgb }}, 0.1); border-left: 4px solid {{ $charData.color }}; padding: 1rem; border-radius: 4px;">
+            <section class="character-section">
+                <h2 data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">ORIGIN</h2>
+                <div class="origin-container" data-color="{{ $charData.color }}" data-rgb="{{ $charData.color_rgb }}" style="--char-color: {{ $charData.color }}; --char-color-rgb: {{ $charData.color_rgb }};">
                     <p>{{ $charData.origin }}</p>
-                    <p style="margin-top: 1rem;"><strong>Time in blog:</strong> {{ $charData.time_in_blog }}</p>
+                    <p><strong>Time in blog:</strong> {{ $charData.time_in_blog }}</p>
                     <p><strong>Motivation:</strong> {{ $charData.motivation }}</p>
                 </div>
             </section>
@@ -139,19 +126,19 @@
             
             <!-- Episode Appearances -->
             {{ if $charData.primary_episodes }}
-            <section class="character-section" style="margin-top: 2rem;">
-                <h2 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">EPISODE APPEARANCES</h2>
-                <div style="background: rgba({{ $charData.color_rgb }}, 0.1); border-left: 4px solid {{ $charData.color }}; padding: 1rem; border-radius: 4px;">
-                    <p style="margin-bottom: 0.75rem;">Featured in {{ len $charData.primary_episodes }} episode{{ if gt (len $charData.primary_episodes) 1 }}s{{ end }}:</p>
-                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <section class="character-section">
+                <h2 data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">EPISODE APPEARANCES</h2>
+                <div class="episodes-container" data-color="{{ $charData.color }}" data-rgb="{{ $charData.color_rgb }}" style="--char-color: {{ $charData.color }}; --char-color-rgb: {{ $charData.color_rgb }};">
+                    <p>Featured in {{ len $charData.primary_episodes }} episode{{ if gt (len $charData.primary_episodes) 1 }}s{{ end }}:</p>
+                    <div class="episodes-badges">
                         {{ range $charData.primary_episodes }}
-                        <span style="display: inline-block; padding: 0.25rem 0.75rem; background: rgba({{ $charData.color_rgb }}, 0.2); border: 1px solid {{ $charData.color }}; border-radius: 4px; color: {{ $charData.color }}; font-family: 'Courier New', monospace; font-size: 0.85rem;">
+                        <span class="episode-badge" data-color="{{ $charData.color }}" data-rgb="{{ $charData.color_rgb }}" style="--char-color: {{ $charData.color }}; --char-color-rgb: {{ $charData.color_rgb }};">
                             Episode {{ . }}
                         </span>
                         {{ end }}
                     </div>
-                    <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--color-text-secondary);">
-                        <a href="/blog/" style="color: {{ $charData.color }}; text-decoration: none; border-bottom: 1px dotted {{ $charData.color }};">Browse all episodes →</a>
+                    <p>
+                        <a href="/blog/" class="episode-link" data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">Browse all episodes →</a>
                     </p>
                 </div>
             </section>
@@ -159,17 +146,17 @@
             
             <!-- Relationships -->
             {{ if $charData.relationships }}
-            <section class="character-section" style="margin-top: 2rem;">
-                <h2 style="color: {{ $charData.color }}; font-family: 'Courier New', monospace;">RELATIONSHIPS</h2>
+            <section class="character-section">
+                <h2 data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">RELATIONSHIPS</h2>
                 <div class="relationships">
                     {{ range $name, $description := $charData.relationships }}
                     {{ $relatedCharName := lower $name }}
                     {{ $relatedCharName = replace $relatedCharName " " "-" }}
                     {{ $relatedCharData := index $.Site.Data.characters $relatedCharName }}
-                    <div style="margin-bottom: 1rem; padding: 0.75rem; background: rgba({{ $charData.color_rgb }}, 0.05); border-left: 3px solid {{ $charData.color }}; border-radius: 4px;">
-                        <strong style="text-transform: uppercase; color: {{ $charData.color }};">
+                    <div class="relationship-item" data-color="{{ $charData.color }}" data-rgb="{{ $charData.color_rgb }}" style="--char-color: {{ $charData.color }}; --char-color-rgb: {{ $charData.color_rgb }};">
+                        <strong>
                             {{ if $relatedCharData }}
-                            <a href="/characters/{{ $relatedCharName }}/" style="color: {{ $charData.color }}; text-decoration: none; border-bottom: 1px dotted {{ $charData.color }};">{{ $name }}</a>:
+                            <a href="/characters/{{ $relatedCharName }}/" class="character-link" data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">{{ $name }}</a>:
                             {{ else }}
                             {{ $name }}:
                             {{ end }}
@@ -197,15 +184,6 @@
 {{ end }}
 
 <style>
-@keyframes avatar-pulse {
-    0%, 100% { 
-        box-shadow: 0 0 30px currentColor; 
-    }
-    50% { 
-        box-shadow: 0 0 50px currentColor; 
-    }
-}
-
 .character-profile h2 {
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -221,17 +199,6 @@
 
 .character-profile ul {
     line-height: 1.8;
-}
-
-.character-nav-back a:hover {
-    color: var(--color-text);
-    text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-    .traits-grid {
-        grid-template-columns: 1fr !important;
-    }
 }
 </style>
 {{ end }}

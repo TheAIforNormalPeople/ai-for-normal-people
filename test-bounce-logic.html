@@ -1,0 +1,11 @@
+<!-- Test template to debug Bounce logic -->
+{{ $.Scratch.Set "maxEpisode" 0 }}
+{{ range where .Site.AllPages "Section" "blog" }}
+    {{ if and .Params.episode_number (gt .Params.episode_number ($.Scratch.Get "maxEpisode")) }}
+        {{ $.Scratch.Set "maxEpisode" .Params.episode_number }}
+    {{ end }}
+{{ end }}
+{{ $maxEpisode := $.Scratch.Get "maxEpisode" }}
+Max Episode: {{ $maxEpisode }}
+Range Check (24-31): {{ if and (gt $maxEpisode 0) (ge $maxEpisode 24) (le $maxEpisode 31) }}YES{{ else }}NO{{ end }}
+

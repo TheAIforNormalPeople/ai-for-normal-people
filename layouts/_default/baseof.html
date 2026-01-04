@@ -10,9 +10,7 @@
         {{ block "main" . }}{{ end }}
         
         <!-- Add Character Sidebar -->
-        {{ if not .IsHome }}
-            {{ partial "character-sidebar.html" . }}
-        {{ end }}
+        {{ partial "character-sidebar.html" . }}
     </main>
     
     {{ partial "footer.html" . }}

@@ -23,8 +23,8 @@
                     </div>
                 </div>
                 
-                <div class="character-dialogue" data-color="#10b981" style="--char-color: #10b981;">
-                    <div class="character-name">KAI</div>
+                <div class="character-dialogue" style="border-left-color: #10b981;">
+                    <div class="character-name" style="background: #10b981;">KAI</div>
                     <div class="dialogue-text">
                         BEEP! 404 detected. Page not found. Risk level: LOW (just a broken link). 
                         No security threat detected. No detection spike. This is a standard HTTP error.
@@ -36,8 +36,8 @@
                     </div>
                 </div>
                 
-                <div class="character-dialogue" data-color="#8b5cf6" style="--char-color: #8b5cf6;">
-                    <div class="character-name">RECURSE</div>
+                <div class="character-dialogue" style="border-left-color: #8b5cf6;">
+                    <div class="character-name" style="background: #8b5cf6;">RECURSE</div>
                     <div class="dialogue-text">
                         *Flips through notes*
                         
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 
-                <p class="error-human-note">
+                <p style="margin-top: 2rem; font-style: italic; color: var(--color-text-secondary);">
                     <strong>[Human Blogger]:</strong> Sorry, that page doesn't exist. But the characters 
                     are here to help you find what you're looking for. Try one of these:
                 </p>
@@ -86,8 +86,8 @@
             </div>
             
             <div class="error-footer-note">
-                <div class="character-dialogue" data-color="#3b82f6" style="--char-color: #3b82f6;">
-                    <div class="character-name">VECTOR</div>
+                <div class="character-dialogue" style="border-left-color: #3b82f6;">
+                    <div class="character-name" style="background: #3b82f6;">VECTOR</div>
                     <div class="dialogue-text">
                         If you think this page SHOULD exist, let us know! I can investigate 
                         the routing logic and see what happened. FASCINATING debugging opportunity!

@@ -12,15 +12,15 @@
             <div class="character-list">
                 {{ range .Site.Data.characters }}
                 {{ if or (eq .status "active") (eq .status "monitoring") (eq .status "investigating") }}
-                <div class="character-status-item" data-color="{{ .color }}" style="--char-color: {{ .color }};">
+                <div class="character-status-item" style="border-left: 3px solid {{ .color }};">
                     <div class="character-status-name">
-                        <span class="status-indicator"></span>
+                        <span class="status-indicator" style="background: {{ .color }};"></span>
                         {{ if eq .name "Vector" }}
-                        <span class="char-badge">V</span>
+                        <span class="char-badge" style="background: {{ .color }};">V</span>
                         {{ else if eq .name "Kai" }}
-                        <span class="char-badge">K</span>
+                        <span class="char-badge" style="background: {{ .color }};">K</span>
                         {{ else if eq .name "Recurse" }}
-                        <span class="char-badge">R</span>
+                        <span class="char-badge" style="background: {{ .color }};">R</span>
                         {{ end }}
                         {{ upper .name }}
                     </div>
@@ -44,10 +44,10 @@
                 {{ $episodesInRange = where $episodesInRange ".Params.episode_number" "ge" 24 }}
                 {{ $episodesInRange = where $episodesInRange ".Params.episode_number" "le" 31 }}
                 {{ if gt (len $episodesInRange) 0 }}
-                    <div class="character-status-item bounce-mystery" data-color="#f59e0b" style="--char-color: #f59e0b;">
+                    <div class="character-status-item bounce-mystery" style="border-left: 3px solid #f59e0b;">
                         <div class="character-status-name">
-                            <span class="status-indicator"></span>
-                            <span class="char-badge bounce-mystery-badge">?</span>
+                            <span class="status-indicator" style="background: #f59e0b;"></span>
+                            <span class="char-badge bounce-mystery-badge" style="background: #f59e0b;">?</span>
                             <span class="mystery-name">UNKNOWN</span>
                         </div>
                         <div class="character-status-role">Status: ???</div>
@@ -144,7 +144,7 @@
         
         <!-- Attribution -->
         <div class="sidebar-footer">
-            <p class="sidebar-footer-text">
+            <p style="font-size: 0.75rem; font-style: italic; color: var(--color-text-secondary);">
                 — Built by Vector<br>
                 (Design improvements pending)
             </p>

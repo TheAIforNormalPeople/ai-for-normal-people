@@ -71,20 +71,6 @@ buildFuture = true  # Allow future-dated posts to be published
   changefreq = "weekly"
   priority = 0.5
 
-# Minification and Build Optimization
-[minify]
-  minifyOutput = true
-  [minify.tdewolff.html]
-    keepWhitespace = false
-  [minify.tdewolff.css]
-    keepCSS2 = true
-  [minify.tdewolff.js]
-    keepVarNames = true
-
-# Build Performance
-[build]
-  writeStats = true
-
 
 
 

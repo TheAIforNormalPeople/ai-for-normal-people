@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="container">
-    <header class="page-header">
-        <h1 class="page-title">{{ .Title }}</h1>
+    <header class="page-header" style="text-align: center; margin-bottom: 3rem;">
+        <h1 class="page-title" style="font-family: 'Courier New', monospace; text-transform: uppercase; letter-spacing: 2px;">{{ .Title }}</h1>
         <p class="page-description">{{ .Content }}</p>
     </header>
     
@@ -16,14 +16,16 @@
             <a href="{{ .Permalink }}" class="character-card-link">
                 <div class="character-card-inner">
                     <!-- Avatar -->
-                    <div class="character-card-avatar" data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }}; background: {{ $charData.color }};">
+                    <div class="character-card-avatar" 
+                         style="background: {{ $charData.color }}; 
+                                box-shadow: 0 0 30px {{ $charData.color }};">
                         <span class="avatar-initial">{{ $charData.initial }}</span>
                         <div class="avatar-glitch"></div>
                     </div>
                     
                     <!-- Info -->
                     <div class="character-card-info">
-                        <h3 class="character-card-name" data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">
+                        <h3 class="character-card-name" style="color: {{ $charData.color }};">
                             {{ .Title }}
                         </h3>
                         <div class="character-card-designation">
@@ -32,11 +34,11 @@
                         <div class="character-card-role">
                             {{ $charData.role }}
                         </div>
-                        <div class="character-card-status" data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">
+                        <div class="character-card-status" style="color: {{ $charData.color }};">
                             ● {{ upper $charData.status }}
                         </div>
                         {{ if $charData.archetype }}
-                        <div class="character-card-archetype">
+                        <div class="character-card-archetype" style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 0.5rem; font-style: italic;">
                             {{ $charData.archetype }}
                         </div>
                         {{ end }}

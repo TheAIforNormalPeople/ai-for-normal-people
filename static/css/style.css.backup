@@ -73,6 +73,65 @@ body {
     transition: background-color var(--transition-base), color var(--transition-base);
 }
 
+/* Light mode - DARKER GRAY background (much easier on eyes), DARK text */
+html:not(.dark-mode) body {
+    background-color: #9ca3af !important;  /* DARKER gray - NOT WHITE, much easier to read */
+    color: #374151;  /* Dark gray body text */
+}
+
+/* Headings - near black */
+html:not(.dark-mode) h1,
+html:not(.dark-mode) h2,
+html:not(.dark-mode) h3,
+html:not(.dark-mode) h4,
+html:not(.dark-mode) h5,
+html:not(.dark-mode) h6 {
+    color: #1a1a1a !important;
+}
+
+/* Body text - dark gray */
+html:not(.dark-mode) p,
+html:not(.dark-mode) li,
+html:not(.dark-mode) .post-content {
+    color: #374151 !important;
+}
+
+/* Secondary text - medium gray */
+html:not(.dark-mode) .post-meta,
+html:not(.dark-mode) .post-date,
+html:not(.dark-mode) .post-summary {
+    color: #4b5563 !important;
+}
+
+html:not(.dark-mode) .site-header {
+    background-color: #f3f4f6 !important;  /* Light gray - NO WHITE */
+    border-bottom-color: #d1d5db;
+}
+
+html:not(.dark-mode) .hero {
+    background: #9ca3af !important;  /* DARKER gray - much easier on eyes */
+    border-bottom-color: #6b7280;
+}
+
+/* Post cards - light gray with visible borders and shadows */
+html:not(.dark-mode) .post-card {
+    background-color: #f3f4f6 !important;  /* Light gray - NO WHITE */
+    border: 1px solid #d1d5db !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark-mode) .post-card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15) !important;
+}
+
+html:not(.dark-mode) .post-list-item {
+    border-bottom-color: #e5e7eb;
+}
+
+html:not(.dark-mode) .site-footer {
+    background-color: #cbd5e1;
+    border-top-color: #94a3b8;
+}
 
 /* ===========================
    Typography
@@ -202,6 +261,15 @@ em {
     color: var(--color-text);
 }
 
+/* Light mode - darker nav links */
+html:not(.dark-mode) .nav-link {
+    color: #1f2937 !important;
+}
+
+html:not(.dark-mode) .nav-link:hover,
+html:not(.dark-mode) .nav-link.active {
+    color: #3b82f6 !important;
+}
 
 .nav-link.active::after {
     content: '';
@@ -213,7 +281,30 @@ em {
     background-color: var(--color-primary);
 }
 
-/* Theme toggle removed - dark mode only */
+/* Theme toggle - HIDDEN, dark mode only */
+.theme-toggle {
+    display: none !important;  /* Hide theme toggle - dark mode is the only option */
+}
+
+.theme-toggle:hover {
+    color: var(--color-primary);
+}
+
+.sun-icon {
+    display: none;
+}
+
+.moon-icon {
+    display: block;
+}
+
+.dark-mode .sun-icon {
+    display: block;
+}
+
+.dark-mode .moon-icon {
+    display: none;
+}
 
 /* Mobile menu toggle */
 .mobile-menu-toggle {
@@ -450,6 +541,11 @@ em {
     animation: pulse 2s infinite;
 }
 
+/* Light mode - ensure NEW badge is bright red */
+html:not(.dark-mode) .status-badge.is-new {
+    background: #ef4444 !important;
+    color: #ffffff !important;
+}
 
 .status-badge.is-read {
     background: linear-gradient(135deg, #4ade80, #22c55e);

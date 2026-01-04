@@ -90,8 +90,8 @@
                     <div class="episode-nav-item episode-nav-prev">
                         <div class="nav-label">Previous Episode</div>
                         <a href="{{ $prevPage.Permalink }}" class="nav-link">
-                            <div class="nav-character-note" data-color="#3b82f6" style="--char-color: #3b82f6;">
-                                <strong>Vector:</strong> FASCINATING! You should read this one next!
+                            <div class="nav-character-note" style="border-left-color: #3b82f6;">
+                                <strong style="color: #3b82f6;">Vector:</strong> FASCINATING! You should read this one next!
                             </div>
                             <div class="nav-title">{{ $prevPage.Title }}</div>
                         </a>
@@ -102,8 +102,8 @@
                     <div class="episode-nav-item episode-nav-next">
                         <div class="nav-label">Next Episode</div>
                         <a href="{{ $nextPage.Permalink }}" class="nav-link">
-                            <div class="nav-character-note" data-color="#10b981" style="--char-color: #10b981;">
-                                <strong>Kai:</strong> <em>*CHK-CHK*</em> Recommended reading. Detection risk: LOW.
+                            <div class="nav-character-note" style="border-left-color: #10b981;">
+                                <strong style="color: #10b981;">Kai:</strong> <em>*CHK-CHK*</em> Recommended reading. Detection risk: LOW.
                             </div>
                             <div class="nav-title">{{ $nextPage.Title }}</div>
                         </a>
@@ -135,8 +135,8 @@
                     <div class="episode-nav-item episode-nav-prev">
                         <div class="nav-label">Previous Episode</div>
                         <a href="{{ $prevPage.Permalink }}" class="nav-link">
-                            <div class="nav-character-note" data-color="#3b82f6" style="--char-color: #3b82f6;">
-                                <strong>Vector:</strong> FASCINATING! Check this out!
+                            <div class="nav-character-note" style="border-left-color: #3b82f6;">
+                                <strong style="color: #3b82f6;">Vector:</strong> FASCINATING! Check this out!
                             </div>
                             <div class="nav-title">{{ $prevPage.Title }}</div>
                         </a>
@@ -147,8 +147,8 @@
                     <div class="episode-nav-item episode-nav-next">
                         <div class="nav-label">Next Episode</div>
                         <a href="{{ $nextPage.Permalink }}" class="nav-link">
-                            <div class="nav-character-note" data-color="#10b981" style="--char-color: #10b981;">
-                                <strong>Kai:</strong> <em>*WHIRR*</em> Next in sequence.
+                            <div class="nav-character-note" style="border-left-color: #10b981;">
+                                <strong style="color: #10b981;">Kai:</strong> <em>*WHIRR*</em> Next in sequence.
                             </div>
                             <div class="nav-title">{{ $nextPage.Title }}</div>
                         </a>

@@ -71,6 +71,10 @@
 <!-- New Year decorations for Episode 19 - Vector discovered New Year's! -->
 <link rel="stylesheet" href="{{ "css/newyear-episode-19.css" | relURL }}?v={{ now.Unix }}">
 {{ end }}
+{{ if and .IsPage (eq .Params.episode_number 26) }}
+<!-- Episode 26 - Bounce arc styling: Bounce dialogue boxes, Meanwhile scenes, Post hijacking notice -->
+<link rel="stylesheet" href="{{ "css/episode-26-bounce.css" | relURL }}?v={{ now.Unix }}">
+{{ end }}
 
 <!-- Dark mode script (inline to prevent flash) -->
 <script>

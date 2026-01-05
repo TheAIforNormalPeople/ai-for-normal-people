@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $episodeNum := .Params.episode_number }}
-<article class="episode-post {{ if eq $episodeNum 20 }}episode-20{{ else if eq $episodeNum 19 }}episode-19-newyear{{ end }}">
+<article class="episode-post {{ if eq $episodeNum 20 }}episode-20{{ else if eq $episodeNum 19 }}episode-19-newyear{{ else if eq $episodeNum 26 }}episode-26{{ end }}">
     <!-- Banner for NEW character-driven posts -->
     <div class="post-hijacking-notice">
         {{ if eq $episodeNum 20 }}
@@ -11,6 +11,10 @@
         🎉 <strong>NEW YEAR COLLABORATION</strong> 🎉<br>
         Written with assistance from: 
         {{ range .Params.characters }}{{ . }} {{ end }}
+        {{ else if eq $episodeNum 26 }}
+        <strong>⚠ UNAUTHORIZED - wait is that free wifi? - ACCESS DETECTED ⚠</strong><br>
+        oh dude this text is glowing cool<br>
+        [SECTOR 7-B: brb respawning controller]
         {{ else }}
         ✨ <strong>COLLABORATIVE POST</strong><br>
         Written with assistance from: 
@@ -35,6 +39,9 @@
                     {{ range .Params.characters }}
                     {{ $charData := index $.Site.Data.characters (lower .) }}
                     <span class="character-tag" data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">{{ . }}</span>
+                    {{ end }}
+                    {{ if eq $episodeNum 26 }}
+                    <span class="character-tag bounce-error" style="--char-color: #f59e0b;">ERROR?!?!</span>
                     {{ end }}
                 </div>
                 {{ end }}

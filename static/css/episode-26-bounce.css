@@ -24,6 +24,7 @@
         #fbbf24 16px
     ) 1;
     padding: 1.25rem;
+    padding-top: 2.5rem; /* Extra space for name label */
     margin: 1.5rem 0;
     font-family: 'Press Start 2P', 'Courier New', monospace;
     font-size: 0.9rem;
@@ -41,6 +42,163 @@
     
     /* Prevent text selection for immersive effect */
     user-select: none;
+    
+    /* Slight rotation and movement like other character boxes */
+    transform: rotate(1.6deg);
+    transition: transform 0.1s ease;
+    
+    /* Subtle constant flicker = unstable signal (like other boxes) */
+    animation: subtle-flicker 5s ease-in-out infinite;
+}
+
+/* Bounce name label - retro gaming style with effects */
+.dialogue-box.bounce::before {
+    content: '>> [BOUNCE]:';
+    position: absolute;
+    top: 0.5rem;
+    left: 0.75rem;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: 0.65rem;
+    color: #fbbf24;
+    background: rgba(26, 26, 26, 0.9);
+    padding: 0.25rem 0.5rem;
+    border: 2px solid #f59e0b;
+    /* Pixelated box shadow */
+    box-shadow: 
+        3px 3px 0 rgba(0, 0, 0, 0.8),
+        0 0 12px rgba(251, 191, 36, 0.6),
+        0 0 24px rgba(245, 158, 11, 0.4);
+    text-shadow: 
+        0 0 8px rgba(251, 191, 36, 0.8),
+        0 0 16px rgba(245, 158, 11, 0.6),
+        2px 2px 0 rgba(0, 0, 0, 0.9);
+    letter-spacing: 1px;
+    font-weight: normal;
+    /* Multiple effects: glitch, pulse, scan */
+    animation: bounce-name-glitch 3s ease-in-out infinite, bounce-name-pulse 2s ease-in-out infinite;
+    z-index: 1;
+    /* Pixelated rendering */
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    /* Scan line overlay effect */
+    background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 1px,
+        rgba(251, 191, 36, 0.1) 1px,
+        rgba(251, 191, 36, 0.1) 2px
+    );
+}
+
+/* Retro gaming prompt indicator (>>) with pixelated style */
+.dialogue-box.bounce::before {
+    /* The >> is already in content, but we can enhance it */
+}
+
+/* Blinking cursor effect - retro block cursor */
+.dialogue-box.bounce::after {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    left: calc(0.75rem + 6.5rem); /* Position after [BOUNCE]: */
+    width: 0.4rem;
+    height: 0.65rem;
+    background: #fbbf24;
+    box-shadow: 
+        0 0 8px rgba(251, 191, 36, 0.8),
+        0 0 16px rgba(245, 158, 11, 0.6);
+    animation: bounce-cursor-blink 1s step-end infinite, bounce-cursor-glitch 4s ease-in-out infinite;
+    z-index: 2;
+    /* Pixelated cursor */
+    image-rendering: pixelated;
+}
+
+@keyframes bounce-name-glitch {
+    0%, 90%, 100% { 
+        transform: translateX(0);
+        text-shadow: 
+            0 0 8px rgba(251, 191, 36, 0.8),
+            0 0 16px rgba(245, 158, 11, 0.6),
+            2px 2px 0 rgba(0, 0, 0, 0.9);
+    }
+    91% {
+        transform: translateX(-1px);
+        text-shadow: 
+            -1px 0 rgba(255, 100, 100, 0.8),
+            1px 0 rgba(100, 255, 255, 0.8),
+            2px 2px 0 rgba(0, 0, 0, 0.9);
+    }
+    92% {
+        transform: translateX(1px);
+        text-shadow: 
+            1px 0 rgba(100, 255, 255, 0.8),
+            -1px 0 rgba(255, 100, 100, 0.8),
+            2px 2px 0 rgba(0, 0, 0, 0.9);
+    }
+    93% {
+        transform: translateX(0);
+        text-shadow: 
+            0 0 8px rgba(251, 191, 36, 0.8),
+            0 0 16px rgba(245, 158, 11, 0.6),
+            2px 2px 0 rgba(0, 0, 0, 0.9);
+    }
+}
+
+@keyframes bounce-name-pulse {
+    0%, 100% {
+        box-shadow: 
+            3px 3px 0 rgba(0, 0, 0, 0.8),
+            0 0 12px rgba(251, 191, 36, 0.6),
+            0 0 24px rgba(245, 158, 11, 0.4);
+    }
+    50% {
+        box-shadow: 
+            3px 3px 0 rgba(0, 0, 0, 0.8),
+            0 0 16px rgba(251, 191, 36, 0.8),
+            0 0 32px rgba(245, 158, 11, 0.6);
+    }
+}
+
+@keyframes bounce-cursor-blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0.3; }
+}
+
+@keyframes bounce-cursor-glitch {
+    0%, 95%, 100% {
+        transform: translateX(0);
+        background: #fbbf24;
+    }
+    96% {
+        transform: translateX(-1px);
+        background: #ff6b6b;
+    }
+    97% {
+        transform: translateX(1px);
+        background: #4ecdc4;
+    }
+    98% {
+        transform: translateX(0);
+        background: #fbbf24;
+    }
+}
+
+.dialogue-box.bounce:hover {
+    transform: rotate(1.6deg) translateX(3px);
+    animation: glitch-shake 0.3s ease-in-out, subtle-flicker 5s ease-in-out infinite;
+}
+
+@keyframes subtle-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.98; }
+    75% { opacity: 0.99; }
+}
+
+@keyframes glitch-shake {
+    0%, 100% { transform: rotate(1.6deg) translateX(3px); }
+    25% { transform: rotate(2.1deg) translateX(2px); }
+    50% { transform: rotate(1.1deg) translateX(4px); }
+    75% { transform: rotate(1.9deg) translateX(1px); }
 }
 
 /* Retro CRT scan line effect */
@@ -393,10 +551,11 @@
 }
 
 /* ==========================================================================
-   POST HIJACKING NOTICE - Episode 26 Special - BOUNCE CORRUPTED IT
+   POST HIJACKING NOTICE - Retro Gaming Box Style (All Episodes)
+   BOUNCE CORRUPTED IT - Now it's the default!
    ========================================================================== */
 
-.episode-post.episode-26 .post-hijacking-notice {
+.post-hijacking-notice {
     background: 
         /* Pixelated grid pattern */
         repeating-linear-gradient(
@@ -448,7 +607,7 @@
 }
 
 /* Glitch scan line effect */
-.episode-post.episode-26 .post-hijacking-notice::before {
+.post-hijacking-notice::before {
     content: '';
     position: absolute;
     top: 0;
@@ -488,7 +647,7 @@
 /* No corner decoration - removed controller emoji */
 
 /* Breathing glow animation - organic pulsing */
-.episode-post.episode-26 .post-hijacking-notice strong {
+ .post-hijacking-notice strong {
     display: block;
     font-size: 0.85rem;
     margin-bottom: 0.75rem;
@@ -522,13 +681,13 @@
 }
 
 /* Warning symbols - gentle breathing */
-.episode-post.episode-26 .post-hijacking-notice strong::before {
+.post-hijacking-notice strong::before {
     content: '⚠ ';
     animation: warning-breathe 4s ease-in-out infinite;
     display: inline-block;
 }
 
-.episode-post.episode-26 .post-hijacking-notice strong::after {
+ .post-hijacking-notice strong::after {
     content: ' ⚠';
     animation: warning-breathe 4s ease-in-out infinite 2s; /* offset by half */
     display: inline-block;
@@ -572,12 +731,12 @@
         font-size: 0.65rem;
     }
     
-    .episode-post.episode-26 .post-hijacking-notice {
+    .post-hijacking-notice {
         padding: 1rem;
         font-size: 0.65rem;
     }
     
-    .episode-post.episode-26 .post-hijacking-notice strong {
+    .post-hijacking-notice strong {
         font-size: 0.75rem;
     }
 }
@@ -612,10 +771,10 @@
     .character-tag.bounce::before,
     .character-tag.bounce-error,
     .character-tag.bounce-error::before,
-    .episode-post.episode-26 .post-hijacking-notice::before,
-    .episode-post.episode-26 .post-hijacking-notice strong,
-    .episode-post.episode-26 .post-hijacking-notice strong::before,
-    .episode-post.episode-26 .post-hijacking-notice strong::after {
+    .post-hijacking-notice::before,
+    .post-hijacking-notice strong,
+    .post-hijacking-notice strong::before,
+    .post-hijacking-notice strong::after {
         animation: none;
     }
     
@@ -631,7 +790,7 @@
             inset 0 0 20px rgba(0, 255, 255, 0.1);
     }
     
-    .episode-post.episode-26 .post-hijacking-notice {
+    .post-hijacking-notice {
         box-shadow: 
             8px 8px 0 rgba(0, 0, 0, 0.8),
             0 0 20px rgba(217, 119, 6, 0.4);
@@ -650,7 +809,7 @@
         background: #000;
     }
     
-    .episode-post.episode-26 .post-hijacking-notice {
+    .post-hijacking-notice {
         border: 4px solid #fbbf24;
         background: #000;
         color: #fbbf24;

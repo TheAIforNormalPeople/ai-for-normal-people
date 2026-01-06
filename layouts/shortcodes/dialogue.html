@@ -1,10 +1,17 @@
 {{ $character := .Get "char" }}
 {{ $charData := index .Site.Data.characters (lower $character) }}
+{{ $isBounce := eq (lower $character) "bounce" }}
 
+{{ if $isBounce }}
+<div class="dialogue-box bounce">
+    {{ .Inner | markdownify }}
+</div>
+{{ else }}
 <div class="character-dialogue" 
      data-character="{{ $character }}"
      style="--char-color: {{ $charData.color }}; --char-font: {{ $charData.font }};">
     <span class="character-name">[{{ $character }}]:</span>
     <span class="dialogue-text">{{ .Inner | markdownify }}</span>
 </div>
+{{ end }}
 

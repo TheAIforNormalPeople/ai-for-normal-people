@@ -563,6 +563,34 @@ em {
     margin-bottom: var(--spacing-xs);
 }
 
+/* Scene-setting narrative blocks - subtle styling for time jumps and scene descriptions */
+/* Matches site's dark tech aesthetic with subtle background and border */
+.scene-setting {
+    color: var(--color-text-secondary);
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-left: 2px solid var(--color-border);
+    background: rgba(148, 163, 184, 0.05);
+    border-radius: 4px;
+    line-height: 1.8;
+    font-size: 0.98em;
+}
+
+.scene-setting strong {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.dark-mode .scene-setting {
+    background: rgba(30, 41, 59, 0.2);
+    border-left-color: rgba(96, 165, 250, 0.4);
+    color: var(--color-text-secondary);
+}
+
+.dark-mode .scene-setting strong {
+    color: var(--color-text);
+}
+
 .post-footer {
     padding-top: var(--spacing-lg);
     border-top: 1px solid var(--color-border);

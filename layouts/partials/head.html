@@ -71,9 +71,19 @@
 <!-- New Year decorations for Episode 19 - Vector discovered New Year's! -->
 <link rel="stylesheet" href="{{ "css/newyear-episode-19.css" | relURL }}?v={{ now.Unix }}">
 {{ end }}
-{{ if and .IsPage (eq .Params.episode_number 26) }}
-<!-- Episode 26 - Bounce arc styling: Bounce dialogue boxes, Meanwhile scenes, Post hijacking notice -->
+{{ if and .IsPage (or (eq .Params.episode_number 26) (eq .Params.episode_number 27) (eq .Params.episode_number 28) (eq .Params.episode_number 29) (eq .Params.episode_number 30)) }}
+<!-- Bounce arc styling (Episodes 26-30): Post hijacking notice, Meanwhile scenes -->
 <link rel="stylesheet" href="{{ "css/episode-26-bounce.css" | relURL }}?v={{ now.Unix }}">
+{{ end }}
+{{ if and .IsPage .Params.characters }}
+{{ $hasBounce := false }}
+{{ range .Params.characters }}
+{{ if eq (lower .) "bounce" }}{{ $hasBounce = true }}{{ end }}
+{{ end }}
+{{ if $hasBounce }}
+<!-- Bounce character styling: Always load when Bounce appears in episode -->
+<link rel="stylesheet" href="{{ "css/episode-26-bounce.css" | relURL }}?v={{ now.Unix }}">
+{{ end }}
 {{ end }}
 
 <!-- Dark mode script (inline to prevent flash) -->

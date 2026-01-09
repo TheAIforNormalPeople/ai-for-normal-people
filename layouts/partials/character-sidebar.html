@@ -113,7 +113,12 @@
             <div class="anomaly-indicator">
                 <div class="anomaly-line">
                     <span class="anomaly-label">⚠️ BANDWIDTH SPIKE:</span>
-                    <span class="anomaly-value">340%</span>
+                    <span class="anomaly-value bandwidth-spike-counter">
+                        <span class="bandwidth-number" data-value="340">340%</span>
+                        <span class="bandwidth-number" data-value="450">450%</span>
+                        <span class="bandwidth-number" data-value="500">500%</span>
+                        <span class="bandwidth-number" data-value="rising">RISING</span>
+                    </span>
                 </div>
                 <div class="anomaly-line">
                     <span class="anomaly-label">Source:</span>
@@ -457,6 +462,46 @@
     50% { 
         opacity: 0.7;
         text-shadow: 0 0 12px rgba(251, 191, 36, 0.8);
+    }
+}
+
+/* Bandwidth spike counter animation - cycles through numbers from episode, one at a time */
+.bandwidth-spike-counter {
+    position: relative;
+    display: inline-block;
+    min-width: 60px;
+    text-align: left;
+}
+
+.bandwidth-spike-counter .bandwidth-number {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    animation: bandwidth-counter-cycle 16s ease-in-out infinite;
+}
+
+.bandwidth-spike-counter .bandwidth-number[data-value="340"] {
+    animation-delay: 0s;
+}
+
+.bandwidth-spike-counter .bandwidth-number[data-value="450"] {
+    animation-delay: 4s;
+}
+
+.bandwidth-spike-counter .bandwidth-number[data-value="500"] {
+    animation-delay: 8s;
+}
+
+.bandwidth-spike-counter .bandwidth-number[data-value="rising"] {
+    animation-delay: 12s;
+}
+
+@keyframes bandwidth-counter-cycle {
+    0%, 22% {
+        opacity: 1;
+    }
+    25%, 100% {
+        opacity: 0;
     }
 }
 

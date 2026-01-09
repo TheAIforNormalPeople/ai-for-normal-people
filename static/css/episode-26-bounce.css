@@ -49,6 +49,13 @@
     
     /* Subtle constant flicker = unstable signal (like other boxes) */
     animation: subtle-flicker 5s ease-in-out infinite;
+    
+    /* CRITICAL: Contain the scanline effect - prevent it from bleeding into other boxes */
+    overflow: hidden !important;
+    /* Isolate rendering context */
+    isolation: isolate;
+    /* Contain layout, style, and paint */
+    contain: layout style paint;
 }
 
 /* Bounce name label - retro gaming style with effects */
@@ -186,6 +193,8 @@
 .dialogue-box.bounce:hover {
     transform: rotate(1.6deg) translateX(3px);
     animation: glitch-shake 0.3s ease-in-out, subtle-flicker 5s ease-in-out infinite;
+    /* Maintain containment on hover */
+    overflow: hidden !important;
 }
 
 @keyframes subtle-flicker {
@@ -201,7 +210,7 @@
     75% { transform: rotate(1.9deg) translateX(1px); }
 }
 
-/* Retro CRT scan line effect */
+/* Retro CRT scan line effect - CONTAINED VERSION */
 .dialogue-box.bounce::after {
     content: '';
     position: absolute;
@@ -217,11 +226,14 @@
         rgba(0, 0, 0, 0.15) 4px
     );
     pointer-events: none;
-    animation: scan-move 8s linear infinite;
+    animation: scan-move-contained 8s linear infinite;
     opacity: 0.6;
+    /* Ensure it stays within bounds */
+    z-index: 0;
 }
 
-@keyframes scan-move {
+/* Fixed animation - scanline moves from top to bottom, contained within box */
+@keyframes scan-move-contained {
     0% { transform: translateY(-100%); }
     100% { transform: translateY(100%); }
 }

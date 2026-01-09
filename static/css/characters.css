@@ -104,6 +104,13 @@
     100% { background-position: 0 100px; }
 }
 
+/* Bounce-specific scanline - contained to prevent bleeding into other boxes */
+/* Changed from 0-100px movement to 0-4px to prevent the "falling" effect from escaping */
+@keyframes scan-lines-bounce {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 4px; /* Much smaller movement - stays contained */}
+}
+
 /* ───────────────────────────────────────────────────────
    2. CHARACTER NAMES - TERMINAL PROMPTS
    
@@ -225,6 +232,32 @@
     --char-color: #f59e0b;
     --char-color-rgb: 245, 158, 11;
     --char-rotation: 1.6deg;
+}
+
+/* Fix: Contain Bounce's scanline effect to prevent bleeding into Vector's boxes */
+/* Issue: Scanline animation (background-position moving 0-100px) creates falling effect that bleeds outside Bounce's yellow box into Vector's blue boxes */
+/* Solution: Use isolation and contain properties to completely isolate the animation, plus overflow hidden */
+[data-character="Bounce"] .character-dialogue {
+    /* Use Bounce-specific scanline animation with contained movement */
+    animation: subtle-flicker 5s ease-in-out infinite, scan-lines-bounce 8s linear infinite;
+    /* CRITICAL: Contain the effect completely - prevent it from moving outside the box */
+    overflow: hidden !important;
+    /* Isolate this element's rendering context */
+    isolation: isolate;
+    /* Contain layout, style, and paint to this element */
+    contain: layout style paint;
+    /* Ensure background is clipped to box */
+    background-clip: padding-box;
+    /* Create new stacking context */
+    position: relative;
+    z-index: auto;
+}
+
+/* Also fix hover state for Bounce */
+[data-character="Bounce"] .character-dialogue:hover {
+    animation: glitch-shake 0.3s ease-in-out, scan-lines-bounce 8s linear infinite;
+    /* Maintain containment on hover */
+    overflow: hidden !important;
 }
 
 [data-character="River"] {
@@ -525,6 +558,14 @@
         0 0 15px var(--char-color);
     border: 2px solid rgba(255, 255, 255, 0.3);
     position: relative;
+}
+
+/* Reduce Human's glow and border - lighter colors appear brighter */
+.character-tag[data-color="#64748b"] {
+    box-shadow: 
+        2px 2px 0 rgba(0, 0, 0, 0.5),
+        0 0 8px rgba(100, 116, 139, 0.3);
+    border-color: rgba(100, 116, 139, 0.5);
 }
 
 /* Active process indicator */

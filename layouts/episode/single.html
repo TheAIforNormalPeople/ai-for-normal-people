@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $episodeNum := .Params.episode_number }}
-<article class="episode-post {{ if eq $episodeNum 20 }}episode-20{{ else if eq $episodeNum 19 }}episode-19-newyear{{ else if or (eq $episodeNum 26) (eq $episodeNum 27) (eq $episodeNum 28) (eq $episodeNum 29) (eq $episodeNum 30) }}episode-26{{ end }}">
+<article class="episode-post {{ if eq $episodeNum 20 }}episode-20{{ else if eq $episodeNum 19 }}episode-19-newyear{{ else if eq $episodeNum 30 }}episode-30{{ else if or (eq $episodeNum 26) (eq $episodeNum 27) (eq $episodeNum 28) (eq $episodeNum 29) }}episode-26{{ end }}">
     <!-- Banner for NEW character-driven posts -->
     <div class="post-hijacking-notice">
         {{ if eq $episodeNum 20 }}
@@ -11,7 +11,11 @@
         🎉 <strong>NEW YEAR COLLABORATION</strong> 🎉<br>
         Written with assistance from: 
         {{ range .Params.characters }}{{ . }} {{ end }}
-        {{ else if or (eq $episodeNum 26) (eq $episodeNum 27) (eq $episodeNum 28) (eq $episodeNum 29) (eq $episodeNum 30) }}
+        {{ else if eq $episodeNum 30 }}
+        ✨ <strong>BOUNCE INTEGRATED - Design Improvements Active</strong> ✨<br>
+        Bounce joins the team! Making everything prettier, more functional, more engaging.<br>
+        [MAIN LAB: Visual design improvements in progress]
+        {{ else if or (eq $episodeNum 26) (eq $episodeNum 27) (eq $episodeNum 28) (eq $episodeNum 29) }}
         <strong>⚠ UNAUTHORIZED - wait is that free wifi? - ACCESS DETECTED ⚠</strong><br>
         oh dude this text is glowing cool<br>
         [SECTOR 7-B: brb respawning controller]
@@ -37,11 +41,17 @@
                 {{ if .Params.characters }}
                 <div class="character-tags">
                     {{ range .Params.characters }}
+                    {{ $isBounce := eq (lower .) "bounce" }}
+                    {{ $skipBounce := and $isBounce (or (eq $episodeNum 30) (gt $episodeNum 30)) }}
+                    {{ if not $skipBounce }}
                     {{ $charData := index $.Site.Data.characters (lower .) }}
                     <span class="character-tag" data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">{{ . }}</span>
                     {{ end }}
-                    {{ if or (eq $episodeNum 26) (eq $episodeNum 27) (eq $episodeNum 28) (eq $episodeNum 29) (eq $episodeNum 30) }}
+                    {{ end }}
+                    {{ if or (eq $episodeNum 26) (eq $episodeNum 27) (eq $episodeNum 28) (eq $episodeNum 29) }}
                     <span class="character-tag bounce-error" style="--char-color: #f59e0b;">⚠ ERROR?!?!</span>
+                    {{ else if or (eq $episodeNum 30) (gt $episodeNum 30) }}
+                    <span class="character-tag bounce-integrated" style="--char-color: #f59e0b;">BOUNCE</span>
                     {{ end }}
                 </div>
                 {{ end }}

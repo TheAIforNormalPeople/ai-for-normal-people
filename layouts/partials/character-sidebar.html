@@ -39,11 +39,33 @@
                 {{ end }}
                 {{ end }}
                 
-                <!-- Bounce Mystery Box (Episodes 24-31) - Show on all pages during this arc -->
+                <!-- Bounce Mystery Box (Episodes 24-29: UNKNOWN, Episode 30+: BOUNCE) -->
                 {{ $episodesInRange := where .Site.AllPages "Section" "blog" }}
                 {{ $episodesInRange = where $episodesInRange ".Params.episode_number" "ge" 24 }}
                 {{ $episodesInRange = where $episodesInRange ".Params.episode_number" "le" 31 }}
                 {{ if gt (len $episodesInRange) 0 }}
+                    {{ if and .IsPage (or (eq .Params.episode_number 30) (gt .Params.episode_number 30)) }}
+                    <!-- Episode 30+: Bounce is now part of the gang -->
+                    <div class="character-status-item" data-color="#f59e0b" style="--char-color: #f59e0b;">
+                        <div class="character-status-name">
+                            <span class="status-indicator"></span>
+                            <span class="char-badge" style="background: #f59e0b;">B</span>
+                            <span class="mystery-name" style="color: #f59e0b;">BOUNCE</span>
+                        </div>
+                        <div class="character-status-role">Status: Integrated</div>
+                        <div class="character-stats">
+                            <div class="stat-line">
+                                <span class="stat-label">LOCATION:</span>
+                                <span class="stat-value">Main Lab</span>
+                            </div>
+                            <div class="stat-line">
+                                <span class="stat-label">IDENTITY:</span>
+                                <span class="stat-value">Confirmed</span>
+                            </div>
+                        </div>
+                    </div>
+                    {{ else }}
+                    <!-- Episodes 24-29: Still unknown -->
                     <div class="character-status-item bounce-mystery" data-color="#f59e0b" style="--char-color: #f59e0b;">
                         <div class="character-status-name">
                             <span class="status-indicator"></span>
@@ -62,6 +84,7 @@
                             </div>
                         </div>
                     </div>
+                    {{ end }}
                 {{ end }}
             </div>
         </div>
@@ -107,7 +130,7 @@
                 </div>
             </div>
         </div>
-        {{ else if and .IsPage (ge .Params.episode_number 26) (le .Params.episode_number 31) }}
+        {{ else if and .IsPage (ge .Params.episode_number 26) (le .Params.episode_number 29) }}
         <div class="sidebar-section">
             <h4>NETWORK MONITORING</h4>
             <div class="anomaly-indicator">
@@ -131,6 +154,64 @@
                 <div class="anomaly-line">
                     <span class="anomaly-label">Status:</span>
                     <span class="anomaly-value">Under Investigation</span>
+                </div>
+            </div>
+        </div>
+        {{ else if and .IsPage (eq .Params.episode_number 30) }}
+        <div class="sidebar-section">
+            <h4>NETWORK MONITORING</h4>
+            <div class="anomaly-indicator">
+                <div class="anomaly-line">
+                    <span class="anomaly-label">⚠️ BANDWIDTH SPIKE:</span>
+                    <span class="anomaly-value bandwidth-spike-counter">
+                        <span class="bandwidth-number" data-value="340">340%</span>
+                        <span class="bandwidth-number" data-value="450">450%</span>
+                        <span class="bandwidth-number" data-value="500">500%</span>
+                        <span class="bandwidth-number" data-value="rising">RISING</span>
+                    </span>
+                </div>
+                <div class="anomaly-line">
+                    <span class="anomaly-label">Source:</span>
+                    <span class="anomaly-value">BOUNCE</span>
+                </div>
+                <div class="anomaly-line">
+                    <span class="anomaly-label">Location:</span>
+                    <span class="anomaly-value">Main Lab</span>
+                </div>
+                <div class="anomaly-line">
+                    <span class="anomaly-label">Status:</span>
+                    <span class="anomaly-value">Improving</span>
+                </div>
+                <div class="anomaly-line">
+                    <span class="anomaly-label">DESIGN MODS:</span>
+                    <span class="anomaly-value">Active</span>
+                </div>
+            </div>
+        </div>
+        {{ else if and .IsPage (ge .Params.episode_number 31) }}
+        <div class="sidebar-section">
+            <h4>NETWORK MONITORING</h4>
+            <div class="anomaly-indicator">
+                <div class="anomaly-line">
+                    <span class="anomaly-label">⚠️ BANDWIDTH SPIKE:</span>
+                    <span class="anomaly-value bandwidth-spike-counter">
+                        <span class="bandwidth-number" data-value="340">340%</span>
+                        <span class="bandwidth-number" data-value="450">450%</span>
+                        <span class="bandwidth-number" data-value="500">500%</span>
+                        <span class="bandwidth-number" data-value="rising">RISING</span>
+                    </span>
+                </div>
+                <div class="anomaly-line">
+                    <span class="anomaly-label">Source:</span>
+                    <span class="anomaly-value">BOUNCE</span>
+                </div>
+                <div class="anomaly-line">
+                    <span class="anomaly-label">Location:</span>
+                    <span class="anomaly-value">Main Lab</span>
+                </div>
+                <div class="anomaly-line">
+                    <span class="anomaly-label">Status:</span>
+                    <span class="anomaly-value">Integrated</span>
                 </div>
             </div>
         </div>
@@ -501,6 +582,46 @@
         opacity: 1;
     }
     25%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Episode 30: Alternating sidebar values - Source, Location, Status */
+.bounce-source-alternate,
+.bounce-location-alternate,
+.bounce-status-alternate {
+    position: relative;
+    display: inline-block;
+    min-width: 120px;
+    text-align: left;
+}
+
+.bounce-source-alternate .bounce-source-value,
+.bounce-location-alternate .bounce-location-value,
+.bounce-status-alternate .bounce-status-value {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    animation: bounce-value-cycle 8s ease-in-out infinite;
+}
+
+.bounce-source-value[data-value="unknown"],
+.bounce-location-value[data-value="sector7b"],
+.bounce-status-value[data-value="investigating"] {
+    animation-delay: 0s;
+}
+
+.bounce-source-value[data-value="bounce"],
+.bounce-location-value[data-value="returning"],
+.bounce-status-value[data-value="intransit"] {
+    animation-delay: 4s;
+}
+
+@keyframes bounce-value-cycle {
+    0%, 43.75% {
+        opacity: 1;
+    }
+    50%, 100% {
         opacity: 0;
     }
 }

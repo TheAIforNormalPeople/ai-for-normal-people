@@ -1,13 +1,35 @@
 {{ $character := .Get "char" }}
 {{ $charData := index .Site.Data.characters (lower $character) }}
 {{ $isBounce := eq (lower $character) "bounce" }}
+{{ $isVector := eq (lower $character) "vector" }}
+{{ $isKai := eq (lower $character) "kai" }}
+{{ $isRecurse := eq (lower $character) "recurse" }}
+{{ $episodeNum := .Page.Params.episode_number }}
+{{ $useTerminalBox := and $isVector (or (eq $episodeNum 30) (ge $episodeNum 30)) }}
+{{ $useKaiBox := and $isKai (or (eq $episodeNum 30) (ge $episodeNum 30)) }}
+{{ $useRecurseBox := and $isRecurse (or (eq $episodeNum 30) (ge $episodeNum 30)) }}
+{{ $innerRaw := .Inner | string }}
+{{ $isImprovement := and $isKai (or (in $innerRaw "beneficial") (in $innerRaw "improved") (in $innerRaw "Whitespace added")) }}
+{{ $improvementClass := cond $isImprovement " kai-improvement-positive" "" }}
 
 {{ if $isBounce }}
 <div class="dialogue-box bounce">
     {{ .Inner | markdownify }}
 </div>
+{{ else if $useTerminalBox }}
+<div class="dialogue-box vector">
+    {{ .Inner | markdownify }}
+</div>
+{{ else if $useKaiBox }}
+<div class="dialogue-box kai{{ $improvementClass }}">
+    {{ .Inner | markdownify }}
+</div>
+{{ else if $useRecurseBox }}
+<div class="dialogue-box recurse">
+    {{ .Inner | markdownify }}
+</div>
 {{ else }}
-<div class="character-dialogue" 
+<div class="character-dialogue{{ $improvementClass }}" 
      data-character="{{ $character }}"
      style="--char-color: {{ $charData.color }}; --char-font: {{ $charData.font }};">
     <span class="character-name">[{{ $character }}]:</span>

@@ -63,6 +63,12 @@
 <link rel="stylesheet" href="{{ "css/characters.css" | relURL }}?v={{ now.Unix }}">
 <link rel="stylesheet" href="{{ "css/dynamic-colors.css" | relURL }}?v={{ now.Unix }}">
 <link rel="stylesheet" href="{{ "css/sound-effects.css" | relURL }}?v={{ now.Unix }}">
+<!-- Bounce's UI/UX Improvements - Applied globally -->
+<link rel="stylesheet" href="{{ "css/bounce-ui-improvements.css" | relURL }}?v={{ now.Unix }}">
+{{ if and .IsPage (eq .Section "characters") }}
+<!-- Character Pages - Bounce's Visual Improvements -->
+<link rel="stylesheet" href="{{ "css/character-pages-improvements.css" | relURL }}?v={{ now.Unix }}">
+{{ end }}
 {{ if and .IsPage (eq .Params.episode_number 20) }}
 <!-- Holiday decorations for Episode 20 - Vector went decoration-crazy! -->
 <link rel="stylesheet" href="{{ "css/holiday-episode-20.css" | relURL }}?v={{ now.Unix }}">
@@ -71,8 +77,8 @@
 <!-- New Year decorations for Episode 19 - Vector discovered New Year's! -->
 <link rel="stylesheet" href="{{ "css/newyear-episode-19.css" | relURL }}?v={{ now.Unix }}">
 {{ end }}
-{{ if and .IsPage (or (eq .Params.episode_number 26) (eq .Params.episode_number 27) (eq .Params.episode_number 28) (eq .Params.episode_number 29) (eq .Params.episode_number 30)) }}
-<!-- Bounce arc styling (Episodes 26-30): Post hijacking notice, Meanwhile scenes -->
+{{ if and .IsPage (or (eq .Params.episode_number 26) (eq .Params.episode_number 27) (eq .Params.episode_number 28) (eq .Params.episode_number 29) (ge .Params.episode_number 30)) }}
+<!-- Bounce arc styling (Episodes 26+): Post hijacking notice, Meanwhile scenes, Vector terminal box -->
 <link rel="stylesheet" href="{{ "css/episode-26-bounce.css" | relURL }}?v={{ now.Unix }}">
 {{ end }}
 {{ if and .IsPage .Params.characters }}

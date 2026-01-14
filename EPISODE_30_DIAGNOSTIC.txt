@@ -1,0 +1,8 @@
+﻿TEST: Episode 30 Logic Chain
+1. Frontmatter: episode_number: 30
+2. Layout: {{ if eq $episodeNum 30 }}episode-30
+3. CSS: Loads for episodes 26-30
+4. Character tag: {{ else if ge $episodeNum 30 }} â†’ bounce-integrated
+5. Sidebar: {{ if ge .Params.episode_number 30 }} â†’ BOUNCE
+6. Vector boxes: <div class='dialogue-box vector'>
+7. Bounce boxes: <div class='dialogue-box bounce'>

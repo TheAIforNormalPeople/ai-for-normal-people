@@ -124,25 +124,6 @@
             </section>
             {{ end }}
             
-            <!-- Episode Appearances -->
-            {{ if $charData.primary_episodes }}
-            <section class="character-section">
-                <h2 data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">EPISODE APPEARANCES</h2>
-                <div class="episodes-container" data-color="{{ $charData.color }}" data-rgb="{{ $charData.color_rgb }}" style="--char-color: {{ $charData.color }}; --char-color-rgb: {{ $charData.color_rgb }};">
-                    <p>Featured in {{ len $charData.primary_episodes }} episode{{ if gt (len $charData.primary_episodes) 1 }}s{{ end }}:</p>
-                    <div class="episodes-badges">
-                        {{ range $charData.primary_episodes }}
-                        <span class="episode-badge" data-color="{{ $charData.color }}" data-rgb="{{ $charData.color_rgb }}" style="--char-color: {{ $charData.color }}; --char-color-rgb: {{ $charData.color_rgb }};">
-                            Episode {{ . }}
-                        </span>
-                        {{ end }}
-                    </div>
-                    <p>
-                        <a href="/blog/" class="episode-link" data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">Browse all episodes →</a>
-                    </p>
-                </div>
-            </section>
-            {{ end }}
             
             <!-- Relationships -->
             {{ if $charData.relationships }}

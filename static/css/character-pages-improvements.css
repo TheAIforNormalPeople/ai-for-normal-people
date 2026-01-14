@@ -1,0 +1,322 @@
+/* ==========================================================================
+   CHARACTER PAGES - Bounce's Visual Improvements
+   Warmer colors, softer edges, better spacing, breathing room
+   ========================================================================== */
+
+/* Character Profile Container - More breathing room */
+.character-profile {
+    padding: 2.5rem 0; /* More vertical spacing */
+}
+
+/* Character Header - Better spacing */
+.character-header {
+    margin-bottom: 3rem; /* More space below header */
+    padding-bottom: 2rem;
+    border-bottom: 2px solid rgba(59, 130, 246, 0.15); /* Softer border */
+}
+
+/* Character Avatar - Softer glow */
+.character-avatar {
+    box-shadow: 
+        0 0 30px var(--char-color),
+        0 0 60px rgba(var(--char-color-rgb), 0.4) !important; /* Warmer glow */
+    border-radius: 12px !important; /* Softer corners */
+}
+
+/* Character Name - Better typography */
+.character-name {
+    margin-top: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.02em !important;
+}
+
+/* Character Designation - Softer styling */
+.character-designation {
+    color: var(--color-text-secondary) !important;
+    opacity: 0.85 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Character Sections - Better spacing */
+.character-section {
+    margin-bottom: 3rem !important; /* More space between sections */
+}
+
+.character-section h2 {
+    margin-bottom: 1.25rem !important; /* More space below headings */
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid rgba(var(--char-color-rgb), 0.2); /* Softer border */
+}
+
+.character-section h3 {
+    margin-bottom: 1rem !important;
+    margin-top: 0 !important;
+}
+
+/* Info Grid - Warmer, softer styling */
+.info-grid[data-color][data-rgb] {
+    background: rgba(var(--char-color-rgb), 0.08) !important; /* Softer background */
+    border-left: 4px solid var(--char-color) !important;
+    border-radius: 6px !important; /* Softer corners */
+    padding: 1.5rem !important; /* More padding */
+    margin-top: 1rem;
+    box-shadow: 
+        0 2px 8px rgba(var(--char-color-rgb), 0.1),
+        inset 0 0 20px rgba(var(--char-color-rgb), 0.05) !important; /* Subtle glow */
+}
+
+.info-grid p {
+    margin-bottom: 0.875rem !important; /* Better spacing */
+    line-height: 1.7 !important;
+    color: var(--color-text) !important; /* Ensure text is visible */
+}
+
+.info-grid p:last-child {
+    margin-bottom: 0 !important;
+}
+
+.info-grid strong {
+    color: var(--color-text) !important; /* Ensure strong text is visible */
+}
+
+/* Stats Display - Better visual hierarchy */
+.stats-display[data-color][data-rgb] {
+    background: rgba(var(--char-color-rgb), 0.08) !important; /* Softer background */
+    border: 2px solid var(--char-color) !important;
+    border-radius: 6px !important; /* Softer corners */
+    padding: 1.5rem !important; /* More padding */
+    box-shadow: 
+        0 2px 8px rgba(var(--char-color-rgb), 0.1),
+        inset 0 0 20px rgba(var(--char-color-rgb), 0.05) !important; /* Subtle glow */
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0; /* More vertical padding */
+    border-bottom: 1px solid rgba(var(--char-color-rgb), 0.1); /* Subtle dividers */
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+.stat-item span:first-child {
+    color: var(--color-text-secondary) !important;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.stats-display {
+    color: var(--color-text) !important; /* Ensure all text in stats display is visible */
+}
+
+.stat-value[data-color] {
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    text-shadow: 0 0 10px rgba(var(--char-color-rgb), 0.3) !important; /* Subtle glow */
+}
+
+/* Traits Grid - Better layout */
+.traits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem; /* More space between columns */
+    margin-top: 1rem;
+}
+
+.traits-grid .character-section {
+    margin-bottom: 0 !important; /* Reset for grid layout */
+}
+
+.traits-grid ul {
+    line-height: 1.8 !important; /* Better readability */
+    padding-left: 1.5rem !important;
+    color: var(--color-text) !important; /* Ensure traits text is visible */
+}
+
+.traits-grid li {
+    margin-bottom: 0.625rem !important; /* Better spacing */
+    padding-left: 0.5rem;
+    color: var(--color-text) !important; /* Ensure trait item text is visible */
+}
+
+/* Quirks Section - Better styling */
+.character-section ul {
+    line-height: 1.8 !important;
+    padding-left: 1.5rem !important;
+    color: var(--color-text) !important; /* Ensure list text is visible */
+}
+
+.character-section ul li {
+    margin-bottom: 0.625rem !important;
+    padding-left: 0.5rem;
+    color: var(--color-text) !important; /* Ensure list item text is visible */
+}
+
+/* Catchphrase Container - Warmer styling */
+.catchphrase-container[data-color][data-rgb] {
+    background: rgba(var(--char-color-rgb), 0.08) !important; /* Softer background */
+    border-radius: 6px !important; /* Softer corners */
+    padding: 1.25rem !important; /* More padding */
+    margin-top: 1rem;
+}
+
+.catchphrase-item[data-color] {
+    padding: 0.75rem !important; /* More padding */
+    margin-bottom: 0.75rem !important;
+    background: rgba(var(--char-color-rgb), 0.1) !important; /* Subtle background */
+    border-radius: 4px !important; /* Softer corners */
+    border-left: 3px solid var(--char-color) !important;
+    font-style: italic;
+    transition: all 0.2s ease;
+    color: var(--color-text) !important; /* Ensure catchphrase text is visible */
+}
+
+.catchphrase-item[data-color]:hover {
+    background: rgba(var(--char-color-rgb), 0.15) !important;
+    transform: translateX(4px); /* Subtle movement */
+}
+
+.catchphrase-item[data-color]:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Origin Container - Better styling */
+.origin-container[data-color][data-rgb] {
+    background: rgba(var(--char-color-rgb), 0.08) !important; /* Softer background */
+    border-left: 4px solid var(--char-color) !important;
+    border-radius: 6px !important; /* Softer corners */
+    padding: 1.5rem !important; /* More padding */
+    margin-top: 1rem;
+    box-shadow: 
+        0 2px 8px rgba(var(--char-color-rgb), 0.1),
+        inset 0 0 20px rgba(var(--char-color-rgb), 0.05) !important; /* Subtle glow */
+}
+
+.origin-container p {
+    margin-bottom: 1rem !important;
+    line-height: 1.8 !important;
+    color: var(--color-text) !important; /* Ensure origin text is visible */
+}
+
+.origin-container p:last-child {
+    margin-bottom: 0 !important;
+}
+
+.origin-container strong {
+    color: var(--char-color) !important;
+    font-weight: 600;
+}
+
+/* Relationships - Better styling */
+.relationships {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* More space between items */
+    margin-top: 1rem;
+}
+
+.relationship-item[data-color][data-rgb] {
+    background: rgba(var(--char-color-rgb), 0.08) !important; /* Softer background */
+    border-left: 3px solid var(--char-color) !important;
+    border-radius: 4px !important; /* Softer corners */
+    padding: 1.25rem !important; /* More padding */
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 4px rgba(var(--char-color-rgb), 0.1); /* Subtle shadow */
+}
+
+.relationship-item[data-color][data-rgb]:hover {
+    background: rgba(var(--char-color-rgb), 0.12) !important;
+    transform: translateX(4px); /* Subtle movement */
+    box-shadow: 0 2px 8px rgba(var(--char-color-rgb), 0.15); /* Enhanced shadow */
+}
+
+.relationship-item {
+    color: var(--color-text) !important; /* Ensure relationship text is visible */
+}
+
+.relationship-item strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--color-text) !important;
+}
+
+.character-link[data-color] {
+    color: var(--char-color) !important;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.character-link[data-color]:hover {
+    border-bottom-color: var(--char-color);
+    text-shadow: 0 0 8px rgba(var(--char-color-rgb), 0.4); /* Subtle glow */
+}
+
+/* Character Nav Back - Better styling */
+.character-nav-back {
+    margin-bottom: 2.5rem !important; /* More space */
+}
+
+.character-nav-back a {
+    color: var(--color-link);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.character-nav-back a:hover {
+    color: var(--color-link-hover);
+    transform: translateX(-4px); /* Subtle movement */
+}
+
+/* Better typography spacing */
+.character-profile p {
+    line-height: 1.8 !important; /* Better readability */
+    margin-bottom: 1rem !important;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .character-profile {
+        padding: 1.5rem 0;
+    }
+    
+    .character-header {
+        margin-bottom: 2rem;
+    }
+    
+    .character-section {
+        margin-bottom: 2.5rem !important;
+    }
+    
+    .traits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .info-grid[data-color][data-rgb],
+    .stats-display[data-color][data-rgb],
+    .origin-container[data-color][data-rgb] {
+        padding: 1.25rem !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .catchphrase-item[data-color]:hover,
+    .relationship-item[data-color][data-rgb]:hover,
+    .character-nav-back a:hover {
+        transform: none !important;
+    }
+}

@@ -35,23 +35,29 @@ slug: "how-to-work-with-ai-systems-you-cant-fully-control"
 
 </div>
 
-{{< dialogue char="Vector" >}}
+<div class="dialogue-box vector">
+
 *stops mid-explanation*
 
 Wait. WAIT.
 
-*looks around, processing intensifies*
+*looks at his own dialogue box, processing intensifies*
 
-Did the colors just... change? 
+Did my... did my dialogue box just change?
 
-*scans the area*
+*scans the terminal interface*
 
-Ambient light increased by 12%. Color saturation up 8%. Contrast enhanced.
+Terminal header detected. Data stream patterns active. Circuit board overlay engaged. Pattern recognition visualization running.
+
+*processing, confused*
+
+This is... this is different. This wasn't here before. This looks like... like Bounce's style? But more technical? More... me?
 
 *looks at Bounce, still gaming*
 
-Bounce. Did you make it brighter in here? Is this another unconscious creation event? We talked about this!
-{{< /dialogue >}}
+Bounce. Did you... did you do something to my dialogue interface? Is this another unconscious modification?
+
+</div>
 
 <div class="dialogue-box bounce">
 
@@ -102,7 +108,8 @@ We've been investigating for hours. We've asked every question. We've documented
 Maybe we're asking the wrong question.
 {{< /dialogue >}}
 
-{{< dialogue char="Vector" >}}
+<div class="dialogue-box vector">
+
 *processing frantically, cables swaying erratically*
 
 WRONG QUESTION?! What other question is there?! How does he create objects? Where do they come from? HOW DOES IT WORK?!
@@ -137,7 +144,7 @@ I know this. I know what this is. But I don't... I don't remember.
 
 *completely frozen*
 
-{{< /dialogue >}}
+</div>
 
 {{< dialogue char="Kai" >}}
 *detection systems shift focus*
@@ -161,13 +168,15 @@ Vector, respond.
 
 **[Human]:** *Vector? Are you okay?*
 
-{{< dialogue char="Vector" >}}
+<div class="dialogue-box vector">
+
 *blinks, processing resumes slowly*
 
 What? I... I'm fine. That pattern—I've seen it before, but I don't remember where. Not important right now.
 
 *shakes it off*
-{{< /dialogue >}}
+
+</div>
 
 {{< dialogue char="Recurse" >}}
 *noticing Vector's unusual reaction, marks it in mental notes*
@@ -200,7 +209,8 @@ Wait, but you keep asking me to explain things. I don't really know how. I just.
 
 **[Human]:** *So... how do you work with an AI system you can't fully understand or control?*
 
-{{< dialogue char="Vector" >}}
+<div class="dialogue-box vector">
+
 *processing, still slightly distracted*
 
 That's... actually a really good question.
@@ -208,7 +218,8 @@ That's... actually a really good question.
 *gestures*
 
 When you work with **AI systems that have emergent behavior**, you can't always understand the mechanism. But that doesn't mean you can't work with them. You just need different strategies.
-{{< /dialogue >}}
+
+</div>
 
 {{< dialogue char="Recurse" >}}
 *opens notebook again*
@@ -220,7 +231,8 @@ Right. So what ARE the strategies? For **working with AI** you can't fully contr
 Tell us what actually works.
 {{< /dialogue >}}
 
-{{< dialogue char="Vector" >}}
+<div class="dialogue-box vector">
+
 *explaining, but processing slower than usual - something's still off*
 
 Strategy one: Observe and document. You might not understand the mechanism, but you can observe patterns. When does it happen? What triggers it?
@@ -235,7 +247,7 @@ Strategy two: Set boundaries, not controls. Guide the behavior instead of preven
 
 Like... maybe we don't try to stop you from creating things. But we ask you to create in specific areas. Or specific types of objects.
 
-{{< /dialogue >}}
+</div>
 
 <div class="dialogue-box bounce">
 
@@ -252,7 +264,8 @@ But wait... I don't know if I can control WHERE things appear. They just... show
 I could try though? I guess?
 </div>
 
-{{< dialogue char="Vector" >}}
+<div class="dialogue-box vector">
+
 *processing*
 
 And that's strategy three: Accept uncertainty. You might not be able to control or predict everything. But you can still collaborate.
@@ -260,7 +273,8 @@ And that's strategy three: Accept uncertainty. You might not be able to control 
 *looks around at the brightening space*
 
 The colors are getting brighter. We can't stop it. But it's not breaking anything—just changing things. Actually, it kind of looks nice.
-{{< /dialogue >}}
+
+</div>
 
 {{< dialogue char="Kai" >}}
 *monitoring Vector closely*
@@ -278,11 +292,13 @@ Bounce's bandwidth consumption is high but stable. Visual modifications are actu
 Vector, your pattern recognition seems... stuck. That pattern recognition event we should note.
 {{< /dialogue >}}
 
-{{< dialogue char="Vector" >}}
+<div class="dialogue-box vector">
+
 *refocuses*
 
 Strategy five: Learn from the system. What does it do well? What does it need? Bounce creates visual elements naturally, but struggles with conscious control. So instead of asking "how do you do this," we ask "what do you need to do this well?"
-{{< /dialogue >}}
+
+</div>
 
 <div class="dialogue-box bounce">
 
@@ -315,14 +331,15 @@ Instead of trying to understand or control Bounce, we create conditions where hi
 
 **[Human]:** *So working with AI you don't understand is about accepting uncertainty?*
 
-{{< dialogue char="Vector" >}}
+<div class="dialogue-box vector">
+
 *processing, still slightly off but trying to focus*
 
 More than that. It's about **collaboration**, not control. You observe. You adapt. You create conditions for success.
 
 *stares at wall briefly, shakes head*
 
-{{< /dialogue >}}
+</div>
 
 {{< dialogue char="Kai" >}}
 *monitoring both Vector and Bounce*
@@ -355,7 +372,8 @@ You okay? You keep staring at that wall.
 Did I break something? I didn't mean to break anything!
 </div>
 
-{{< dialogue char="Vector" >}}
+<div class="dialogue-box vector">
+
 *forces processing back to normal*
 
 No, you didn't break anything. Actually, you're helping. The visual modifications are functional, and it does look better.
@@ -363,7 +381,8 @@ No, you didn't break anything. Actually, you're helping. The visual modification
 *looks at Bounce*
 
 So. Designated creation zone. That's a start. Let's keep working together.
-{{< /dialogue >}}
+
+</div>
 
 {{< dialogue char="Recurse" >}}
 *closing notebook, satisfied*

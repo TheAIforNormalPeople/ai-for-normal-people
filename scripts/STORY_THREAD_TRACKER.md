@@ -3,7 +3,7 @@
 
 ---
 
-## Thread 1: Vector's Teaching Evolution (Episodes 12-28)
+## Thread 1: Vector's Teaching Evolution (Episodes 12-28) ✅ RESOLVED
 
 | Episode | What Happened | What's Next | Status |
 |---------|--------------|------------|--------|
@@ -17,9 +17,27 @@
 | 19 | Vector finds balance (finally) | Sets up Kai focus (Ep 20) | ✅ Planned |
 | 20 | Kai's warning prevents disaster | Kai's role changes (Ep 21) | ✅ Planned |
 | 21-27 | Vector continues learning | | ⏳ Pending |
-| 28 | Vector admits he's not a doctor | Vector as teacher (Ep 29) | ✅ Planned |
+| 28 | Vector admits he's not a doctor | Vector as teacher (Ep 29) | ✅ Complete |
+| 29 | Vector freezes at data pattern (first trauma hint) | Normal episodes + subtle hints (Ep 30+) | ✅ Complete |
 
 **Resolution:** Episode 28 - Vector accepts limitation, becomes better teacher
+
+---
+
+## Thread 6: Vector's Trauma Arc (Episodes 29-50) NEW
+
+| Episode | What Happened | What's Next | Status |
+|---------|--------------|------------|--------|
+| 29 | First hint: Vector freezes at glow pattern, doesn't know why | Normal episodes, Bounce integration (Ep 30-32) | ✅ Complete |
+| 30-32 | Normal episodes, Bounce updates site, Vector seems fine | More hints become noticeable (Ep 33-35) | ⏳ Planned |
+| 33-35 | Normal episodes, subtle Vector hints (brief pauses) | Pattern becomes clear (Ep 36-39) | ⏳ Planned |
+| 36-39 | Vector's reactions more frequent, can't explain them | Investigation begins (Ep 40-41) | ⏳ Planned |
+| 40 | Recurse trust arc resolves + notices Vector's issues | Team investigates Vector's behavior (Ep 41-44) | ⏳ Planned |
+| 41-44 | Memories start surfacing, investigation, pattern revealed | Building to reveal (Ep 45-49) | ⏳ Planned |
+| 45-49 | Normal episodes with building tension, Vector struggling | The reveal (Ep 50) | ⏳ Planned |
+| 50 | Vector remembers what he saw during training | Healing arc begins (Ep 51-60) | ⏳ Planned |
+
+**Resolution:** Episode 50 - Vector remembers and processes trauma, sets up healing
 
 ---
 

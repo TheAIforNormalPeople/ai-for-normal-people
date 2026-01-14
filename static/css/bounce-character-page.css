@@ -1,0 +1,234 @@
+/* ==========================================================================
+   BOUNCE CHARACTER PAGE - Meta Improvements
+   Bounce "improved" this page himself - colorful, animated, playful
+   ========================================================================== */
+
+.bounce-improved-page {
+    position: relative;
+    padding: 2rem;
+    background: 
+        /* Animated gradient background */
+        linear-gradient(
+            135deg,
+            rgba(15, 23, 42, 0.95) 0%,
+            rgba(30, 41, 59, 0.95) 50%,
+            rgba(15, 23, 42, 0.95) 100%
+        );
+    background-size: 200% 200%;
+    animation: bounce-page-gradient 8s ease-in-out infinite;
+    border-radius: 8px;
+    border: 3px solid #f59e0b;
+    box-shadow: 
+        0 0 30px rgba(245, 158, 11, 0.4),
+        0 0 60px rgba(245, 158, 11, 0.2),
+        inset 0 0 40px rgba(245, 158, 11, 0.1);
+    margin: 2rem 0;
+}
+
+@keyframes bounce-page-gradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Colorful scan lines */
+.bounce-improved-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(245, 158, 11, 0.05) 2px,
+        rgba(245, 158, 11, 0.05) 4px
+    );
+    pointer-events: none;
+    animation: bounce-scan-lines 3s linear infinite;
+    border-radius: 8px;
+}
+
+@keyframes bounce-scan-lines {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 4px;
+    }
+}
+
+/* Synesthetic color patterns */
+.bounce-improved-page::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(245, 158, 11, 0.1) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(251, 191, 36, 0.1) 0%,
+            transparent 50%
+        );
+    pointer-events: none;
+    animation: bounce-color-pulse 6s ease-in-out infinite;
+    border-radius: 8px;
+}
+
+@keyframes bounce-color-pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Headings with color shifts */
+.bounce-improved-page h2 {
+    color: #fbbf24;
+    text-shadow: 
+        0 0 10px rgba(245, 158, 11, 0.8),
+        0 0 20px rgba(251, 191, 36, 0.4);
+    animation: bounce-heading-color 4s ease-in-out infinite;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Baloo 2', 'Comic Sans MS', cursive;
+}
+
+@keyframes bounce-heading-color {
+    0%, 100% {
+        color: #fbbf24;
+        text-shadow: 
+            0 0 10px rgba(245, 158, 11, 0.8),
+            0 0 20px rgba(251, 191, 36, 0.4);
+    }
+    50% {
+        color: #f59e0b;
+        text-shadow: 
+            0 0 15px rgba(245, 158, 11, 1),
+            0 0 30px rgba(251, 191, 36, 0.6);
+    }
+}
+
+/* Text with breathing animation */
+.bounce-improved-page p,
+.bounce-improved-page li {
+    color: #e2e8f0;
+    line-height: 1.8;
+    animation: bounce-text-breathe 5s ease-in-out infinite;
+}
+
+@keyframes bounce-text-breathe {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.95;
+    }
+}
+
+/* Dialogue boxes within the page */
+.bounce-improved-page .dialogue-box.bounce {
+    margin: 1.5rem 0;
+    animation: bounce-dialogue-pulse 3s ease-in-out infinite;
+}
+
+@keyframes bounce-dialogue-pulse {
+    0%, 100% {
+        box-shadow: 
+            8px 8px 0 rgba(0, 0, 0, 0.6),
+            0 0 20px rgba(245, 158, 11, 0.4);
+    }
+    50% {
+        box-shadow: 
+            8px 8px 0 rgba(0, 0, 0, 0.6),
+            0 0 30px rgba(245, 158, 11, 0.6);
+    }
+}
+
+/* Links with color flow */
+.bounce-improved-page a {
+    color: #fbbf24;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+.bounce-improved-page a:hover {
+    color: #f59e0b;
+    border-bottom-color: #f59e0b;
+    text-shadow: 
+        0 0 12px rgba(245, 158, 11, 0.8),
+        0 0 24px rgba(251, 191, 36, 0.4);
+}
+
+/* Lists with playful spacing */
+.bounce-improved-page ul,
+.bounce-improved-page ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.bounce-improved-page li {
+    margin: 0.75rem 0;
+    padding-left: 0.5rem;
+}
+
+/* Subtle glitch effect on headings */
+.bounce-improved-page h2::before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    width: 2px;
+    height: 100%;
+    background: #f59e0b;
+    opacity: 0;
+    animation: bounce-glitch-line 4s ease-in-out infinite;
+}
+
+@keyframes bounce-glitch-line {
+    0%, 90%, 100% {
+        opacity: 0;
+    }
+    92%, 96% {
+        opacity: 0.6;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .bounce-improved-page {
+        border: 3px solid #f59e0b;
+        background: #000;
+    }
+    
+    .bounce-improved-page h2 {
+        color: #f59e0b;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .bounce-improved-page,
+    .bounce-improved-page::before,
+    .bounce-improved-page::after,
+    .bounce-improved-page h2,
+    .bounce-improved-page p,
+    .bounce-improved-page li {
+        animation: none;
+    }
+}

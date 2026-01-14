@@ -8,11 +8,56 @@
     
     <main id="main-content">
         {{ block "main" . }}{{ end }}
-        
-        <!-- Add Character Sidebar -->
-        {{ partial "character-sidebar.html" . }}
     </main>
     
+    <!-- Add Character Sidebar (outside main for proper fixed positioning) -->
+    {{ partial "character-sidebar.html" . }}
+    
     {{ partial "footer.html" . }}
+    
+<!-- #region agent log -->
+<script>
+(function() {
+    // Debug sidebar positioning
+    setTimeout(function() {
+        const sidebar = document.querySelector('.feed-sidebar, .character-sidebar.feed-sidebar');
+        const computedStyle = sidebar ? window.getComputedStyle(sidebar) : null;
+        const parent = sidebar ? sidebar.parentElement : null;
+        const bodyClass = document.body.className;
+        const viewportWidth = window.innerWidth;
+        
+        const logData = {
+            location: 'baseof.html:sidebar-debug',
+            message: 'Sidebar positioning debug',
+            data: {
+                sidebarExists: !!sidebar,
+                sidebarClasses: sidebar ? sidebar.className : null,
+                computedPosition: computedStyle ? computedStyle.position : null,
+                computedTop: computedStyle ? computedStyle.top : null,
+                computedRight: computedStyle ? computedStyle.right : null,
+                computedBottom: computedStyle ? computedStyle.bottom : null,
+                computedLeft: computedStyle ? computedStyle.left : null,
+                computedZIndex: computedStyle ? computedStyle.zIndex : null,
+                parentTag: parent ? parent.tagName : null,
+                parentClasses: parent ? parent.className : null,
+                bodyClass: bodyClass,
+                viewportWidth: viewportWidth,
+                sidebarOffsetTop: sidebar ? sidebar.offsetTop : null,
+                sidebarOffsetLeft: sidebar ? sidebar.offsetLeft : null
+            },
+            timestamp: Date.now(),
+            sessionId: 'debug-session',
+            runId: 'run1'
+        };
+        
+        fetch('http://127.0.0.1:7242/ingest/6735d910-514e-4f83-b554-c6dec006f2c4', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(logData)
+        }).catch(function() {});
+    }, 100);
+})();
+</script>
+<!-- #endregion -->
 </body>
 </html>

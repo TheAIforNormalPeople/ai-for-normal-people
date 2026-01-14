@@ -40,7 +40,7 @@ A makeshift paradise built from salvaged hardware. Three monitors daisy-chained 
 
 *CRUNCH. CRUNCH. CRUNCH.*
 
-The figure doesn't look up from the game. Lime green hoodie (also digital, also impossible). Feet propped on a server that was decommissioned in 2019.
+The figure doesn't look up from the game. Sherbet orange hoodie (also digital, also impossible). Feet propped on a server that was decommissioned in 2019.
 
 "C'mon, c'mon... just gotta get past this level..."
 

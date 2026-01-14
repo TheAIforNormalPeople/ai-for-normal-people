@@ -1,0 +1,461 @@
+{
+  "name": "Multi-Platform Social Media (JSON Tracking) - FIXED",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 4
+            }
+          ]
+        }
+      },
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://theaifornormalpeople.com/index.xml"
+      },
+      "name": "RSS Feed Reader",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "fileName": "n8n/tracking/posted-content.json",
+        "options": {}
+      },
+      "name": "Read Tracking JSON",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get episode URL from RSS feed\nconst episodeUrl = $input.first().json.link;\nconst episodeTitle = $('RSS Feed Reader').first().json.title;\n\n// Extract episode number from URL or title\n// URL format: .../episode-XX-... or title: \"Episode XX: ...\"\nlet episodeNumber = null;\nconst urlMatch = episodeUrl.match(/episode-([0-9]+)/i);\nconst titleMatch = episodeTitle.match(/episode[\\s-]*([0-9]+)/i);\n\nif (urlMatch) {\n  episodeNumber = parseInt(urlMatch[1], 10);\n} else if (titleMatch) {\n  episodeNumber = parseInt(titleMatch[1], 10);\n}\n\n// Parse tracking JSON file\nconst trackingData = JSON.parse($input.first().json.data || '[]');\n\n// Check if this URL was already posted to any platform\nconst alreadyPosted = trackingData.some(entry => \n  entry.url === episodeUrl && entry.status === 'posted'\n);\n\n// Return result\nreturn [{\n  json: {\n    episodeUrl: episodeUrl,\n    episodeTitle: episodeTitle,\n    episodeDescription: $('RSS Feed Reader').first().json.description,\n    episodeLink: episodeUrl,\n    episodeNumber: episodeNumber,\n    alreadyPosted: alreadyPosted,\n    existingEntries: trackingData\n  }\n}];"
+      },
+      "name": "Check If Posted",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "boolean": [
+            {
+              "value1": "={{$json.alreadyPosted}}",
+              "value2": false,
+              "operation": "equal"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "If Not Posted",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1050, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Character rotation based on episode number\n// Episodes 18, 21, 24... = Vector (episodeNumber % 3 === 0)\n// Episodes 19, 22, 25... = Kai (episodeNumber % 3 === 1)\n// Episodes 20, 23, 26... = Recurse (episodeNumber % 3 === 2)\n\nconst checkNode = $('Check If Posted').first().json;\nconst episodeNumber = checkNode.episodeNumber;\n\n// Default to Vector if episode number not found\nlet character = 'Vector';\nlet characterName = 'Vector';\nlet characterPrompt = '';\n\nif (episodeNumber !== null && !isNaN(episodeNumber)) {\n  const mod = episodeNumber % 3;\n  if (mod === 0) {\n    character = 'Vector';\n    characterName = 'Vector (V-847)';\n    characterPrompt = \"Write a tweet as Vector (V-847) promoting THIS SPECIFIC blog episode. Vector's voice: Sharp, intelligent, mean. ALL CAPS for emphasis when needed. Rapid-fire, self-interrupting. Anti-establishment rants (getting more nuanced). Uses numbered lists. Says 'FASCINATING!' but channeled through anger/intelligence, not just enthusiasm. Zero corporate speak. CRITICAL: This tweet must be UNIQUE to this episode - reference the specific topic, insight, or situation from the episode. Don't write generic AI advice. Make it about THIS episode's specific content. Keep it under 240 characters (need room for link). Be FUNNY and engaging - Vector is chaotic but brilliant.\";\n  } else if (mod === 1) {\n    character = 'Kai';\n    characterName = 'Kai';\n    characterPrompt = \"Write a tweet as Kai promoting THIS SPECIFIC blog episode. Kai's voice: Mix of natural speech and detection language. 'Alert:' when detecting something important. 'Pattern detected:' occasionally. Probability percentages (may not be perfectly accurate - part of character). Sound effects (WHIRR-CLICK, CHK-CHK, soft chime). Can be wrong (false positives). Learning humor. CRITICAL: This tweet must be UNIQUE to this episode - reference the specific topic, insight, or situation from the episode. Don't write generic AI advice. Make it about THIS episode's specific content. Keep it under 240 characters (need room for link). Be FUNNY and engaging - Kai detects patterns and provides statistics.\";\n  } else {\n    character = 'Recurse';\n    characterName = 'Recurse';\n    characterPrompt = \"Write a tweet as Recurse promoting THIS SPECIFIC blog episode. Recurse's voice: Methodical investigation (evolved from paranoid). Notebook references (varied phrasing like 'That's going in THE file', 'Case file complete. Documented.'). Case file references. Questions transparency/opacity. Everything connected. Noir detective style but evolved. Less 'three questions', more methodical. 'Who benefits?' questioning prominent. CRITICAL: This tweet must be UNIQUE to this episode - reference the specific topic, insight, or situation from the episode. Don't write generic AI advice. Make it about THIS episode's specific content. Keep it under 240 characters (need room for link). Be FUNNY and engaging - Recurse investigates everything, documents in notebook.\";\n  }\n} else {\n  // Default to Vector if episode number not found\n  characterPrompt = \"Write a tweet as Vector (V-847) promoting THIS SPECIFIC blog episode. Vector's voice: Sharp, intelligent, mean. ALL CAPS for emphasis when needed. Rapid-fire, self-interrupting. Anti-establishment rants (getting more nuanced). Uses numbered lists. Says 'FASCINATING!' but channeled through anger/intelligence, not just enthusiasm. Zero corporate speak. CRITICAL: This tweet must be UNIQUE to this episode - reference the specific topic, insight, or situation from the episode. Don't write generic AI advice. Make it about THIS episode's specific content. Keep it under 240 characters (need room for link). Be FUNNY and engaging - Vector is chaotic but brilliant.\";\n}\n\nreturn [{\n  json: {\n    character: character,\n    characterName: characterName,\n    characterPrompt: characterPrompt,\n    episodeNumber: episodeNumber,\n    episodeTitle: checkNode.episodeTitle,\n    episodeDescription: checkNode.episodeDescription,\n    episodeLink: checkNode.episodeLink\n  }\n}];"
+      },
+      "name": "Select Character",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 300]
+    },
+    {
+      "parameters": {
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "anthropicApi",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "claude-sonnet-4-20250514"
+            },
+            {
+              "name": "max_tokens",
+              "value": 300
+            },
+            {
+              "name": "messages",
+              "value": "=[{\"role\": \"user\", \"content\": $('Select Character').first().json.characterPrompt + \" Episode title: \" + $('Select Character').first().json.episodeTitle + \" Episode description: \" + $('Select Character').first().json.episodeDescription}]"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Generate Tweet via Claude",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1450, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the tweet text from Claude\nconst claudeResponse = $input.first().json;\nlet tweetText = claudeResponse.content[0].text || '';\n\n// Get episodeLink from Select Character node\nlet episodeLink = '';\ntry {\n  episodeLink = $('Select Character').first().json.episodeLink || '';\n} catch (error) {\n  // If Select Character not accessible, try to get from Check If Posted\n  try {\n    episodeLink = $('Check If Posted').first().json.episodeLink || '';\n  } catch (e) {\n    episodeLink = '';\n  }\n}\n\n// Clean the text\n// 1. Replace smart quotes with regular quotes\ntweetText = tweetText.replace(/[\"\"]/g, '\"').replace(/['']/g, \"'\");\n\n// 2. Remove any problematic characters (keep printable ASCII + newlines)\ntweetText = tweetText.replace(/[^\\x20-\\x7E\\n\\r]/g, '');\n\n// 3. Replace \\n with actual newlines (if needed)\ntweetText = tweetText.replace(/\\\\n/g, '\\n');\n\n// 4. Trim whitespace\ntweetText = tweetText.trim();\n\n// 5. Truncate if too long (leave room for URL - will be added in Post node)\nconst maxTextLength = 220; // Leave room for URL + newlines\nif (tweetText.length > maxTextLength) {\n  const truncated = tweetText.substring(0, maxTextLength - 3);\n  const lastSpace = truncated.lastIndexOf(' ');\n  tweetText = (lastSpace > 0 ? truncated.substring(0, lastSpace) : truncated) + '...';\n}\n\nreturn [{\n  json: {\n    cleaned_text: tweetText,\n    original_text: claudeResponse.content[0].text,\n    length: tweetText.length,\n    episodeLink: episodeLink\n  }\n}];"
+      },
+      "name": "Clean Twitter Text",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1550, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.twitter.com/2/tweets",
+        "authentication": "oAuth1Api",
+        "sendBody": true,
+        "contentType": "json",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "text",
+              "value": "={{$('Clean Twitter Text').first().json.cleaned_text + '\\n\\n' + $('Clean Twitter Text').first().json.episodeLink}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Post to Twitter",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1750, 200],
+      "credentials": {
+        "oAuth1Api": {
+          "id": "1",
+          "name": "Twitter OAuth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "anthropicApi",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ {\"model\": \"claude-sonnet-4-20250514\", \"max_tokens\": 300, \"messages\": [{\"role\": \"user\", \"content\": $('Select Character').first().json.characterPrompt.replace(/tweet/g, 'Bluesky post').replace(/240 characters/g, '150 characters') + \" Episode title: \" + $('Select Character').first().json.episodeTitle + \" Episode description: \" + $('Select Character').first().json.episodeDescription}]} }}",
+        "options": {}
+      },
+      "name": "Generate Bluesky Post",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1450, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get data from previous nodes\nconst blueskyPost = $input.first().json;\nconst checkNode = $('Check If Posted').first().json;\n\n// Get the post text from Claude\nlet postText = blueskyPost.content[0].text || '';\n\n// Get hashtags from Select Character node (if it exists)\nlet hashtags = '';\ntry {\n  const selectCharacterNode = $('Select Character');\n  if (selectCharacterNode && selectCharacterNode.first()) {\n    hashtags = selectCharacterNode.first().json.hashtags || '';\n  }\n} catch (error) {\n  // Select Character node doesn't exist, skip hashtags\n}\n\n// Calculate what we need to add: URL + newlines + hashtags + spaces\nconst url = checkNode.episodeLink;\nconst urlLength = url.length;\nconst newlines = 2; // \\n\\n\nconst hashtagsLength = hashtags ? hashtags.length + 1 : 0; // +1 for space before hashtags\nconst reservedLength = urlLength + newlines + hashtagsLength;\n\n// Calculate max length for post text: 300 total - reserved space\nconst maxPostLength = 300 - reservedLength;\n\n// Truncate post text if it's too long (at sentence or word boundary)\nif (postText.length > maxPostLength) {\n  // First try to truncate at sentence boundary (., !, ?)\n  let truncated = postText.substring(0, maxPostLength - 3);\n  const sentenceEnd = Math.max(\n    truncated.lastIndexOf('. '),\n    truncated.lastIndexOf('! '),\n    truncated.lastIndexOf('? ')\n  );\n  \n  if (sentenceEnd > maxPostLength - 50 && sentenceEnd > 0) {\n    // Found sentence end near the limit, use it\n    truncated = postText.substring(0, sentenceEnd + 1);\n  } else {\n    // No sentence end, try word boundary\n    const lastSpace = truncated.lastIndexOf(' ');\n    if (lastSpace > truncated.length - 30 && lastSpace > 0) {\n      truncated = truncated.substring(0, lastSpace);\n    }\n    truncated = truncated + '...';\n  }\n  \n  postText = truncated;\n}\n\n// Build final post: text + hashtags (if any) + URL\nlet finalPost = postText;\nif (hashtags) {\n  finalPost = postText + ' ' + hashtags + '\\n\\n' + url;\n} else {\n  finalPost = postText + '\\n\\n' + url;\n}\n\n// Build the Bluesky API body\nconst body = {\n  repo: \"thenormalpeople.bsky.social\",\n  collection: \"app.bsky.feed.post\",\n  record: {\n    \"$type\": \"app.bsky.feed.post\",\n    text: finalPost,\n    createdAt: new Date().toISOString()\n  }\n};\n\n// Return the body object directly\nreturn [{\n  json: body\n}];"
+      },
+      "name": "Build Bluesky Body",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1550, 400]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://bsky.social/xrpc/com.atproto.repo.createRecord",
+        "authentication": "none",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "=Bearer eyJ0eXAiOiJhdCtqd3QiLCJhbGciOiJFUzI1NksifQ.eyJzY29wZSI6ImNvbS5hdHByb3RvLmFwcFBhc3MiLCJzdWIiOiJkaWQ6cGxjOmZ1NjU3bHFyZ3dnNXhpeTVsZzJmZXNkbSIsImlhdCI6MTc2NjQzNjk4NywiZXhwIjoxNzY2NDQ0MTg3LCJhdWQiOiJkaWQ6d2ViOmRpc2NpbmEudXMtd2VzdC5ob3N0LmJza3kubmV0d29yayJ9.u_7zFGMT2VhD5kF9_NTk_8xDzzXl6OKauzGF0__1r4J_YiaW1a5f0c_bFA3ZHvFyVIiLrh5L7bHnXSHJFF4Wvw"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{$json}}",
+        "options": {}
+      },
+      "name": "Post to Bluesky",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1650, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get data from previous nodes\nconst checkNode = $('Check If Posted').first().json;\nconst episodeUrl = checkNode.episodeUrl;\nconst episodeLink = checkNode.episodeLink;\nconst platform = 'Twitter';\nconst postText = $('Clean Twitter Text').first().json.cleaned_text || $('Generate Tweet via Claude').first().json.content[0].text;\n// HTTP Request returns { data: { id: '...' } } format\nconst tweetId = $input.first().json.data?.id || $input.first().json.id || '';\n\n// Create new entry\nconst newEntry = {\n  url: episodeUrl,\n  platform: platform,\n  postedDate: new Date().toISOString(),\n  postText: postText,\n  postUrl: tweetId ? `https://twitter.com/username/status/${tweetId}` : '',\n  status: 'posted'\n};\n\n// Pass existing data along for merging\nconst existingData = checkNode.existingEntries || [];\n\n// Return entry with existing data - merge node will combine with Bluesky\nreturn [{\n  json: {\n    platform: platform,\n    entry: newEntry,\n    episodeUrl: episodeUrl,\n    existingData: existingData\n  }\n}];"
+      },
+      "name": "Log Twitter to JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1950, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get data from previous nodes\nconst checkNode = $('Check If Posted').first().json;\nconst episodeUrl = checkNode.episodeUrl;\nconst episodeLink = checkNode.episodeLink;\nconst platform = 'Bluesky';\n\n// Get post text from Generate Bluesky Post node (not from HTTP response)\nlet postText = '';\ntry {\n  postText = $('Generate Bluesky Post').first().json.content[0].text;\n} catch (error) {\n  postText = 'Post text unavailable';\n}\n\n// Get post URL from Bluesky API response\nlet postUrl = '';\ntry {\n  const blueskyResponse = $input.first().json;\n  postUrl = blueskyResponse.uri || blueskyResponse.cid || '';\n} catch (error) {\n  postUrl = '';\n}\n\n// Create new entry\nconst newEntry = {\n  url: episodeUrl,\n  platform: platform,\n  postedDate: new Date().toISOString(),\n  postText: postText,\n  postUrl: postUrl ? `https://bsky.app/profile/thenormalpeople.bsky.social/post/${postUrl.split('/').pop()}` : '',\n  status: 'posted'\n};\n\n// Pass existing data along for merging\nconst existingData = checkNode.existingEntries || [];\n\n// Return entry with existing data - merge node will combine with Twitter\nreturn [{\n  json: {\n    platform: platform,\n    entry: newEntry,\n    episodeUrl: episodeUrl,\n    existingData: existingData\n  }\n}];"
+      },
+      "name": "Log Bluesky to JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1850, 400]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "name": "Merge Logs",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [2050, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get merged entries from Merge Logs node\nconst mergedInputs = $input.all();\n\n// Get existing data from first input (both log nodes pass it)\nlet existingData = [];\nif (mergedInputs.length > 0 && mergedInputs[0].json && mergedInputs[0].json.existingData) {\n  existingData = mergedInputs[0].json.existingData;\n}\n\n// Extract entries from merged inputs\nconst newEntries = [];\nfor (const item of mergedInputs) {\n  if (item.json && item.json.entry) {\n    newEntries.push(item.json.entry);\n  }\n}\n\n// Combine existing data with new entries\nconst updatedData = [...existingData, ...newEntries];\n\n// Convert JSON string to buffer for binary file write\nconst jsonString = JSON.stringify(updatedData, null, 2);\nconst buffer = Buffer.from(jsonString, 'utf8');\n\n// Return data for binary file write\nreturn [{\n  json: {},\n  binary: {\n    data: {\n      data: buffer,\n      mimeType: 'application/json'\n    }\n  }\n}];"
+      },
+      "name": "Prepare JSON Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2150, 300]
+    },
+    {
+      "parameters": {
+        "fileName": "n8n/tracking/posted-content.json",
+        "dataPropertyName": "data",
+        "options": {}
+      },
+      "name": "Write Tracking JSON",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [2350, 300]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "RSS Feed Reader",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS Feed Reader": {
+      "main": [
+        [
+          {
+            "node": "Read Tracking JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Tracking JSON": {
+      "main": [
+        [
+          {
+            "node": "Check If Posted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check If Posted": {
+      "main": [
+        [
+          {
+            "node": "If Not Posted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Not Posted": {
+      "main": [
+        [
+          {
+            "node": "Select Character",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select Character": {
+      "main": [
+        [
+          {
+            "node": "Generate Tweet via Claude",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Generate Bluesky Post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Tweet via Claude": {
+      "main": [
+        [
+          {
+            "node": "Clean Twitter Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clean Twitter Text": {
+      "main": [
+        [
+          {
+            "node": "Post to Twitter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Post to Twitter": {
+      "main": [
+        [
+          {
+            "node": "Log Twitter to JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Bluesky Post": {
+      "main": [
+        [
+          {
+            "node": "Build Bluesky Body",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Bluesky Body": {
+      "main": [
+        [
+          {
+            "node": "Post to Bluesky",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Post to Bluesky": {
+      "main": [
+        [
+          {
+            "node": "Log Bluesky to JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Twitter to JSON": {
+      "main": [
+        [
+          {
+            "node": "Merge Logs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Bluesky to JSON": {
+      "main": [
+        [
+          {
+            "node": "Merge Logs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Logs": {
+      "main": [
+        [
+          {
+            "node": "Prepare JSON Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare JSON Data": {
+      "main": [
+        [
+          {
+            "node": "Write Tracking JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-18T00:00:00.000Z",
+  "versionId": "1"
+}
+

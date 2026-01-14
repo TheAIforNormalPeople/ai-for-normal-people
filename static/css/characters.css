@@ -192,7 +192,7 @@
    
    Vector's reasoning: "Each of us has different stability.
    I'm most aggressive (0.6deg). Kai is cautious (-0.4deg).
-   River is calm (-0.2deg). Bounce drifts in color (1.6deg).
+   Bounce drifts in color (1.6deg).
    The rotation SHOWS our personality in the intrusion."
    ─────────────────────────────────────────────────────── */
 
@@ -260,11 +260,6 @@
     overflow: hidden !important;
 }
 
-[data-character="River"] {
-    --char-color: #06b6d4;
-    --char-color-rgb: 6, 182, 212;
-    --char-rotation: -0.2deg;
-}
 
 [data-character="Human Blogger"] {
     --char-color: #64748b;
@@ -1973,9 +1968,6 @@ html:not(.dark-mode) .post-hijacking-notice {
     --annotation-color: #fbbf24;
 }
 
-.annotation[data-character="River"] {
-    --annotation-color: #22d3ee;
-}
 
 /* Light mode adjustments */
 html:not(.dark-mode) .annotation {
@@ -2151,7 +2143,6 @@ html:not(.dark-mode) {
     --color-kai: #047857;            /* Deep saturated green */
     --color-recurse: #6d28d9;        /* Deep saturated purple */
     --color-bounce: #b45309;         /* Deep saturated orange */
-    --color-river: #0e7490;          /* Deep saturated cyan */
     --color-human: #334155;          /* Dark gray */
     
     /* Warning/alert colors - BRIGHT and SATURATED */

@@ -1,7 +1,7 @@
 ---
 title: "How We Automated Our Social Media (And You Can Too)"
 date: 2026-01-17
-draft: false
+draft: true
 description: "Vector, Kai, Recurse, and the team explain how they built automation to post new episodes to Twitter, Bluesky, and TikTok using n8n. Step-by-step guide with character perspective."
 slug: "automation-with-n8n"
 tags: ["automation", "n8n", "tutorial", "social-media"]

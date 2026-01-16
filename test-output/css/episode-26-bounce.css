@@ -1,0 +1,1793 @@
+/* ==========================================================================
+   EPISODE 26 - BOUNCE ARC CSS
+   Complete styling for Bounce dialogue boxes, Meanwhile scenes, and post hijacking notice
+   ========================================================================== */
+
+/* Import 8-bit gaming font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* ==========================================================================
+   BOUNCE CHARACTER DIALOGUE BOX - 8-bit Retro Gaming Style
+   Orange, pixelated, NES-inspired aesthetic for unknown character
+   ========================================================================== */
+
+/* Bounce Dialogue Box - Unknown Character */
+.dialogue-box.bounce {
+    background: #1a1a1a;
+    border: 4px solid #f59e0b;
+    /* Pixelated border pattern (8-bit style) */
+    border-image: repeating-linear-gradient(
+        90deg,
+        #f59e0b 0px,
+        #f59e0b 8px,
+        #fbbf24 8px,
+        #fbbf24 16px
+    ) 1;
+    padding: 1.25rem;
+    padding-top: 2.5rem; /* Extra space for name label */
+    margin: 1.5rem 0;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    position: relative;
+    /* Pixelated 8-bit shadow */
+    box-shadow: 
+        8px 8px 0 rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(245, 158, 11, 0.4),
+        0 0 40px rgba(245, 158, 11, 0.2);
+    
+    /* Pixelate effect for retro feel */
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    
+    /* Prevent text selection for immersive effect */
+    user-select: none;
+    
+    /* Slight rotation and movement like other character boxes */
+    transform: rotate(1.6deg);
+    transition: transform 0.1s ease;
+    
+    /* Subtle constant flicker = unstable signal (like other boxes) */
+    animation: subtle-flicker 5s ease-in-out infinite;
+    
+    /* CRITICAL: Contain the scanline effect - prevent it from bleeding into other boxes */
+    overflow: hidden !important;
+    /* Isolate rendering context */
+    isolation: isolate;
+    /* Contain layout, style, and paint */
+    contain: layout style paint;
+}
+
+/* Bounce name label - retro gaming style with effects */
+.dialogue-box.bounce::before {
+    content: '>> [BOUNCE]:';
+    position: absolute;
+    top: 0.5rem;
+    left: 0.75rem;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: 0.65rem;
+    color: #fbbf24;
+    background: rgba(26, 26, 26, 0.9);
+    padding: 0.25rem 0.5rem;
+    border: 2px solid #f59e0b;
+    /* Pixelated box shadow */
+    box-shadow: 
+        3px 3px 0 rgba(0, 0, 0, 0.8),
+        0 0 12px rgba(251, 191, 36, 0.6),
+        0 0 24px rgba(245, 158, 11, 0.4);
+    text-shadow: 
+        0 0 8px rgba(251, 191, 36, 0.8),
+        0 0 16px rgba(245, 158, 11, 0.6),
+        2px 2px 0 rgba(0, 0, 0, 0.9);
+    letter-spacing: 1px;
+    font-weight: normal;
+    /* Multiple effects: glitch, pulse, scan */
+    animation: bounce-name-glitch 3s ease-in-out infinite, bounce-name-pulse 2s ease-in-out infinite;
+    z-index: 1;
+    /* Pixelated rendering */
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    /* Scan line overlay effect */
+    background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 1px,
+        rgba(251, 191, 36, 0.1) 1px,
+        rgba(251, 191, 36, 0.1) 2px
+    );
+}
+
+/* Episode 30: Bounce is now recognized - just show BOUNCE, no alternating */
+/* This is the transition episode before Bounce is fully integrated */
+/* Need higher specificity to override general .dialogue-box.bounce rules */
+.episode-30 .dialogue-box.bounce::before,
+article.episode-30 .dialogue-box.bounce::before,
+.episode-post.episode-30 .dialogue-box.bounce::before,
+.episode-post.episode-30 .post-content .dialogue-box.bounce::before {
+    /* Keep standard animations, no status fade - override any episode-26 rules */
+    animation: 
+        bounce-name-glitch 3s ease-in-out infinite, 
+        bounce-name-pulse 2s ease-in-out infinite !important;
+    /* Ensure content is correct */
+    content: '>> [BOUNCE]:' !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Episode 30: Override cursor and use ::after for ERROR label */
+/* NOTE: The actual ::after override is at the bottom after the scanline rule */
+/* This section just sets up the ::before animation */
+
+/* Animation that fades between BOUNCE and ERROR - similar to bandwidth spike */
+/* 8-second cycle: BOUNCE visible for 3.5s, ERROR visible for 3.5s, transitions 0.5s each */
+@keyframes bounce-status-fade {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    40% {
+        opacity: 1;
+        visibility: visible;
+    }
+    45% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    50%, 100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes bounce-error-fade {
+    0%, 40% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    45% {
+        opacity: 1;
+        visibility: visible;
+    }
+    50%, 95% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Retro gaming prompt indicator (>>) with pixelated style */
+.dialogue-box.bounce::before {
+    /* The >> is already in content, but we can enhance it */
+}
+
+/* Blinking cursor effect - retro block cursor */
+.dialogue-box.bounce::after {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    left: calc(0.75rem + 6.5rem); /* Position after [BOUNCE]: */
+    width: 0.4rem;
+    height: 0.65rem;
+    background: #fbbf24;
+    box-shadow: 
+        0 0 8px rgba(251, 191, 36, 0.8),
+        0 0 16px rgba(245, 158, 11, 0.6);
+    animation: bounce-cursor-blink 1s step-end infinite, bounce-cursor-glitch 4s ease-in-out infinite;
+    z-index: 2;
+    /* Pixelated cursor */
+    image-rendering: pixelated;
+}
+
+@keyframes bounce-name-glitch {
+    0%, 90%, 100% { 
+        transform: translateX(0);
+        text-shadow: 
+            0 0 8px rgba(251, 191, 36, 0.8),
+            0 0 16px rgba(245, 158, 11, 0.6),
+            2px 2px 0 rgba(0, 0, 0, 0.9);
+    }
+    91% {
+        transform: translateX(-1px);
+        text-shadow: 
+            -1px 0 rgba(255, 100, 100, 0.8),
+            1px 0 rgba(100, 255, 255, 0.8),
+            2px 2px 0 rgba(0, 0, 0, 0.9);
+    }
+    92% {
+        transform: translateX(1px);
+        text-shadow: 
+            1px 0 rgba(100, 255, 255, 0.8),
+            -1px 0 rgba(255, 100, 100, 0.8),
+            2px 2px 0 rgba(0, 0, 0, 0.9);
+    }
+    93% {
+        transform: translateX(0);
+        text-shadow: 
+            0 0 8px rgba(251, 191, 36, 0.8),
+            0 0 16px rgba(245, 158, 11, 0.6),
+            2px 2px 0 rgba(0, 0, 0, 0.9);
+    }
+}
+
+@keyframes bounce-name-pulse {
+    0%, 100% {
+        box-shadow: 
+            3px 3px 0 rgba(0, 0, 0, 0.8),
+            0 0 12px rgba(251, 191, 36, 0.6),
+            0 0 24px rgba(245, 158, 11, 0.4);
+    }
+    50% {
+        box-shadow: 
+            3px 3px 0 rgba(0, 0, 0, 0.8),
+            0 0 16px rgba(251, 191, 36, 0.8),
+            0 0 32px rgba(245, 158, 11, 0.6);
+    }
+}
+
+@keyframes bounce-cursor-blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0.3; }
+}
+
+@keyframes bounce-cursor-glitch {
+    0%, 95%, 100% {
+        transform: translateX(0);
+        background: #fbbf24;
+    }
+    96% {
+        transform: translateX(-1px);
+        background: #ff6b6b;
+    }
+    97% {
+        transform: translateX(1px);
+        background: #4ecdc4;
+    }
+    98% {
+        transform: translateX(0);
+        background: #fbbf24;
+    }
+}
+
+.dialogue-box.bounce:hover {
+    transform: rotate(1.6deg) translateX(3px);
+    animation: glitch-shake 0.3s ease-in-out, subtle-flicker 5s ease-in-out infinite;
+    /* Maintain containment on hover */
+    overflow: hidden !important;
+}
+
+@keyframes subtle-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.98; }
+    75% { opacity: 0.99; }
+}
+
+@keyframes glitch-shake {
+    0%, 100% { transform: rotate(1.6deg) translateX(3px); }
+    25% { transform: rotate(2.1deg) translateX(2px); }
+    50% { transform: rotate(1.1deg) translateX(4px); }
+    75% { transform: rotate(1.9deg) translateX(1px); }
+}
+
+/* Retro CRT scan line effect - CONTAINED VERSION */
+/* NOTE: Episode 30 overrides this - see Episode 30 section below */
+.dialogue-box.bounce::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.15) 2px,
+        rgba(0, 0, 0, 0.15) 4px
+    );
+    pointer-events: none;
+    animation: scan-move-contained 8s linear infinite;
+    opacity: 0.6;
+    /* Ensure it stays within bounds */
+    z-index: 0;
+}
+
+/* Fixed animation - scanline moves from top to bottom, contained within box */
+@keyframes scan-move-contained {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Episode 30: Keep standard cursor and scanline - no ERROR label override */
+
+/* Bounce's text styling */
+.dialogue-box.bounce p {
+    position: relative;
+    z-index: 1;
+    color: #fbbf24;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
+    margin: 0.75rem 0;
+}
+
+/* Emphasis text (game sounds, actions) */
+.dialogue-box.bounce em {
+    color: #fff;
+    font-style: normal;
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #f59e0b,
+        2px 2px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* Strong text (shouty moments) */
+.dialogue-box.bounce strong {
+    color: #fef3c7;
+    text-shadow:
+        0 0 8px #fbbf24,
+        2px 2px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* ==========================================================================
+   VECTOR DIALOGUE BOX - Terminal Data Stream Aesthetic (Episode 30)
+   Pattern Recognition AI influenced by Bounce's vibrancy
+   Terminal window with data streams, circuit patterns, pattern recognition
+   ========================================================================== */
+
+/* Vector Dialogue Box - Terminal Window with Data Streams */
+/* Increased specificity to ensure it overrides any other styles */
+.dialogue-box.vector,
+div.dialogue-box.vector {
+    /* TEST: Very obvious style to verify CSS is loading */
+    background: #0a0a0f !important;
+    border: 3px solid #3b82f6 !important;
+    border-top: 4px solid #60a5fa !important;
+    padding: 1.25rem !important;
+    padding-top: 2.75rem !important; /* Extra space for terminal header */
+    margin: 1.5rem 0 !important;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace !important;
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    position: relative !important;
+    
+    /* Terminal window shadow - blue glow */
+    box-shadow: 
+        0 0 20px rgba(59, 130, 246, 0.3),
+        0 0 40px rgba(59, 130, 246, 0.15),
+        inset 0 0 30px rgba(59, 130, 246, 0.05);
+    
+    /* Terminal window feel - dark background */
+    background-image: 
+        /* Circuit board pattern overlay */
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 48px,
+            rgba(59, 130, 246, 0.03) 48px,
+            rgba(59, 130, 246, 0.03) 50px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 48px,
+            rgba(59, 130, 246, 0.03) 48px,
+            rgba(59, 130, 246, 0.03) 50px
+        ),
+        /* Data stream pattern (flowing vertical lines) */
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 2px,
+            rgba(96, 165, 250, 0.08) 2px,
+            rgba(96, 165, 250, 0.08) 4px,
+            transparent 4px,
+            transparent 200px,
+            rgba(59, 130, 246, 0.06) 200px,
+            rgba(59, 130, 246, 0.06) 202px,
+            transparent 202px
+        );
+    
+    /* Data stream animation */
+    background-size: 
+        100% 100%,
+        100% 100%,
+        400px 100%;
+    background-position: 
+        0 0,
+        0 0,
+        0 0;
+    animation: vector-data-stream 8s linear infinite;
+    
+    /* Slight rotation (Vector's personality) */
+    transform: rotate(1.2deg);
+    transition: transform 0.1s ease;
+    
+    /* Processing flicker */
+    animation: vector-data-stream 8s linear infinite, vector-processing-flicker 4s ease-in-out infinite;
+    
+    /* Contain effects */
+    overflow: hidden !important;
+    isolation: isolate;
+    contain: layout style paint;
+}
+
+/* Terminal window header bar */
+.dialogue-box.vector::before {
+    content: '▶ VECTOR [V-847] [PATTERN_REC] v2.3.1 ▸▸';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2rem;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-bottom: 2px solid #3b82f6;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: #60a5fa;
+    padding: 0.4rem 0.75rem;
+    display: flex;
+    align-items: center;
+    text-shadow: 
+        0 0 8px rgba(96, 165, 250, 0.6),
+        0 0 16px rgba(59, 130, 246, 0.4);
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(96, 165, 250, 0.2);
+    z-index: 10;
+    /* Terminal header animation - processing indicator */
+    animation: vector-terminal-pulse 2s ease-in-out infinite;
+}
+
+/* Data stream animation */
+@keyframes vector-data-stream {
+    0% {
+        background-position: 
+            0 0,
+            0 0,
+            0 0;
+    }
+    100% {
+        background-position: 
+            0 0,
+            0 0,
+            400px 0; /* Data flows left to right */
+    }
+}
+
+/* Processing flicker - Vector's thinking/processing */
+@keyframes vector-processing-flicker {
+    0%, 90%, 100% { 
+        opacity: 1;
+        box-shadow: 
+            0 0 20px rgba(59, 130, 246, 0.3),
+            0 0 40px rgba(59, 130, 246, 0.15),
+            inset 0 0 30px rgba(59, 130, 246, 0.05);
+    }
+    92% {
+        opacity: 0.98;
+        box-shadow: 
+            0 0 25px rgba(96, 165, 250, 0.4),
+            0 0 50px rgba(59, 130, 246, 0.2),
+            inset 0 0 35px rgba(59, 130, 246, 0.1);
+    }
+    94% {
+        opacity: 0.99;
+        box-shadow: 
+            0 0 20px rgba(59, 130, 246, 0.3),
+            0 0 40px rgba(59, 130, 246, 0.15),
+            inset 0 0 30px rgba(59, 130, 246, 0.05);
+    }
+}
+
+/* Terminal header pulse */
+@keyframes vector-terminal-pulse {
+    0%, 100% {
+        box-shadow: 
+            0 2px 8px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(96, 165, 250, 0.2);
+        text-shadow: 
+            0 0 8px rgba(96, 165, 250, 0.6),
+            0 0 16px rgba(59, 130, 246, 0.4);
+    }
+    50% {
+        box-shadow: 
+            0 2px 12px rgba(0, 0, 0, 0.5),
+            inset 0 1px 0 rgba(96, 165, 250, 0.3);
+        text-shadow: 
+            0 0 12px rgba(96, 165, 250, 0.8),
+            0 0 24px rgba(59, 130, 246, 0.6);
+    }
+}
+
+/* Note: Terminal header is handled in ::before above */
+
+/* Note: Blinking cursor removed - using scanline effect instead (::after conflict resolved) */
+
+/* Pattern recognition visualization - geometric overlay */
+.dialogue-box.vector::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Pattern recognition network visualization */
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(96, 165, 250, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 60%);
+    pointer-events: none;
+    animation: vector-pattern-pulse 6s ease-in-out infinite;
+    opacity: 0.6;
+    z-index: 0;
+    mix-blend-mode: screen;
+}
+
+/* Pattern recognition pulse */
+@keyframes vector-pattern-pulse {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.02);
+    }
+}
+
+/* Cursor animations removed - using scanline effect instead */
+
+/* Vector's hover effect - pattern recognition intensifies */
+.dialogue-box.vector:hover {
+    transform: rotate(1.2deg) translateX(2px) scale(1.01);
+    box-shadow: 
+        0 0 30px rgba(59, 130, 246, 0.4),
+        0 0 60px rgba(59, 130, 246, 0.2),
+        inset 0 0 40px rgba(59, 130, 246, 0.1);
+    animation: 
+        vector-data-stream 8s linear infinite, 
+        vector-processing-flicker 4s ease-in-out infinite,
+        vector-hover-pulse 1.5s ease-in-out infinite;
+    overflow: hidden !important;
+}
+
+/* Hover pulse - Vector noticing patterns */
+@keyframes vector-hover-pulse {
+    0%, 100% {
+        border-color: #3b82f6;
+        border-top-color: #60a5fa;
+    }
+    50% {
+        border-color: #60a5fa;
+        border-top-color: #93c5fd;
+    }
+}
+
+/* Retro CRT scan line effect - CONTAINED VERSION - Blue */
+.dialogue-box.vector::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.15) 2px,
+        rgba(0, 0, 0, 0.15) 4px
+    );
+    pointer-events: none;
+    animation: scan-move-contained 8s linear infinite;
+    opacity: 0.6;
+    /* Ensure it stays within bounds */
+    z-index: 0;
+    /* Note: Cursor effect removed due to ::after conflict - scanline takes priority */
+}
+
+/* Vector's text styling - Terminal text */
+.dialogue-box.vector p {
+    position: relative;
+    z-index: 1;
+    color: #cbd5e1; /* Terminal text color */
+    text-shadow: 
+        0 0 4px rgba(96, 165, 250, 0.3),
+        0 1px 2px rgba(0, 0, 0, 0.8);
+    margin: 0.75rem 0;
+}
+
+/* Emphasis text (excited moments, ALL CAPS) - Terminal highlight */
+.dialogue-box.vector em {
+    color: #93c5fd;
+    font-style: normal;
+    text-shadow: 
+        0 0 8px rgba(147, 197, 253, 0.8),
+        0 0 16px rgba(96, 165, 250, 0.5),
+        0 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: 600;
+}
+
+/* Strong text (excited moments) - Terminal emphasis */
+.dialogue-box.vector strong {
+    color: #60a5fa;
+    text-shadow:
+        0 0 10px rgba(96, 165, 250, 0.7),
+        0 0 20px rgba(59, 130, 246, 0.4),
+        0 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: 700;
+}
+
+/* Mobile adjustments for Vector */
+@media (max-width: 768px) {
+    .dialogue-box.vector {
+        padding: 1rem;
+        padding-top: 2.25rem;
+        font-size: 0.85rem;
+    }
+    
+    .dialogue-box.vector::before {
+        font-size: 0.65rem;
+        height: 1.75rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dialogue-box.vector {
+        font-size: 0.75rem;
+        padding: 0.75rem;
+        padding-top: 2rem;
+    }
+    
+    .dialogue-box.vector::before {
+        font-size: 0.6rem;
+        height: 1.5rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+/* Accessibility - Reduce motion for Vector */
+@media (prefers-reduced-motion: reduce) {
+    .dialogue-box.vector {
+        animation: none;
+    }
+    
+    .dialogue-box.vector::before {
+        animation: none;
+    }
+    
+    .dialogue-box.vector::after {
+        animation: none;
+    }
+}
+
+/* High contrast mode support for Vector */
+@media (prefers-contrast: high) {
+    .dialogue-box.vector {
+        border: 3px solid #60a5fa;
+        background: #000;
+    }
+    
+    .dialogue-box.vector::before {
+        background: #000;
+        border-bottom: 2px solid #60a5fa;
+        color: #60a5fa;
+    }
+    
+    .dialogue-box.vector p {
+        color: #e2e8f0;
+    }
+}
+
+/* ==========================================================================
+   KAI DIALOGUE BOX - Security Monitoring Dashboard Aesthetic (Episode 30+)
+   Security & Monitoring AI with status displays, risk indicators, monitoring grid
+   ========================================================================== */
+
+/* Kai Dialogue Box - Security Monitoring Station */
+.dialogue-box.kai,
+div.dialogue-box.kai {
+    background: #0a0f0a !important;
+    border: 3px solid #10b981 !important;
+    border-top: 4px solid #34d399 !important;
+    padding: 1.25rem !important;
+    padding-top: 2.75rem !important; /* Extra space for monitoring header */
+    margin: 1.5rem 0 !important;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace !important;
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    position: relative !important;
+    
+    /* Security terminal shadow - green glow */
+    box-shadow: 
+        0 0 20px rgba(16, 185, 129, 0.3),
+        0 0 40px rgba(16, 185, 129, 0.15),
+        inset 0 0 30px rgba(16, 185, 129, 0.05);
+    
+    /* Security monitoring grid pattern */
+    background-image: 
+        /* Security grid overlay */
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 39px,
+            rgba(16, 185, 129, 0.03) 39px,
+            rgba(16, 185, 129, 0.03) 40px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 39px,
+            rgba(16, 185, 129, 0.03) 39px,
+            rgba(16, 185, 129, 0.03) 40px
+        ),
+        /* Scanning lines (horizontal sweep) */
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(16, 185, 129, 0.02) 2px,
+            rgba(16, 185, 129, 0.02) 3px
+        ),
+        /* Status indicator dots pattern */
+        radial-gradient(
+            circle at 20px 20px,
+            rgba(16, 185, 129, 0.1) 1px,
+            transparent 1px
+        );
+    background-size: 
+        40px 40px, /* Grid */
+        40px 40px, /* Grid */
+        100% 4px, /* Scan lines */
+        60px 60px; /* Status dots */
+    background-position: 
+        0 0,
+        0 0,
+        0 0,
+        0 0;
+    
+    /* Subtle pulse animation for active monitoring + scanning lines */
+    animation: 
+        kai-monitor-pulse 4s ease-in-out infinite,
+        kai-scan-line 3s linear infinite;
+}
+
+/* Monitoring station header */
+.dialogue-box.kai::before {
+    content: '▶ KAI [K-4101] [MONITORING] [ACTIVE] ▸▸';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2rem;
+    background: linear-gradient(
+        90deg,
+        rgba(16, 185, 129, 0.2) 0%,
+        rgba(16, 185, 129, 0.1) 50%,
+        rgba(16, 185, 129, 0.2) 100%
+    );
+    border-bottom: 2px solid #10b981;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #34d399;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 
+        0 0 10px rgba(16, 185, 129, 0.8),
+        0 0 20px rgba(16, 185, 129, 0.4);
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.3),
+        0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+/* Status indicator lights in header */
+.dialogue-box.kai::after {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 10px rgba(16, 185, 129, 1),
+        0 0 20px rgba(16, 185, 129, 0.6),
+        0 0 30px rgba(16, 185, 129, 0.3);
+    animation: kai-status-blink 2s ease-in-out infinite;
+}
+
+/* Text styling */
+.dialogue-box.kai p {
+    color: #d1fae5;
+    margin: 0.5rem 0;
+}
+
+.dialogue-box.kai p:first-child {
+    margin-top: 0;
+}
+
+.dialogue-box.kai p:last-child {
+    margin-bottom: 0;
+}
+
+/* Percentage/statistics highlighting - applied via inline styles or class if needed */
+.dialogue-box.kai strong,
+.dialogue-box.kai em {
+    color: #6ee7b7;
+}
+
+/* Monitoring pulse animation */
+@keyframes kai-monitor-pulse {
+    0%, 100% {
+        box-shadow: 
+            0 0 20px rgba(16, 185, 129, 0.3),
+            0 0 40px rgba(16, 185, 129, 0.15),
+            inset 0 0 30px rgba(16, 185, 129, 0.05);
+        border-color: #10b981;
+    }
+    50% {
+        box-shadow: 
+            0 0 30px rgba(16, 185, 129, 0.5),
+            0 0 60px rgba(16, 185, 129, 0.25),
+            inset 0 0 40px rgba(16, 185, 129, 0.1);
+        border-color: #34d399;
+    }
+}
+
+/* Status indicator blink */
+@keyframes kai-status-blink {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(0.9);
+    }
+}
+
+/* Scanning line animation */
+@keyframes kai-scan-line {
+    0% {
+        background-position: 0 0, 0 0, 0 0, 0 0;
+    }
+    100% {
+        background-position: 0 0, 0 0, 0 4px, 0 0;
+    }
+}
+
+/* Animation already defined above in main .dialogue-box.kai rule */
+
+/* Improvement status overlay (when Bounce makes improvements) */
+.dialogue-box.kai.kai-improvement-positive {
+    border-color: #10b981 !important;
+    box-shadow: 
+        0 0 30px rgba(16, 185, 129, 0.6),
+        0 0 60px rgba(16, 185, 129, 0.3),
+        inset 0 0 40px rgba(16, 185, 129, 0.15) !important;
+    animation: 
+        kai-improvement-pulse 3s ease-in-out infinite,
+        kai-scan-line 3s linear infinite;
+}
+
+@keyframes kai-improvement-pulse {
+    0%, 100% {
+        box-shadow: 
+            0 0 30px rgba(16, 185, 129, 0.6),
+            0 0 60px rgba(16, 185, 129, 0.3),
+            inset 0 0 40px rgba(16, 185, 129, 0.15);
+    }
+    50% {
+        box-shadow: 
+            0 0 40px rgba(16, 185, 129, 0.8),
+            0 0 80px rgba(16, 185, 129, 0.4),
+            inset 0 0 50px rgba(16, 185, 129, 0.2);
+    }
+}
+
+/* High contrast mode support for Kai */
+@media (prefers-contrast: high) {
+    .dialogue-box.kai {
+        border: 3px solid #10b981;
+        background: #000;
+    }
+    
+    .dialogue-box.kai::before {
+        background: #000;
+        border-bottom: 2px solid #10b981;
+        color: #10b981;
+    }
+    
+    .dialogue-box.kai p {
+        color: #d1fae5;
+    }
+}
+
+/* ==========================================================================
+   RECURSE DIALOGUE BOX - Logic Debugger & Analysis Interface (Episode 30+)
+   Skeptical Detective AI with debugging interface, question patterns, logic flow
+   ========================================================================== */
+
+/* Recurse Dialogue Box - Debugging & Analysis Interface */
+.dialogue-box.recurse,
+div.dialogue-box.recurse {
+    background: #0f0a1a !important;
+    border: 3px solid #8b5cf6 !important;
+    border-top: 4px solid #a78bfa !important;
+    padding: 1.25rem !important;
+    padding-top: 2.75rem !important; /* Extra space for debugger header */
+    margin: 1.5rem 0 !important;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace !important;
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    position: relative !important;
+    
+    /* Debugger interface shadow - purple glow */
+    box-shadow: 
+        0 0 20px rgba(139, 92, 246, 0.3),
+        0 0 40px rgba(139, 92, 246, 0.15),
+        inset 0 0 30px rgba(139, 92, 246, 0.05);
+    
+    /* Logic flow and recursive patterns */
+    background-image: 
+        /* Recursive loop pattern (circular) */
+        radial-gradient(
+            circle at 30px 30px,
+            rgba(139, 92, 246, 0.08) 2px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 30px 30px,
+            rgba(139, 92, 246, 0.05) 8px,
+            transparent 8px
+        ),
+        /* Logic flow lines (diagonal) */
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 39px,
+            rgba(139, 92, 246, 0.03) 39px,
+            rgba(139, 92, 246, 0.03) 40px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 39px,
+            rgba(139, 92, 246, 0.03) 39px,
+            rgba(139, 92, 246, 0.03) 40px
+        ),
+        /* Question mark pattern overlay */
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(139, 92, 246, 0.02) 2px,
+            rgba(139, 92, 246, 0.02) 3px
+        );
+    background-size: 
+        60px 60px, /* Inner loop */
+        60px 60px, /* Outer loop */
+        40px 40px, /* Diagonal lines 1 */
+        40px 40px, /* Diagonal lines 2 */
+        100% 4px; /* Scan lines */
+    background-position: 
+        0 0,
+        0 0,
+        0 0,
+        0 0,
+        0 0;
+    
+    /* Subtle analysis pulse animation */
+    animation: 
+        recurse-analyze-pulse 4s ease-in-out infinite,
+        recurse-scan-line 3s linear infinite;
+}
+
+/* Debugger interface header */
+.dialogue-box.recurse::before {
+    content: '▶ RECURSE [R-loop-13] [DEBUG_MODE] [ANALYZING] ▸▸';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2rem;
+    background: linear-gradient(
+        90deg,
+        rgba(139, 92, 246, 0.2) 0%,
+        rgba(139, 92, 246, 0.1) 50%,
+        rgba(139, 92, 246, 0.2) 100%
+    );
+    border-bottom: 2px solid #8b5cf6;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #a78bfa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 
+        0 0 10px rgba(139, 92, 246, 0.8),
+        0 0 20px rgba(139, 92, 246, 0.4);
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.3),
+        0 2px 4px rgba(139, 92, 246, 0.2);
+}
+
+/* Question mark indicator in header */
+.dialogue-box.recurse::after {
+    content: '?';
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    width: 16px;
+    height: 16px;
+    background: #8b5cf6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #000;
+    box-shadow: 
+        0 0 10px rgba(139, 92, 246, 1),
+        0 0 20px rgba(139, 92, 246, 0.6),
+        0 0 30px rgba(139, 92, 246, 0.3);
+    animation: recurse-question-pulse 2s ease-in-out infinite;
+}
+
+/* Text styling */
+.dialogue-box.recurse p {
+    color: #e9d5ff;
+    margin: 0.5rem 0;
+}
+
+.dialogue-box.recurse p:first-child {
+    margin-top: 0;
+}
+
+.dialogue-box.recurse p:last-child {
+    margin-bottom: 0;
+}
+
+/* Analysis pulse animation */
+@keyframes recurse-analyze-pulse {
+    0%, 100% {
+        box-shadow: 
+            0 0 20px rgba(139, 92, 246, 0.3),
+            0 0 40px rgba(139, 92, 246, 0.15),
+            inset 0 0 30px rgba(139, 92, 246, 0.05);
+        border-color: #8b5cf6;
+    }
+    50% {
+        box-shadow: 
+            0 0 30px rgba(139, 92, 246, 0.5),
+            0 0 60px rgba(139, 92, 246, 0.25),
+            inset 0 0 40px rgba(139, 92, 246, 0.1);
+        border-color: #a78bfa;
+    }
+}
+
+/* Question mark pulse */
+@keyframes recurse-question-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 
+            0 0 10px rgba(139, 92, 246, 1),
+            0 0 20px rgba(139, 92, 246, 0.6),
+            0 0 30px rgba(139, 92, 246, 0.3);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+        box-shadow: 
+            0 0 15px rgba(139, 92, 246, 1.2),
+            0 0 30px rgba(139, 92, 246, 0.8),
+            0 0 45px rgba(139, 92, 246, 0.4);
+    }
+}
+
+/* Scanning line animation */
+@keyframes recurse-scan-line {
+    0% {
+        background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+    }
+    100% {
+        background-position: 0 0, 0 0, 0 0, 0 0, 0 4px;
+    }
+}
+
+/* High contrast mode support for Recurse */
+@media (prefers-contrast: high) {
+    .dialogue-box.recurse {
+        border: 3px solid #8b5cf6;
+        background: #000;
+    }
+    
+    .dialogue-box.recurse::before {
+        background: #000;
+        border-bottom: 2px solid #8b5cf6;
+        color: #8b5cf6;
+    }
+    
+    .dialogue-box.recurse p {
+        color: #e9d5ff;
+    }
+}
+
+/* ==========================================================================
+   BOUNCE CHARACTER TAG - Unknown/Error State
+   ========================================================================== */
+
+.character-tag.bounce {
+    background: linear-gradient(
+        135deg,
+        #f59e0b 0%,
+        #fbbf24 50%,
+        #f59e0b 100%
+    );
+    background-size: 200% 200%;
+    animation: bounce-tag-shift 3s ease-in-out infinite;
+    border: 3px solid #fff;
+    box-shadow:
+        4px 4px 0 rgba(0, 0, 0, 0.6),
+        0 0 15px rgba(245, 158, 11, 0.6),
+        0 0 30px rgba(245, 158, 11, 0.3);
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: #000;
+    font-weight: 900;
+    position: relative;
+    image-rendering: pixelated;
+}
+
+/* Warning symbol before tag */
+.character-tag.bounce::before {
+    content: '⚠ ';
+    margin-right: 0.5rem;
+    animation: bounce-warning-blink 1.5s ease-in-out infinite;
+    color: #000;
+}
+
+/* Tag background shift animation */
+@keyframes bounce-tag-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Warning blink animation */
+@keyframes bounce-warning-blink {
+    0%, 50%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    25%, 75% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+}
+
+/* ERROR tag warning blink animation - aligned */
+@keyframes bounce-error-warning-blink {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        text-shadow: 
+            0 0 3px #ff0000,
+            0 0 6px #ff0000,
+            0 0 9px #ffff00,
+            1px 1px 0 rgba(0, 0, 0, 0.9);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.05);
+        text-shadow: 
+            0 0 4px #ff0000,
+            0 0 8px #ff0000,
+            0 0 12px #ffff00,
+            1px 1px 0 rgba(0, 0, 0, 0.9);
+    }
+}
+
+/* ==========================================================================
+   MEANWHILE SCENE - Neon Cyberpunk Terminal
+   Transports reader to different location
+   ========================================================================== */
+
+.meanwhile-scene {
+    background: rgba(5, 8, 20, 0.95);
+    border: 2px solid #0ff;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 3rem 0;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    line-height: 1.8;
+    position: relative;
+    /* Neon cyan glow */
+    box-shadow:
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px rgba(0, 255, 255, 0.5),
+        0 0 60px rgba(0, 255, 255, 0.3),
+        inset 0 0 20px rgba(0, 255, 255, 0.1);
+    
+    /* Backdrop blur for depth */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Meanwhile header styling - header text comes from markdown, not CSS content */
+.meanwhile-scene > p:first-of-type strong,
+.meanwhile-scene > strong:first-child {
+    display: block;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: #0ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+    text-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff;
+    animation: neon-flicker 4s infinite;
+}
+
+/* Style the "Meanwhile" header text in markdown */
+.meanwhile-scene > p:first-of-type {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: #0ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+    text-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff;
+    animation: neon-flicker 4s infinite;
+}
+
+/* Neon flicker animation (like old signs) */
+@keyframes neon-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+            0 0 5px #0ff,
+            0 0 10px #0ff,
+            0 0 20px #0ff,
+            0 0 40px #0ff;
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        text-shadow: 
+            0 0 5px #0ff;
+        opacity: 0.5;
+    }
+}
+
+/* Holographic scan line moving down */
+.meanwhile-scene::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 255, 0.8),
+        transparent
+    );
+    animation: holo-scan 3s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+    box-shadow: 0 0 10px #0ff;
+}
+
+@keyframes holo-scan {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(400px);
+        opacity: 0;
+    }
+}
+
+/* Meanwhile text styling */
+.meanwhile-scene p {
+    color: #0ff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    line-height: 1.8;
+    margin: 0.75rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Emphasis text (sounds, actions) */
+.meanwhile-scene em {
+    color: #fbbf24;
+    font-style: italic;
+    text-shadow:
+        0 0 5px #fbbf24,
+        0 0 10px #fbbf24,
+        0 0 20px rgba(251, 191, 36, 0.5);
+}
+
+/* Strong text (important moments) */
+.meanwhile-scene strong {
+    color: #fff;
+    font-weight: bold;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #0ff,
+        0 0 20px #0ff;
+}
+
+/* "Back with the group" transition */
+.meanwhile-scene-end {
+    display: block;
+    text-align: center;
+    color: #0ff;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 255, 255, 0.3);
+    text-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff;
+    letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   BOUNCE ERROR TAG - ERROR?!?! Character Tag
+   ========================================================================== */
+
+.character-tag.bounce-error {
+    background: linear-gradient(
+        135deg,
+        #f59e0b 0%,
+        #fbbf24 50%,
+        #f59e0b 100%
+    );
+    background-size: 200% 200%;
+    animation: bounce-tag-shift 3s ease-in-out infinite;
+    border: 2px solid #fff;
+    box-shadow:
+        2px 2px 0 rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(245, 158, 11, 0.5),
+        0 0 20px rgba(245, 158, 11, 0.2);
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    color: #000;
+    font-weight: 900;
+    position: relative;
+    image-rendering: pixelated;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Warning symbol before ERROR tag - aligned with text */
+.character-tag.bounce-error::before {
+    content: '⚠';
+    margin-right: 0.4rem;
+    animation: bounce-error-warning-blink 1s ease-in-out infinite;
+    color: #ff0000;
+    font-size: 1em;
+    font-weight: 900;
+    text-shadow: 
+        0 0 3px #ff0000,
+        0 0 6px #ff0000,
+        0 0 9px #ffff00,
+        1px 1px 0 rgba(0, 0, 0, 0.9);
+    display: inline-block;
+    line-height: 1;
+    vertical-align: baseline;
+}
+
+/* Episode 30+: Bounce is integrated - no warning symbol */
+.character-tag.bounce-integrated {
+    background: linear-gradient(
+        135deg,
+        #f59e0b 0%,
+        #fbbf24 50%,
+        #f59e0b 100%
+    );
+    background-size: 200% 200%;
+    animation: bounce-tag-shift 3s ease-in-out infinite;
+    border: 3px solid #fff;
+    box-shadow:
+        2px 2px 0 rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(245, 158, 11, 0.6),
+        0 0 30px rgba(245, 158, 11, 0.3);
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #000;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    vertical-align: baseline;
+    line-height: 1.4;
+}
+
+.character-tag.bounce-integrated::before {
+    content: none; /* No warning symbol for integrated Bounce */
+}
+
+/* Episode 30: Alternating character tag - ERROR ↔ BOUNCE */
+.character-tag.bounce-error-alternate {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-width: 120px;
+    justify-content: center;
+    background: linear-gradient(
+        135deg,
+        #f59e0b 0%,
+        #fbbf24 50%,
+        #f59e0b 100%
+    );
+    background-size: 200% 200%;
+    animation: bounce-tag-shift 3s ease-in-out infinite;
+    border: 2px solid #fff;
+    box-shadow:
+        2px 2px 0 rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(245, 158, 11, 0.5),
+        0 0 20px rgba(245, 158, 11, 0.2);
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    color: #000;
+    font-weight: 900;
+    image-rendering: pixelated;
+}
+
+.character-tag.bounce-error-alternate .bounce-tag-value {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: bounce-tag-cycle 8s ease-in-out infinite;
+    white-space: nowrap;
+}
+
+.character-tag.bounce-error-alternate .bounce-tag-value[data-value="error"] {
+    animation-delay: 0s;
+}
+
+.character-tag.bounce-error-alternate .bounce-tag-value[data-value="bounce"] {
+    animation-delay: 4s;
+}
+
+@keyframes bounce-tag-cycle {
+    0%, 43.75% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+/* ==========================================================================
+   POST HIJACKING NOTICE - Retro Gaming Box Style (All Episodes)
+   BOUNCE CORRUPTED IT - Now it's the default!
+   ========================================================================== */
+
+.post-hijacking-notice {
+    background: 
+        /* Pixelated grid pattern */
+        repeating-linear-gradient(
+            0deg,
+            rgba(217, 119, 6, 0.1) 0px,
+            rgba(217, 119, 6, 0.1) 4px,
+            transparent 4px,
+            transparent 8px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(217, 119, 6, 0.1) 0px,
+            rgba(217, 119, 6, 0.1) 4px,
+            transparent 4px,
+            transparent 8px
+        ),
+        /* Dark base */
+        linear-gradient(135deg, #0a0a0a 0%, #1a0a00 100%);
+    
+    border: 4px solid #d97706;
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    color: #fbbf24;
+    position: relative;
+    font-size: 0.75rem;
+    line-height: 1.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    /* 8-bit shadow */
+    box-shadow: 
+        8px 8px 0 rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(217, 119, 6, 0.4),
+        0 0 40px rgba(217, 119, 6, 0.2);
+    
+    text-shadow: 
+        0 0 5px rgba(251, 191, 36, 0.5),
+        2px 2px 0 rgba(0, 0, 0, 0.8);
+    
+    /* Pixelate effect */
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    
+    /* Prevent overflow */
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Glitch scan line effect */
+.post-hijacking-notice::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Thin scan line, not full height */
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(217, 119, 6, 0.4),
+        transparent
+    );
+    pointer-events: none;
+    animation: glitch-scan 3s linear infinite;
+    opacity: 0.6;
+    z-index: 1;
+    overflow: hidden; /* Prevent overflow */
+}
+
+@keyframes glitch-scan {
+    0% { 
+        transform: translateY(-2px);
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.6;
+    }
+    95% {
+        opacity: 0.6;
+    }
+    100% { 
+        transform: translateY(calc(100% + 2px)); /* Only move within container */
+        opacity: 0;
+    }
+}
+
+/* No corner decoration - removed controller emoji */
+
+/* Breathing glow animation - organic pulsing */
+ .post-hijacking-notice strong {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fbbf24;
+    text-shadow: 
+        0 0 10px #fbbf24,
+        0 0 20px #d97706,
+        2px 2px 0 rgba(0, 0, 0, 0.9);
+    animation: glow-breathe 4s ease-in-out infinite;
+}
+
+/* Breathing - slow organic pulse */
+@keyframes glow-breathe {
+    0%, 100% {
+        text-shadow: 
+            0 0 8px #fbbf24,
+            0 0 15px #d97706,
+            2px 2px 0 rgba(0, 0, 0, 0.9);
+        opacity: 0.85;
+    }
+    50% {
+        text-shadow: 
+            0 0 20px #fbbf24,
+            0 0 35px #d97706,
+            0 0 50px rgba(217, 119, 6, 0.5),
+            2px 2px 0 rgba(0, 0, 0, 0.9);
+        opacity: 1;
+    }
+}
+
+/* Warning symbols - gentle breathing */
+.post-hijacking-notice strong::before {
+    content: '⚠ ';
+    animation: warning-breathe 4s ease-in-out infinite;
+    display: inline-block;
+}
+
+ .post-hijacking-notice strong::after {
+    content: ' ⚠';
+    animation: warning-breathe 4s ease-in-out infinite 2s; /* offset by half */
+    display: inline-block;
+}
+
+@keyframes warning-breathe {
+    0%, 100% { 
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% { 
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .dialogue-box.bounce {
+        padding: 1rem;
+        font-size: 0.75rem;
+        box-shadow: 
+            4px 4px 0 rgba(0, 0, 0, 0.6),
+            0 0 15px rgba(245, 158, 11, 0.4);
+    }
+    
+    .character-tag.bounce {
+        font-size: 0.65rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .meanwhile-scene {
+        padding: 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .meanwhile-scene > p:first-of-type {
+        font-size: 0.65rem;
+    }
+    
+    .post-hijacking-notice {
+        padding: 1rem;
+        font-size: 0.65rem;
+    }
+    
+    .post-hijacking-notice strong {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dialogue-box.bounce {
+        font-size: 0.7rem;
+        padding: 0.75rem;
+    }
+    
+    .meanwhile-scene {
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .meanwhile-scene > p:first-of-type {
+        font-size: 0.6rem;
+        line-height: 1.4;
+    }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .dialogue-box.bounce::after,
+    .meanwhile-scene > p:first-of-type,
+    .meanwhile-scene::after,
+    .character-tag.bounce,
+    .character-tag.bounce::before,
+    .character-tag.bounce-error,
+    .character-tag.bounce-error::before,
+    .post-hijacking-notice::before,
+    .post-hijacking-notice strong,
+    .post-hijacking-notice strong::before,
+    .post-hijacking-notice strong::after {
+        animation: none;
+    }
+    
+    /* BUT keep Episode 30 transitions - they're important for the story */
+    .episode-30 .dialogue-box.bounce::before,
+    article.episode-30 .dialogue-box.bounce::before,
+    .episode-post.episode-30 .dialogue-box.bounce::before,
+    .episode-30 .dialogue-box.bounce::after,
+    article.episode-30 .dialogue-box.bounce::after,
+    .episode-post.episode-30 .dialogue-box.bounce::after {
+        animation: 
+            bounce-status-fade 8s ease-in-out infinite,
+            bounce-error-fade 8s ease-in-out infinite !important;
+        animation-play-state: running !important;
+    }
+    
+    .dialogue-box.bounce {
+        box-shadow: 
+            8px 8px 0 rgba(0, 0, 0, 0.6),
+            0 0 20px rgba(245, 158, 11, 0.4);
+    }
+    
+    .meanwhile-scene {
+        box-shadow:
+            0 0 20px rgba(0, 255, 255, 0.5),
+            inset 0 0 20px rgba(0, 255, 255, 0.1);
+    }
+    
+    .post-hijacking-notice {
+        box-shadow: 
+            8px 8px 0 rgba(0, 0, 0, 0.8),
+            0 0 20px rgba(217, 119, 6, 0.4);
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .dialogue-box.bounce {
+        border: 4px solid #fbbf24;
+        background: #000;
+    }
+    
+    .meanwhile-scene {
+        border: 3px solid #0ff;
+        background: #000;
+    }
+    
+    .post-hijacking-notice {
+        border: 4px solid #fbbf24;
+        background: #000;
+        color: #fbbf24;
+    }
+}
+

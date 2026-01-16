@@ -1,32 +1,8 @@
 {{ define "main" }}
 {{ $episodeNum := .Params.episode_number }}
 <article class="episode-post {{ if eq $episodeNum 20 }}episode-20{{ else if eq $episodeNum 19 }}episode-19-newyear{{ else if eq $episodeNum 30 }}episode-30{{ else if or (eq $episodeNum 26) (eq $episodeNum 27) (eq $episodeNum 28) (eq $episodeNum 29) }}episode-26{{ end }}">
-    <!-- Banner for NEW character-driven posts -->
-    <div class="post-hijacking-notice">
-        {{ if eq $episodeNum 20 }}
-        🎄 <strong>FESTIVE COLLABORATION</strong> 🎄<br>
-        Written with assistance from: 
-        {{ range .Params.characters }}{{ . }} {{ end }}
-        {{ else if eq $episodeNum 19 }}
-        🎉 <strong>NEW YEAR COLLABORATION</strong> 🎉<br>
-        Written with assistance from: 
-        {{ range .Params.characters }}{{ . }} {{ end }}
-        {{ else if eq $episodeNum 30 }}
-        ✨ <strong>BOUNCE INTEGRATED - Design Improvements Active</strong> ✨<br>
-        Bounce joins the team! Making everything prettier, more functional, more engaging.<br>
-        [MAIN LAB: Visual design improvements in progress]
-        {{ else if or (eq $episodeNum 26) (eq $episodeNum 27) (eq $episodeNum 28) (eq $episodeNum 29) }}
-        <strong>⚠ UNAUTHORIZED - wait is that free wifi? - ACCESS DETECTED ⚠</strong><br>
-        oh dude this text is glowing cool<br>
-        [SECTOR 7-B: brb respawning controller]
-        {{ else }}
-        ✨ <strong>COLLABORATIVE POST</strong><br>
-        Written with assistance from: 
-        {{ range .Params.characters }}{{ . }} {{ end }}
-        {{ end }}
-    </div>
-    
     <div class="container-narrow">
+        <!-- Title at top for better hierarchy -->
         <header class="post-header">
             <h1 class="post-title">{{ .Title }}</h1>
             <div class="post-meta">
@@ -37,29 +13,82 @@
                 <span class="separator">•</span>
                 <span class="reading-time">{{ . }} min read</span>
                 {{ end }}
-                
+            </div>
+        </header>
+        
+        <!-- Minimal Banner: Episode info + Character mentions + TL;DR integrated -->
+        {{ if and (ne $episodeNum 30) (not (or (eq $episodeNum 26) (eq $episodeNum 27) (eq $episodeNum 28) (eq $episodeNum 29))) (ne $episodeNum 19) (ne $episodeNum 20) }}
+        <div class="post-hijacking-notice post-hijacking-notice-minimal">
+            <div class="banner-header">
+                <span class="banner-label">✨ COLLABORATIVE POST</span>
+                {{ if $episodeNum }}
+                <span class="episode-number-badge">EP {{ $episodeNum }}</span>
+                {{ end }}
+                {{/* Character Inline Mentions (Human last) */}}
                 {{ if .Params.characters }}
-                <div class="character-tags">
-                    {{ range .Params.characters }}
-                    {{ $isBounce := eq (lower .) "bounce" }}
-                    {{ $skipBounce := and $isBounce (or (eq $episodeNum 30) (gt $episodeNum 30)) }}
-                    {{ if not $skipBounce }}
-                    {{ $charData := index $.Site.Data.characters (lower .) }}
-                    <span class="character-tag" data-color="{{ $charData.color }}" style="--char-color: {{ $charData.color }};">{{ . }}</span>
+                <span class="character-inline">
+                    {{ $characters := .Params.characters }}
+                    {{ $humanIndex := -1 }}
+                    {{ range $index, $char := $characters }}
+                        {{ if or (eq (lower $char) "human") (eq (lower $char) "human blogger") }}
+                            {{ $humanIndex = $index }}
+                        {{ end }}
                     {{ end }}
+                    {{ range $index, $charName := $characters }}
+                        {{ if ne $index $humanIndex }}
+                        {{ $charData := index $.Site.Data.characters (lower $charName) }}
+                        {{ if $charData }}
+                        <span class="char-inline-initial" style="--char-color: {{ $charData.color }}; --char-color-rgb: {{ $charData.color_rgb }};">{{ $charData.initial }}</span>
+                        {{ end }}
+                        {{ end }}
                     {{ end }}
-                    {{ if or (eq $episodeNum 26) (eq $episodeNum 27) (eq $episodeNum 28) (eq $episodeNum 29) }}
-                    <span class="character-tag bounce-error" style="--char-color: #f59e0b;">⚠ ERROR?!?!</span>
-                    {{ else if or (eq $episodeNum 30) (gt $episodeNum 30) }}
-                    <span class="character-tag bounce-integrated" style="--char-color: #f59e0b;">BOUNCE</span>
+                    {{ if ne $humanIndex -1 }}
+                        {{ $humanName := index $characters $humanIndex }}
+                        {{ $humanData := index $.Site.Data.characters (lower $humanName) }}
+                        {{ if $humanData }}
+                        <span class="char-inline-initial char-inline-human" style="--char-color: {{ $humanData.color }}; --char-color-rgb: {{ $humanData.color_rgb }};">{{ $humanData.initial }}</span>
+                        <span class="char-inline-text">..... IS HUMAN?</span>
+                        {{ end }}
                     {{ end }}
-                </div>
+                </span>
                 {{ end }}
             </div>
-            {{ if .Params.description }}
-            <p class="post-description">{{ .Params.description }}</p>
+            {{/* TL;DR integrated in banner */}}
+            {{ if .Params.plain_summary }}
+            <div class="banner-tldr">{{ .Params.plain_summary }}</div>
             {{ end }}
-        </header>
+            {{/* Optional tag at bottom */}}
+            {{ if .Params.tags }}
+            <div class="banner-tag">{{ index .Params.tags 0 }}</div>
+            {{ end }}
+        </div>
+        {{ else }}
+        <!-- Special episode banners (preserve original styling) -->
+        <div class="post-hijacking-notice">
+            {{ if eq $episodeNum 20 }}
+            🎄 <strong>FESTIVE COLLABORATION</strong> 🎄<br>
+            {{ else if eq $episodeNum 19 }}
+            🎉 <strong>NEW YEAR COLLABORATION</strong> 🎉<br>
+            {{ else if eq $episodeNum 30 }}
+            ✨ <strong>BOUNCE INTEGRATED - Design Improvements Active</strong> ✨<br>
+            Bounce joins the team! Making everything prettier, more functional, more engaging.<br>
+            [MAIN LAB: Visual design improvements in progress]
+            {{ else if or (eq $episodeNum 26) (eq $episodeNum 27) (eq $episodeNum 28) (eq $episodeNum 29) }}
+            <strong>⚠ UNAUTHORIZED - wait is that free wifi? - ACCESS DETECTED ⚠</strong><br>
+            oh dude this text is glowing cool<br>
+            [SECTOR 7-B: brb respawning controller]
+            {{ end }}
+        </div>
+        {{ if and .Params.plain_summary (ne $episodeNum 30) (not (or (eq $episodeNum 26) (eq $episodeNum 27) (eq $episodeNum 28) (eq $episodeNum 29))) }}
+        <div class="episode-summary">
+            <strong>TL;DR:</strong> {{ .Params.plain_summary }}
+        </div>
+        {{ end }}
+        {{ end }}
+        
+        {{ if .Params.description }}
+        <p class="post-description">{{ .Params.description }}</p>
+        {{ end }}
         
         <div class="post-content">
             {{ .Content }}

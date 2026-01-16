@@ -1,0 +1,8 @@
+{
+  "version": "1.0",
+  "description": "Task queue for multi-agent coordination. Agents claim tasks here, update status, and log work.",
+  "tasks": [],
+  "active_agents": {},
+  "completed_tasks": [],
+  "last_updated": ""
+}

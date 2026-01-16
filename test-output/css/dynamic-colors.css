@@ -1,0 +1,364 @@
+/**
+ * Dynamic Color System
+ * Uses CSS custom properties (variables) set via data attributes
+ * Replaces inline styles for better performance and maintainability
+ */
+
+/* Character Status Items - Dynamic Border Color */
+.character-status-item[data-color] {
+    border-left: 3px solid var(--char-color);
+}
+
+.character-status-item[data-color] .status-indicator {
+    background: var(--char-color);
+}
+
+.character-status-item[data-color] .char-badge {
+    background: var(--char-color);
+}
+
+/* Character Avatar - Dynamic Background */
+.character-avatar[data-color] {
+    background: var(--char-color);
+    box-shadow: 0 0 30px var(--char-color);
+}
+
+/* Character Name - Dynamic Text Color */
+.character-name[data-color] {
+    color: var(--char-color);
+}
+
+/* Character Section Headings - Dynamic Color */
+.character-section h2[data-color],
+.character-section h3[data-color] {
+    color: var(--char-color);
+    font-family: 'Courier New', monospace;
+}
+
+/* Info Grid - Dynamic Background and Border */
+.info-grid[data-color][data-rgb] {
+    background: rgba(var(--char-color-rgb), 0.1);
+    border-left: 4px solid var(--char-color);
+}
+
+/* Stats Display - Dynamic Border */
+.stats-display[data-color][data-rgb] {
+    background: rgba(var(--char-color-rgb), 0.05);
+    border: 2px solid var(--char-color);
+}
+
+/* Stat Value - Dynamic Color */
+.stat-value[data-color] {
+    color: var(--char-color);
+}
+
+/* Character Tag - Dynamic Background */
+.character-tag[data-color] {
+    background: var(--char-color);
+}
+
+/* Episode Badge - Dynamic Colors */
+.episode-badge[data-color][data-rgb] {
+    background: rgba(var(--char-color-rgb), 0.2);
+    border: 1px solid var(--char-color);
+    color: var(--char-color);
+}
+
+/* Character Link - Dynamic Color */
+.character-link[data-color] {
+    color: var(--char-color);
+    border-bottom-color: var(--char-color);
+}
+
+/* Relationship Item - Dynamic Border */
+.relationship-item[data-color][data-rgb] {
+    background: rgba(var(--char-color-rgb), 0.05);
+    border-left: 3px solid var(--char-color);
+}
+
+/* Character Note - Dynamic Border */
+.character-note[data-color] {
+    border-left-color: var(--char-color);
+}
+
+/* Character Dialogue - Dynamic Border and Background */
+.character-dialogue[data-color] {
+    border-left-color: var(--char-color);
+}
+
+.character-dialogue[data-color] .character-name {
+    background: var(--char-color);
+}
+
+/* Nav Character Note - Dynamic Border */
+.nav-character-note[data-color] {
+    border-left-color: var(--char-color);
+}
+
+.nav-character-note[data-color] strong {
+    color: var(--char-color);
+}
+
+/* Catchphrase Item - Dynamic Color */
+.catchphrase-item[data-color] {
+    color: var(--char-color);
+}
+
+/* Catchphrase Container - Dynamic Background */
+.catchphrase-container[data-color][data-rgb] {
+    background: rgba(var(--char-color-rgb), 0.05);
+}
+
+/* Origin Container - Dynamic Background and Border */
+.origin-container[data-color][data-rgb] {
+    background: rgba(var(--char-color-rgb), 0.1);
+    border-left: 4px solid var(--char-color);
+}
+
+/* Episode Appearances Container - Dynamic Background and Border */
+.episodes-container[data-color][data-rgb] {
+    background: rgba(var(--char-color-rgb), 0.1);
+    border-left: 4px solid var(--char-color);
+}
+
+/* Footer Status Value - Specific color (operational green) */
+.status-value.operational {
+    color: #10b981;
+}
+
+/* Footer Character Notes - Dynamic Border */
+.footer-character-notes .character-note[data-color] {
+    border-left-color: var(--char-color);
+}
+
+.footer-character-notes .character-note[data-color] strong {
+    color: var(--char-color);
+}
+
+/* Sidebar Footer Text */
+.sidebar-footer-text {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--color-text-secondary);
+}
+
+/* Character Nav Back */
+.character-nav-back {
+    margin-bottom: 2rem;
+}
+
+.character-nav-back a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+.character-nav-back a:hover {
+    color: var(--color-text);
+    text-decoration: underline;
+}
+
+/* Character Avatar - Full styling */
+.character-avatar[data-color] {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    color: white;
+    font-weight: bold;
+    margin: 0 auto 1.5rem;
+    animation: avatar-pulse 2s ease-in-out infinite;
+}
+
+@keyframes avatar-pulse {
+    0%, 100% { 
+        box-shadow: 0 0 30px var(--char-color); 
+    }
+    50% { 
+        box-shadow: 0 0 50px var(--char-color); 
+    }
+}
+
+/* Character Name */
+.character-name[data-color] {
+    text-align: center;
+}
+
+/* Character Designation */
+.character-designation {
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* Info Grid - Additional styles */
+.info-grid[data-color][data-rgb] {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+}
+
+.info-grid p {
+    margin-top: 1rem;
+}
+
+/* Stats Display - Additional styles */
+.stats-display[data-color][data-rgb] {
+    font-family: 'Courier New', monospace;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.stat-item {
+    margin-bottom: 0.5rem;
+}
+
+.stat-item span:first-child {
+    text-transform: uppercase;
+}
+
+/* Traits Grid */
+.traits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.traits-grid ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.traits-grid li {
+    margin-bottom: 0.5rem;
+}
+
+/* Character Section */
+.character-section {
+    margin-top: 2rem;
+}
+
+/* Catchphrase Container */
+.catchphrase-container[data-color][data-rgb] {
+    font-family: 'Courier New', monospace;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.catchphrase-item[data-color] {
+    margin-bottom: 0.5rem;
+}
+
+/* Origin Container - Additional styles */
+.origin-container[data-color][data-rgb] {
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.origin-container p {
+    margin-top: 1rem;
+}
+
+/* Episodes Container - Additional styles */
+.episodes-container[data-color][data-rgb] {
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.episodes-container p {
+    margin-bottom: 0.75rem;
+}
+
+.episodes-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.episode-badge[data-color][data-rgb] {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+}
+
+.episodes-container .episode-link[data-color] {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--char-color);
+}
+
+/* Relationship Item - Additional styles */
+.relationship-item[data-color][data-rgb] {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+}
+
+.relationship-item strong {
+    text-transform: uppercase;
+}
+
+/* 404 Page */
+.error-human-note {
+    margin-top: 2rem;
+    font-style: italic;
+    color: var(--color-text-secondary);
+}
+
+/* Character Card Avatar */
+.character-card-avatar[data-color] {
+    box-shadow: 0 0 30px var(--char-color);
+}
+
+/* Character Card Name */
+.character-card-name[data-color] {
+    color: var(--char-color);
+}
+
+/* Character Card Status */
+.character-card-status[data-color] {
+    color: var(--char-color);
+}
+
+/* Character Card Archetype */
+.character-card-archetype {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-title {
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Small Comment Badge */
+.char-badge-small[data-color] {
+    background: var(--char-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .traits-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+

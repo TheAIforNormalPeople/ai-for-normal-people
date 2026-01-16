@@ -1,0 +1,124 @@
+{
+  "version": "1.0",
+  "description": "Pre-task checklist that agents must complete before starting work. This ensures mandatory behaviors are followed.",
+  "checklist_template": {
+    "task_id": "",
+    "agent_id": "",
+    "timestamp": "",
+    "checklist": {
+      "read_context_index": {
+        "required": true,
+        "completed": false,
+        "file": "docs/AGENT_CONTEXT_INDEX.md",
+        "notes": "Must read master context index first"
+      },
+      "read_mandatory_behaviors": {
+        "required": true,
+        "completed": false,
+        "file": "docs/agents/MANDATORY_BEHAVIORS.md",
+        "notes": "Must read mandatory behaviors document"
+      },
+      "checked_mcp_server": {
+        "required": true,
+        "completed": false,
+        "action": "Verify MCP server is accessible and understand which functions to use",
+        "notes": "Must verify MCP server availability before starting"
+      },
+      "claimed_task_in_queue": {
+        "required": true,
+        "completed": false,
+        "file": ".agent-tasks/task-queue.json",
+        "notes": "Must claim task in task queue before starting work"
+      },
+      "checked_file_locks": {
+        "required": true,
+        "completed": false,
+        "directory": ".agent-locks/",
+        "notes": "Must check for file locks before editing files"
+      },
+      "loaded_required_files": {
+        "required": true,
+        "completed": false,
+        "files": [],
+        "notes": "Must load all required context files for task type"
+      },
+      "understood_task_scope": {
+        "required": true,
+        "completed": false,
+        "notes": "Must understand what the task requires and what it does NOT require"
+      }
+    },
+    "required_mcp_calls": {
+      "description": "MCP calls that must be made during this task (varies by task type)",
+      "calls": []
+    },
+    "validation_required": {
+      "description": "Validation steps that must be completed before task is done",
+      "steps": []
+    },
+    "compliance_notes": {
+      "description": "Notes about compliance with mandatory behaviors",
+      "mcp_calls_logged": false,
+      "work_logged": false,
+      "context_files_referenced": false,
+      "generic_content_avoided": false
+    }
+  },
+  "task_type_templates": {
+    "episode_writing": {
+      "required_mcp_calls": [
+        "mcp_unified-knowledge-base_read_episode",
+        "mcp_unified-knowledge-base_character_lookup",
+        "mcp_unified-knowledge-base_validate_character_voice",
+        "mcp_unified-knowledge-base_validate_continuity",
+        "mcp_unified-knowledge-base_validate_structure",
+        "mcp_unified-knowledge-base_check_banned_phrases"
+      ],
+      "required_files": [
+        "data/characters/*.yaml",
+        "COMPLETE_PROJECT_BIBLE.md",
+        "docs/CHARACTER_VOICE_ROTATION.md",
+        "docs/ENVIRONMENT_AND_BANTER.md"
+      ],
+      "validation_required": [
+        "Character voice validation",
+        "Continuity validation",
+        "Structure validation",
+        "Banned phrases check"
+      ]
+    },
+    "technical_work": {
+      "required_mcp_calls": [
+        "mcp_unified-knowledge-base_get_episode_status"
+      ],
+      "required_files": [
+        "hugo.toml",
+        "layouts/",
+        "static/css/"
+      ],
+      "validation_required": [
+        "Code review",
+        "Local testing"
+      ]
+    },
+    "seo_work": {
+      "required_mcp_calls": [
+        "mcp_unified-knowledge-base_check_topic_coverage",
+        "mcp_unified-knowledge-base_validate_seo"
+      ],
+      "required_files": [
+        "docs/guides/SEO guides"
+      ],
+      "validation_required": [
+        "SEO validation"
+      ]
+    }
+  },
+  "usage_instructions": {
+    "step_1": "Agent creates checklist instance for their task",
+    "step_2": "Agent completes all required checklist items",
+    "step_3": "Agent logs checklist completion in task queue",
+    "step_4": "Agent starts work only after checklist is complete",
+    "step_5": "Reviewer agent verifies checklist was completed before approving task"
+  }
+}

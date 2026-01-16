@@ -308,7 +308,8 @@ article.episode-30 .dialogue-box.bounce::before,
     z-index: 1;
     color: #fbbf24;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
-    margin: 0.75rem 0;
+    margin: 0.25rem 0;
+    line-height: 1.3;
 }
 
 /* Emphasis text (game sounds, actions) */
@@ -344,11 +345,12 @@ div.dialogue-box.vector {
     border: 3px solid #3b82f6 !important;
     border-top: 4px solid #60a5fa !important;
     padding: 1.25rem !important;
-    padding-top: 2.75rem !important; /* Extra space for terminal header */
+    padding-top: 3rem !important; /* Extra space for terminal header - increased to prevent overlap */
+    padding-bottom: 0.75rem !important; /* Reduce bottom padding */
     margin: 1.5rem 0 !important;
     font-family: 'SF Mono', 'Monaco', 'Courier New', monospace !important;
     font-size: 0.95rem !important;
-    line-height: 1.7 !important;
+    line-height: 1.3 !important;
     position: relative !important;
     
     /* Terminal window shadow - blue glow */
@@ -592,12 +594,18 @@ div.dialogue-box.vector {
 /* Vector's text styling - Terminal text */
 .dialogue-box.vector p {
     position: relative;
-    z-index: 1;
+    z-index: 0;
     color: #cbd5e1; /* Terminal text color */
     text-shadow: 
         0 0 4px rgba(96, 165, 250, 0.3),
         0 1px 2px rgba(0, 0, 0, 0.8);
-    margin: 0.75rem 0;
+    margin: 0.25rem 0;
+    line-height: 1.3;
+}
+
+.dialogue-box.vector p:first-child {
+    margin-top: 0;
+    padding-top: 0.5rem; /* Extra space after header */
 }
 
 /* Emphasis text (excited moments, ALL CAPS) - Terminal highlight */
@@ -699,7 +707,7 @@ div.dialogue-box.kai {
     margin: 1.5rem 0 !important;
     font-family: 'SF Mono', 'Monaco', 'Courier New', monospace !important;
     font-size: 0.95rem !important;
-    line-height: 1.7 !important;
+    line-height: 1.3 !important;
     position: relative !important;
     
     /* Security terminal shadow - green glow */
@@ -763,7 +771,8 @@ div.dialogue-box.kai {
     top: 0;
     left: 0;
     right: 0;
-    height: 2rem;
+    height: 2.5rem;
+    z-index: 1;
     background: linear-gradient(
         90deg,
         rgba(16, 185, 129, 0.2) 0%,
@@ -808,7 +817,15 @@ div.dialogue-box.kai {
 /* Text styling */
 .dialogue-box.kai p {
     color: #d1fae5;
-    margin: 0.5rem 0;
+    margin: 0.25rem 0;
+    line-height: 1.3;
+    position: relative;
+    z-index: 0;
+}
+
+.dialogue-box.kai p:first-child {
+    margin-top: 0;
+    padding-top: 0.5rem; /* Extra space after header */
 }
 
 .dialogue-box.kai p:first-child {
@@ -928,7 +945,7 @@ div.dialogue-box.recurse {
     margin: 1.5rem 0 !important;
     font-family: 'SF Mono', 'Monaco', 'Courier New', monospace !important;
     font-size: 0.95rem !important;
-    line-height: 1.7 !important;
+    line-height: 1.3 !important;
     position: relative !important;
     
     /* Debugger interface shadow - purple glow */

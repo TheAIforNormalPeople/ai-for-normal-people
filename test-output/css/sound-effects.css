@@ -1,0 +1,132 @@
+/* ============================================
+   SOUND EFFECTS & ENVIRONMENTAL DETAILS STYLING
+   Makes Kai's sounds and environmental stage directions visually distinct
+   ============================================ */
+
+/* ============================================
+   KAI'S SOUND EFFECTS
+   Format: *sound name* (e.g., *processing hum*, *BEEP*, *WHIRR-CLICK*)
+   These appear as italic text with asterisks in dialogue
+   ============================================ */
+
+/* All italic text in dialogue - default styling for sounds */
+.character-dialogue em {
+    font-style: italic;
+    color: #eab308; /* Bright yellow/gold - stands out from green box */
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    opacity: 0.95;
+    transition: all 0.2s ease;
+}
+
+/* Sound effects that appear on their own line (first in paragraph) */
+.character-dialogue p:first-child em,
+.character-dialogue > em:first-of-type {
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1.05em;
+    color: #eab308; /* Bright yellow/gold - distinct from green box */
+}
+
+/* Sound effects with data attributes for specific types */
+.character-dialogue em[data-sound="processing"] {
+    color: #eab308; /* Yellow/gold for processing sounds */
+    font-weight: 500;
+}
+
+.character-dialogue em[data-sound="alert"] {
+    color: #ef4444;
+    font-weight: 600;
+    text-shadow: 0 0 4px rgba(239, 68, 68, 0.3);
+}
+
+.character-dialogue em[data-sound="soft"] {
+    color: #8b5cf6;
+    font-weight: 400;
+    opacity: 0.85;
+}
+
+.character-dialogue em[data-sound="data"] {
+    color: #06b6d4;
+    font-weight: 500;
+}
+
+.character-dialogue em[data-sound="stress"] {
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+.character-dialogue em[data-sound="realization"] {
+    color: #eab308;
+    font-weight: 600;
+}
+
+/* Environmental details - use data-env attribute */
+.character-dialogue em[data-env] {
+    color: #6b7280 !important; /* Gray for environmental */
+    font-size: 0.9em !important;
+    opacity: 0.85 !important;
+    font-weight: 400 !important;
+    letter-spacing: normal !important;
+    text-shadow: none !important;
+}
+
+/* Hover effect for sounds */
+.character-dialogue em[data-sound]:hover {
+    opacity: 1;
+    text-shadow: 0 0 8px currentColor;
+    transform: scale(1.02);
+}
+
+/* ============================================
+   DARK MODE ADJUSTMENTS
+   ============================================ */
+
+.dark-mode .character-dialogue em {
+    color: #fbbf24; /* Brighter yellow/gold in dark mode */
+    text-shadow: 0 0 6px rgba(234, 179, 8, 0.5);
+}
+
+.dark-mode .character-dialogue em[data-sound="processing"] {
+    color: #fbbf24; /* Brighter yellow in dark mode */
+    text-shadow: 0 0 6px rgba(234, 179, 8, 0.5);
+}
+
+.dark-mode .character-dialogue em[data-sound="alert"] {
+    color: #f87171; /* Softer red in dark mode */
+    text-shadow: 0 0 6px rgba(239, 68, 68, 0.4);
+}
+
+.dark-mode .character-dialogue em[data-sound="soft"] {
+    color: #a78bfa; /* Brighter purple in dark mode */
+}
+
+.dark-mode .character-dialogue em[data-sound="data"] {
+    color: #22d3ee; /* Brighter cyan in dark mode */
+}
+
+.dark-mode .character-dialogue em[data-env] {
+    color: #9ca3af !important; /* Lighter gray in dark mode */
+    opacity: 0.9 !important;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* Ensure sounds are still readable if color is removed */
+.character-dialogue em[data-sound] {
+    font-weight: 500; /* Also uses weight */
+    letter-spacing: 0.03em; /* Also uses spacing */
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .character-dialogue em {
+        color: #000 !important;
+        text-shadow: none !important;
+    }
+}

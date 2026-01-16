@@ -1,0 +1,17 @@
+﻿{{ $character := .Get "char" }}
+{{ $charData := index .Site.Data.characters (lower $character) }}
+{{ $charColor := "#64748b" }}
+{{ $charColorRgb := "100, 116, 139" }}
+{{ $charInitial := substr $character 0 1 | upper }}
+{{ if $charData }}
+  {{ $charColor = $charData.color | default "#64748b" }}
+  {{ $charColorRgb = $charData.color_rgb | default "100, 116, 139" }}
+  {{ $charInitial = $charData.initial | default (substr $character 0 1 | upper) }}
+{{ end }}
+
+<div class="cutin-comment" 
+     data-character="{{ $character }}"
+     style="--char-color: {{ $charColor }}; --char-color-rgb: {{ $charColorRgb }};">
+    <span class="cutin-name">{{ $charInitial }}</span>
+    <span class="cutin-content">{{ .Inner | markdownify }}</span>
+</div>

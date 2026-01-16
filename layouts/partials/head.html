@@ -2,7 +2,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-{{ $title := print .Title " | " .Site.Title }}
+{{/* Dual Title System: Use seo_title for meta title, keep creative title for H1 */}}
+{{ $metaTitle := .Title }}
+{{ if and .IsPage .Params.seo_title }}
+    {{ $metaTitle = .Params.seo_title }}
+{{ end }}
+{{ $title := print $metaTitle " | " .Site.Title }}
 {{ if .IsHome }}
     {{ $title = .Site.Title }}
 {{ end }}
@@ -25,23 +30,31 @@
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:title" content="{{ $title }}">
+<meta property="og:title" content="{{ if and .IsPage .Params.seo_title }}{{ .Params.seo_title }}{{ else }}{{ .Title }}{{ end }}">
 <meta property="og:description" content="{{ $description }}">
 {{ if .Params.image }}
 <meta property="og:image" content="{{ .Params.image | absURL }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ if .Params.seo_title }}{{ .Params.seo_title }}{{ else }}{{ .Title }}{{ end }} - {{ .Site.Title }}">
 {{ else if .Site.Params.images }}
 <meta property="og:image" content="{{ index .Site.Params.images 0 | absURL }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ if .Params.seo_title }}{{ .Params.seo_title }}{{ else }}{{ .Title }}{{ end }} - {{ .Site.Title }}">
 {{ end }}
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="{{ .Permalink }}">
-<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:title" content="{{ if and .IsPage .Params.seo_title }}{{ .Params.seo_title }}{{ else }}{{ .Title }}{{ end }}">
 <meta name="twitter:description" content="{{ $description }}">
 {{ if .Params.image }}
 <meta name="twitter:image" content="{{ .Params.image | absURL }}">
+<meta name="twitter:image:alt" content="{{ if .Params.seo_title }}{{ .Params.seo_title }}{{ else }}{{ .Title }}{{ end }} - {{ .Site.Title }}">
 {{ else if .Site.Params.images }}
 <meta name="twitter:image" content="{{ index .Site.Params.images 0 | absURL }}">
+<meta name="twitter:image:alt" content="{{ if .Params.seo_title }}{{ .Params.seo_title }}{{ else }}{{ .Title }}{{ end }} - {{ .Site.Title }}">
 {{ end }}
 {{ with .Site.Params.twitter }}
 <meta name="twitter:creator" content="@{{ . }}">
@@ -63,6 +76,10 @@
 <link rel="stylesheet" href="{{ "css/characters.css" | relURL }}?v={{ now.Unix }}">
 <link rel="stylesheet" href="{{ "css/dynamic-colors.css" | relURL }}?v={{ now.Unix }}">
 <link rel="stylesheet" href="{{ "css/sound-effects.css" | relURL }}?v={{ now.Unix }}">
+{{ if and .IsPage (eq .Section "blog") (eq .Params.type "episode") }}
+<!-- Episode Summary Styles (TL;DR) -->
+<link rel="stylesheet" href="{{ "css/episode-summary.css" | relURL }}?v={{ now.Unix }}">
+{{ end }}
 <!-- Bounce's UI/UX Improvements - Applied globally -->
 <link rel="stylesheet" href="{{ "css/bounce-ui-improvements.css" | relURL }}?v={{ now.Unix }}">
 {{ if and .IsPage (eq .Section "characters") }}
@@ -99,6 +116,41 @@
     // Clear any old light mode preference
     localStorage.removeItem('theme');
 </script>
+
+<!-- Article Schema Markup (JSON-LD) for episodes -->
+{{ if and .IsPage (eq .Section "blog") (eq .Params.type "episode") }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ .Title | jsonify }},
+  "description": {{ if .Description }}{{ .Description | jsonify }}{{ else if .Summary }}{{ .Summary | jsonify }}{{ else }}{{ .Site.Params.description | jsonify }}{{ end }},
+  {{ if .Params.image }}
+  "image": {{ .Params.image | absURL | jsonify }},
+  {{ else if .Site.Params.images }}
+  "image": {{ (index .Site.Params.images 0) | absURL | jsonify }},
+  {{ end }}
+  "author": {
+    "@type": "Person",
+    "name": {{ if and .Params.characters (gt (len .Params.characters) 0) }}{{ index .Params.characters 0 | jsonify }}{{ else }}{{ .Site.Params.author | default "AI for Normal People" | jsonify }}{{ end }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI for Normal People",
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ if .Site.Params.images }}{{ (index .Site.Params.images 0) | absURL | jsonify }}{{ else }}{{ .Site.BaseURL | absURL | printf "%simages/og-image.jpg" | jsonify }}{{ end }}
+    }
+  },
+  "datePublished": {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ .Permalink | jsonify }}
+  }
+}
+</script>
+{{ end }}
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MJ5P9KP0H2"></script>

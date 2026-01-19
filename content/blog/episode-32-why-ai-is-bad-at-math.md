@@ -1,6 +1,6 @@
 ---
 title: "Why Is ChatGPT Bad at Math? (The Real Reason)"
-date: 2026-01-20T09:00:00-05:00
+date: 2026-01-18T09:00:00-05:00
 type: "episode"
 episode_number: 32
 draft: false

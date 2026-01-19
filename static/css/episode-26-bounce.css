@@ -703,7 +703,7 @@ div.dialogue-box.kai {
     border: 3px solid #10b981 !important;
     border-top: 4px solid #34d399 !important;
     padding: 1.25rem !important;
-    padding-top: 2.75rem !important; /* Extra space for monitoring header */
+    padding-top: 3.5rem !important; /* Extra space for monitoring header - increased to prevent text cutoff */
     margin: 1.5rem 0 !important;
     font-family: 'SF Mono', 'Monaco', 'Courier New', monospace !important;
     font-size: 0.95rem !important;
@@ -824,12 +824,8 @@ div.dialogue-box.kai {
 }
 
 .dialogue-box.kai p:first-child {
-    margin-top: 0;
-    padding-top: 0.5rem; /* Extra space after header */
-}
-
-.dialogue-box.kai p:first-child {
-    margin-top: 0;
+    margin-top: 0 !important;
+    padding-top: 1rem !important; /* Extra space after header - increased to prevent text cutoff */
 }
 
 .dialogue-box.kai p:last-child {
@@ -941,7 +937,7 @@ div.dialogue-box.recurse {
     border: 3px solid #8b5cf6 !important;
     border-top: 4px solid #a78bfa !important;
     padding: 1.25rem !important;
-    padding-top: 2.75rem !important; /* Extra space for debugger header */
+    padding-top: 3.25rem !important; /* Extra space for debugger header - increased to prevent text cutoff */
     margin: 1.5rem 0 !important;
     font-family: 'SF Mono', 'Monaco', 'Courier New', monospace !important;
     font-size: 0.95rem !important;
@@ -1072,6 +1068,7 @@ div.dialogue-box.recurse {
 
 .dialogue-box.recurse p:first-child {
     margin-top: 0;
+    padding-top: 0.75rem; /* Extra space after header - increased to prevent text cutoff */
 }
 
 .dialogue-box.recurse p:last-child {

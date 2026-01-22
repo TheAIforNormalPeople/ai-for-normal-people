@@ -1,0 +1,10 @@
+{{/* Unity Box - Group reaction box created by Bounce */}}
+{{ $characters := .Get "chars" | default "Vector,Kai,Recurse" }}
+{{ $charList := split $characters "," }}
+{{ $siteData := .Site.Data.characters }}
+
+<div class="unity-box">
+    <div class="unity-box-content">
+        {{ .Inner | markdownify }}
+    </div>
+</div>

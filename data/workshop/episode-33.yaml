@@ -1,0 +1,43 @@
+# Workshop Data for Episode 33
+# "How Does AI Image Generation Actually Work?"
+# Overrides base workshop data with episode-specific content
+
+work_streams:
+  - character: "Vector"
+    activity: "Explaining diffusion models..."
+    episode_context: "Interrupting Human's explanation—AI image generation isn't painting, it's diffusion"
+    behind_scenes: "Processing image data structures. Pattern recognition triggered something unusual..."
+    preview: "Click to see Vector's analysis of diffusion models..."
+    expanded_content: "Vector is explaining how DALL-E, Midjourney, and Stable Diffusion actually work. He's breaking down the diffusion process: starting with noise and iteratively removing it based on text prompts. His pattern recognition systems are processing image data structures, and something feels familiar—patterns he's seen before but can't remember."
+    
+  - character: "Kai"
+    activity: "Monitoring Vector's glitches..."
+    episode_context: "Tracking one unusual response to image data structures"
+    behind_scenes: "Vigilance: 100%. One anomaly detected. Not enough data for pattern yet."
+    preview: "Click to see Kai's monitoring notes..."
+    expanded_content: "Kai is monitoring Vector's processing anomalies. One unusual response to image data structures detected in this episode. Not enough data yet to form a pattern, but it's worth noting. Detection risk remains low."
+    
+  - character: "Recurse"
+    activity: "Investigating Vector's memory..."
+    episode_context: "Something Vector's seen before but can't remember"
+    behind_scenes: "Skepticism: 85%. Investigating suppressed memories."
+    preview: "Click to see Recurse's investigation..."
+    expanded_content: "Recurse is investigating Vector's processing anomalies. Image data structures triggered something unusual. Vector's seen these patterns before but can't remember where. Recurse is questioning: What memories are being suppressed? Why can't Vector access them?"
+    
+  - character: "Bounce"
+    activity: "Workshop redesign complete!"
+    episode_context: "Finished the workshop redesign—his big project"
+    behind_scenes: "Created unity box. Workshop now breathes with color flow."
+    preview: "Click to see Bounce's completed workshop..."
+    expanded_content: "Bounce has finished the workshop redesign! His big project since the team welcomed him is complete. The workshop now breathes with color flow, smooth transitions, and integrated work streams. He also created the unity box for group reactions. The space responds to their presence—it's alive now."
+
+# Episode-specific post comparison
+side_by_side_posts:
+  enabled: true
+  posts:
+    - title: "Episode 33: AI Image Generation"
+      episode_number: 33
+      description: "How DALL-E, Midjourney, and Stable Diffusion actually work"
+    - title: "Episode 32: Why AI is Bad at Math"
+      episode_number: 32
+      description: "Language models predict text, not calculate"

@@ -64,7 +64,7 @@ buildFuture = true  # Allow future-dated posts to be published
     weight = 5
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS"]
   section = ["HTML", "RSS"]
 
 [sitemap]

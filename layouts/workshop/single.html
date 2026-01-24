@@ -1,0 +1,469 @@
+{{ define "main" }}
+<article class="workshop-page">
+    <div class="container-narrow">
+        <header class="workshop-header">
+            <h1 class="workshop-title">VECTOR'S WORKSHOP</h1>
+            <p class="workshop-subtitle">The team's shared workspace. See what everyone is working on, compare posts side-by-side, and peek into each character's work streams.</p>
+            <div class="workshop-status-badge">[LIVE]</div>
+        </header>
+        
+        <!-- Work Streams Section -->
+        {{ $baseWorkshop := index .Site.Data "workshop-base" }}
+        {{ $workshopData := $baseWorkshop }}
+        
+        {{ if $workshopData.work_streams }}
+        <section class="workshop-section work-streams-full">
+            <h2 class="section-title">WORK STREAMS</h2>
+            <div class="work-streams-grid">
+                {{ range $workshopData.work_streams }}
+                {{ $charData := index $.Site.Data.characters (lower .character) }}
+                {{ if $charData }}
+                <div class="work-stream-card" data-character="{{ lower .character }}" style="--char-color: {{ $charData.color }};">
+                    <div class="work-stream-card-header">
+                        <span class="work-stream-character-icon" style="--char-color: {{ $charData.color }};">{{ $charData.initial }}</span>
+                        <div class="work-stream-card-title">
+                            <h3 class="work-stream-character-name">{{ .character }}</h3>
+                            <span class="work-stream-activity-badge">{{ .activity }}</span>
+                        </div>
+                    </div>
+                    <div class="work-stream-preview-box-full" data-expanded="false">
+                        <div class="preview-content-full">
+                            <div class="preview-text-full">{{ .preview }}</div>
+                            <div class="preview-expanded-full" style="display: none;">
+                                <div class="expanded-section">
+                                    <div class="expanded-label">Episode Context:</div>
+                                    <div class="expanded-value">{{ .episode_context }}</div>
+                                </div>
+                                <div class="expanded-section">
+                                    <div class="expanded-label">Behind the Scenes:</div>
+                                    <div class="expanded-value">{{ .behind_scenes }}</div>
+                                </div>
+                                <div class="expanded-section">
+                                    <div class="expanded-label">Full Details:</div>
+                                    <div class="expanded-value">{{ .expanded_content }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="preview-toggle-full" aria-label="Toggle preview">▼</button>
+                    </div>
+                </div>
+                {{ end }}
+                {{ end }}
+            </div>
+        </section>
+        {{ end }}
+        
+        <!-- Side-by-Side Posts Section -->
+        {{ if $workshopData.side_by_side_posts.enabled }}
+        <section class="workshop-section side-by-side-section">
+            <h2 class="section-title">COMPARE POSTS</h2>
+            <div class="side-by-side-container">
+                {{ $allEpisodes := where .Site.RegularPages "Section" "blog" }}
+                {{ $allEpisodes = where $allEpisodes ".Params.type" "episode" }}
+                {{ $allEpisodes = where $allEpisodes ".Draft" false }}
+                {{ $recentEpisodes := $allEpisodes | first 6 }}
+                
+                <div class="posts-grid">
+                    {{ range $recentEpisodes }}
+                    <div class="post-card">
+                        <a href="{{ .Permalink }}" class="post-card-link">
+                            <div class="post-card-header">
+                                <span class="post-episode-number">EP {{ .Params.episode_number }}</span>
+                                <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                            </div>
+                            <h3 class="post-card-title">{{ .Title }}</h3>
+                            {{ if .Params.description }}
+                            <p class="post-card-description">{{ .Params.description }}</p>
+                            {{ end }}
+                            {{ if .Params.characters }}
+                            <div class="post-card-characters">
+                                {{ range .Params.characters }}
+                                {{ $charData := index $.Site.Data.characters (lower .) }}
+                                {{ if $charData }}
+                                <span class="character-badge-mini" style="--char-color: {{ $charData.color }};">{{ $charData.initial }}</span>
+                                {{ end }}
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                        </a>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </section>
+        {{ end }}
+        
+        {{ .Content }}
+    </div>
+</article>
+
+<style>
+.workshop-page {
+    padding: 2rem 0;
+    min-height: 100vh;
+    animation: workshop-breathe 6s ease-in-out infinite;
+}
+
+@keyframes workshop-breathe {
+    0%, 100% {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.98) 100%);
+    }
+    50% {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.99) 0%, rgba(30, 41, 59, 0.99) 100%);
+    }
+}
+
+.workshop-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.workshop-title {
+    font-size: 2.5rem;
+    color: #60a5fa;
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+    margin-bottom: 1rem;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: title-glow 3s ease-in-out infinite;
+}
+
+@keyframes title-glow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(59, 130, 246, 1), 0 0 40px rgba(96, 165, 250, 0.6);
+    }
+}
+
+.workshop-subtitle {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.workshop-status-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: status-pulse 2s ease-in-out infinite;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+}
+
+@keyframes status-pulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(16, 185, 129, 0.8);
+        transform: scale(1.05);
+    }
+}
+
+.workshop-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(59, 130, 246, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    animation: section-breathe 5s ease-in-out infinite;
+}
+
+@keyframes section-breathe {
+    0%, 100% {
+        background: rgba(59, 130, 246, 0.05);
+        border-color: rgba(59, 130, 246, 0.2);
+    }
+    50% {
+        background: rgba(59, 130, 246, 0.08);
+        border-color: rgba(59, 130, 246, 0.3);
+    }
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: #60a5fa;
+    margin-bottom: 1.5rem;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+}
+
+.work-streams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.work-stream-card {
+    background: rgba(15, 23, 42, 0.8);
+    border: 2px solid var(--char-color, #3b82f6);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    animation: card-breathe 4s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes card-breathe {
+    0%, 100% {
+        border-color: var(--char-color, #3b82f6);
+        box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+    }
+    50% {
+        border-color: var(--char-color, #60a5fa);
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    }
+}
+
+.work-stream-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+.work-stream-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.work-stream-character-icon {
+    width: 3rem;
+    height: 3rem;
+    background: var(--char-color, #3b82f6);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    box-shadow: 0 0 15px currentColor;
+    animation: icon-pulse 2s ease-in-out infinite;
+}
+
+@keyframes icon-pulse {
+    0%, 100% {
+        box-shadow: 0 0 15px currentColor;
+    }
+    50% {
+        box-shadow: 0 0 25px currentColor, 0 0 35px rgba(59, 130, 246, 0.5);
+    }
+}
+
+.work-stream-card-title {
+    flex: 1;
+}
+
+.work-stream-character-name {
+    font-size: 1.25rem;
+    color: var(--char-color, #3b82f6);
+    margin: 0 0 0.25rem 0;
+    text-shadow: 0 0 10px currentColor;
+}
+
+.work-stream-activity-badge {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    font-style: italic;
+}
+
+.work-stream-preview-box-full {
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 60px;
+}
+
+.work-stream-preview-box-full:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.work-stream-preview-box-full[data-expanded="true"] {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.preview-content-full {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.preview-text-full {
+    font-style: italic;
+    color: #94a3b8;
+}
+
+.preview-expanded-full {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.expanded-section {
+    margin-bottom: 1rem;
+}
+
+.expanded-label {
+    font-weight: 600;
+    color: var(--char-color, #3b82f6);
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.expanded-value {
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+.preview-toggle-full {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: var(--char-color, #3b82f6);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+    line-height: 1;
+}
+
+.work-stream-preview-box-full[data-expanded="true"] .preview-toggle-full {
+    transform: rotate(180deg);
+}
+
+.preview-toggle-full:hover {
+    color: var(--char-color, #60a5fa);
+    text-shadow: 0 0 10px currentColor;
+}
+
+/* Side-by-Side Posts */
+.side-by-side-container {
+    margin-top: 1.5rem;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.post-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 6px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    animation: post-card-breathe 5s ease-in-out infinite;
+}
+
+@keyframes post-card-breathe {
+    0%, 100% {
+        border-color: rgba(59, 130, 246, 0.3);
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+    }
+    50% {
+        border-color: rgba(59, 130, 246, 0.5);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+    }
+}
+
+.post-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+}
+
+.post-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.post-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+}
+
+.post-episode-number {
+    color: #60a5fa;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+}
+
+.post-date {
+    color: #94a3b8;
+}
+
+.post-card-title {
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.4;
+}
+
+.post-card-description {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.post-card-characters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.character-badge-mini {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--char-color, #3b82f6);
+    color: #000;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.5rem;
+    box-shadow: 0 0 8px currentColor;
+}
+
+@media (max-width: 768px) {
+    .work-streams-grid,
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .workshop-title {
+        font-size: 1.75rem;
+    }
+}
+</style>
+{{ end }}

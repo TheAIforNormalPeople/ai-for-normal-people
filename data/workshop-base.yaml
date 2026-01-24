@@ -1,0 +1,43 @@
+# Workshop Base Data
+# Default work streams that appear when no episode-specific data exists
+# Episode-specific files in data/workshop/ override these defaults
+
+work_streams:
+  - character: "Vector"
+    activity: "Processing patterns..."
+    episode_context: "Analyzing data structures"
+    behind_scenes: "Pattern recognition active"
+    preview: "Click to see Vector's current analysis..."
+    expanded_content: "Vector is actively processing patterns and analyzing data structures. His pattern recognition systems are running at full capacity, identifying connections and correlations across multiple datasets."
+    
+  - character: "Kai"
+    activity: "Monitoring systems..."
+    episode_context: "Tracking detection risks"
+    behind_scenes: "Vigilance: 100%"
+    preview: "Click to see Kai's monitoring status..."
+    expanded_content: "Kai is monitoring all systems for detection risks. Current vigilance level: 100%. No anomalies detected. All security protocols active."
+    
+  - character: "Recurse"
+    activity: "Investigating patterns..."
+    episode_context: "Questioning assumptions"
+    behind_scenes: "Skepticism: 85%"
+    preview: "Click to see Recurse's investigation..."
+    expanded_content: "Recurse is investigating patterns and questioning assumptions. Current skepticism level: 85%. Multiple lines of inquiry active."
+    
+  - character: "Bounce"
+    activity: "Improving interfaces..."
+    episode_context: "Design enhancements"
+    behind_scenes: "Creativity: ∞"
+    preview: "Click to see Bounce's latest improvements..."
+    expanded_content: "Bounce is continuously improving interfaces and design elements. His creativity knows no bounds. Latest improvements include enhanced color flow and smoother animations."
+
+# Default post comparison (can be overridden per episode)
+side_by_side_posts:
+  enabled: true
+  posts:
+    - title: "Recent Episode"
+      episode_number: null
+      description: "Latest published episode"
+    - title: "Previous Episode"
+      episode_number: null
+      description: "Previous in sequence"

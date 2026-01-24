@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Read receipt system for NEW badges
     initReadReceiptSystem();
+    
+    // Workshop preview boxes
+    initWorkshopPreviewBoxes();
 });
 
 /**
@@ -259,3 +262,44 @@ function initReadReceiptSystem() {
     });
 }
 
+/**
+ * Workshop Preview Boxes - Expand/Collapse functionality
+ */
+function initWorkshopPreviewBoxes() {
+    const previewBoxes = document.querySelectorAll('.work-stream-preview-box');
+    
+    previewBoxes.forEach(box => {
+        const toggle = box.querySelector('.preview-toggle');
+        const expandedContent = box.querySelector('.preview-expanded');
+        
+        if (!toggle || !expandedContent) return;
+        
+        function toggleExpand() {
+            const isExpanded = box.getAttribute('data-expanded') === 'true';
+            box.setAttribute('data-expanded', !isExpanded);
+            
+            if (!isExpanded) {
+                expandedContent.style.display = 'block';
+                // Smooth scroll into view if needed
+                setTimeout(() => {
+                    box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            } else {
+                expandedContent.style.display = 'none';
+            }
+        }
+        
+        // Click on box or toggle button
+        box.addEventListener('click', (e) => {
+            // Don't toggle if clicking the button (it has its own handler)
+            if (e.target !== toggle) {
+                toggleExpand();
+            }
+        });
+        
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleExpand();
+        });
+    });
+}

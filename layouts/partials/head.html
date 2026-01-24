@@ -152,6 +152,13 @@
 </script>
 {{ end }}
 
+<!-- Scripts -->
+<script src="{{ "js/main.js" | relURL }}?v={{ now.Unix }}"></script>
+{{ if and .IsPage .Params.episode_number }}
+<!-- Workshop Interface - Only load on episode pages with workshop -->
+<script src="{{ "js/workshop.js" | relURL }}?v={{ now.Unix }}"></script>
+{{ end }}
+
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MJ5P9KP0H2"></script>
 <script>

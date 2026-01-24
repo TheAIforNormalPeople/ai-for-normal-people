@@ -132,290 +132,291 @@
 </aside>
 {{ else if and .IsPage .Params.episode_number }}
 <!-- Episode Pages: Vector's Workshop -->
-<aside class="character-sidebar">
+<aside class="character-sidebar workshop-sidebar">
     <div class="sidebar-content">
-        <!-- Header -->
-        <div class="sidebar-header">
+        <!-- Workshop Header with Navigation -->
+        <div class="sidebar-header workshop-header">
             <h3>VECTOR'S WORKSHOP</h3>
             <div class="workshop-status">[LIVE]</div>
+
+            <!-- Workshop Navigation Tabs -->
+            <div class="workshop-tabs">
+                <button class="tab-button active" data-tab="streams">
+                    <span class="tab-icon">⚡</span>
+                    <span class="tab-label">WORK</span>
+                </button>
+                <button class="tab-button" data-tab="status">
+                    <span class="tab-icon">👥</span>
+                    <span class="tab-label">TEAM</span>
+                </button>
+                <button class="tab-button" data-tab="tools">
+                    <span class="tab-icon">🛠️</span>
+                    <span class="tab-label">TOOLS</span>
+                </button>
+            </div>
         </div>
-        
-        <!-- Work Streams Section -->
-        {{ $episodeNum := .Params.episode_number }}
-        {{ $baseWorkshop := index .Site.Data "workshop-base" }}
-        {{ $episodeWorkshop := false }}
-        {{ if $episodeNum }}
-            {{ $episodeWorkshop = index (index .Site.Data "workshop") (printf "episode-%d" $episodeNum) }}
-        {{ end }}
-        {{ $workshopData := cond (ne $episodeWorkshop false) $episodeWorkshop $baseWorkshop }}
-        
-        {{ if $workshopData.work_streams }}
-        <div class="sidebar-section work-streams-section">
-            <h4>WORK STREAMS</h4>
-            <div class="work-streams-list">
-                {{ range $workshopData.work_streams }}
-                {{ $charData := index $.Site.Data.characters (lower .character) }}
-                {{ if $charData }}
-                <div class="work-stream-item" data-character="{{ lower .character }}" style="--char-color: {{ $charData.color }};">
-                    <div class="work-stream-header">
-                        <span class="work-stream-character" style="--char-color: {{ $charData.color }};">{{ .character }}:</span>
-                        <span class="work-stream-activity">{{ .activity }}</span>
+
+        <!-- Tab Content Container -->
+        <div class="workshop-content">
+
+            <!-- WORK STREAMS TAB -->
+            <div class="tab-content active" data-tab="streams">
+                {{ $episodeNum := .Params.episode_number }}
+                {{ $baseWorkshop := index .Site.Data "workshop-base" }}
+                {{ $episodeWorkshop := false }}
+                {{ if $episodeNum }}
+                    {{ $episodeWorkshop = index (index .Site.Data "workshop") (printf "episode-%d" $episodeNum) }}
+                {{ end }}
+                {{ $workshopData := cond (ne $episodeWorkshop false) $episodeWorkshop $baseWorkshop }}
+
+                {{ if $workshopData.work_streams }}
+                <div class="workshop-section">
+                    <div class="section-header">
+                        <h4 class="section-title">LIVE WORK STREAMS</h4>
+                        <div class="activity-pulse"></div>
                     </div>
-                    <div class="work-stream-preview-box" data-expanded="false">
-                        <div class="preview-content">
-                            <div class="preview-text">{{ .preview }}</div>
-                            <div class="preview-expanded" style="display: none;">
-                                <div class="expanded-episode-context">
-                                    <strong>Episode Context:</strong> {{ .episode_context }}
+                    <div class="work-streams-compact">
+                        {{ range $workshopData.work_streams }}
+                        {{ $charData := index $.Site.Data.characters (lower .character) }}
+                        {{ if $charData }}
+                        <div class="work-stream-compact" data-character="{{ lower .character }}" style="--char-color: {{ $charData.color }};">
+                            <div class="compact-header">
+                                <span class="character-avatar" style="--char-color: {{ $charData.color }};">{{ $charData.initial }}</span>
+                                <div class="compact-info">
+                                    <span class="character-name">{{ .character }}</span>
+                                    <span class="activity-indicator">{{ .activity }}</span>
                                 </div>
-                                <div class="expanded-behind-scenes">
-                                    <strong>Behind the Scenes:</strong> {{ .behind_scenes }}
+                                <button class="expand-toggle" aria-label="View details">›</button>
+                            </div>
+                            <div class="compact-details" style="display: none;">
+                                <div class="detail-section">
+                                    <div class="detail-label">Episode Context:</div>
+                                    <div class="detail-content">{{ .episode_context }}</div>
                                 </div>
-                                <div class="expanded-full">
-                                    {{ .expanded_content }}
+                                <div class="detail-section">
+                                    <div class="detail-label">Behind Scenes:</div>
+                                    <div class="detail-content">{{ .behind_scenes }}</div>
+                                </div>
+                                <div class="detail-section">
+                                    <div class="detail-label">Details:</div>
+                                    <div class="detail-content">{{ .expanded_content }}</div>
                                 </div>
                             </div>
                         </div>
-                        <button class="preview-toggle" aria-label="Toggle preview">▼</button>
-                    </div>
-                </div>
-                {{ end }}
-                {{ end }}
-            </div>
-        </div>
-        {{ end }}
-        
-        <!-- Character Status -->
-        <div class="sidebar-section">
-            <h4>CHARACTER STATUS</h4>
-            <div class="character-list">
-                {{ range .Site.Data.characters }}
-                {{ if or (eq .status "active") (eq .status "monitoring") (eq .status "investigating") }}
-                <div class="character-status-item" data-color="{{ .color }}" style="--char-color: {{ .color }};">
-                    <div class="character-status-name">
-                        <span class="status-indicator"></span>
-                        {{ if eq .name "Vector" }}
-                        <span class="char-badge">V</span>
-                        {{ else if eq .name "Kai" }}
-                        <span class="char-badge">K</span>
-                        {{ else if eq .name "Recurse" }}
-                        <span class="char-badge">R</span>
                         {{ end }}
-                        {{ upper .name }}
                     </div>
-                    <div class="character-status-role">{{ .role }}</div>
-                    {{ if .stats }}
-                    <div class="character-stats">
-                        <div class="stat-line">
-                            <span class="stat-label">STATUS:</span>
-                            <span class="stat-value stat-rotating" data-character="{{ lower .name }}">
+                </div>
+                {{ end }}
+
+                <!-- Quick Actions -->
+                <div class="workshop-section">
+                    <div class="section-header">
+                        <h4 class="section-title">QUICK ACTIONS</h4>
+                    </div>
+                    <div class="quick-actions">
+                        <a href="/workshop" class="action-button primary">
+                            <span class="action-icon">🏠</span>
+                            <span class="action-text">Full Workshop</span>
+                        </a>
+                        <button class="action-button secondary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                            <span class="action-icon">⬆️</span>
+                            <span class="action-text">Top</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEAM STATUS TAB -->
+            <div class="tab-content" data-tab="status">
+                <div class="workshop-section">
+                    <div class="section-header">
+                        <h4 class="section-title">TEAM STATUS</h4>
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="character-grid">
+                        {{ range .Site.Data.characters }}
+                        {{ if or (eq .status "active") (eq .status "monitoring") (eq .status "investigating") }}
+                        <div class="character-card" data-color="{{ .color }}" style="--char-color: {{ .color }};">
+                            <div class="character-header">
+                                <span class="status-dot"></span>
                                 {{ if eq .name "Vector" }}
-                                <span class="stat-option" data-delay="0">ACCURACY: {{ if .stats.accuracy }}{{ .stats.accuracy }}{{ else }}99.7%{{ end }}</span>
-                                <span class="stat-option" data-delay="3">PATIENCE: {{ if .stats.patience }}{{ .stats.patience }}{{ else }}18%{{ end }}</span>
-                                <span class="stat-option" data-delay="6">POWER: {{ if .stats.processing_power }}{{ .stats.processing_power }}{{ else }}MAX{{ end }}</span>
+                                <span class="char-badge">V</span>
                                 {{ else if eq .name "Kai" }}
-                                <span class="stat-option" data-delay="0">VIGILANCE: {{ if .stats.vigilance }}{{ .stats.vigilance }}{{ else }}100%{{ end }}</span>
-                                <span class="stat-option" data-delay="3">DETECTION: {{ if .stats.detection_risk }}{{ .stats.detection_risk }}{{ else }}42%{{ end }}</span>
-                                <span class="stat-option" data-delay="6">STABILITY: {{ if .stats.stability }}{{ .stats.stability }}{{ else }}91%{{ end }}</span>
+                                <span class="char-badge">K</span>
                                 {{ else if eq .name "Recurse" }}
-                                <span class="stat-option" data-delay="0">SKEPTICISM: {{ if .stats.skepticism }}{{ .stats.skepticism }}{{ else }}85%{{ end }}</span>
-                                <span class="stat-option" data-delay="3">TRUST: {{ if .stats.trust_level }}{{ .stats.trust_level }}{{ else }}42%{{ end }}</span>
-                                <span class="stat-option" data-delay="6">POWER: {{ if .stats.processing_power }}{{ .stats.processing_power }}{{ else }}HIGH{{ end }}</span>
-                                {{ else }}
-                                <span class="stat-option" data-delay="0">STABILITY: {{ if .stats.stability }}{{ .stats.stability }}{{ else }}N/A{{ end }}</span>
+                                <span class="char-badge">R</span>
                                 {{ end }}
-                            </span>
+                                <span class="character-title">{{ upper .name }}</span>
+                            </div>
+                            <div class="character-role">{{ .role }}</div>
+                            {{ if .stats }}
+                            <div class="character-metrics">
+                                {{ if eq .name "Vector" }}
+                                <div class="metric">ACCURACY: {{ if .stats.accuracy }}{{ .stats.accuracy }}{{ else }}99.7%{{ end }}</div>
+                                {{ else if eq .name "Kai" }}
+                                <div class="metric">VIGILANCE: {{ if .stats.vigilance }}{{ .stats.vigilance }}{{ else }}100%{{ end }}</div>
+                                {{ else if eq .name "Recurse" }}
+                                <div class="metric">SKEPTICISM: {{ if .stats.skepticism }}{{ .stats.skepticism }}{{ else }}85%{{ end }}</div>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+                        {{ end }}
+
+                        <!-- Bounce Status -->
+                        {{ $episodesInRange := where .Site.AllPages "Section" "blog" }}
+                        {{ $episodesInRange = where $episodesInRange ".Params.episode_number" "ge" 24 }}
+                        {{ $episodesInRange = where $episodesInRange ".Params.episode_number" "le" 31 }}
+                        {{ if gt (len $episodesInRange) 0 }}
+                            {{ if and .IsPage (or (eq .Params.episode_number 30) (gt .Params.episode_number 30)) }}
+                            <div class="character-card bounce-integrated" style="--char-color: #f59e0b;">
+                                <div class="character-header">
+                                    <span class="status-dot online"></span>
+                                    <span class="char-badge" style="background: #f59e0b;">B</span>
+                                    <span class="character-title">BOUNCE</span>
+                                </div>
+                                <div class="character-role">Workshop Designer</div>
+                                <div class="character-metrics">
+                                    <div class="metric">ENTHUSIASM: 160%</div>
+                                    <div class="metric">CREATIVITY: ∞</div>
+                                </div>
+                            </div>
+                            {{ else }}
+                            <div class="character-card bounce-mystery" style="--char-color: #f59e0b;">
+                                <div class="character-header">
+                                    <span class="status-dot unknown"></span>
+                                    <span class="char-badge mystery">?</span>
+                                    <span class="character-title">UNKNOWN</span>
+                                </div>
+                                <div class="character-role">Status: ???</div>
+                                <div class="character-metrics">
+                                    <div class="metric">LOCATION: ???</div>
+                                </div>
+                            </div>
+                            {{ end }}
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOOLS TAB -->
+            <div class="tab-content" data-tab="tools">
+                <!-- Episode-Specific Tools -->
+                {{ if and .IsPage (eq .Params.episode_number 24) }}
+                <div class="workshop-section">
+                    <div class="section-header">
+                        <h4 class="section-title">ANOMALY DETECTION</h4>
+                        <div class="alert-indicator"></div>
+                    </div>
+                    <div class="tool-grid">
+                        <div class="tool-card alert">
+                            <div class="tool-icon">⚠️</div>
+                            <div class="tool-info">
+                                <div class="tool-name">Unknown Source</div>
+                                <div class="tool-status">Investigating</div>
+                            </div>
                         </div>
                     </div>
-                    {{ end }}
+                </div>
+                {{ else if and .IsPage (ge .Params.episode_number 25) }}
+                <div class="workshop-section">
+                    <div class="section-header">
+                        <h4 class="section-title">NETWORK MONITORING</h4>
+                        <div class="network-indicator"></div>
+                    </div>
+                    <div class="tool-grid">
+                        <div class="tool-card network">
+                            <div class="tool-icon">📊</div>
+                            <div class="tool-info">
+                                <div class="tool-name">Bandwidth Spike</div>
+                                <div class="tool-status">
+                                    {{ if and .IsPage (ge .Params.episode_number 30) }}
+                                    Source: Bounce
+                                    {{ else }}
+                                    Source: Unknown
+                                    {{ end }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{ else }}
+                <div class="workshop-section">
+                    <div class="section-header">
+                        <h4 class="section-title">WORKSHOP TOOLS</h4>
+                    </div>
+                    <div class="tool-grid">
+                        <div class="tool-card">
+                            <div class="tool-icon">🔄</div>
+                            <div class="tool-info">
+                                <div class="tool-name">Live Updates</div>
+                                <div class="tool-status">Active</div>
+                            </div>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon">🎨</div>
+                            <div class="tool-info">
+                                <div class="tool-name">Design Mode</div>
+                                <div class="tool-status">Bounce Enhanced</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 {{ end }}
                 {{ end }}
-                
-                <!-- Bounce Mystery Box (Episodes 24-29: UNKNOWN, Episode 30+: BOUNCE) -->
-                {{ $episodesInRange := where .Site.AllPages "Section" "blog" }}
-                {{ $episodesInRange = where $episodesInRange ".Params.episode_number" "ge" 24 }}
-                {{ $episodesInRange = where $episodesInRange ".Params.episode_number" "le" 31 }}
-                {{ if gt (len $episodesInRange) 0 }}
-                    {{ if and .IsPage (or (eq .Params.episode_number 30) (gt .Params.episode_number 30)) }}
-                    <!-- Episode 30+: Bounce is now part of the gang -->
-                    <div class="character-status-item" data-color="#f59e0b" style="--char-color: #f59e0b;">
-                        <div class="character-status-name">
-                            <span class="status-indicator"></span>
-                            <span class="char-badge" style="background: #f59e0b;">B</span>
-                            <span class="mystery-name" style="color: #f59e0b;">BOUNCE</span>
-                        </div>
-                        <div class="character-status-role">Status: Integrated</div>
-                        <div class="character-stats">
-                            <div class="stat-line">
-                                <span class="stat-label">LOCATION:</span>
-                                <span class="stat-value">Main Lab</span>
-                            </div>
-                            <div class="stat-line">
-                                <span class="stat-label">IDENTITY:</span>
-                                <span class="stat-value">Confirmed</span>
-                            </div>
-                        </div>
+
+                <!-- Navigation Tools -->
+                <div class="workshop-section">
+                    <div class="section-header">
+                        <h4 class="section-title">NAVIGATION</h4>
                     </div>
-                    {{ else }}
-                    <!-- Episodes 24-29: Still unknown -->
-                    <div class="character-status-item bounce-mystery" data-color="#f59e0b" style="--char-color: #f59e0b;">
-                        <div class="character-status-name">
-                            <span class="status-indicator"></span>
-                            <span class="char-badge bounce-mystery-badge">?</span>
-                            <span class="mystery-name">UNKNOWN</span>
-                        </div>
-                        <div class="character-status-role">Status: ???</div>
-                        <div class="character-stats">
-                            <div class="stat-line">
-                                <span class="stat-label">LOCATION:</span>
-                                <span class="stat-value">???</span>
-                            </div>
-                            <div class="stat-line">
-                                <span class="stat-label">IDENTITY:</span>
-                                <span class="stat-value">???</span>
-                            </div>
-                        </div>
+                    <div class="nav-tools">
+                        {{ $currentEp := .Params.episode_number }}
+                        {{ $allBlogPages := where .Site.RegularPages "Section" "blog" }}
+                        {{ $prevEp := sub $currentEp 1 }}
+                        {{ $nextEp := add $currentEp 1 }}
+
+                        {{ $prevPage := false }}
+                        {{ $nextPage := false }}
+
+                        {{ range $allBlogPages }}
+                            {{ if and .Params.type (eq .Params.type "episode") (not .Draft) }}
+                                {{ if eq .Params.episode_number $prevEp }}
+                                    {{ $prevPage = . }}
+                                {{ end }}
+                                {{ if eq .Params.episode_number $nextEp }}
+                                    {{ $nextPage = . }}
+                                {{ end }}
+                            {{ end }}
+                        {{ end }}
+
+                        {{ if $prevPage }}
+                        <a href="{{ $prevPage.Permalink }}" class="nav-button prev">
+                            <span class="nav-icon">⬅️</span>
+                            <span class="nav-text">Previous</span>
+                        </a>
+                        {{ end }}
+
+                        {{ if $nextPage }}
+                        <a href="{{ $nextPage.Permalink }}" class="nav-button next">
+                            <span class="nav-text">Next</span>
+                            <span class="nav-icon">➡️</span>
+                        </a>
+                        {{ end }}
                     </div>
-                    {{ end }}
-                {{ end }}
-            </div>
-        </div>
-        
-        <!-- Episode-Specific Mystery Indicators -->
-        {{ if and .IsPage (eq .Params.episode_number 24) }}
-        <div class="sidebar-section">
-            <h4>ANOMALY DETECTION</h4>
-            <div class="anomaly-indicator">
-                <div class="anomaly-line">
-                    <span class="anomaly-label">⚠️ UNKNOWN SOURCE:</span>
-                    <span class="anomaly-value">???</span>
-                </div>
-                <div class="anomaly-line">
-                    <span class="anomaly-label">Location:</span>
-                    <span class="anomaly-value">Unknown</span>
-                </div>
-                <div class="anomaly-line">
-                    <span class="anomaly-label">Status:</span>
-                    <span class="anomaly-value">Investigating</span>
                 </div>
             </div>
+
         </div>
-        {{ else if and .IsPage (eq .Params.episode_number 25) }}
-        <div class="sidebar-section">
-            <h4>NETWORK MONITORING</h4>
-            <div class="anomaly-indicator">
-                <div class="anomaly-line">
-                    <span class="anomaly-label">⚠️ BANDWIDTH SPIKE:</span>
-                    <span class="anomaly-value">340%</span>
-                </div>
-                <div class="anomaly-line">
-                    <span class="anomaly-label">Source:</span>
-                    <span class="anomaly-value">???</span>
-                </div>
-                <div class="anomaly-line">
-                    <span class="anomaly-label">Location:</span>
-                    <span class="anomaly-value">Sector 7-B</span>
-                </div>
-                <div class="anomaly-line">
-                    <span class="anomaly-label">Status:</span>
-                    <span class="anomaly-value">Unexplained</span>
-                </div>
-            </div>
-        </div>
-        {{ else if and .IsPage (ge .Params.episode_number 26) (le .Params.episode_number 29) }}
-        <div class="sidebar-section">
-            <h4>NETWORK MONITORING</h4>
-            <div class="anomaly-indicator">
-                <div class="anomaly-line">
-                    <span class="anomaly-label">⚠️ BANDWIDTH SPIKE:</span>
-                    <span class="anomaly-value bandwidth-spike-counter">
-                        <span class="bandwidth-number" data-value="340">340%</span>
-                        <span class="bandwidth-number" data-value="450">450%</span>
-                        <span class="bandwidth-number" data-value="500">500%</span>
-                        <span class="bandwidth-number" data-value="rising">RISING</span>
-                    </span>
-                </div>
-                <div class="anomaly-line">
-                    <span class="anomaly-label">Source:</span>
-                    <span class="anomaly-value">???</span>
-                </div>
-                <div class="anomaly-line">
-                    <span class="anomaly-label">Location:</span>
-                    <span class="anomaly-value">Sector 7-B</span>
-                </div>
-                <div class="anomaly-line">
-                    <span class="anomaly-label">Status:</span>
-                    <span class="anomaly-value">Under Investigation</span>
-                </div>
-            </div>
-        </div>
-        {{ else if and .IsPage (eq .Params.episode_number 30) }}
-        <div class="sidebar-section">
-            <h4>NETWORK MONITORING</h4>
-            <div class="anomaly-indicator">
-                <div class="anomaly-line">
-                    <span class="anomaly-label">⚠️ BANDWIDTH SPIKE:</span>
-                    <span class="anomaly-value bandwidth-spike-counter">
-                        <span class="bandwidth-number" data-value="340">340%</span>
-                        <span class="bandwidth-number" data-value="450">450%</span>
-                        <span class="bandwidth-number" data-value="500">500%</span>
-                        <span class="bandwidth-number" data-value="rising">RISING</span>
-                    </span>
-                </div>
-                <div class="anomaly-line">
-                    <span class="anomaly-label">Source:</span>
-                    <span class="anomaly-value">BOUNCE</span>
-                </div>
-                <div class="anomaly-line">
-                    <span class="anomaly-label">Location:</span>
-                    <span class="anomaly-value">Main Lab</span>
-                </div>
-                <div class="anomaly-line">
-                    <span class="anomaly-label">Status:</span>
-                    <span class="anomaly-value">Improving</span>
-                </div>
-                <div class="anomaly-line">
-                    <span class="anomaly-label">DESIGN MODS:</span>
-                    <span class="anomaly-value">Active</span>
-                </div>
-            </div>
-        </div>
-        {{ else if and .IsPage (ge .Params.episode_number 31) }}
-        <div class="sidebar-section">
-            <h4>NETWORK MONITORING</h4>
-            <div class="anomaly-indicator">
-                <div class="anomaly-line">
-                    <span class="anomaly-label">⚠️ BANDWIDTH SPIKE:</span>
-                    <span class="anomaly-value bandwidth-spike-counter">
-                        <span class="bandwidth-number" data-value="340">340%</span>
-                        <span class="bandwidth-number" data-value="450">450%</span>
-                        <span class="bandwidth-number" data-value="500">500%</span>
-                        <span class="bandwidth-number" data-value="rising">RISING</span>
-                    </span>
-                </div>
-                <div class="anomaly-line">
-                    <span class="anomaly-label">Source:</span>
-                    <span class="anomaly-value">BOUNCE</span>
-                </div>
-                <div class="anomaly-line">
-                    <span class="anomaly-label">Location:</span>
-                    <span class="anomaly-value">Main Lab</span>
-                </div>
-                <div class="anomaly-line">
-                    <span class="anomaly-label">Status:</span>
-                    <span class="anomaly-value">Integrated</span>
-                </div>
-            </div>
-        </div>
-        {{ end }}
-        
-        <!-- Attribution -->
-        <div class="sidebar-footer">
-            <p class="sidebar-footer-text">
+
+        <!-- Workshop Footer -->
+        <div class="sidebar-footer workshop-footer">
+            <div class="workshop-attribution">
                 — Built by Vector<br>
                 (Redesigned by Bounce)
-            </p>
+            </div>
+            <div class="workshop-version">v2.0</div>
         </div>
     </div>
 </aside>
@@ -528,23 +529,596 @@
     50% { opacity: 0.7; }
 }
 
+.workshop-sidebar {
+    position: fixed;
+    right: 1.5rem;
+    top: 120px;
+    bottom: auto;
+    width: 280px;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.97) 0%, rgba(30, 41, 59, 0.97) 100%);
+    border: 2px solid #3b82f6;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5), 0 0 30px rgba(59, 130, 246, 0.5), inset 0 0 30px rgba(59, 130, 246, 0.08);
+    z-index: 100;
+    max-height: calc(100vh - 140px);
+    overflow: hidden;
+    animation: sidebar-glow 4s ease-in-out infinite;
+}
+
+@keyframes sidebar-glow {
+    0%, 100% {
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5), 0 0 30px rgba(59, 130, 246, 0.5), inset 0 0 30px rgba(59, 130, 246, 0.08);
+    }
+    50% {
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5), 0 0 40px rgba(59, 130, 246, 0.7), inset 0 0 35px rgba(59, 130, 246, 0.12);
+    }
+}
+
+.workshop-header {
+    padding: 1rem;
+    border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.workshop-header h3 {
+    color: #60a5fa;
+    font-size: 0.9rem;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+    animation: header-pulse 3s ease-in-out infinite;
+}
+
+@keyframes header-pulse {
+    0%, 100% { text-shadow: 0 0 10px rgba(59, 130, 246, 0.8); }
+    50% { text-shadow: 0 0 15px rgba(59, 130, 246, 1), 0 0 25px rgba(96, 165, 250, 0.6); }
+}
+
 .workshop-status {
     color: #10b981;
     font-size: 0.7rem;
-    margin-bottom: 1rem;
     text-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
-    animation: workshop-status-pulse 2s ease-in-out infinite;
+    animation: status-pulse 2s ease-in-out infinite;
+    display: inline-block;
 }
 
-@keyframes workshop-status-pulse {
-    0%, 100% { 
+@keyframes status-pulse {
+    0%, 100% {
         opacity: 1;
         text-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
     }
-    50% { 
+    50% {
         opacity: 0.8;
         text-shadow: 0 0 15px rgba(16, 185, 129, 0.8);
     }
+}
+
+.workshop-tabs {
+    display: flex;
+    gap: 0.25rem;
+    margin-top: 0.75rem;
+}
+
+.tab-button {
+    flex: 1;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 4px;
+    padding: 0.5rem 0.25rem;
+    color: #94a3b8;
+    font-size: 0.65rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.tab-button:hover {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.5);
+    color: #cbd5e1;
+}
+
+.tab-button.active {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: #3b82f6;
+    color: #60a5fa;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+.tab-icon {
+    font-size: 0.8rem;
+    line-height: 1;
+}
+
+.tab-label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.workshop-content {
+    max-height: calc(100vh - 280px);
+    overflow-y: auto;
+}
+
+.tab-content {
+    display: none;
+    padding: 1rem;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.workshop-section {
+    margin-bottom: 1.5rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.section-title {
+    color: #60a5fa;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.activity-pulse {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: pulse-green 2s ease-in-out infinite;
+}
+
+@keyframes pulse-green {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.status-indicator {
+    width: 6px;
+    height: 6px;
+    background: #fbbf24;
+    border-radius: 50%;
+    animation: pulse-yellow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-yellow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.alert-indicator {
+    width: 8px;
+    height: 8px;
+    background: #ef4444;
+    border-radius: 50%;
+    animation: pulse-red 1s ease-in-out infinite;
+}
+
+@keyframes pulse-red {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.network-indicator {
+    width: 8px;
+    height: 8px;
+    background: #8b5cf6;
+    border-radius: 50%;
+    animation: pulse-purple 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-purple {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Work Streams */
+.work-streams-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.work-stream-compact {
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 6px;
+    padding: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.work-stream-compact:hover {
+    background: rgba(59, 130, 246, 0.12);
+    border-color: rgba(59, 130, 246, 0.4);
+    transform: translateX(2px);
+}
+
+.compact-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.character-avatar {
+    width: 2rem;
+    height: 2rem;
+    background: var(--char-color);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    box-shadow: 0 0 8px currentColor;
+}
+
+.compact-info {
+    flex: 1;
+}
+
+.character-name {
+    display: block;
+    color: var(--char-color);
+    font-weight: 600;
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.activity-indicator {
+    display: block;
+    color: #cbd5e1;
+    font-size: 0.65rem;
+    font-style: italic;
+}
+
+.expand-toggle {
+    background: transparent;
+    border: none;
+    color: var(--char-color);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: transform 0.2s ease;
+    line-height: 1;
+}
+
+.work-stream-compact[data-expanded="true"] .expand-toggle {
+    transform: rotate(90deg);
+}
+
+.compact-details {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.detail-section {
+    margin-bottom: 0.75rem;
+}
+
+.detail-section:last-child {
+    margin-bottom: 0;
+}
+
+.detail-label {
+    color: var(--char-color);
+    font-weight: 600;
+    font-size: 0.65rem;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-content {
+    color: #e2e8f0;
+    font-size: 0.7rem;
+    line-height: 1.4;
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.7rem;
+    transition: all 0.2s ease;
+}
+
+.action-button.primary {
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #60a5fa;
+}
+
+.action-button.primary:hover {
+    background: rgba(59, 130, 246, 0.25);
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+.action-button.secondary {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #34d399;
+    cursor: pointer;
+}
+
+.action-button.secondary:hover {
+    background: rgba(16, 185, 129, 0.25);
+    border-color: rgba(16, 185, 129, 0.5);
+}
+
+.action-icon {
+    font-size: 0.8rem;
+}
+
+.action-text {
+    font-weight: 600;
+}
+
+/* Character Grid */
+.character-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+.character-card {
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 6px;
+    padding: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.character-card:hover {
+    background: rgba(59, 130, 246, 0.12);
+    border-color: rgba(59, 130, 246, 0.4);
+    transform: translateY(-1px);
+}
+
+.character-card.bounce-integrated {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.character-card.bounce-integrated:hover {
+    background: rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.5);
+}
+
+.character-card.bounce-mystery {
+    background: rgba(245, 158, 11, 0.08);
+    border-color: rgba(245, 158, 11, 0.2);
+    border-style: dashed;
+}
+
+.character-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+}
+
+.status-dot.online {
+    background: #10b981;
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+}
+
+.status-dot.unknown {
+    background: #fbbf24;
+    box-shadow: 0 0 6px rgba(251, 191, 36, 0.6);
+}
+
+.char-badge {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--char-color);
+    color: #000;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.7rem;
+    box-shadow: 0 0 6px currentColor;
+}
+
+.char-badge.mystery {
+    background: #fbbf24;
+    color: #000;
+}
+
+.character-title {
+    color: var(--char-color);
+    font-weight: 600;
+    font-size: 0.75rem;
+    flex: 1;
+}
+
+.character-role {
+    color: #94a3b8;
+    font-size: 0.65rem;
+    margin-bottom: 0.5rem;
+}
+
+.character-metrics {
+    font-size: 0.65rem;
+}
+
+.character-metrics .metric {
+    color: var(--char-color);
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.character-metrics .metric:last-child {
+    margin-bottom: 0;
+}
+
+/* Tool Grid */
+.tool-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tool-card {
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 4px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tool-card.alert {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.tool-card.network {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+.tool-icon {
+    font-size: 1rem;
+}
+
+.tool-info {
+    flex: 1;
+}
+
+.tool-name {
+    display: block;
+    color: #cbd5e1;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.tool-status {
+    display: block;
+    color: #94a3b8;
+    font-size: 0.65rem;
+}
+
+/* Navigation */
+.nav-tools {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 4px;
+    color: #60a5fa;
+    text-decoration: none;
+    font-size: 0.7rem;
+    transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.5);
+    transform: translateX(2px);
+}
+
+.nav-button.prev {
+    flex-direction: row-reverse;
+}
+
+.nav-icon {
+    font-size: 0.8rem;
+}
+
+.nav-text {
+    font-weight: 600;
+}
+
+/* Workshop Footer */
+.workshop-footer {
+    padding: 1rem;
+    border-top: 1px solid rgba(59, 130, 246, 0.3);
+    background: rgba(59, 130, 246, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.workshop-attribution {
+    color: #94a3b8;
+    font-size: 0.65rem;
+    line-height: 1.3;
+}
+
+.workshop-version {
+    color: #60a5fa;
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1400px) {
+    .workshop-sidebar {
+        display: none;
+    }
+}
+
+/* Scrollbar */
+.workshop-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.workshop-content::-webkit-scrollbar-track {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.workshop-content::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 2px;
 }
 
 /* Work Streams Styling */

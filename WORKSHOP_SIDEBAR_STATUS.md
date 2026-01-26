@@ -1,82 +1,133 @@
 # Workshop Sidebar - Current Status & Fixes
 
-**Last Updated:** January 24, 2026  
-**Status:** Recently fixed multiple issues, needs testing
+**Last Updated:** January 24, 2026
+**Status:** TEAM and TOOLS tabs restored - critical template bug fixed
 
-## What We Just Fixed
+---
 
-### 1. **Tab Navigation Issues**
-- **Problem:** Tabs weren't working, couldn't switch between WORK/TEAM/TOOLS
-- **Fix:** Updated JavaScript (`workshop.js`) and CSS to properly handle tab switching with flex layout
-- **Files Changed:** `layouts/partials/character-sidebar.html`, `static/js/workshop.js`
+## Critical Bug Fix (January 24, 2026 - Session 2)
 
-### 2. **Layout Shift on Load**
-- **Problem:** Vector's work stream was auto-expanding on page load, causing everything to shift down
-- **Fix:** Disabled `initAutoExpand()` function - all work streams now start collapsed
-- **File Changed:** `static/js/workshop.js`
+### ROOT CAUSE: Missing `{{ end }}` for Range Loop
 
-### 3. **Team Status Layout**
-- **Problem:** Vector and Kai were separated from Recurse and Bounce, Kai appeared to be "floating"
-- **Fix:** Changed character grid from CSS Grid to Flexbox, all characters now display together properly
-- **File Changed:** `layouts/partials/character-sidebar.html` (CSS for `.character-grid`)
+**Problem:** TEAM and TOOLS tabs were not rendering in episode pages. Only the WORK (streams) tab appeared.
 
-### 4. **Scrolling & Visibility Issues**
-- **Problem:** No scrolling ability, Tools/Navigation sections not visible
-- **Fix:** 
-  - Changed sidebar from `overflow: hidden` to flex layout
-  - Made tab content areas scrollable with `overflow-y: auto`
-  - Proper flex structure: Header (fixed) → Content (scrollable) → Footer (fixed)
-- **Files Changed:** `layouts/partials/character-sidebar.html` (CSS for `.workshop-sidebar`, `.workshop-content`, `.tab-content`)
+**Root Cause:** The `{{ range $workshopData.work_streams }}` loop on line 179 was missing its closing `{{ end }}` statement. This caused Hugo to consume the TEAM and TOOLS tab content into the unclosed range, resulting in broken output.
 
-### 5. **Spacing & Quick Actions**
-- **Problem:** Quick Actions had poor spacing, buttons too cramped
-- **Fix:** Increased gaps and padding throughout (0.5rem → 0.75rem), improved button styling
-- **File Changed:** `layouts/partials/character-sidebar.html` (CSS for `.quick-actions`, `.action-button`, `.nav-tools`)
+**Symptoms:**
+- Built HTML had only 1 `tab-content` div instead of 3
+- "TEAM STATUS" and "WORKSHOP TOOLS" headings were missing
+- Home page sidebar worked correctly (different code path)
 
-### 6. **Emoji Icons Replaced**
-- **Problem:** User wanted to replace emojis with something more professional
-- **Fix:** Replaced all emojis with bracketed symbols:
-  - 🏠 → `[H]`, 📊 → `[=]`, 🔄 → `[⟲]`, 🎨 → `[■]`, ⬆️ → `[↑]`
-  - ⬅️ → `[←]`, ➡️ → `[→]`, ⚡ → `[W]`, 👥 → `[T]`, 🛠️ → `[≡]`, ⚠️ → `[!]`
-- **File Changed:** `layouts/partials/character-sidebar.html`
+**Fix Applied:**
+1. Added missing `{{ end }}` after line 206 to close the range loop
+2. Removed extra `{{ end }}` at line 368 that was causing imbalance
 
-### 7. **Text Visibility**
-- **Problem:** Character names (especially Bounce's orange) were hard to read
-- **Fix:** Changed `.character-title` from `color: var(--char-color)` to `color: #ffffff` (white)
-- **File Changed:** `layouts/partials/character-sidebar.html`
+**Files Changed:** `layouts/partials/character-sidebar.html`
+- Line 207: Added `{{ end }}` to close `{{ range $workshopData.work_streams }}`
+- Line 367: Removed duplicate `{{ end }}`
+
+**Result:**
+- All 3 tabs (WORK, TEAM, TOOLS) now render correctly
+- All 4 characters (Vector, Kai, Recurse, Bounce) appear in TEAM tab
+- TOOLS tab displays with episode navigation
+
+---
+
+## Previous Overhaul (January 24, 2026 - Session 1)
+
+### 1. **Bounce Integration Fixed**
+- **Problem:** Bounce was excluded from character loops because `status: "pending"` in YAML
+- **Fix:** Changed `data/characters/bounce.yaml` status from `"pending"` to `"active"`
+- **Result:** All 4 characters (Vector, Kai, Recurse, Bounce) now render from the same Hugo loop
+
+### 2. **Character Cards Unified**
+- **Problem:** Hardcoded Bounce blocks caused inconsistent styling vs dynamically-generated cards
+- **Fix:**
+  - Removed hardcoded Bounce blocks from both home page and TEAM tab
+  - Added Bounce badge logic (`{{ else if eq .name "Bounce" }}`) to the Hugo character loop
+  - All 4 characters now use identical HTML structure
+- **Files Changed:** `layouts/partials/character-sidebar.html` (lines 48-96 and 237-270)
+
+### 3. **Glitchy Unicode Icons**
+- **Problem:** Generic bracketed symbols `[W]`, `[T]`, `[=]` didn't fit corrupted terminal aesthetic
+- **Fix:** Replaced with glitchy Unicode symbols:
+
+| Element | Old | New | Meaning |
+|---------|-----|-----|---------|
+| Work Tab | `[W]` | `~` | Command/code |
+| Team Tab | `[T]` | `` | Diamond cluster |
+| Tools Tab | `[]` | `_` | Terminal cursor |
+| Full Workshop | `[H]` | `` | Home glyph |
+| Scroll Top | `[]` | `` | Double triangle |
+| Previous | `[]` | `` | Double play reverse |
+| Next | `[]` | `` | Double play forward |
+| Live Updates | `[]` | `` | Bullseye pulse |
+| Design Mode | `[]` | `` | Grid pattern |
+| Alert | `[!]` | `` | Lightning |
+| Network | `[=]` | `` | Triple arrow |
+
+### 4. **Icon Glitch CSS Effect**
+- **New:** Chromatic aberration animation on all icons
+- **Effect:** Cyan/magenta text-shadow with periodic glitch displacement
+- **Animation:** `icon-glitch` keyframes (5s cycle with random-feeling stutters)
+
+### 5. **Improved Spacing**
+- **Changes:**
+  - `.character-grid` gap: `0.75rem`  `1rem`
+  - `.character-card` padding: `0.75rem`  `1rem`
+  - `.quick-actions` gap: `0.75rem`  `1rem`
+  - `.tool-grid` gap: `0.75rem`  `1rem`
+  - `.nav-tools` gap: `0.75rem`  `1rem`
+
+### 6. **Tab Display Fix**
+- **Problem:** Potential CSS specificity conflicts hiding tab content
+- **Fix:** Added `!important` to `.tab-content` display rules
+
+---
 
 ## Current Structure
 
 The workshop sidebar now uses:
-- **Flexbox layout** for proper scrolling
-- **Tab system** with WORK, TEAM, TOOLS tabs
-- **Collapsible work streams** (all start collapsed)
-- **Scrollable content areas** within each tab
-- **Fixed header and footer** with scrollable content in between
+- **Unified character rendering** - All 4 characters from Hugo data loop
+- **Glitchy Unicode icons** - Corrupted terminal aesthetic
+- **Chromatic aberration** - Cyan/magenta icon glitch animation
+- **Flexbox layout** - Proper scrolling
+- **Tab system** - WORK, TEAM, TOOLS tabs
+- **Improved spacing** - Better breathing room
+
+---
 
 ## Key Files
 
-- `layouts/partials/character-sidebar.html` - Main sidebar template with all CSS
+- `layouts/partials/character-sidebar.html` - Main sidebar template with embedded CSS
+- `data/characters/bounce.yaml` - Bounce character data (status now "active")
 - `static/js/workshop.js` - Tab navigation and expand/collapse functionality
-- `static/js/main.js` - General site JavaScript (includes workshop preview boxes)
 
-## Testing Needed
+---
 
-1. **Tab Switching:** Verify WORK/TEAM/TOOLS tabs switch correctly
-2. **Scrolling:** Check that content scrolls properly within each tab
-3. **Team Status:** Confirm all 4 characters (Vector, Kai, Recurse, Bounce) appear together
-4. **Work Streams:** Verify they start collapsed and can be expanded manually
-5. **Tools/Navigation:** Ensure these sections are visible and functional
-6. **No Layout Shift:** Page should load without elements jumping around
+## Character Color Reference
 
-## Known Issues (If Any)
+- **Vector:** `#3b82f6` (Blue) - Badge "V"
+- **Kai:** `#10b981` (Green) - Badge "K"
+- **Recurse:** `#8b5cf6` (Purple) - Badge "R"
+- **Bounce:** `#f59e0b` (Amber) - Badge "B"
 
-- Need to verify on actual episode pages that everything works
-- May need to adjust spacing further based on user feedback
-- Footer positioning might need tweaking if content is very short
+---
 
-## Next Steps
+## Testing Checklist
 
-1. Test locally on episode pages
-2. Get user feedback on spacing and functionality
-3. Adjust as needed based on real-world usage
+1.  **Home Page Sidebar:** All 4 characters display with correct badges and rotating stats
+2.  **Episode TEAM Tab:** All 4 character cards appear together, styled consistently
+3.  **Tab Switching:** WORK/TEAM/TOOLS tabs switch correctly
+4.  **Icons:** Glitchy Unicode symbols render with chromatic aberration effect
+5.  **Spacing:** Elements have comfortable breathing room
+
+---
+
+## Previous Fixes (Still Active)
+
+- Tab navigation JavaScript (event delegation)
+- Layout shift prevention (auto-expand disabled)
+- Scrollable content areas
+- Fixed header/footer with scrollable content between
+- White character titles for readability

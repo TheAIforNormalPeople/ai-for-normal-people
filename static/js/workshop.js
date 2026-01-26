@@ -81,15 +81,9 @@ function initExpandableWorkStreams() {
 
 /**
  * Auto-expand first work stream for better UX
+ * DISABLED: Causes layout shift on page load
  */
 function initAutoExpand() {
-    const firstWorkStream = document.querySelector('.work-stream-compact');
-    if (firstWorkStream) {
-        const firstToggle = firstWorkStream.querySelector('.expand-toggle');
-        const firstDetails = firstWorkStream.querySelector('.compact-details');
-        if (firstToggle && firstDetails) {
-            firstDetails.style.display = 'block';
-            firstToggle.style.transform = 'rotate(90deg)';
-        }
-    }
+    // Disabled - all work streams start collapsed to prevent layout shift
+    // Users can expand manually if needed
 }

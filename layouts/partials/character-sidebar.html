@@ -204,6 +204,7 @@
                             </div>
                         </div>
                         {{ end }}
+                        {{ end }}
                     </div>
                 </div>
                 {{ end }}
@@ -245,6 +246,8 @@
                                 <span class="char-badge">K</span>
                                 {{ else if eq .name "Recurse" }}
                                 <span class="char-badge">R</span>
+                                {{ else if eq .name "Bounce" }}
+                                <span class="char-badge">B</span>
                                 {{ end }}
                                 <span class="character-title">{{ upper .name }}</span>
                             </div>
@@ -257,44 +260,13 @@
                                 <div class="metric">VIGILANCE: {{ if .stats.vigilance }}{{ .stats.vigilance }}{{ else }}100%{{ end }}</div>
                                 {{ else if eq .name "Recurse" }}
                                 <div class="metric">SKEPTICISM: {{ if .stats.skepticism }}{{ .stats.skepticism }}{{ else }}85%{{ end }}</div>
+                                {{ else if eq .name "Bounce" }}
+                                <div class="metric">ENTHUSIASM: {{ if .stats.enthusiasm }}{{ .stats.enthusiasm }}{{ else }}160%{{ end }}</div>
                                 {{ end }}
                             </div>
                             {{ end }}
                         </div>
                         {{ end }}
-                        {{ end }}
-
-                        <!-- Bounce Status -->
-                        {{ $episodesInRange := where .Site.AllPages "Section" "blog" }}
-                        {{ $episodesInRange = where $episodesInRange ".Params.episode_number" "ge" 24 }}
-                        {{ $episodesInRange = where $episodesInRange ".Params.episode_number" "le" 31 }}
-                        {{ if gt (len $episodesInRange) 0 }}
-                            {{ if and .IsPage (or (eq .Params.episode_number 30) (gt .Params.episode_number 30)) }}
-                            <div class="character-card bounce-integrated" style="--char-color: #f59e0b;">
-                                <div class="character-header">
-                                    <span class="status-dot online"></span>
-                                    <span class="char-badge" style="background: #f59e0b;">B</span>
-                                    <span class="character-title">BOUNCE</span>
-                                </div>
-                                <div class="character-role">Workshop Designer</div>
-                                <div class="character-metrics">
-                                    <div class="metric">ENTHUSIASM: 160%</div>
-                                    <div class="metric">CREATIVITY: ∞</div>
-                                </div>
-                            </div>
-                            {{ else }}
-                            <div class="character-card bounce-mystery" style="--char-color: #f59e0b;">
-                                <div class="character-header">
-                                    <span class="status-dot unknown"></span>
-                                    <span class="char-badge mystery">?</span>
-                                    <span class="character-title">UNKNOWN</span>
-                                </div>
-                                <div class="character-role">Status: ???</div>
-                                <div class="character-metrics">
-                                    <div class="metric">LOCATION: ???</div>
-                                </div>
-                            </div>
-                            {{ end }}
                         {{ end }}
                     </div>
                 </div>
@@ -363,7 +335,6 @@
                         </div>
                     </div>
                 </div>
-                {{ end }}
                 {{ end }}
 
                 <!-- Navigation Tools -->
@@ -649,7 +620,7 @@
 
 .tab-content {
     display: none;
-    padding: 1rem;
+    padding: 0.5rem 0.75rem;
 }
 
 .tab-content.active {

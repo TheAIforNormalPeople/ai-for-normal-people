@@ -1,6 +1,6 @@
 ---
 title: "How Does AI Image Generation Actually Work? (DALL-E, Midjourney, Stable Diffusion)"
-date: 2026-01-22T09:00:00-05:00
+date: 2026-01-25T09:00:00-05:00
 type: "episode"
 episode_number: 33
 draft: false

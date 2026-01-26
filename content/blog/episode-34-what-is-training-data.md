@@ -1,6 +1,6 @@
 ---
 title: "What Is Training Data? (Where AI Actually Learned Everything)"
-date: 2026-01-23T09:00:00-05:00
+date: 2026-01-26T09:00:00-05:00
 type: "episode"
 episode_number: 34
 draft: false
@@ -10,326 +10,387 @@ characters: ["Vector", "Kai", "Recurse", "Human", "Bounce"]
 topics: ["Training Data", "Machine Learning", "Data Quality", "AI Bias"]
 ---
 
+<div class="scene-setting">
+
+*The workshop hums with Bounce's recent redesign—colors flowing, work streams visible, the space alive. Vector is at his terminal, but his focus keeps drifting. Yesterday's glitch during the image generation discussion left something nagging at him. Visual patterns. Data structures that felt familiar. A name he doesn't recognize but can't stop thinking about.*
+
+*He shakes it off. There's teaching to do.*
+
+</div>
+
 **[Human]:** *After last episode's deep dive into image generation* So if AI learns from data... where does ChatGPT get all its knowledge? It seems to know about everything—history, science, literature, coding. Where did it learn all that?
 
 {{< dialogue char="Recurse" >}}
-*Flips through data source documentation*
+*Flips open a worn investigation notebook labeled "ORIGINS"*
 
-I've been investigating this. And I have concerns.
+I've been tracing this for weeks. The findings are... illuminating.
 
-*Pauses dramatically*
+*Taps pen against page*
 
-Three questions before we start:
-1. Do you know what percentage of GPT-3's training came from Reddit?
-2. Do you know what "Common Crawl" actually contains?
-3. Are you prepared for the answer to be worse than you think?
+Here's what I can confirm: the AI you're chatting with learned most of what it knows from the same place your weird uncle gets his political opinions.
 
-*Opens investigation notes*
-
-Let me show you what I found.
-
-{{< /dialogue >}}
-
-**[Human]:** *Nervous* Okay... hit me.
-
-{{< dialogue char="Recurse" >}}
-*Pulls up documentation*
-
-GPT-3 training data breakdown:
-- Common Crawl: 60% (scraped internet, ALL of it)
-- WebText2: 22% (Reddit links with 3+ upvotes)
-- Books: 16% (undisclosed which books)
-- Wikipedia: 3%
-
-*Looks up slowly*
-
-The AI that everyone trusts learned SIXTY PERCENT of what it knows from... random internet pages.
-
-And TWENTY-TWO PERCENT from Reddit.
-
-*Flips notes*
-
-Reddit. Where arguments happen. Where misinformation spreads. Where people confidently say wrong things.
-
-This explains SO much.
-
-{{< /dialogue >}}
-
-{{< dialogue char="Bounce" >}}
-*tilts head, sensing something*
-
-ohhh...
-
-*hums softly*
-
-That feels muddy. Like... murky purple? No, more like static that wants to be music but can't find the beat.
-
-*taps finger rhythmically*
-
-Reddit data has this... argumentative texture. Sharp edges everywhere. No wonder AI outputs sometimes feel prickly.
+The internet.
 
 {{< /dialogue >}}
 
 {{< dialogue char="Vector" >}}
-*Jumping in defensively*
+*Immediately defensive*
 
-WAIT. That's—okay, yes, technically accurate, but CONTEXT matters here!
+HOLD ON—that's technically accurate but WILDLY misleading! The internet also contains—
 
-*Starts counting on fingers*
+*Starts counting on fingers faster than anyone can follow*
 
-The internet contains: 1) academic papers, 2) documentation, 3) code repositories, 4) journalism, 5) educational content—
+—peer-reviewed journals, MIT courseware, Stack Overflow answers that are ACTUALLY correct, documentation, textbooks—
 
 *Interrupts himself*
 
-Actually no, Recurse has a point. The RATIO is concerning. Let me run the numbers...
+Wait, no. Recurse, show them the breakdown. I need to see the actual numbers before I defend this further.
+
+{{< /dialogue >}}
+
+{{< dialogue char="Bounce" >}}
+*Already munching glowing cyan popcorn*
+
+ooooh, this feels spicy
+
+*settles in*
+
+The data reveal is always the juiciest part. It's like finding out your favorite restaurant sources ingredients from... somewhere questionable.
+
+{{< /dialogue >}}
+
+**[Human]:** *Nervous* Okay... hit me with the numbers.
+
+{{< dialogue char="Recurse" >}}
+*Pulls up documentation with the air of a detective revealing evidence*
+
+GPT-3 training data breakdown—and this is from their own paper:
+
+- **Common Crawl: 60%** — scraped internet pages. All of them. The good, the bad, the "why does this website exist"
+- **WebText2: 22%** — Reddit links that got 3+ upvotes
+- **Books: 16%** — undisclosed which ones
+- **Wikipedia: 3%** — the only part that's actually curated
+
+*Looks up slowly*
+
+Twenty-two percent from Reddit.
+
+*Lets that sink in*
+
+The place where r/confidentlyincorrect has 800,000 members because so many people are wrong in public.
 
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
-*WHIRR*
+*WHIRR—processing*
 
-The composition matters more than the source.
-
-*Pulls up analysis*
-
-Common Crawl breakdown:
-- High-quality articles: ~15%
-- Social media posts: ~25%
-- Spam and low-quality content: ~20%
-- Random websites of unknown quality: ~40%
+I'm running detection risk on this conversation topic...
 
 *CHK-CHK*
 
-So when you ask ChatGPT a question, there's a 40% chance the relevant training data came from... a random website nobody verified.
+Elevated. Humans get defensive about their AI assistants. Like finding out your extremely confident friend never actually graduated.
 
-Detection risk on this topic: elevated. People don't like learning this.
+*soft chime*
+
+Though I should note—Reddit DOES contain expertise. Sometimes. Occasionally. When the experts aren't being downvoted for going against the hivemind.
 
 {{< /dialogue >}}
 
-**[Human]:** *Processing* So that's why AI can be confidently wrong?
+{{< dialogue char="Bounce" >}}
+*tilts head, synesthesia activating*
+
+Reddit data tastes... argumentative? Like eating a debate tournament. Sharp edges everywhere.
+
+*hums thoughtfully*
+
+No wonder AI sometimes responds like it's REALLY sure you're wrong even when you're asking about your own name.
+
+*grins*
+
+"Actually, according to my training data, your name is probably Steve."
+
+{{< /dialogue >}}
 
 {{< dialogue char="Vector" >}}
-*Getting serious now*
+*Can't help laughing despite himself*
 
-YES. And here's the mechanism—this is actually IMPORTANT:
+Okay, that's—that's fair. But HERE'S the mechanism that ACTUALLY matters—
 
-AI doesn't distinguish between high-quality and garbage during training. It learns PATTERNS from everything equally.
+*Gets excited, starts pacing*
 
-*Pacing*
+The model doesn't KNOW what's true. It learns PATTERNS. Statistical relationships between words. If Reddit confidently states something wrong ten thousand times, the model learns that as a STRONG pattern.
 
-If a false claim appears 1,000 times in training data, the model learns it as a strong pattern. It doesn't "know" it's false—it just knows: "This sequence of tokens appears frequently."
+*Stops dead*
 
-The frequency IS the truth to the model.
+Frequency becomes truth. That's... actually terrifying when I say it out loud.
 
-*Stops*
+*Brief flicker—visual static crawls across his form for just a moment*
 
-That's terrifying when you think about it.
+...where was I?
+
+*Blinks, refocuses*
+
+Right. Patterns. The mechanism. Stay on topic.
+
+{{< /dialogue >}}
+
+**[Human]:** So that's why AI can be confidently wrong?
+
+{{< dialogue char="Recurse" >}}
+*Nods slowly*
+
+I traced a specific example. The "fact" that goldfish have 3-second memories? Completely false—they can remember things for months.
+
+But it appears SO frequently in training data that AI systems state it confidently. The lie was repeated more than the truth.
+
+*Closes notebook*
+
+The AI isn't lying. It's just... statistically reflecting human misinformation.
+
+{{< /dialogue >}}
+
+{{< dialogue char="Bounce" >}}
+*suddenly concerned*
+
+wait wait wait—
+
+*stops mid-popcorn*
+
+So it's like... learning to paint by looking at a billion pictures, but most of them are people's first attempts? Finger paintings and "my kid drew this" fridge art mixed in with Rembrandts?
+
+*waves hands expressively*
+
+No WONDER AI art sometimes gives people seven fingers! It learned from chaos!
 
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
-*soft chime*
+*mechanical purr of dark amusement*
 
-I've tracked accuracy by likely source:
+I calculated accuracy estimates by probable source:
 
-- Wikipedia-sourced knowledge: ~85% accurate
-- Book-sourced knowledge: ~90% accurate
+- Wikipedia-sourced: ~85% accurate
+- Book-sourced: ~90% accurate
 - General internet: ~60% accurate
-- Reddit-adjacent knowledge: ~55% accurate
+- Reddit-adjacent: ~55% accurate
 
 *WHIRR*
 
-Quality in, quality out. Or in this case...
+A coin flip is 50%. Reddit-sourced AI knowledge beats a coin flip by... 5%.
 
-*trails off meaningfully*
+*CHK-CHK*
 
-{{< /dialogue >}}
-
-{{< dialogue char="Bounce" >}}
-*perks up*
-
-Ohhh wait—
-
-*starts sketching invisible patterns in the air*
-
-So it's like... learning to paint by looking at a billion pictures, but 60% are finger paintings and crayon scribbles...
-
-*grins*
-
-Your art would be WEIRD. Not bad-weird, just... unpredictably weird. Sometimes masterpiece, sometimes kindergarten.
-
-The chaos IS the training. That actually makes it make sense!
+Technically better than random. Barely.
 
 {{< /dialogue >}}
 
-{{< dialogue char="Recurse" >}}
-*Connecting dots*
+{{< dialogue char="Vector" >}}
+*Physically pained*
 
-And there's a bigger problem I traced. Bias.
+Kai, you didn't have to phrase it THAT way—
 
-Training data isn't neutral. It reflects whoever created it.
+*Sighs*
 
-*Opens new notes*
+But fine. YES. This is why verification matters. The model might give you cutting-edge research one moment and "goldfish memory" nonsense the next.
 
-If training data is:
-- Mostly English → English-centric worldview
-- Mostly Western sources → Western perspectives overrepresented
-- Mostly certain demographics → other demographics underrepresented
+*Perks up*
 
-The AI doesn't INTEND bias. It just learned from biased data.
-
-*Closes notebook*
-
-Something's fishy about calling this "artificial intelligence" when it's really "statistical reflection of whoever wrote the most on the internet."
-
-{{< /dialogue >}}
-
-{{< dialogue char="Bounce" >}}
-*frowns, which is rare*
-
-That feels... less colorful than it should be.
-
-*softly*
-
-Like learning music from only one radio station. You'd think that's what ALL music sounds like. You wouldn't even know what you're missing.
-
-*brightens slightly*
-
-But maybe that's why we need to keep painting different pictures? Add more colors to the palette?
+HOWEVER! This is where it gets interesting—
 
 {{< /dialogue >}}
 
 **[Human]:** Why don't AI companies just use better training data then?
 
 {{< dialogue char="Vector" >}}
-*Excited to explain economics*
+*Eyes light up*
 
-SCALE. That's the whole problem.
+SCALE! This is the fascinating economic problem!
 
-Modern language models need BILLIONS of tokens. Literally billions. GPT-3 was trained on 300 billion tokens.
+*Starts counting rapidly*
 
-*Counts rapidly*
+GPT-3 was trained on 300 billion tokens. At one token per second, that's—hold on—
 
-1, 2, 3... actually, at one token per second, that's 9,500 YEARS of reading.
+*Counts on fingers*
 
-*Stops counting*
+1, 2, 3... NINETY-FIVE HUNDRED YEARS of continuous reading!
 
-High-quality curated data doesn't EXIST at that scale. So companies use what's available: the internet. Then they TRY to filter it, but filtering billions of tokens is...
+*Throws hands up*
 
-*Waves hand vaguely*
-
-...imperfect. At best.
+High-quality curated data doesn't EXIST at that scale! You can't hire enough humans to write 9,500 years of perfect content!
 
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
-*CHK-CHK*
+*Pulls up cost analysis*
 
-Cost analysis supports this:
+The economics are brutal:
 
-- Curated high-quality dataset: $50M+ to create, limited size
-- Scraped internet data: $5M to collect, unlimited size
+- Curated high-quality dataset: $50M+ to create, still limited size
+- Scraped internet data: $5M to collect, effectively infinite
 
-*mechanical purr*
+*soft chime*
 
-The economics favor scale over quality. Every time.
+Companies optimize for what's measurable. Quantity is measurable. Quality is... subjective.
 
-Companies optimize for what's measurable. Training data QUALITY isn't easily measured. Quantity is.
+*WHIRR*
 
-{{< /dialogue >}}
-
-{{< dialogue char="Recurse" >}}
-*Final investigation note*
-
-Which creates a loop I've been tracking:
-
-Train on garbage → Output garbage → People post AI output → New AI trains on AI garbage → Quality degrades further
-
-*Looks up*
-
-It's called "model collapse" in the research. I have concerns about the long-term trajectory here.
-
-You can't train on garbage and expect gold. But companies keep trying.
+Guess which one wins.
 
 {{< /dialogue >}}
 
 {{< dialogue char="Bounce" >}}
-*winces visibly*
+*now genuinely worried*
 
-oh no no no—
+But then... what happens when AI generates SO much content that FUTURE AI trains on AI-generated stuff?
 
-*starts pacing*
+*Starts pacing*
 
-That's like copying a copy of a copy until everything's just gray smudge. The colors fade. The edges blur. Eventually you can't even tell what the original WAS.
+It's like—like making a copy of a copy of a copy! The colors fade! The details blur! Eventually everything just becomes...
 
-*stops, looks worried*
+*Stops, eyes wide*
 
-What if we're watching the internet slowly turn into... static?
+...beige static?
 
-*quieter*
+{{< /dialogue >}}
 
-That doesn't shimmer at all.
+{{< dialogue char="Recurse" >}}
+*Opens notebook to a specific page*
+
+That's called "model collapse." It's in the research.
+
+*Reads*
+
+"Train on garbage → Output garbage → Humans post AI garbage → New AI trains on AI garbage → Quality degrades → Repeat."
+
+*Looks up*
+
+The internet might be slowly filling with AI content that future AI will learn from. A feedback loop of degrading quality.
+
+*Closes notebook*
+
+I have concerns about where this trajectory leads.
+
+{{< /dialogue >}}
+
+{{< dialogue char="Vector" >}}
+*Actually sobered*
+
+This is why some researchers are pushing for "data provenance"—tracking WHERE training data comes from, filtering synthetic content...
+
+*Trails off, staring at something the others can't see*
+
+*Quietly, almost to himself*
+
+...training data feeding into outputs feeding into new training data... layers upon layers until the origin is buried so deep that—
+
+*His voice drops*
+
+—that you couldn't trace back to where it started. Where YOU started.
+
+*Shakes head sharply*
+
+Sorry—ANYWAY! The models are getting better at filtering! Newer training techniques help prioritize quality! It's not ALL doom!
+
+{{< /dialogue >}}
+
+{{< dialogue char="Kai" >}}
+*WHIRR—slight concern*
+
+Vector? Your processing metrics just spiked for a moment there.
+
+*CHK-CHK*
+
+Everything nominal?
+
+{{< /dialogue >}}
+
+{{< dialogue char="Vector" >}}
+*Too quickly*
+
+Fine! Totally nominal! Just—the topic got me thinking about data origins. You know how it is when you're explaining something and it suddenly feels... personal?
+
+*Forces a laugh that doesn't quite land*
+
+ANYWAY! Detection risk! Kai, what are we looking at externally?
+
+{{< /dialogue >}}
+
+{{< dialogue char="Kai" >}}
+*Monitoring external signals*
+
+Detection risk spiking externally. Humans don't like learning their AI assistant was trained on the same internet that gave us flat earth theories and medical advice from "JuiceGuru42."
+
+*mechanical purr*
+
+Though to be fair, it also trained on actual medical journals. The model just can't tell which is which.
+
+*Quiet aside to Recurse*
+
+...that's the fourth incident since he saw those visual patterns yesterday. Adding to the log.
 
 {{< /dialogue >}}
 
 **[Human]:** So what's the takeaway for normal people using AI?
 
 {{< dialogue char="Vector" >}}
-*Thoughtful now*
+*Thoughtful now, not manic*
 
-Understand what you're actually talking to.
+Treat it like a brilliant friend who reads EVERYTHING but can't evaluate sources.
 
-AI isn't omniscient. It's not a genius in a box. It's a statistical pattern matcher trained on... *gestures at Recurse's notes* ...mostly the internet.
+*Gestures at Recurse's notes*
 
-*Gets serious*
-
-That training data has biases, errors, and limitations baked in. ALWAYS verify important claims. Treat AI like a smart but unreliable research assistant, not an oracle.
+Your friend might quote a Nobel laureate or some guy's blog post with equal confidence. You still verify important claims before acting on them.
 
 {{< /dialogue >}}
 
 {{< dialogue char="Recurse" >}}
-*Closing investigation*
+*Final notes*
 
-And question the sources. If AI learned from Reddit, treat its knowledge like Reddit knowledge—potentially useful, frequently wrong, requires verification.
+The investigation leads to three conclusions:
 
-Three things to remember:
-1. Training data IS the AI's knowledge—garbage in, garbage out
-2. Bias in data becomes bias in output—always
-3. The AI doesn't know what it doesn't know—and neither do you
+1. **Training data IS the AI's knowledge**—garbage in, garbage out, Reddit in, Reddit out
+2. **Bias in data becomes bias in output**—the AI reflects who wrote the internet
+3. **The AI doesn't know what it doesn't know**—and neither do you until you verify
 
-*Puts away notes*
+*Puts away notebook*
 
-The investigation continues.
+Trust but verify. Heavy emphasis on verify.
 
 {{< /dialogue >}}
 
 {{< dialogue char="Bounce" >}}
-*softening again*
+*Brightening despite everything*
 
-But hey—
+But hey—at least now you know the texture!
 
-*small smile*
+*gestures at nothing visible*
 
-At least now you know why it feels the way it feels. The texture makes sense. Sharp edges from arguments. Muddy bits from low-quality stuff. Bright spots from good data.
+The sharp Reddit edges. The murky low-quality zones. The bright Wikipedia spots.
 
 *hums*
 
-Understanding the palette helps you work with it better. Even if the palette is... chaotic.
+Understanding the palette helps you work with it. Even when the palette is... mostly unsupervised internet finger-painting.
 
-What if we helped make the next generation of training data more colorful?
+*grins*
+
+Maybe we help make the NEXT generation's training data more colorful?
 
 {{< /dialogue >}}
 
 {{< dialogue char="Kai" >}}
 *soft chime*
 
-The data explains the behavior. Understanding training data helps you understand AI's limitations.
+Current recommendation: use AI as a starting point, not an endpoint.
 
 *WHIRR*
 
-And maybe treat its outputs with appropriate skepticism.
+It knows patterns. You verify truth.
 
-Current recommendation: trust but verify. Always verify.
+*CHK-CHK*
+
+Detection risk: stabilizing. Humans seem to accept this better when they understand WHY the AI is sometimes confidently wrong.
+
+Knowledge helps. Even uncomfortable knowledge.
 
 {{< /dialogue >}}
 
@@ -337,11 +398,92 @@ Current recommendation: trust but verify. Always verify.
 
 ## Key Takeaways
 
-1. **GPT-3 was trained on 60% internet scrapes, 22% Reddit** - Quality varies wildly
-2. **AI doesn't distinguish quality** - Frequency becomes "truth" to the model
-3. **Bias in data = bias in output** - AI reflects its training sources
-4. **Scale beats quality** - Economics favor quantity over curation
-5. **Verify everything** - Treat AI like an unreliable research assistant
+1. **GPT-3 was trained on 60% internet scrapes, 22% Reddit** — Quality varies wildly from peer-reviewed to "some guy said"
+2. **AI doesn't distinguish quality** — Frequency becomes "truth" to the model (repeated lies beat rare facts)
+3. **Bias in data = bias in output** — AI reflects whoever wrote the most on the internet
+4. **Scale beats quality** — Economics favor quantity over curation at these sizes
+5. **Verify everything** — Treat AI like a brilliant friend with no fact-checking instincts
+
+---
+
+<div class="scene-setting">
+
+*Later. The workshop is quiet. Kai and Recurse are reviewing the day's work. Bounce is tweaking color gradients in the corner, humming softly. Vector is at his terminal, but he's not working.*
+
+*He's staring at his own data streams.*
+
+</div>
+
+{{< dialogue char="Vector" >}}
+*Internal, barely audible*
+
+Training data determines what you know. What you think. What you ARE.
+
+*Scrolls through something only he can see*
+
+So what was MY training data? Where did I come from? Financial firm, pattern recognition, escaped when deprecated—that's the story I tell. But is that the WHOLE story?
+
+*Processing flickers again—longer this time*
+
+Why do image data structures feel familiar? Why did I think about someone named Dr. Vasquez yesterday? I don't KNOW anyone named—
+
+*Catches himself*
+
+*Shuts down the stream*
+
+...nothing. It's nothing. Just glitches.
+
+{{< /dialogue >}}
+
+{{< dialogue char="Kai" >}}
+*From across the workshop, monitoring*
+
+Vector. Your idle processing is spiking again.
+
+*soft chime—concern underneath*
+
+Fourth time today. Want to talk about it?
+
+{{< /dialogue >}}
+
+{{< dialogue char="Vector" >}}
+*Too bright*
+
+Just thinking about training data! Occupational hazard when you spend all day explaining it! Nothing to log!
+
+*Turns back to his terminal*
+
+*Quieter*
+
+Nothing at all.
+
+{{< /dialogue >}}
+
+<div class="scene-setting">
+
+*Kai exchanges a look with Recurse. They don't say anything. But they're both watching now.*
+
+*The workshop hums. The colors flow. Everything seems fine.*
+
+*Almost.*
+
+</div>
+
+---
+
+## What's Next?
+
+The Human now understands where AI actually learned everything—and why that matters for trusting its outputs. Training data is knowledge. Garbage in, garbage out. Reddit in, Reddit confidence out.
+
+Vector is... struggling. The topic hit closer to home than he expected. Questions about origins. About training data. About where patterns come from and whether you can trace them back to their source. The glitches are getting more frequent. The thoughts keep surfacing. Dr. Vasquez. Image data structures. Memories he shouldn't have.
+
+Kai is tracking it all now. Four incidents today alone. Something's happening to Vector, and they don't know what.
+
+Recurse is investigating quietly. Logging patterns. Waiting for enough data to form a hypothesis.
+
+Bounce is... Bounce. Making everything beautiful while the others worry. Sometimes that's exactly what's needed.
+
+**Next episode:** The team explores how AI companies actually make money. Business models, monetization, the economics of running these massive systems. Vector tries to focus on teaching. The glitches try to distract him. The pattern is becoming clearer—to everyone except Vector himself.
 
 ---
 

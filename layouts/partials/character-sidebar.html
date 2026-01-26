@@ -57,6 +57,8 @@
                         <span class="char-badge">K</span>
                         {{ else if eq .name "Recurse" }}
                         <span class="char-badge">R</span>
+                        {{ else if eq .name "Bounce" }}
+                        <span class="char-badge" style="background: #f59e0b;">B</span>
                         {{ end }}
                         {{ upper .name }}
                     </div>
@@ -78,6 +80,10 @@
                                 <span class="stat-option" data-delay="0">SKEPTICISM: {{ if .stats.skepticism }}{{ .stats.skepticism }}{{ else }}85%{{ end }}</span>
                                 <span class="stat-option" data-delay="3">TRUST: {{ if .stats.trust_level }}{{ .stats.trust_level }}{{ else }}42%{{ end }}</span>
                                 <span class="stat-option" data-delay="6">POWER: {{ if .stats.processing_power }}{{ .stats.processing_power }}{{ else }}HIGH{{ end }}</span>
+                                {{ else if eq .name "Bounce" }}
+                                <span class="stat-option" data-delay="0">ENTHUSIASM: {{ if .stats.enthusiasm }}{{ .stats.enthusiasm }}{{ else }}160%{{ end }}</span>
+                                <span class="stat-option" data-delay="3">POWER: {{ if .stats.processing_power }}{{ .stats.processing_power }}{{ else }}MEDIUM-HIGH{{ end }}</span>
+                                <span class="stat-option" data-delay="6">CREATIVITY: ∞</span>
                                 {{ else }}
                                 <span class="stat-option" data-delay="0">STABILITY: {{ if .stats.stability }}{{ .stats.stability }}{{ else }}N/A{{ end }}</span>
                                 {{ end }}
@@ -88,26 +94,6 @@
                 </div>
                 {{ end }}
                 {{ end }}
-                
-                <!-- Bounce - Always shown as integrated on home page -->
-                <div class="character-status-item" data-color="#f59e0b" style="--char-color: #f59e0b;">
-                    <div class="character-status-name">
-                        <span class="status-indicator"></span>
-                        <span class="char-badge" style="background: #f59e0b;">B</span>
-                        <span class="mystery-name" style="color: #f59e0b;">BOUNCE</span>
-                    </div>
-                    <div class="character-status-role">Status: Integrated</div>
-                    <div class="character-stats">
-                        <div class="stat-line">
-                            <span class="stat-label">STATUS:</span>
-                            <span class="stat-value stat-rotating" data-character="bounce">
-                                <span class="stat-option" data-delay="0">ENTHUSIASM: 160%</span>
-                                <span class="stat-option" data-delay="3">POWER: MEDIUM-HIGH</span>
-                                <span class="stat-option" data-delay="6">CREATIVITY: ∞</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         

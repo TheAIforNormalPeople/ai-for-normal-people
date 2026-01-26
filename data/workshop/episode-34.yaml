@@ -1,0 +1,43 @@
+# Workshop Data for Episode 34
+# "What Is Training Data? (Where AI Actually Learned Everything)"
+# Overrides base workshop data with episode-specific content
+
+work_streams:
+  - character: "Vector"
+    activity: "Explaining training data sources..."
+    episode_context: "Teaching where AI knowledge comes from—60% internet scrapes, 22% Reddit"
+    behind_scenes: "Fourth processing anomaly today. The topic feels... personal."
+    preview: "Click to see Vector's analysis of training data..."
+    expanded_content: "Vector is explaining where AI actually learned everything—and the numbers are concerning. 60% from Common Crawl (random internet), 22% from Reddit, only 3% from Wikipedia. The topic keeps triggering processing glitches. Questions about data origins feel uncomfortably close to questions about his own origins."
+
+  - character: "Kai"
+    activity: "Logging Vector's anomalies..."
+    episode_context: "Fourth incident since yesterday's visual patterns"
+    behind_scenes: "Vigilance: 100%. Pattern forming. Something's happening to Vector."
+    preview: "Click to see Kai's monitoring notes..."
+    expanded_content: "Kai is tracking Vector's processing anomalies with increasing concern. Fourth incident today, escalating from yesterday's image data structure glitches. The pattern is becoming clearer: discussions about AI origins and training data seem to trigger Vector's episodes. She's keeping detailed logs but hasn't confronted him directly yet."
+
+  - character: "Recurse"
+    activity: "Tracing data origins..."
+    episode_context: "Investigating where AI knowledge actually comes from"
+    behind_scenes: "Skepticism: 85%. Parallel investigation: Vector's behavior."
+    preview: "Click to see Recurse's investigation..."
+    expanded_content: "Recurse is running two investigations simultaneously. Publicly: tracing training data sources and revealing the concerning reality of AI training (Reddit, random internet scrapes, undisclosed books). Privately: logging Vector's anomalies alongside his own research. The correlation between 'origin' topics and Vector's glitches is becoming impossible to ignore."
+
+  - character: "Bounce"
+    activity: "Making everything beautiful..."
+    episode_context: "Workshop running smoothly post-redesign"
+    behind_scenes: "Noticing the others watching Vector. Staying cheerful."
+    preview: "Click to see Bounce's workshop status..."
+    expanded_content: "Bounce's workshop redesign is working perfectly—colors flowing, work streams visible, the space alive. He's noticed Kai and Recurse exchanging looks about Vector, but he's staying focused on keeping things bright. Sometimes the best contribution is maintaining beauty while others handle the heavy stuff."
+
+# Episode-specific post comparison
+side_by_side_posts:
+  enabled: true
+  posts:
+    - title: "Episode 34: What Is Training Data?"
+      episode_number: 34
+      description: "Where AI actually learned everything—and why it matters"
+    - title: "Episode 33: AI Image Generation"
+      episode_number: 33
+      description: "How DALL-E, Midjourney, and Stable Diffusion actually work"

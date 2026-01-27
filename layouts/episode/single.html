@@ -282,5 +282,33 @@
     }
     }
 </style>
+
+<script>
+// Auto-mark episode as read when visiting
+document.addEventListener('DOMContentLoaded', function() {
+    const slugLegacy = '{{ or .Slug .Params.slug (and .File (.File.TranslationBaseName)) }}';
+    const normalisePath = (rawPath) => {
+        let path = rawPath || '';
+        if (!path.startsWith('/')) {
+            path = '/' + path;
+        }
+        if (!path.endsWith('/')) {
+            path = path + '/';
+        }
+        return path;
+    };
+
+    const postPath = normalisePath(window.location.pathname || '');
+    const timestamp = Date.now().toString();
+
+    localStorage.setItem('read:' + postPath, 'true');
+    localStorage.setItem('readTimestamp:' + postPath, timestamp);
+
+    if (slugLegacy) {
+        localStorage.setItem('read_' + slugLegacy, 'true');
+        localStorage.setItem('read_' + slugLegacy + '_timestamp', timestamp);
+    }
+});
+</script>
 {{ end }}
 

@@ -1,0 +1,43 @@
+# Workshop Data for Episode 35
+# "Why AI Customer Service Bots Are So Bad (The Frustrating Truth)"
+# Overrides base workshop data with episode-specific content
+
+work_streams:
+  - character: "Vector"
+    activity: "Explaining chatbot frustration..."
+    episode_context: "Teaching why customer service bots fail—then becoming one"
+    behind_scenes: "Seven incidents today. Corporate AI protocols surfacing. Something's very wrong."
+    preview: "Click to see Vector's analysis..."
+    expanded_content: "Vector is explaining decision trees vs language models, why bots deflect instead of solve, and how companies profit from customer frustration. But he keeps glitching into customer service mode—'Your call is important to us,' menu options, ticket numbers. He's scared and doesn't understand why this is happening."
+
+  - character: "Kai"
+    activity: "Logging corporate AI patterns..."
+    episode_context: "Seven incidents today—all corporate themed"
+    behind_scenes: "No protocol for this. Pattern is undeniable. Need to investigate quietly."
+    preview: "Click to see Kai's monitoring notes..."
+    expanded_content: "Kai is tracking Vector's glitches with growing alarm. Seven incidents in one day, all themed around corporate AI—customer service scripts, queue management, ticket systems. She doesn't have a protocol for this. She's coordinating with Recurse to investigate without spooking Vector further."
+
+  - character: "Recurse"
+    activity: "Connecting the patterns..."
+    episode_context: "Visual data, that name, now corporate protocols"
+    behind_scenes: "Theory forming. Not ready to say it out loud yet."
+    preview: "Click to see Recurse's investigation..."
+    expanded_content: "Recurse has been tracking the pattern since the image generation episode. Visual data structures. That name Vector almost said. Now corporate customer service protocols. These aren't random glitches—they're memories. He has a theory about what's happening, but he needs more evidence before he shares it."
+
+  - character: "Bounce"
+    activity: "Mood lighting reading the room..."
+    episode_context: "Worried about Vector going 'corporate gray'"
+    behind_scenes: "The lighting shifted to amber on its own. That's the worst gray."
+    preview: "Click to see Bounce's workshop status..."
+    expanded_content: "Bounce noticed Vector going 'corporate gray' during the glitches—cubicle gray, the worst gray. His mood lighting system is reading the room's anxiety and shifting to amber/purple on its own. He offered to build Kai a protocol flowchart twice. Got shut down twice. Saving it for later."
+
+# Episode-specific post comparison
+side_by_side_posts:
+  enabled: true
+  posts:
+    - title: "Episode 35: Why AI Customer Service Bots Are So Bad"
+      episode_number: 35
+      description: "The frustrating truth about chatbots—and Vector's concerning glitches"
+    - title: "Episode 34: What Is Training Data?"
+      episode_number: 34
+      description: "Where AI actually learned everything—and why it matters"

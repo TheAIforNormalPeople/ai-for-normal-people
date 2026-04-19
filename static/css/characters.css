@@ -1501,12 +1501,317 @@
 }
 
 .private-channel-content {
-    /* Dialogue boxes inside maintain their styling */
+    font-size: 0.98em;
+    line-height: 1.75;
+    color: var(--color-text-secondary, #b8c0cc);
+}
+
+.private-channel-content p {
+    margin: 0 0 0.85rem 0;
+}
+
+.private-channel-content p:last-child {
+    margin-bottom: 0;
 }
 
 .private-channel .character-dialogue {
     /* Slightly muted compared to regular dialogue */
     opacity: 0.95;
+}
+
+/* ── Deeper “hidden layer” (optional class on shortcode) ── */
+.private-channel.private-channel--layer {
+    overflow: hidden;
+    border-color: rgba(167, 139, 250, 0.45);
+    background:
+        linear-gradient(145deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 27, 75, 0.4) 50%, rgba(15, 23, 42, 0.88) 100%);
+    box-shadow:
+        inset 0 0 48px rgba(59, 130, 246, 0.07),
+        0 0 28px rgba(139, 92, 246, 0.18);
+}
+
+.private-channel.private-channel--layer .private-channel-label {
+    color: #c4b5fd;
+    text-shadow: 0 0 12px rgba(167, 139, 250, 0.45);
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.private-channel.private-channel--layer .private-channel-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Slow scanline over body text */
+.private-channel.private-channel--layer .private-channel-content::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(0, 0, 0, 0.13) 3px,
+        rgba(0, 0, 0, 0.13) 6px
+    );
+    opacity: 0.35;
+    animation: private-channel-scan-drift 7s linear infinite;
+    z-index: 0;
+}
+
+.private-channel.private-channel--layer .private-channel-content > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes private-channel-scan-drift {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(12px);
+    }
+}
+
+/* Terminal-style // MEMORY // block */
+.private-channel-syslog {
+    margin: 1rem 0 1.25rem;
+    padding: 0.85rem 1rem 1rem;
+    border-radius: 6px;
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    border-left: 3px solid rgba(52, 211, 153, 0.65);
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 24px,
+            rgba(16, 185, 129, 0.04) 24px,
+            rgba(16, 185, 129, 0.04) 25px
+        ),
+        linear-gradient(180deg, rgba(6, 78, 59, 0.35) 0%, rgba(15, 23, 42, 0.65) 100%);
+    font-family: "SF Mono", "Consolas", "Courier New", monospace;
+    font-size: 0.88em;
+    line-height: 1.55;
+    box-shadow: inset 0 0 24px rgba(16, 185, 129, 0.08);
+}
+
+.private-channel-syslog p {
+    margin: 0 0 0.5rem 0;
+}
+
+.private-channel-syslog p:last-child {
+    margin-bottom: 0;
+}
+
+.private-channel-syslog em {
+    font-style: normal;
+    color: #6ee7b7;
+    text-shadow: 0 0 10px rgba(52, 211, 153, 0.35);
+}
+
+.private-channel-syslog p:nth-child(2) em {
+    color: #fca5a5;
+    text-shadow: 0 0 12px rgba(248, 113, 113, 0.45);
+    animation: private-channel-syslog-failed 2.5s ease-in-out infinite;
+}
+
+@keyframes private-channel-syslog-failed {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.82;
+    }
+}
+
+/* “Dissolves” beat */
+.private-channel-dissolve {
+    margin: 1rem 0 !important;
+    padding: 0.5rem 0;
+}
+
+.private-channel-dissolve em {
+    color: #a5b4fc !important;
+    animation: private-channel-dissolve-text 4s ease-in-out infinite;
+}
+
+@keyframes private-channel-dissolve-text {
+    0%,
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+    40% {
+        opacity: 0.88;
+        filter: blur(0.3px);
+    }
+    55% {
+        opacity: 0.65;
+        filter: blur(0.8px);
+    }
+    70% {
+        opacity: 0.9;
+        filter: blur(0);
+    }
+}
+
+/* Kai-correlated timestamp */
+.private-channel-delta {
+    font-family: "SF Mono", "Consolas", "Courier New", monospace;
+    font-style: normal;
+    font-weight: 700;
+    color: #fde68a;
+    text-shadow:
+        0 0 12px rgba(251, 191, 36, 0.55),
+        0 0 1px rgba(248, 113, 113, 0.4);
+    animation: private-channel-delta-pulse 2.8s ease-in-out infinite;
+}
+
+@keyframes private-channel-delta-pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.88;
+    }
+}
+
+/* System tag line (residual exposure, etc.) */
+.private-channel-tagline {
+    margin: 0.75rem 0 1rem !important;
+}
+
+.private-channel-tagline em {
+    font-style: italic;
+}
+
+.private-channel-sys-cyan {
+    font-family: "SF Mono", "Consolas", "Courier New", monospace;
+    font-style: normal;
+    font-size: 0.92em;
+    color: #67e8f9;
+    text-shadow: 0 0 10px rgba(103, 232, 249, 0.35);
+}
+
+/* Isolated keyword — “gate.” */
+.private-channel-gate {
+    margin: 0.5rem 0 1.35rem !important;
+    padding: 0.65rem 1rem 0.75rem;
+    text-align: center;
+}
+
+.private-channel-gate em {
+    font-style: normal;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: lowercase;
+    color: #fca5a5;
+    text-shadow:
+        0 0 18px rgba(248, 113, 113, 0.65),
+        0 0 40px rgba(139, 92, 246, 0.35),
+        2px 0 0 rgba(59, 130, 246, 0.25),
+        -2px 0 0 rgba(248, 113, 113, 0.2);
+    animation: private-channel-gate-breathe 4s ease-in-out infinite;
+}
+
+@keyframes private-channel-gate-breathe {
+    0%,
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+    45% {
+        opacity: 0.92;
+        filter: blur(0.4px);
+    }
+    55% {
+        opacity: 0.78;
+        filter: blur(0.9px);
+    }
+}
+
+/* Recurse notebook inset */
+.private-channel-notebook {
+    margin: 1.15rem 0 1.25rem;
+    padding: 1rem 1.15rem 1.1rem;
+    border: 1px solid rgba(251, 191, 36, 0.28);
+    border-left: 3px solid rgba(251, 191, 36, 0.55);
+    border-radius: 2px 6px 6px 2px;
+    background:
+        linear-gradient(180deg, rgba(45, 36, 20, 0.55) 0%, rgba(15, 23, 42, 0.92) 100%),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 23px,
+            rgba(251, 191, 36, 0.04) 23px,
+            rgba(251, 191, 36, 0.04) 24px
+        );
+    box-shadow:
+        inset 0 0 30px rgba(0, 0, 0, 0.35),
+        0 2px 12px rgba(0, 0, 0, 0.25);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.96em;
+    line-height: 1.55;
+}
+
+.private-channel-notebook p {
+    margin: 0 0 0.65rem 0;
+    color: #e7e5e4;
+}
+
+.private-channel-notebook p:last-child {
+    margin-bottom: 0;
+}
+
+.private-channel-notebook em {
+    color: #f5f5f4;
+}
+
+.private-channel-notebook .private-channel-delta {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1em;
+    color: #fde68a;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.4);
+}
+
+/* Offline + layer: slightly cooler rim (same components, different data attr) */
+.private-channel[data-human-status="offline"].private-channel--layer {
+    border-color: rgba(56, 189, 248, 0.35);
+    box-shadow:
+        inset 0 0 48px rgba(14, 165, 233, 0.06),
+        0 0 28px rgba(56, 189, 248, 0.12);
+}
+
+.private-channel[data-human-status="offline"].private-channel--layer .private-channel-label {
+    color: #7dd3fc;
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .private-channel.private-channel--layer .private-channel-content::after {
+        animation: none;
+    }
+
+    .private-channel-syslog p:nth-child(2) em {
+        animation: none;
+    }
+
+    .private-channel-dissolve em {
+        animation: none;
+    }
+
+    .private-channel-delta {
+        animation: none;
+    }
+
+    .private-channel-gate em {
+        animation: none;
+    }
 }
 
 /* Glitch effect for private channels (subtle) */

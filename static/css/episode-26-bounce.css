@@ -629,6 +629,202 @@ div.dialogue-box.vector {
     font-weight: 700;
 }
 
+/* In-terminal “stall” — nested inside .dialogue-box.vector only */
+.dialogue-box.vector .vector-processing-pause {
+    position: relative;
+    z-index: 2;
+    margin: 1rem -0.35rem 1.35rem -0.35rem;
+    padding: 0.9rem 1rem 1rem;
+    border: 1px dashed rgba(248, 113, 113, 0.55);
+    border-radius: 6px;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 3px,
+            rgba(0, 0, 0, 0.22) 3px,
+            rgba(0, 0, 0, 0.22) 6px
+        ),
+        linear-gradient(
+            125deg,
+            rgba(248, 113, 113, 0.14) 0%,
+            rgba(59, 130, 246, 0.06) 45%,
+            transparent 70%
+        );
+    box-shadow:
+        inset 0 0 28px rgba(248, 113, 113, 0.12),
+        0 0 18px rgba(248, 113, 113, 0.15);
+    overflow: hidden;
+    animation: vector-pause-container-glitch 3.2s ease-in-out infinite;
+}
+
+.dialogue-box.vector .vector-processing-pause::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 12px,
+        rgba(248, 113, 113, 0.04) 12px,
+        rgba(248, 113, 113, 0.04) 13px
+    );
+    pointer-events: none;
+    animation: vector-pause-scan-drift 4.5s linear infinite;
+    opacity: 0.85;
+}
+
+.dialogue-box.vector .vector-processing-pause::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent 48%,
+        rgba(248, 113, 113, 0.07) 50%,
+        transparent 52%
+    );
+    background-size: 100% 8px;
+    pointer-events: none;
+    animation: vector-pause-scanline 2.1s steps(6, end) infinite;
+    mix-blend-mode: screen;
+}
+
+.dialogue-box.vector .vector-processing-pause p {
+    position: relative;
+    z-index: 1;
+    margin: 0.35rem 0;
+    color: #e2e8f0;
+    text-shadow:
+        0 0 6px rgba(248, 113, 113, 0.35),
+        0 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.dialogue-box.vector .vector-processing-pause p:first-of-type {
+    margin-top: 0;
+}
+
+.dialogue-box.vector .vector-processing-pause p:last-child {
+    margin-bottom: 0;
+}
+
+.dialogue-box.vector .vector-processing-pause em {
+    color: #fecaca;
+    font-style: italic;
+    font-weight: 500;
+    text-shadow:
+        0 0 10px rgba(248, 113, 113, 0.55),
+        0 0 1px rgba(0, 0, 0, 1);
+}
+
+.dialogue-box.vector .vector-processing-pause p:first-child em {
+    font-style: normal;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #f87171;
+    animation: vector-pause-label-burst 2.8s steps(1, end) infinite;
+}
+
+/* Loud “FOUR!!!” beat — overrides global Vector strong (blue) inside stall */
+.dialogue-box.vector .vector-processing-pause strong {
+    display: block;
+    margin: 0.35rem 0 0.5rem;
+    font-size: 1.15em;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: #fef08a !important;
+    text-shadow:
+        0 0 14px rgba(250, 204, 21, 0.85),
+        2px 0 0 rgba(248, 113, 113, 0.5),
+        -2px 0 0 rgba(96, 165, 250, 0.45) !important;
+    animation: vector-pause-four-yell 2.4s ease-in-out infinite;
+}
+
+@keyframes vector-pause-four-yell {
+    0%,
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    50% {
+        transform: scale(1.02);
+        filter: brightness(1.08);
+    }
+}
+
+@keyframes vector-pause-container-glitch {
+    0%,
+    100% {
+        transform: translateX(0);
+        filter: saturate(1);
+    }
+    31% {
+        transform: translateX(0);
+    }
+    32% {
+        transform: translateX(-2px);
+        filter: saturate(1.15) hue-rotate(-8deg);
+    }
+    33% {
+        transform: translateX(1px);
+    }
+    34% {
+        transform: translateX(0);
+        filter: saturate(1);
+    }
+    71% {
+        transform: translateX(0);
+    }
+    72% {
+        transform: translateX(1px);
+        filter: hue-rotate(6deg);
+    }
+    73% {
+        transform: translateX(-1px);
+    }
+    74% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes vector-pause-scan-drift {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 120px 0;
+    }
+}
+
+@keyframes vector-pause-scanline {
+    0%,
+    100% {
+        opacity: 0.15;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 0.45;
+        transform: translateY(6px);
+    }
+}
+
+@keyframes vector-pause-label-burst {
+    0%,
+    88%,
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 12px rgba(248, 113, 113, 0.8);
+    }
+    90% {
+        opacity: 0.72;
+        text-shadow: 2px 0 0 rgba(96, 165, 250, 0.9), -2px 0 0 rgba(248, 113, 113, 0.9);
+    }
+    92% {
+        opacity: 1;
+        text-shadow: 0 0 12px rgba(248, 113, 113, 0.8);
+    }
+}
+
 /* Mobile adjustments for Vector */
 @media (max-width: 768px) {
     .dialogue-box.vector {
@@ -669,6 +865,20 @@ div.dialogue-box.vector {
     }
     
     .dialogue-box.vector::after {
+        animation: none;
+    }
+
+    .dialogue-box.vector .vector-processing-pause,
+    .dialogue-box.vector .vector-processing-pause::before,
+    .dialogue-box.vector .vector-processing-pause::after {
+        animation: none;
+    }
+
+    .dialogue-box.vector .vector-processing-pause p:first-child em {
+        animation: none;
+    }
+
+    .dialogue-box.vector .vector-processing-pause strong {
         animation: none;
     }
 }
@@ -1884,4 +2094,3 @@ div.dialogue-box.recurse {
     color: #fff;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
-

@@ -11,13 +11,14 @@
   {{ $label = "PRIVATE CHANNEL - HUMAN OFFLINE" }}
 {{ end }}
 
-<div class="private-channel" data-human-status="{{ $humanStatus }}">
+{{ $extraClass := .Get "class" | default "" }}
+<div class="private-channel {{ $extraClass }}" data-human-status="{{ $humanStatus }}">
     <div class="private-channel-label">
         <span class="private-channel-icon">👁️</span>
         {{ $label }}
     </div>
     <div class="private-channel-content">
-        {{ .Inner }}
+        {{ .Inner | markdownify }}
     </div>
 </div>
 

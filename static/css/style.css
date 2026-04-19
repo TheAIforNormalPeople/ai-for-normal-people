@@ -592,6 +592,41 @@ em {
     color: var(--color-text);
 }
 
+/* Section breaks (---) between beats — match episode rhythm, not default browser <hr> */
+.post-content hr {
+    border: none;
+    height: 1px;
+    margin: 2rem 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(96, 165, 250, 0.35) 15%,
+        rgba(96, 165, 250, 0.35) 85%,
+        transparent
+    );
+}
+
+/* FAQ block (standard closing for newer episodes; ## FAQ → id="faq") */
+.post-content h2#faq {
+    margin-top: 2.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border, rgba(148, 163, 184, 0.25));
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary, #3b82f6);
+}
+
+.post-content h2#faq ~ p {
+    margin-bottom: 1.15rem;
+}
+
+.post-content h2#faq ~ p strong:first-child {
+    color: var(--color-text, #e8e8e8);
+    font-weight: 600;
+}
+
 .post-footer {
     padding-top: var(--spacing-lg);
     border-top: 1px solid var(--color-border);
